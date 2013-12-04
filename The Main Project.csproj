@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5B78C669-2399-4A7D-B100-3971FBA7ECCE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>The_Main_Project</RootNamespace>
+    <AssemblyName>The Main Project</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FlashButton">
+      <HintPath>..\..\Documents\Emploi + autre\CLG\13-b-Aut\Dev Interface\TP2\Graphique\FlashButton\bin\Debug\FlashButton.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UC_Navigator">
+      <HintPath>UC_Navigator\UC_Navigator\bin\Debug\UC_Navigator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AfficherStat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AfficherStat.Designer.cs">
+      <DependentUpon>AfficherStat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainLigue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainLigue.Designer.cs">
+      <DependentUpon>MainLigue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionEquipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionEquipe.Designer.cs">
+      <DependentUpon>GestionEquipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionJoueur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionJoueur.Designer.cs">
+      <DependentUpon>GestionJoueur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionDivision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionDivision.Designer.cs">
+      <DependentUpon>GestionDivision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionMatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionMatch.Designer.cs">
+      <DependentUpon>GestionMatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parametre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Parametre.Designer.cs">
+      <DependentUpon>Parametre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resultat Match.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resultat Match.Designer.cs">
+      <DependentUpon>Resultat Match.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AfficherStat.resx">
+      <DependentUpon>AfficherStat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionEquipe.resx">
+      <DependentUpon>GestionEquipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionJoueur.resx">
+      <DependentUpon>GestionJoueur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionDivision.resx">
+      <DependentUpon>GestionDivision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionMatch.resx">
+      <DependentUpon>GestionMatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainLigue.resx">
+      <DependentUpon>MainLigue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parametre.resx">
+      <DependentUpon>Parametre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Resultat Match.resx">
+      <DependentUpon>Resultat Match.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
