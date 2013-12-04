@@ -16,6 +16,6 @@ namespace The_Main_Project
         {
             InitializeComponent();
         }
-        private bool test;
+       
     }
 }
