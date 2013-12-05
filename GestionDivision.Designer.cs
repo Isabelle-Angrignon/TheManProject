@@ -154,6 +154,7 @@
             this.Controls.Add(this.Caractérstique);
             this.Name = "GestionDivision";
             this.Text = "GestionDivision";
+            this.Load += new System.EventHandler(this.GestionDivision_Load);
             this.Caractérstique.ResumeLayout(false);
             this.Caractérstique.PerformLayout();
             this.ResumeLayout(false);

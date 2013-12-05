@@ -39,6 +39,28 @@ namespace The_Main_Project
             this.Close();
         }
 
+        private void GestionDivision_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                OracleDataAdapter Oraliste = new OracleDataAdapter(sqlShow, conn);
+
+                if (divDataSet.Tables.Contains(dsDivision))
+                {
+                    divDataSet.Tables[dsDivision].Clear();
+                }
+                Oraliste.Fill(divDataSet, dsDivision);
+                Oraliste.Dispose();
+
+                BindingSource maSource = new BindingSource(divDataSet, dsDivision);
+
+                TB_Nom_D.DataBindings.Add("Text", divDataSet, "Divisions.NomDivision");
+                
+            }
+            catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
+        }
+
+
         /////////////////////////////////////////
         //exemple typique de code avec paramètres
         ///////////////////////////////////////
