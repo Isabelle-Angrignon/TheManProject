@@ -39,7 +39,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DTP_Date = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.BTN_Ok = new System.Windows.Forms.Button();
@@ -58,7 +58,7 @@
             this.Caractérstique.Controls.Add(this.label5);
             this.Caractérstique.Controls.Add(this.textBox1);
             this.Caractérstique.Controls.Add(this.label4);
-            this.Caractérstique.Controls.Add(this.dateTimePicker1);
+            this.Caractérstique.Controls.Add(this.DTP_Date);
             this.Caractérstique.Controls.Add(this.label3);
             this.Caractérstique.Location = new System.Drawing.Point(12, 12);
             this.Caractérstique.Name = "Caractérstique";
@@ -148,12 +148,12 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Lieu";
             // 
-            // dateTimePicker1
+            // DTP_Date
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(54, 19);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(111, 20);
-            this.dateTimePicker1.TabIndex = 3;
+            this.DTP_Date.Location = new System.Drawing.Point(54, 19);
+            this.DTP_Date.Name = "DTP_Date";
+            this.DTP_Date.Size = new System.Drawing.Size(111, 20);
+            this.DTP_Date.TabIndex = 3;
             // 
             // label3
             // 
@@ -209,7 +209,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DTP_Date;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button BTN_Ok;
