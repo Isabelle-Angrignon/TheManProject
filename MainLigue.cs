@@ -17,9 +17,13 @@ namespace The_Main_Project
             InitializeComponent();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void FLB_Division_Click(object sender, EventArgs e)
         {
-
+            GestionDivision Form = new GestionDivision();
+            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                ///envoyer commit?
+            }
         }
     }
 }

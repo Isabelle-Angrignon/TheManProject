@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_League));
             this.DGV_Team = new System.Windows.Forms.DataGridView();
             this.MS_Main = new System.Windows.Forms.MenuStrip();
             this.TSMI_Gestion = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,6 +63,7 @@
             this.flashButton2 = new FlashButton.FlashButton();
             this.flashButton3 = new FlashButton.FlashButton();
             this.flashButton4 = new FlashButton.FlashButton();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Team)).BeginInit();
             this.MS_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Logo)).BeginInit();
@@ -282,7 +282,7 @@
             // 
             // FLB_Division
             // 
-            this.FLB_Division.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("FLB_Division.BackgroundImage")));
+            this.FLB_Division.BackgroundImage = global::The_Main_Project.Properties.Resources.Division_FB;
             this.FLB_Division.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.FLB_Division.ImageClick = global::The_Main_Project.Properties.Resources.Division_FB_Click;
             this.FLB_Division.ImageDisable = global::The_Main_Project.Properties.Resources.Division_FB_Disable;
@@ -292,6 +292,7 @@
             this.FLB_Division.Name = "FLB_Division";
             this.FLB_Division.Size = new System.Drawing.Size(60, 45);
             this.FLB_Division.TabIndex = 19;
+            this.FLB_Division.Click += new System.EventHandler(this.FLB_Division_Click);
             // 
             // FLB_Team
             // 
@@ -357,6 +358,10 @@
             this.flashButton4.Name = "flashButton4";
             this.flashButton4.Size = new System.Drawing.Size(60, 45);
             this.flashButton4.TabIndex = 24;
+            // 
+            // backgroundWorker1
+            // 
+//            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
             // Form_League
             // 
@@ -425,6 +430,7 @@
         private FlashButton.FlashButton flashButton2;
         private FlashButton.FlashButton flashButton3;
         private FlashButton.FlashButton flashButton4;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
 
     }
 }

@@ -126,20 +126,10 @@
   <metadata name="CMS_Team.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>274, 3</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="FLB_Division.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAAAd0SU1FB90MBBUbIddUZVgAAAFHSURBVGhD7Y8BisQwDAP7lP7/k3u3xxqaVmMS
-        lGR7JQMiYBxJ3haL8bw++k/IzjFUugOq12vf9/dbcFk66ZuoPn/KDjlD85l06da0PIguHdYhHVmHHHnc
-        IUojUDkhC2UYGoHKCVmQiW0MUJadRya2MUBZdh6Z2MYAZdl5ZGIbA5RVnUfL2XwErR0u8xiSzqhZDygr
-        U4FaCClo7pLlkQrkMKFlt4XWDnYPMqg1dv9341GHkGpQ/0JTUQVCNah/oalQYG0R9383bnvI26DFxA4E
-        Wjtc9mOopKC5S5ZHKlALR51Rsx5QVqYCOfwlm4+gtUN1j8xkBJRl55GJbQxQlp1HJrYxQFl2HpnYxgBl
-        2XlhojQClROyUIahEaickEUXE5N1yJF1SEcef4icNy1PJjqQCtTCUd9GdQoVqIXQXZH97l56sZjPtv0A
-        pY5xXhP+Z6QAAAAASUVORK5CYII=
-</value>
-  </data>
+  <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>386, 3</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>83</value>
+    <value>27</value>
   </metadata>
 </root>
