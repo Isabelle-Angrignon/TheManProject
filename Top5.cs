@@ -16,5 +16,10 @@ namespace The_Main_Project
         {
             InitializeComponent();
         }
+
+        private void BTN_Ok_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

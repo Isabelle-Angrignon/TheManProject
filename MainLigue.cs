@@ -77,6 +77,12 @@ namespace The_Main_Project
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
 
+        private void flashButton2_Click(object sender, EventArgs e)
+        {
+            Top5 Form = new Top5();
+            Form.ShowDialog();
+        }
+
     }
 
    

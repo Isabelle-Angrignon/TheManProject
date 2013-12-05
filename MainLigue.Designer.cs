@@ -332,6 +332,7 @@
             this.flashButton2.Name = "flashButton2";
             this.flashButton2.Size = new System.Drawing.Size(45, 45);
             this.flashButton2.TabIndex = 22;
+            this.flashButton2.Click += new System.EventHandler(this.flashButton2_Click);
             // 
             // flashButton3
             // 
