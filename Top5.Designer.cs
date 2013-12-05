@@ -36,6 +36,7 @@
             // 
             // BTN_Ok
             // 
+            this.BTN_Ok.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Ok.Location = new System.Drawing.Point(282, 272);
             this.BTN_Ok.Name = "BTN_Ok";
             this.BTN_Ok.Size = new System.Drawing.Size(50, 50);

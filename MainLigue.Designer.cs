@@ -276,6 +276,7 @@
             // 
             this.FB_Result.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Resultat;
             this.FB_Result.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Result.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FB_Result.ImageClick = global::The_Main_Project.Properties.Resources.FB_Resultat_Click;
             this.FB_Result.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Resultat_Disable;
             this.FB_Result.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Resultat;
@@ -290,6 +291,7 @@
             // 
             this.FB_Match.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Match;
             this.FB_Match.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Match.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FB_Match.ImageClick = global::The_Main_Project.Properties.Resources.FB_Match_Click;
             this.FB_Match.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Match_Disable;
             this.FB_Match.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Match;
@@ -304,6 +306,7 @@
             // 
             this.flashButton2.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Top_5;
             this.flashButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flashButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.flashButton2.ImageClick = global::The_Main_Project.Properties.Resources.FB_Top_5_Click;
             this.flashButton2.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Top_5_Disable;
             this.flashButton2.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Top_5;
@@ -318,6 +321,7 @@
             // 
             this.FB_Joueur.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Player;
             this.FB_Joueur.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Joueur.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FB_Joueur.ImageClick = global::The_Main_Project.Properties.Resources.FB_Player_Click;
             this.FB_Joueur.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Player_Disable;
             this.FB_Joueur.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Player;
@@ -332,6 +336,7 @@
             // 
             this.FLB_Team.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Team;
             this.FLB_Team.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FLB_Team.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FLB_Team.ImageClick = global::The_Main_Project.Properties.Resources.FB_Team_Click;
             this.FLB_Team.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Team_Disable;
             this.FLB_Team.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Team;
@@ -346,6 +351,7 @@
             // 
             this.FLB_Division.BackgroundImage = global::The_Main_Project.Properties.Resources.Division_FB;
             this.FLB_Division.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FLB_Division.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FLB_Division.ImageClick = global::The_Main_Project.Properties.Resources.Division_FB_Click;
             this.FLB_Division.ImageDisable = global::The_Main_Project.Properties.Resources.Division_FB_Disable;
             this.FLB_Division.ImageNeutral = global::The_Main_Project.Properties.Resources.Division_FB;

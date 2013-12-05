@@ -36,9 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -49,9 +46,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -64,6 +58,12 @@
             this.label16 = new System.Windows.Forms.Label();
             this.BTN_Ok = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -144,33 +144,6 @@
             this.groupBox1.Size = new System.Drawing.Size(232, 252);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
-            this.button1.Location = new System.Drawing.Point(186, 115);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 40);
-            this.button1.TabIndex = 22;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(186, 69);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(40, 40);
-            this.button4.TabIndex = 23;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
-            this.button5.Location = new System.Drawing.Point(186, 23);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(40, 40);
-            this.button5.TabIndex = 24;
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // dataGridView2
             // 
@@ -268,33 +241,6 @@
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             // 
-            // button2
-            // 
-            this.button2.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
-            this.button2.Location = new System.Drawing.Point(189, 118);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(40, 40);
-            this.button2.TabIndex = 25;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(189, 75);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(40, 40);
-            this.button6.TabIndex = 26;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
-            this.button7.Location = new System.Drawing.Point(189, 32);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(40, 40);
-            this.button7.TabIndex = 27;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -380,6 +326,7 @@
             // 
             // BTN_Ok
             // 
+            this.BTN_Ok.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Ok.Location = new System.Drawing.Point(437, 338);
             this.BTN_Ok.Name = "BTN_Ok";
             this.BTN_Ok.Size = new System.Drawing.Size(50, 50);
@@ -390,6 +337,7 @@
             // 
             // button3
             // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Location = new System.Drawing.Point(493, 338);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(50, 50);
@@ -397,6 +345,66 @@
             this.button3.Text = "Cancel";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
+            this.button2.Location = new System.Drawing.Point(189, 118);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(40, 40);
+            this.button2.TabIndex = 25;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.Location = new System.Drawing.Point(189, 75);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(40, 40);
+            this.button6.TabIndex = 26;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
+            this.button7.Location = new System.Drawing.Point(189, 32);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(40, 40);
+            this.button7.TabIndex = 27;
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
+            this.button1.Location = new System.Drawing.Point(186, 115);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(40, 40);
+            this.button1.TabIndex = 22;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(186, 69);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(40, 40);
+            this.button4.TabIndex = 23;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
+            this.button5.Location = new System.Drawing.Point(186, 23);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(40, 40);
+            this.button5.TabIndex = 24;
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // Resultat_Match
             // 
@@ -412,6 +420,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Name = "Resultat_Match";
             this.Text = "Resultat_Match";
             this.groupBox1.ResumeLayout(false);

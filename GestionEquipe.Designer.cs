@@ -38,20 +38,21 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.BTN_Edit = new System.Windows.Forms.Button();
-            this.BTN_Add = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.PBX_Logo = new System.Windows.Forms.PictureBox();
+            this.BTN_Edit = new System.Windows.Forms.Button();
             this.BTN_Del = new System.Windows.Forms.Button();
+            this.BTN_Add = new System.Windows.Forms.Button();
             this.Caractérstique.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // BTN_Ok
             // 
+            this.BTN_Ok.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Ok.Location = new System.Drawing.Point(194, 249);
             this.BTN_Ok.Name = "BTN_Ok";
             this.BTN_Ok.Size = new System.Drawing.Size(50, 50);
@@ -62,6 +63,7 @@
             // 
             // BTN_Cancel
             // 
+            this.BTN_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Cancel.Location = new System.Drawing.Point(253, 249);
             this.BTN_Cancel.Name = "BTN_Cancel";
             this.BTN_Cancel.Size = new System.Drawing.Size(50, 50);
@@ -94,6 +96,7 @@
             // 
             // uC_Navigator
             // 
+            this.uC_Navigator.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uC_Navigator.Location = new System.Drawing.Point(17, 198);
             this.uC_Navigator.Name = "uC_Navigator";
             this.uC_Navigator.Size = new System.Drawing.Size(195, 19);
@@ -101,6 +104,7 @@
             // 
             // BTN_Load
             // 
+            this.BTN_Load.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Load.Location = new System.Drawing.Point(97, 19);
             this.BTN_Load.Name = "BTN_Load";
             this.BTN_Load.Size = new System.Drawing.Size(75, 23);
@@ -140,24 +144,6 @@
             this.textBox4.Size = new System.Drawing.Size(131, 20);
             this.textBox4.TabIndex = 16;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
-            // BTN_Edit
-            // 
-            this.BTN_Edit.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
-            this.BTN_Edit.Location = new System.Drawing.Point(221, 137);
-            this.BTN_Edit.Name = "BTN_Edit";
-            this.BTN_Edit.Size = new System.Drawing.Size(40, 40);
-            this.BTN_Edit.TabIndex = 3;
-            this.BTN_Edit.UseVisualStyleBackColor = true;
-            // 
-            // BTN_Add
-            // 
-            this.BTN_Add.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
-            this.BTN_Add.Location = new System.Drawing.Point(221, 46);
-            this.BTN_Add.Name = "BTN_Add";
-            this.BTN_Add.Size = new System.Drawing.Size(40, 40);
-            this.BTN_Add.TabIndex = 5;
-            this.BTN_Add.UseVisualStyleBackColor = true;
             // 
             // textBox2
             // 
@@ -201,14 +187,35 @@
             this.PBX_Logo.TabIndex = 22;
             this.PBX_Logo.TabStop = false;
             // 
+            // BTN_Edit
+            // 
+            this.BTN_Edit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_Edit.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
+            this.BTN_Edit.Location = new System.Drawing.Point(221, 137);
+            this.BTN_Edit.Name = "BTN_Edit";
+            this.BTN_Edit.Size = new System.Drawing.Size(40, 40);
+            this.BTN_Edit.TabIndex = 3;
+            this.BTN_Edit.UseVisualStyleBackColor = true;
+            // 
             // BTN_Del
             // 
+            this.BTN_Del.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Del.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Del.Image")));
             this.BTN_Del.Location = new System.Drawing.Point(221, 91);
             this.BTN_Del.Name = "BTN_Del";
             this.BTN_Del.Size = new System.Drawing.Size(40, 40);
             this.BTN_Del.TabIndex = 4;
             this.BTN_Del.UseVisualStyleBackColor = true;
+            // 
+            // BTN_Add
+            // 
+            this.BTN_Add.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_Add.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
+            this.BTN_Add.Location = new System.Drawing.Point(221, 46);
+            this.BTN_Add.Name = "BTN_Add";
+            this.BTN_Add.Size = new System.Drawing.Size(40, 40);
+            this.BTN_Add.TabIndex = 5;
+            this.BTN_Add.UseVisualStyleBackColor = true;
             // 
             // GestionEquipe
             // 
