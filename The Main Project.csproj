@@ -32,8 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BoutonFlèche">
+      <HintPath>UC_Navigator\UC_Navigator\bin\Debug\BoutonFlèche.dll</HintPath>
+    </Reference>
     <Reference Include="FlashButton">
-      <HintPath>..\..\Documents\Emploi + autre\CLG\13-b-Aut\Dev Interface\TP2\Graphique\FlashButton\bin\Debug\FlashButton.dll</HintPath>
+      <HintPath>UC_Navigator\UC_Navigator\FlashButton\bin\Debug\FlashButton.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -55,12 +58,6 @@
     </Compile>
     <Compile Include="AfficherStat.Designer.cs">
       <DependentUpon>AfficherStat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainLigue.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainLigue.Designer.cs">
-      <DependentUpon>MainLigue.cs</DependentUpon>
     </Compile>
     <Compile Include="GestionEquipe.cs">
       <SubType>Form</SubType>
@@ -85,6 +82,12 @@
     </Compile>
     <Compile Include="GestionMatch.Designer.cs">
       <DependentUpon>GestionMatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainLigue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainLigue.Designer.cs">
+      <DependentUpon>MainLigue.cs</DependentUpon>
     </Compile>
     <Compile Include="Parametre.cs">
       <SubType>Form</SubType>
@@ -129,6 +132,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Resultat Match.resx">
       <DependentUpon>Resultat Match.cs</DependentUpon>
@@ -145,6 +149,78 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FB Resultat_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FB Team.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FB Team_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FB Team_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FB Team_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FB Top 5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FB Top 5_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FB Top 5_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FB Top 5_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Division FB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Division FB_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Division FB_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Division FB_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FB Match.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FB Match_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FB Match_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FB Match_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FB Player.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FB Player_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FB Player_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FB Player_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FB Resultat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FB Resultat_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FB Resultat_Disable.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
