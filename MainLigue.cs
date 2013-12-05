@@ -39,6 +39,31 @@ namespace The_Main_Project
         private void Form_League_Load(object sender, EventArgs e)
         {
             Connect();
+            UpdateComboBox();
+        }
+
+        private void UpdateComboBox()
+        {
+            try
+            {
+                OracleCommand oraCmdProg = new OracleCommand("select NomDivision From Divisions", conn);
+                oraCmdProg.CommandType = CommandType.Text;
+
+                OracleDataReader objRead = oraCmdProg.ExecuteReader();
+
+                while (objRead.Read())
+                {
+                    //ListeProgrammes.Items.Add(objRead.GetInt32(0)); 
+                    CBX_Division.Items.Add(objRead.GetString(0));
+                }
+
+                CBX_Division.SelectedIndex = 0;
+                objRead.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            } 
         }
         private void Connect()
         {
