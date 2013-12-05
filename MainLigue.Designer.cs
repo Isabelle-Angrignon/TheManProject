@@ -46,7 +46,6 @@
             this.TSMI_Aide = new System.Windows.Forms.ToolStripMenuItem();
             this.aideToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_A_Propos = new System.Windows.Forms.ToolStripMenuItem();
-            this.PBX_Logo = new System.Windows.Forms.PictureBox();
             this.DGV_Match = new System.Windows.Forms.DataGridView();
             this.CBX_Division = new System.Windows.Forms.ComboBox();
             this.CMS_Match = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -57,19 +56,20 @@
             this.CMS_Team_Afficher = new System.Windows.Forms.ToolStripMenuItem();
             this.CMS_Team_Modifier = new System.Windows.Forms.ToolStripMenuItem();
             this.CMS_Team_Supprimer = new System.Windows.Forms.ToolStripMenuItem();
-            this.FLB_Division = new FlashButton.FlashButton();
-            this.FLB_Team = new FlashButton.FlashButton();
-            this.flashButton1 = new FlashButton.FlashButton();
-            this.flashButton2 = new FlashButton.FlashButton();
-            this.flashButton3 = new FlashButton.FlashButton();
-            this.flashButton4 = new FlashButton.FlashButton();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.FB_Result = new FlashButton.FlashButton();
+            this.FB_Match = new FlashButton.FlashButton();
+            this.FB_Top5 = new FlashButton.FlashButton();
+            this.flashButton1 = new FlashButton.FlashButton();
+            this.FLB_Team = new FlashButton.FlashButton();
+            this.FLB_Division = new FlashButton.FlashButton();
+            this.PBX_Logo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Team)).BeginInit();
             this.MS_Main.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Match)).BeginInit();
             this.CMS_Match.SuspendLayout();
             this.CMS_Team.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // DGV_Team
@@ -201,14 +201,6 @@
             this.TSMI_A_Propos.Size = new System.Drawing.Size(131, 22);
             this.TSMI_A_Propos.Text = "A Propos...";
             // 
-            // PBX_Logo
-            // 
-            this.PBX_Logo.Location = new System.Drawing.Point(503, 146);
-            this.PBX_Logo.Name = "PBX_Logo";
-            this.PBX_Logo.Size = new System.Drawing.Size(73, 56);
-            this.PBX_Logo.TabIndex = 6;
-            this.PBX_Logo.TabStop = false;
-            // 
             // DGV_Match
             // 
             this.DGV_Match.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -280,6 +272,76 @@
             this.CMS_Team_Supprimer.Size = new System.Drawing.Size(129, 22);
             this.CMS_Team_Supprimer.Text = "Supprimer";
             // 
+            // FB_Result
+            // 
+            this.FB_Result.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Resultat;
+            this.FB_Result.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Result.ImageClick = global::The_Main_Project.Properties.Resources.FB_Resultat_Click;
+            this.FB_Result.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Resultat_Disable;
+            this.FB_Result.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Resultat;
+            this.FB_Result.ImageOver = global::The_Main_Project.Properties.Resources.FB_Resultat_Hover;
+            this.FB_Result.Location = new System.Drawing.Point(471, 44);
+            this.FB_Result.Name = "FB_Result";
+            this.FB_Result.Size = new System.Drawing.Size(60, 45);
+            this.FB_Result.TabIndex = 24;
+            this.FB_Result.Click += new System.EventHandler(this.FB_Result_Click);
+            // 
+            // FB_Match
+            // 
+            this.FB_Match.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Match;
+            this.FB_Match.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Match.ImageClick = global::The_Main_Project.Properties.Resources.FB_Match_Click;
+            this.FB_Match.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Match_Disable;
+            this.FB_Match.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Match;
+            this.FB_Match.ImageOver = global::The_Main_Project.Properties.Resources.FB_Match_Hover;
+            this.FB_Match.Location = new System.Drawing.Point(405, 43);
+            this.FB_Match.Name = "FB_Match";
+            this.FB_Match.Size = new System.Drawing.Size(60, 45);
+            this.FB_Match.TabIndex = 23;
+            this.FB_Match.Click += new System.EventHandler(this.flashButton3_Click);
+            // 
+            // FB_Top5
+            // 
+            this.FB_Top5.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Top_5;
+            this.FB_Top5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Top5.ImageClick = global::The_Main_Project.Properties.Resources.FB_Top_5_Click;
+            this.FB_Top5.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Top_5_Disable;
+            this.FB_Top5.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Top_5;
+            this.FB_Top5.ImageOver = global::The_Main_Project.Properties.Resources.FB_Top_5_hover;
+            this.FB_Top5.Location = new System.Drawing.Point(277, 44);
+            this.FB_Top5.Name = "FB_Top5";
+            this.FB_Top5.Size = new System.Drawing.Size(45, 45);
+            this.FB_Top5.TabIndex = 22;
+            this.FB_Top5.Click += new System.EventHandler(this.flashButton2_Click);
+            // 
+            // flashButton1
+            // 
+            this.flashButton1.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Player;
+            this.flashButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flashButton1.ImageClick = global::The_Main_Project.Properties.Resources.FB_Player_Click;
+            this.flashButton1.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Player_Disable;
+            this.flashButton1.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Player;
+            this.flashButton1.ImageOver = global::The_Main_Project.Properties.Resources.FB_Player_Hover;
+            this.flashButton1.Location = new System.Drawing.Point(220, 44);
+            this.flashButton1.Name = "flashButton1";
+            this.flashButton1.Size = new System.Drawing.Size(45, 45);
+            this.flashButton1.TabIndex = 21;
+            this.flashButton1.Click += new System.EventHandler(this.flashButton1_Click);
+            // 
+            // FLB_Team
+            // 
+            this.FLB_Team.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Team;
+            this.FLB_Team.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FLB_Team.ImageClick = global::The_Main_Project.Properties.Resources.FB_Team_Click;
+            this.FLB_Team.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Team_Disable;
+            this.FLB_Team.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Team;
+            this.FLB_Team.ImageOver = global::The_Main_Project.Properties.Resources.FB_Team_Hover;
+            this.FLB_Team.Location = new System.Drawing.Point(88, 43);
+            this.FLB_Team.Name = "FLB_Team";
+            this.FLB_Team.Size = new System.Drawing.Size(60, 45);
+            this.FLB_Team.TabIndex = 20;
+            this.FLB_Team.Click += new System.EventHandler(this.FLB_Team_Click);
+            // 
             // FLB_Division
             // 
             this.FLB_Division.BackgroundImage = global::The_Main_Project.Properties.Resources.Division_FB;
@@ -294,79 +356,22 @@
             this.FLB_Division.TabIndex = 19;
             this.FLB_Division.Click += new System.EventHandler(this.FLB_Division_Click);
             // 
-            // FLB_Team
+            // PBX_Logo
             // 
-            this.FLB_Team.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Team;
-            this.FLB_Team.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FLB_Team.ImageClick = global::The_Main_Project.Properties.Resources.FB_Team_Click;
-            this.FLB_Team.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Team_Disable;
-            this.FLB_Team.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Team;
-            this.FLB_Team.ImageOver = global::The_Main_Project.Properties.Resources.FB_Team_Hover;
-            this.FLB_Team.Location = new System.Drawing.Point(88, 43);
-            this.FLB_Team.Name = "FLB_Team";
-            this.FLB_Team.Size = new System.Drawing.Size(60, 45);
-            this.FLB_Team.TabIndex = 20;
-            // 
-            // flashButton1
-            // 
-            this.flashButton1.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Player;
-            this.flashButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flashButton1.ImageClick = global::The_Main_Project.Properties.Resources.FB_Player_Click;
-            this.flashButton1.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Player_Disable;
-            this.flashButton1.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Player;
-            this.flashButton1.ImageOver = global::The_Main_Project.Properties.Resources.FB_Player_Hover;
-            this.flashButton1.Location = new System.Drawing.Point(220, 44);
-            this.flashButton1.Name = "flashButton1";
-            this.flashButton1.Size = new System.Drawing.Size(45, 45);
-            this.flashButton1.TabIndex = 21;
-            // 
-            // flashButton2
-            // 
-            this.flashButton2.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Top_5;
-            this.flashButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flashButton2.ImageClick = global::The_Main_Project.Properties.Resources.FB_Top_5_Click;
-            this.flashButton2.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Top_5_Disable;
-            this.flashButton2.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Top_5;
-            this.flashButton2.ImageOver = global::The_Main_Project.Properties.Resources.FB_Top_5_hover;
-            this.flashButton2.Location = new System.Drawing.Point(277, 44);
-            this.flashButton2.Name = "flashButton2";
-            this.flashButton2.Size = new System.Drawing.Size(45, 45);
-            this.flashButton2.TabIndex = 22;
-            // 
-            // flashButton3
-            // 
-            this.flashButton3.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Match;
-            this.flashButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flashButton3.ImageClick = global::The_Main_Project.Properties.Resources.FB_Match_Click;
-            this.flashButton3.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Match_Disable;
-            this.flashButton3.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Match;
-            this.flashButton3.ImageOver = global::The_Main_Project.Properties.Resources.FB_Match_Hover;
-            this.flashButton3.Location = new System.Drawing.Point(405, 43);
-            this.flashButton3.Name = "flashButton3";
-            this.flashButton3.Size = new System.Drawing.Size(60, 45);
-            this.flashButton3.TabIndex = 23;
-            // 
-            // flashButton4
-            // 
-            this.flashButton4.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Resultat;
-            this.flashButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flashButton4.ImageClick = global::The_Main_Project.Properties.Resources.FB_Resultat_Click;
-            this.flashButton4.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Resultat_Disable;
-            this.flashButton4.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Resultat;
-            this.flashButton4.ImageOver = global::The_Main_Project.Properties.Resources.FB_Resultat_Hover;
-            this.flashButton4.Location = new System.Drawing.Point(471, 44);
-            this.flashButton4.Name = "flashButton4";
-            this.flashButton4.Size = new System.Drawing.Size(60, 45);
-            this.flashButton4.TabIndex = 24;
+            this.PBX_Logo.Location = new System.Drawing.Point(503, 146);
+            this.PBX_Logo.Name = "PBX_Logo";
+            this.PBX_Logo.Size = new System.Drawing.Size(73, 56);
+            this.PBX_Logo.TabIndex = 6;
+            this.PBX_Logo.TabStop = false;
             // 
             // Form_League
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1015, 428);
-            this.Controls.Add(this.flashButton4);
-            this.Controls.Add(this.flashButton3);
-            this.Controls.Add(this.flashButton2);
+            this.Controls.Add(this.FB_Result);
+            this.Controls.Add(this.FB_Match);
+            this.Controls.Add(this.FB_Top5);
             this.Controls.Add(this.flashButton1);
             this.Controls.Add(this.FLB_Team);
             this.Controls.Add(this.FLB_Division);
@@ -382,10 +387,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Team)).EndInit();
             this.MS_Main.ResumeLayout(false);
             this.MS_Main.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Match)).EndInit();
             this.CMS_Match.ResumeLayout(false);
             this.CMS_Team.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -424,9 +429,9 @@
         private FlashButton.FlashButton FLB_Division;
         private FlashButton.FlashButton FLB_Team;
         private FlashButton.FlashButton flashButton1;
-        private FlashButton.FlashButton flashButton2;
-        private FlashButton.FlashButton flashButton3;
-        private FlashButton.FlashButton flashButton4;
+        private FlashButton.FlashButton FB_Top5;
+        private FlashButton.FlashButton FB_Match;
+        private FlashButton.FlashButton FB_Result;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
 
     }

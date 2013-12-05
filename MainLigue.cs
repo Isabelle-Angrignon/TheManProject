@@ -56,5 +56,47 @@ namespace The_Main_Project
             }
             catch (Exception ex) { MessageBox.Show(ex.Message.ToString());}
         }
+
+        private void FLB_Team_Click(object sender, EventArgs e)
+        {
+            GestionEquipe Form = new GestionEquipe();
+            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                ///envoyer commit?
+            }
+        }
+
+        private void flashButton1_Click(object sender, EventArgs e)
+        {
+            GestionJoueur Form = new GestionJoueur();
+            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                ///envoyer commit?
+            }
+        }
+
+        private void flashButton2_Click(object sender, EventArgs e)
+        {
+            Top_5 Form = new Top_5();
+            Form.ShowDialog();
+        }
+
+        private void flashButton3_Click(object sender, EventArgs e)
+        {
+            GestionMatch Form = new GestionMatch();
+            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                ///envoyer commit?
+            }
+        }
+
+        private void FB_Result_Click(object sender, EventArgs e)
+        {
+            Resultat_Match Form = new Resultat_Match();
+            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                ///envoyer commit?
+            }
+        }
     }
 }

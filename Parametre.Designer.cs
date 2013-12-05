@@ -96,6 +96,7 @@
             this.BTN_Ok.TabIndex = 10;
             this.BTN_Ok.Text = "OK";
             this.BTN_Ok.UseVisualStyleBackColor = true;
+            this.BTN_Ok.Click += new System.EventHandler(this.BTN_Ok_Click);
             // 
             // button1
             // 
@@ -105,6 +106,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
