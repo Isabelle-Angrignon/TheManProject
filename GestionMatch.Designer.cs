@@ -28,91 +28,91 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Caractérstique = new System.Windows.Forms.GroupBox();
-            this.uC_Navigator_Division = new UC_Navigator.UC_Navigator();
+            this.BTN_MOD = new System.Windows.Forms.GroupBox();
+            this.UC_Navigator = new UC_Navigator.UC_Navigator();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BTN_Delete = new System.Windows.Forms.Button();
             this.BTN_Add = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TB_Receveur = new System.Windows.Forms.TextBox();
+            this.TB_Visiteur = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TB_Lieu = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.DTP_Date = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.BTN_Ok = new System.Windows.Forms.Button();
-            this.Caractérstique.SuspendLayout();
+            this.BTN_MOD.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Caractérstique
+            // BTN_MOD
             // 
-            this.Caractérstique.Controls.Add(this.uC_Navigator_Division);
-            this.Caractérstique.Controls.Add(this.button2);
-            this.Caractérstique.Controls.Add(this.button3);
-            this.Caractérstique.Controls.Add(this.BTN_Add);
-            this.Caractérstique.Controls.Add(this.textBox3);
-            this.Caractérstique.Controls.Add(this.textBox2);
-            this.Caractérstique.Controls.Add(this.label6);
-            this.Caractérstique.Controls.Add(this.label5);
-            this.Caractérstique.Controls.Add(this.textBox1);
-            this.Caractérstique.Controls.Add(this.label4);
-            this.Caractérstique.Controls.Add(this.DTP_Date);
-            this.Caractérstique.Controls.Add(this.label3);
-            this.Caractérstique.Location = new System.Drawing.Point(12, 12);
-            this.Caractérstique.Name = "Caractérstique";
-            this.Caractérstique.Size = new System.Drawing.Size(264, 167);
-            this.Caractérstique.TabIndex = 0;
-            this.Caractérstique.TabStop = false;
+            this.BTN_MOD.Controls.Add(this.UC_Navigator);
+            this.BTN_MOD.Controls.Add(this.button2);
+            this.BTN_MOD.Controls.Add(this.BTN_Delete);
+            this.BTN_MOD.Controls.Add(this.BTN_Add);
+            this.BTN_MOD.Controls.Add(this.TB_Receveur);
+            this.BTN_MOD.Controls.Add(this.TB_Visiteur);
+            this.BTN_MOD.Controls.Add(this.label6);
+            this.BTN_MOD.Controls.Add(this.label5);
+            this.BTN_MOD.Controls.Add(this.TB_Lieu);
+            this.BTN_MOD.Controls.Add(this.label4);
+            this.BTN_MOD.Controls.Add(this.DTP_Date);
+            this.BTN_MOD.Controls.Add(this.label3);
+            this.BTN_MOD.Location = new System.Drawing.Point(12, 12);
+            this.BTN_MOD.Name = "BTN_MOD";
+            this.BTN_MOD.Size = new System.Drawing.Size(264, 167);
+            this.BTN_MOD.TabIndex = 0;
+            this.BTN_MOD.TabStop = false;
             // 
-            // uC_Navigator_Division
+            // UC_Navigator
             // 
-            this.uC_Navigator_Division.Location = new System.Drawing.Point(12, 132);
-            this.uC_Navigator_Division.Name = "uC_Navigator_Division";
-            this.uC_Navigator_Division.Size = new System.Drawing.Size(206, 19);
-            this.uC_Navigator_Division.TabIndex = 38;
+            this.UC_Navigator.Location = new System.Drawing.Point(12, 132);
+            this.UC_Navigator.Name = "UC_Navigator";
+            this.UC_Navigator.Size = new System.Drawing.Size(206, 19);
+            this.UC_Navigator.TabIndex = 38;
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(214, 83);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(30, 30);
+            this.button2.Size = new System.Drawing.Size(44, 30);
             this.button2.TabIndex = 3;
             this.button2.Text = "mod";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // BTN_Delete
             // 
-            this.button3.Location = new System.Drawing.Point(214, 47);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(30, 30);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "-";
-            this.button3.UseVisualStyleBackColor = true;
+            this.BTN_Delete.Location = new System.Drawing.Point(214, 47);
+            this.BTN_Delete.Name = "BTN_Delete";
+            this.BTN_Delete.Size = new System.Drawing.Size(44, 30);
+            this.BTN_Delete.TabIndex = 4;
+            this.BTN_Delete.Text = "-";
+            this.BTN_Delete.UseVisualStyleBackColor = true;
             // 
             // BTN_Add
             // 
             this.BTN_Add.Location = new System.Drawing.Point(214, 15);
             this.BTN_Add.Name = "BTN_Add";
-            this.BTN_Add.Size = new System.Drawing.Size(30, 30);
+            this.BTN_Add.Size = new System.Drawing.Size(44, 30);
             this.BTN_Add.TabIndex = 5;
             this.BTN_Add.Text = "+";
             this.BTN_Add.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // TB_Receveur
             // 
-            this.textBox3.Location = new System.Drawing.Point(65, 71);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 11;
+            this.TB_Receveur.Location = new System.Drawing.Point(65, 71);
+            this.TB_Receveur.Name = "TB_Receveur";
+            this.TB_Receveur.Size = new System.Drawing.Size(100, 20);
+            this.TB_Receveur.TabIndex = 11;
             // 
-            // textBox2
+            // TB_Visiteur
             // 
-            this.textBox2.Location = new System.Drawing.Point(65, 97);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 10;
+            this.TB_Visiteur.Location = new System.Drawing.Point(65, 97);
+            this.TB_Visiteur.Name = "TB_Visiteur";
+            this.TB_Visiteur.Size = new System.Drawing.Size(100, 20);
+            this.TB_Visiteur.TabIndex = 10;
             // 
             // label6
             // 
@@ -132,12 +132,12 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Reveveur";
             // 
-            // textBox1
+            // TB_Lieu
             // 
-            this.textBox1.Location = new System.Drawing.Point(65, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 5;
+            this.TB_Lieu.Location = new System.Drawing.Point(65, 45);
+            this.TB_Lieu.Name = "TB_Lieu";
+            this.TB_Lieu.Size = new System.Drawing.Size(100, 20);
+            this.TB_Lieu.TabIndex = 5;
             // 
             // label4
             // 
@@ -191,31 +191,31 @@
             this.ClientSize = new System.Drawing.Size(287, 241);
             this.Controls.Add(this.BTN_Ok);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.Caractérstique);
+            this.Controls.Add(this.BTN_MOD);
             this.Name = "GestionMatch";
             this.Text = "GestionMatch";
-            this.Caractérstique.ResumeLayout(false);
-            this.Caractérstique.PerformLayout();
+            this.BTN_MOD.ResumeLayout(false);
+            this.BTN_MOD.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox Caractérstique;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.GroupBox BTN_MOD;
+        private System.Windows.Forms.TextBox TB_Receveur;
+        private System.Windows.Forms.TextBox TB_Visiteur;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TB_Lieu;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker DTP_Date;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button BTN_Ok;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button BTN_Delete;
         private System.Windows.Forms.Button BTN_Add;
-        private UC_Navigator.UC_Navigator uC_Navigator_Division;
+        private UC_Navigator.UC_Navigator UC_Navigator;
     }
 }
