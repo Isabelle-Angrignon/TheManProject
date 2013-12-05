@@ -284,6 +284,7 @@
             this.flashButton4.Name = "flashButton4";
             this.flashButton4.Size = new System.Drawing.Size(60, 45);
             this.flashButton4.TabIndex = 24;
+            this.flashButton4.Click += new System.EventHandler(this.flashButton4_Click);
             // 
             // flashButton3
             // 
@@ -297,6 +298,7 @@
             this.flashButton3.Name = "flashButton3";
             this.flashButton3.Size = new System.Drawing.Size(60, 45);
             this.flashButton3.TabIndex = 23;
+            this.flashButton3.Click += new System.EventHandler(this.flashButton3_Click);
             // 
             // flashButton2
             // 
@@ -324,6 +326,7 @@
             this.flashButton1.Name = "flashButton1";
             this.flashButton1.Size = new System.Drawing.Size(45, 45);
             this.flashButton1.TabIndex = 21;
+            this.flashButton1.Click += new System.EventHandler(this.flashButton1_Click);
             // 
             // FLB_Team
             // 

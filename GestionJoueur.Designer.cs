@@ -31,6 +31,7 @@
             this.BTN_Ok = new System.Windows.Forms.Button();
             this.BTN_Cancel = new System.Windows.Forms.Button();
             this.Caractérstique = new System.Windows.Forms.GroupBox();
+            this.uC_Navigator = new UC_Navigator.UC_Navigator();
             this.BTN_Stats = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.TB_Maillot = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.uC_Navigator = new UC_Navigator.UC_Navigator();
             this.Caractérstique.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +59,7 @@
             this.BTN_Ok.TabIndex = 5;
             this.BTN_Ok.Text = "OK";
             this.BTN_Ok.UseVisualStyleBackColor = true;
+            this.BTN_Ok.Click += new System.EventHandler(this.BTN_Ok_Click);
             // 
             // BTN_Cancel
             // 
@@ -68,6 +69,7 @@
             this.BTN_Cancel.TabIndex = 4;
             this.BTN_Cancel.Text = "Cancel";
             this.BTN_Cancel.UseVisualStyleBackColor = true;
+            this.BTN_Cancel.Click += new System.EventHandler(this.BTN_Cancel_Click);
             // 
             // Caractérstique
             // 
@@ -93,6 +95,13 @@
             this.Caractérstique.Size = new System.Drawing.Size(329, 230);
             this.Caractérstique.TabIndex = 3;
             this.Caractérstique.TabStop = false;
+            // 
+            // uC_Navigator
+            // 
+            this.uC_Navigator.Location = new System.Drawing.Point(29, 195);
+            this.uC_Navigator.Name = "uC_Navigator";
+            this.uC_Navigator.Size = new System.Drawing.Size(206, 19);
+            this.uC_Navigator.TabIndex = 37;
             // 
             // BTN_Stats
             // 
@@ -228,13 +237,6 @@
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "# Chandail";
-            // 
-            // uC_Navigator
-            // 
-            this.uC_Navigator.Location = new System.Drawing.Point(29, 195);
-            this.uC_Navigator.Name = "uC_Navigator";
-            this.uC_Navigator.Size = new System.Drawing.Size(206, 19);
-            this.uC_Navigator.TabIndex = 37;
             // 
             // GestionJoueur
             // 

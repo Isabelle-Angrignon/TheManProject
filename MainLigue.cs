@@ -93,6 +93,33 @@ namespace The_Main_Project
 
         }
 
+        private void flashButton1_Click(object sender, EventArgs e)
+        {
+            GestionJoueur Form = new GestionJoueur();
+            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                ///envoyer commit?
+            }
+        }
+
+        private void flashButton3_Click(object sender, EventArgs e)
+        {
+            GestionMatch Form = new GestionMatch();
+            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                ///envoyer commit?
+            }
+        }
+
+        private void flashButton4_Click(object sender, EventArgs e)
+        {
+            Resultat_Match Form = new Resultat_Match();
+            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                ///envoyer commit?
+            }
+        }
+
     }
 
    
