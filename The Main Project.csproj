@@ -151,9 +151,6 @@
     <EmbeddedResource Include="Resultat Match.resx">
       <DependentUpon>Resultat Match.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Top5.resx">
-      <DependentUpon>Top5.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
