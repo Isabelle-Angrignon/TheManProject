@@ -17,16 +17,13 @@ namespace The_Main_Project
         {
             InitializeComponent();
         }
+        //////////////////////////////////
+        ///// template std ///////////////
+        //////////////////////////////////
         public OracleConnection conn = new OracleConnection();
         private DataSet divDataSet = new DataSet();
-        string sqlShow = "Select * from Divisions";
-        string sqlAdd = "INSERT INTO Division VALUES (:NOMDIV, :CREATION)";////requete ajout
-        string sqlUpdateNom = "UPDATE Division SET NomDivision = :NOMDIV"; //requete met a jour
-        string sqlUpdateDate = "UPDATE Division SET DateCréation = :CREATION";//requete met a jour
-        string sqlDelete = "DELETE FROM Division WHERE NomDivision = :NOMDIV";//requete supprime
-
         private const string dsDivision = "Divisions";
-        OracleDataReader oreadDiv;
+        OracleDataAdapter Oraliste;
 
         private void BTN_Ok_Click(object sender, EventArgs e)
         {
@@ -43,19 +40,18 @@ namespace The_Main_Project
         {
             try
             {
-                OracleDataAdapter Oraliste = new OracleDataAdapter(sqlShow, conn);
-
+                string sqlShow = "Select * from Divisions";
+                 Oraliste = new OracleDataAdapter(sqlShow, conn);
                 if (divDataSet.Tables.Contains(dsDivision))
                 {
                     divDataSet.Tables[dsDivision].Clear();
                 }
-                Oraliste.Fill(divDataSet, dsDivision);//////
+                Oraliste.Fill(divDataSet, dsDivision);
                 Oraliste.Dispose();
 
                 BindingSource maSource = new BindingSource(divDataSet, dsDivision);
                 Vider();
-                Lister();
-                
+                Lister();                
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
@@ -63,7 +59,7 @@ namespace The_Main_Project
         private void Lister()
         {
             TB_Nom_D.DataBindings.Add("Text", divDataSet, "Divisions.NomDivision");
-            DTP_Creation.DataBindings.Add("Text", divDataSet, "Divisions.NomDivision");
+            DTP_Creation.DataBindings.Add("Text", divDataSet, "Divisions.DateCréation");
         }
         private void Vider()
         {
@@ -90,7 +86,59 @@ namespace The_Main_Project
 
         private void uC_Navigator_OnPrev(object sender, EventArgs e)
         {
-            this.BindingContext[divDataSet, dsDivision].Position -= 1;
+            this.BindingContext[divDataSet, "Divisions"].Position -= 1;
+        }
+
+        private void BTN_Add_Click(object sender, EventArgs e)
+        {
+            try 
+            {
+                string sqlAdd = "INSERT INTO Division VALUES (:NOMDIV, :CREATION)";////requete ajout
+                Oraliste.InsertCommand = new OracleCommand(sqlAdd, conn); 
+                Oraliste.InsertCommand.Parameters.Add(":NOMDIV", OracleDbType.Varchar2, 20, "nomdivision"); 
+                Oraliste.InsertCommand.Parameters.Add(":CREATION", OracleDbType.Varchar2, 20, "datecréation"); 
+                Oraliste.Update(divDataSet.Tables[dsDivision]); 
+                divDataSet.AcceptChanges(); 
+            } 
+            catch (Exception ex) 
+            { 
+                MessageBox.Show(ex.Message.ToString()); 
+            } 
+        }
+
+        private void BTN_Del_Click(object sender, EventArgs e)
+        {
+            try 
+            {
+                string sqlDelete = "DELETE FROM Division WHERE NomDivision = :NOMDIV";//requete supprime
+                Oraliste.DeleteCommand = new OracleCommand(sqlDelete, conn);
+                Oraliste.DeleteCommand.Parameters.Add(":NOMDIV", OracleDbType.Varchar2, 30, "nomdivision");
+                Oraliste.Update(divDataSet.Tables[dsDivision]);
+                divDataSet.AcceptChanges(); 
+            } 
+            catch (Exception ex) 
+            { 
+                MessageBox.Show(ex.Message.ToString()); 
+            } 
+        }
+
+        private void BTN_Edit_Click(object sender, EventArgs e)
+        {
+            try 
+            {
+                string sqlUpdateNom = "UPDATE Division SET NomDivision = :NOMDIV"; //requete met a jour
+                string sqlUpdateDate = "UPDATE Division SET DateCréation = :CREATION";//requete met a jour
+
+                Oraliste.UpdateCommand = new OracleCommand(sqlUpdateDate, conn);
+                Oraliste.UpdateCommand.Parameters.Add(":nom", OracleDbType.Varchar2, 20, "nom");
+                Oraliste.UpdateCommand.Parameters.Add(":numad", OracleDbType.Int32, 4, "numad");
+                Oraliste.Update(divDataSet.Tables[dsDivision]);
+                divDataSet.AcceptChanges(); 
+            } 
+            catch (Exception ex) 
+            { 
+                MessageBox.Show(ex.Message.ToString()); 
+            } 
         }
 
         /////////////////////////////////////////

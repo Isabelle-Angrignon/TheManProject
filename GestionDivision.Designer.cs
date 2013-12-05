@@ -111,6 +111,7 @@
             this.BTN_Edit.TabIndex = 3;
             this.BTN_Edit.Text = "mod";
             this.BTN_Edit.UseVisualStyleBackColor = true;
+            this.BTN_Edit.Click += new System.EventHandler(this.BTN_Edit_Click);
             // 
             // BTN_Del
             // 
@@ -120,6 +121,7 @@
             this.BTN_Del.TabIndex = 4;
             this.BTN_Del.Text = "-";
             this.BTN_Del.UseVisualStyleBackColor = true;
+            this.BTN_Del.Click += new System.EventHandler(this.BTN_Del_Click);
             // 
             // BTN_Add
             // 
@@ -129,6 +131,7 @@
             this.BTN_Add.TabIndex = 5;
             this.BTN_Add.Text = "+";
             this.BTN_Add.UseVisualStyleBackColor = true;
+            this.BTN_Add.Click += new System.EventHandler(this.BTN_Add_Click);
             // 
             // label5
             // 
