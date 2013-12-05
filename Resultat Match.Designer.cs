@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Resultat_Match));
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -90,7 +91,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(253, 58);
+            this.label5.Location = new System.Drawing.Point(269, 61);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(18, 13);
             this.label5.TabIndex = 6;
@@ -99,7 +100,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(168, 16);
+            this.label6.Location = new System.Drawing.Point(133, 19);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(36, 13);
             this.label6.TabIndex = 7;
@@ -138,45 +139,45 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Location = new System.Drawing.Point(37, 42);
+            this.groupBox1.Location = new System.Drawing.Point(15, 42);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(210, 238);
+            this.groupBox1.Size = new System.Drawing.Size(232, 252);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(171, 105);
+            this.button1.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
+            this.button1.Location = new System.Drawing.Point(186, 115);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 30);
+            this.button1.Size = new System.Drawing.Size(40, 40);
             this.button1.TabIndex = 22;
-            this.button1.Text = "mod";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(171, 69);
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(186, 69);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(30, 30);
+            this.button4.Size = new System.Drawing.Size(40, 40);
             this.button4.TabIndex = 23;
-            this.button4.Text = "-";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(171, 37);
+            this.button5.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
+            this.button5.Location = new System.Drawing.Point(186, 23);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(30, 30);
+            this.button5.Size = new System.Drawing.Size(40, 40);
             this.button5.TabIndex = 24;
-            this.button5.Text = "+";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 137);
+            this.dataGridView2.Location = new System.Drawing.Point(6, 164);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(198, 82);
+            this.dataGridView2.Size = new System.Drawing.Size(220, 82);
             this.dataGridView2.TabIndex = 21;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -261,45 +262,45 @@
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Location = new System.Drawing.Point(277, 42);
+            this.groupBox2.Location = new System.Drawing.Point(304, 42);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(210, 238);
+            this.groupBox2.Size = new System.Drawing.Size(239, 252);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(171, 105);
+            this.button2.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
+            this.button2.Location = new System.Drawing.Point(189, 118);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(30, 30);
+            this.button2.Size = new System.Drawing.Size(40, 40);
             this.button2.TabIndex = 25;
-            this.button2.Text = "mod";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(171, 69);
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.Location = new System.Drawing.Point(189, 75);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(30, 30);
+            this.button6.Size = new System.Drawing.Size(40, 40);
             this.button6.TabIndex = 26;
-            this.button6.Text = "-";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(171, 37);
+            this.button7.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
+            this.button7.Location = new System.Drawing.Point(189, 32);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(30, 30);
+            this.button7.Size = new System.Drawing.Size(40, 40);
             this.button7.TabIndex = 27;
-            this.button7.Text = "+";
             this.button7.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 137);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 164);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(198, 82);
+            this.dataGridView1.Size = new System.Drawing.Size(227, 82);
             this.dataGridView1.TabIndex = 21;
             // 
             // label12
@@ -371,7 +372,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(168, 16);
+            this.label16.Location = new System.Drawing.Point(133, 19);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(36, 13);
             this.label16.TabIndex = 7;
@@ -379,7 +380,7 @@
             // 
             // BTN_Ok
             // 
-            this.BTN_Ok.Location = new System.Drawing.Point(378, 296);
+            this.BTN_Ok.Location = new System.Drawing.Point(437, 338);
             this.BTN_Ok.Name = "BTN_Ok";
             this.BTN_Ok.Size = new System.Drawing.Size(50, 50);
             this.BTN_Ok.TabIndex = 25;
@@ -389,7 +390,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(434, 296);
+            this.button3.Location = new System.Drawing.Point(493, 338);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(50, 50);
             this.button3.TabIndex = 24;
@@ -401,7 +402,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 358);
+            this.ClientSize = new System.Drawing.Size(555, 400);
             this.Controls.Add(this.BTN_Ok);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox2);

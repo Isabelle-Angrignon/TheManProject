@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionMatch));
             this.BTN_MOD = new System.Windows.Forms.GroupBox();
             this.UC_Navigator = new UC_Navigator.UC_Navigator();
             this.button2 = new System.Windows.Forms.Button();
@@ -75,29 +76,29 @@
             // 
             // button2
             // 
+            this.button2.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
             this.button2.Location = new System.Drawing.Point(214, 83);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(44, 30);
+            this.button2.Size = new System.Drawing.Size(44, 43);
             this.button2.TabIndex = 3;
-            this.button2.Text = "mod";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // BTN_Delete
             // 
+            this.BTN_Delete.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Delete.Image")));
             this.BTN_Delete.Location = new System.Drawing.Point(214, 47);
             this.BTN_Delete.Name = "BTN_Delete";
-            this.BTN_Delete.Size = new System.Drawing.Size(44, 30);
+            this.BTN_Delete.Size = new System.Drawing.Size(44, 40);
             this.BTN_Delete.TabIndex = 4;
-            this.BTN_Delete.Text = "-";
             this.BTN_Delete.UseVisualStyleBackColor = true;
             // 
             // BTN_Add
             // 
-            this.BTN_Add.Location = new System.Drawing.Point(214, 15);
+            this.BTN_Add.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
+            this.BTN_Add.Location = new System.Drawing.Point(214, 10);
             this.BTN_Add.Name = "BTN_Add";
-            this.BTN_Add.Size = new System.Drawing.Size(44, 30);
+            this.BTN_Add.Size = new System.Drawing.Size(44, 35);
             this.BTN_Add.TabIndex = 5;
-            this.BTN_Add.Text = "+";
             this.BTN_Add.UseVisualStyleBackColor = true;
             // 
             // TB_Receveur

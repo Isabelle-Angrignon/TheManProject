@@ -73,29 +73,9 @@ namespace The_Main_Project.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BTN_Plus {
-            get {
-                object obj = ResourceManager.GetObject("BTN_Plus", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap BTN_Plus1 {
             get {
                 object obj = ResourceManager.GetObject("BTN_Plus1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Crayon {
-            get {
-                object obj = ResourceManager.GetObject("Crayon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -121,8 +121,8 @@
   <data name="FB_Resultat_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FB Resultat_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Crayon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Crayon .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FB_Match_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FB Match_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FB_Team_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FB Team_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,8 +145,8 @@
   <data name="Division_FB_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Division FB_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BTN_Plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BTN Plus .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BTN_Plus1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BTN-Plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FB_Top_5_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FB Top 5_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,14 +154,17 @@
   <data name="FB_Top_5_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FB Top 5_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Crayon_petit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Crayon-petit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="FB_Resultat_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FB Resultat_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FB_Match" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FB Match.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FB_Match_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FB Match_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FB_Top_5_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FB Top 5_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Division_FB_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Division FB_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,14 +184,11 @@
   <data name="FB_Team_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FB Team_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FB_Top_5_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FB Top 5_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FB_Team_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FB Team_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FB_Resultat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FB Resultat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FB_Team_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FB Team_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FB_Player" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FB Player.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -198,11 +198,5 @@
   </data>
   <data name="FB_Resultat_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FB Resultat_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BTN_Plus1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BTN-Plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Crayon_petit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Crayon-petit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionJoueur));
             this.BTN_Ok = new System.Windows.Forms.Button();
             this.BTN_Cancel = new System.Windows.Forms.Button();
             this.Caractérstique = new System.Windows.Forms.GroupBox();
@@ -153,29 +154,29 @@
             // 
             // BTN_Edit
             // 
+            this.BTN_Edit.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
             this.BTN_Edit.Location = new System.Drawing.Point(277, 116);
             this.BTN_Edit.Name = "BTN_Edit";
             this.BTN_Edit.Size = new System.Drawing.Size(40, 40);
             this.BTN_Edit.TabIndex = 3;
-            this.BTN_Edit.Text = "mod";
             this.BTN_Edit.UseVisualStyleBackColor = true;
             // 
             // BTN_Del
             // 
+            this.BTN_Del.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Del.Image")));
             this.BTN_Del.Location = new System.Drawing.Point(277, 70);
             this.BTN_Del.Name = "BTN_Del";
             this.BTN_Del.Size = new System.Drawing.Size(40, 40);
             this.BTN_Del.TabIndex = 4;
-            this.BTN_Del.Text = "-";
             this.BTN_Del.UseVisualStyleBackColor = true;
             // 
             // BTN_Add
             // 
+            this.BTN_Add.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
             this.BTN_Add.Location = new System.Drawing.Point(277, 25);
             this.BTN_Add.Name = "BTN_Add";
             this.BTN_Add.Size = new System.Drawing.Size(40, 40);
             this.BTN_Add.TabIndex = 5;
-            this.BTN_Add.Text = "+";
             this.BTN_Add.UseVisualStyleBackColor = true;
             // 
             // TB_Position
