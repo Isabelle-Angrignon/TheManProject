@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.DataAccess.Client;
 
 namespace The_Main_Project
 {
@@ -16,6 +17,17 @@ namespace The_Main_Project
         {
             InitializeComponent();
         }
+
+        private OracleConnection conn = new OracleConnection();
+        private DataSet divDataSet = new DataSet();
+        string sqlShow = "Select * from Divisions";
+        string sqlAdd = "INSERT INTO Division VALUES (:NOMDIV, :CREATION)";////requete ajout
+        string sqlUpdate = "UPDATE Division SET NomDivision = :NOMDIV, :CREATION";//requete met a jour
+        string sqlDelete = "requete supprime";//requete supprime
+
+        private const string dsHoraire = "Liste_matchs";
+        private string dsCLassement = "Classement_équipes";
+        OracleDataReader orLigue;
 
         private void BTN_Ok_Click(object sender, EventArgs e)
         {
