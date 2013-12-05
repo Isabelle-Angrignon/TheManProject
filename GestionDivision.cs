@@ -24,6 +24,9 @@ namespace The_Main_Project
         private DataSet divDataSet = new DataSet();
         private const string dsDivision = "Divisions";
         OracleDataAdapter Oraliste;
+        OracleParameter oParamNomDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
+        OracleParameter oParamCreation = new OracleParameter(":CREATION", OracleDbType.Date);
+        //oParam
 
         private void BTN_Ok_Click(object sender, EventArgs e)
         {
@@ -65,7 +68,8 @@ namespace The_Main_Project
         {
             TB_Nom_D.DataBindings.Clear();
             DTP_Creation.DataBindings.Clear();
-            TB_Nom_D.Clear();           
+            TB_Nom_D.Clear();
+            DTP_Creation.Value = new DateTime();
         }
 
         private void uC_Navigator_OnFirst(object sender, EventArgs e)
@@ -98,7 +102,10 @@ namespace The_Main_Project
                 Oraliste.InsertCommand.Parameters.Add(":NOMDIV", OracleDbType.Varchar2, 20, "nomdivision"); 
                 Oraliste.InsertCommand.Parameters.Add(":CREATION", OracleDbType.Varchar2, 20, "datecréation"); 
                 Oraliste.Update(divDataSet.Tables[dsDivision]); 
-                divDataSet.AcceptChanges(); 
+                divDataSet.AcceptChanges();
+                Oraliste.Dispose();
+                Vider();
+                Lister();
             } 
             catch (Exception ex) 
             { 
@@ -114,7 +121,8 @@ namespace The_Main_Project
                 Oraliste.DeleteCommand = new OracleCommand(sqlDelete, conn);
                 Oraliste.DeleteCommand.Parameters.Add(":NOMDIV", OracleDbType.Varchar2, 30, "nomdivision");
                 Oraliste.Update(divDataSet.Tables[dsDivision]);
-                divDataSet.AcceptChanges(); 
+                divDataSet.AcceptChanges();
+                Oraliste.Dispose(); 
             } 
             catch (Exception ex) 
             { 
@@ -126,58 +134,23 @@ namespace The_Main_Project
         {
             try 
             {
-                string sqlUpdateNom = "UPDATE Division SET NomDivision = :NOMDIV"; //requete met a jour
-                string sqlUpdateDate = "UPDATE Division SET DateCréation = :CREATION";//requete met a jour
+                /////enregistrer la clé primaire d'abord pour pouvoir la modifier...
+                //string clePrimaire = divDataSet.Tables[dsDivision].se
+                string sqlUpdateNom = "UPDATE Division SET NomDivision = :NOMDIV AND DateCréation = :CREATION"+
+                " WHERE NomDivision = clePrimaire"; //requete met a jour
+                //string sqlUpdateDate = "UPDATE Division SET DateCréation = :CREATION";//requete met a jour
 
-                Oraliste.UpdateCommand = new OracleCommand(sqlUpdateDate, conn);
-                Oraliste.UpdateCommand.Parameters.Add(":nom", OracleDbType.Varchar2, 20, "nom");
-                Oraliste.UpdateCommand.Parameters.Add(":numad", OracleDbType.Int32, 4, "numad");
+                Oraliste.UpdateCommand = new OracleCommand(sqlUpdateNom, conn);
+                Oraliste.UpdateCommand.Parameters.Add(":nomdiv", OracleDbType.Varchar2, 20, "nomdivision");
+                Oraliste.UpdateCommand.Parameters.Add(":creation", OracleDbType.Int32, 4, "datecréation");
                 Oraliste.Update(divDataSet.Tables[dsDivision]);
                 divDataSet.AcceptChanges(); 
-            } 
-            catch (Exception ex) 
-            { 
-                MessageBox.Show(ex.Message.ToString()); 
-            } 
-        }
-
-        /////////////////////////////////////////
-        //exemple typique de code avec paramètres
-        ///////////////////////////////////////
- /*       private void save_Click(object sender, EventArgs e) 
-        { 
-            try 
-            { 
-                // Modification 
-                string sqlupdate = "update etudiants set nom =:nom where numad =:numad"; 
-                Oraliste.UpdateCommand = new OracleCommand(sqlupdate, conn); 
-                Oraliste.UpdateCommand.Parameters.Add(":nom", OracleDbType.Varchar2, 20, "nom"); 
-                Oraliste.UpdateCommand.Parameters.Add(":numad", OracleDbType.Int32, 4, "numad"); 
- 
-                // insertion (voir le SELECT et le FILL) 
-                string sqlinsert = "insert into etudiants (numad, NOM, PRENOM) values (SEQETU.NEXTVAL,:NOM, :PRENOM)" 
-                Oraliste.InsertCommand = new OracleCommand(sqlinsert, conn); 
-                Oraliste.InsertCommand.Parameters.Add(":nom", OracleDbType.Varchar2, 20, "nom"); 
-                Oraliste.InsertCommand.Parameters.Add(":prenom", OracleDbType.Varchar2, 20, "prenom"); 
-                
-                // SUPPRESSION 
-                string sqlsuppression = "delete from etudiants where numad =:numad"; 
-                Oraliste.DeleteCommand = new OracleCommand(sqlsuppression, conn); 
-                Oraliste.DeleteCommand.Parameters.Add(":numad", OracleDbType.Int32, 4, "numad"); 
- 
-                //executer la commande Insert ou delete ou update 
-                Oraliste.Update(monDataSet.Tables["ResultatEtudiants"]); 
-                monDataSet.AcceptChanges(); 
-            } 
-            catch (Exception ex) 
-            { 
-                MessageBox.Show(ex.Message.ToString()); 
-            } 
-            finally 
-            { 
                 Oraliste.Dispose(); 
             } 
+            catch (Exception ex) 
+            { 
+                MessageBox.Show(ex.Message.ToString()); 
+            } 
         }
- */      
     }
 }

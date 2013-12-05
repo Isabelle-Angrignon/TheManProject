@@ -48,6 +48,7 @@
             this.BTNF_Last.Name = "BTNF_Last";
             this.BTNF_Last.Size = new System.Drawing.Size(24, 24);
             this.BTNF_Last.TabIndex = 0;
+            this.BTNF_Last.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BTNF_Last_MouseClick);
             // 
             // BTNF_Next
             // 
@@ -60,6 +61,7 @@
             this.BTNF_Next.Name = "BTNF_Next";
             this.BTNF_Next.Size = new System.Drawing.Size(24, 24);
             this.BTNF_Next.TabIndex = 0;
+            this.BTNF_Next.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BTNF_Next_MouseClick);
             // 
             // BTNF_Previous
             // 
@@ -72,6 +74,7 @@
             this.BTNF_Previous.Name = "BTNF_Previous";
             this.BTNF_Previous.Size = new System.Drawing.Size(24, 24);
             this.BTNF_Previous.TabIndex = 0;
+            this.BTNF_Previous.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BTNF_Previous_MouseClick);
             // 
             // BTNF_First
             // 
@@ -84,6 +87,7 @@
             this.BTNF_First.Name = "BTNF_First";
             this.BTNF_First.Size = new System.Drawing.Size(24, 24);
             this.BTNF_First.TabIndex = 0;
+            this.BTNF_First.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BTNF_First_MouseClick);
             // 
             // UC_Navigator
             // 

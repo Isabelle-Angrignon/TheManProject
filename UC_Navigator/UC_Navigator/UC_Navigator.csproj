@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BoutonFlèche, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>BoutonFlèche\bin\Debug\BoutonFlèche.dll</HintPath>
+    </Reference>
     <Reference Include="FlashButton">
       <HintPath>..\..\..\..\Documents\Emploi + autre\CLG\13-b-Aut\Dev Interface\TP2\Graphique\FlashButton\bin\Debug\FlashButton.dll</HintPath>
     </Reference>
@@ -59,12 +63,6 @@
     <EmbeddedResource Include="UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="BoutonFlèche\BoutonFlèche.csproj">
-      <Project>{7360670A-BEEC-4BF5-99FA-787EE22D98D5}</Project>
-      <Name>BoutonFlèche</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

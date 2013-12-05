@@ -64,5 +64,25 @@ namespace UC_Navigator
             if (OnLast != null)
                 OnLast(this, new EventArgs());
         }
+
+        private void BTNF_First_MouseClick(object sender, MouseEventArgs e)
+        {
+            OnClickFirst();
+        }
+
+        private void BTNF_Previous_MouseClick(object sender, MouseEventArgs e)
+        {
+            OnClickPrevious();
+        }
+
+        private void BTNF_Next_MouseClick(object sender, MouseEventArgs e)
+        {
+            OnClickNext();
+        }
+
+        private void BTNF_Last_MouseClick(object sender, MouseEventArgs e)
+        {
+            OnClickLast();
+        }
     }
 }
