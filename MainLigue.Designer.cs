@@ -317,7 +317,7 @@
             this.flashButton1.ImageOver = global::The_Main_Project.Properties.Resources.FB_Player_Hover;
             this.flashButton1.Location = new System.Drawing.Point(220, 44);
             this.flashButton1.Name = "flashButton1";
-            this.flashButton1.Size = new System.Drawing.Size(60, 45);
+            this.flashButton1.Size = new System.Drawing.Size(45, 45);
             this.flashButton1.TabIndex = 21;
             // 
             // flashButton2
@@ -328,9 +328,9 @@
             this.flashButton2.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Top_5_Disable;
             this.flashButton2.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Top_5;
             this.flashButton2.ImageOver = global::The_Main_Project.Properties.Resources.FB_Top_5_hover;
-            this.flashButton2.Location = new System.Drawing.Point(286, 44);
+            this.flashButton2.Location = new System.Drawing.Point(277, 44);
             this.flashButton2.Name = "flashButton2";
-            this.flashButton2.Size = new System.Drawing.Size(60, 45);
+            this.flashButton2.Size = new System.Drawing.Size(45, 45);
             this.flashButton2.TabIndex = 22;
             // 
             // flashButton3
@@ -359,10 +359,6 @@
             this.flashButton4.Size = new System.Drawing.Size(60, 45);
             this.flashButton4.TabIndex = 24;
             // 
-            // backgroundWorker1
-            // 
-//            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            // 
             // Form_League
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -382,6 +378,7 @@
             this.MainMenuStrip = this.MS_Main;
             this.Name = "Form_League";
             this.Text = "Bienvenue dans la ligue ";
+            this.Load += new System.EventHandler(this.Form_League_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Team)).EndInit();
             this.MS_Main.ResumeLayout(false);
             this.MS_Main.PerformLayout();
