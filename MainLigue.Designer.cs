@@ -317,7 +317,7 @@
             this.flashButton1.ImageOver = global::The_Main_Project.Properties.Resources.FB_Player_Hover;
             this.flashButton1.Location = new System.Drawing.Point(220, 44);
             this.flashButton1.Name = "flashButton1";
-            this.flashButton1.Size = new System.Drawing.Size(60, 45);
+            this.flashButton1.Size = new System.Drawing.Size(45, 45);
             this.flashButton1.TabIndex = 21;
             // 
             // flashButton2
@@ -328,9 +328,9 @@
             this.flashButton2.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Top_5_Disable;
             this.flashButton2.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Top_5;
             this.flashButton2.ImageOver = global::The_Main_Project.Properties.Resources.FB_Top_5_hover;
-            this.flashButton2.Location = new System.Drawing.Point(286, 44);
+            this.flashButton2.Location = new System.Drawing.Point(277, 44);
             this.flashButton2.Name = "flashButton2";
-            this.flashButton2.Size = new System.Drawing.Size(60, 45);
+            this.flashButton2.Size = new System.Drawing.Size(45, 45);
             this.flashButton2.TabIndex = 22;
             // 
             // flashButton3
