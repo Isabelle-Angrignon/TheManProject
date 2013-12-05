@@ -83,6 +83,16 @@ namespace The_Main_Project
             Form.ShowDialog();
         }
 
+        private void FLB_Team_Click(object sender, EventArgs e)
+        {
+            GestionEquipe Form = new GestionEquipe();
+            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                ///envoyer commit?
+            }
+
+        }
+
     }
 
    

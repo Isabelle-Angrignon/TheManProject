@@ -31,8 +31,8 @@
             this.BTN_Ok = new System.Windows.Forms.Button();
             this.BTN_Cancel = new System.Windows.Forms.Button();
             this.Caractérstique = new System.Windows.Forms.GroupBox();
+            this.uC_Navigator = new UC_Navigator.UC_Navigator();
             this.BTN_Load = new System.Windows.Forms.Button();
-            this.PBX_Logo = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -44,7 +44,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.uC_Navigator = new UC_Navigator.UC_Navigator();
+            this.PBX_Logo = new System.Windows.Forms.PictureBox();
             this.Caractérstique.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Logo)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +57,7 @@
             this.BTN_Ok.TabIndex = 8;
             this.BTN_Ok.Text = "OK";
             this.BTN_Ok.UseVisualStyleBackColor = true;
+            this.BTN_Ok.Click += new System.EventHandler(this.BTN_Ok_Click);
             // 
             // BTN_Cancel
             // 
@@ -66,6 +67,7 @@
             this.BTN_Cancel.TabIndex = 7;
             this.BTN_Cancel.Text = "Cancel";
             this.BTN_Cancel.UseVisualStyleBackColor = true;
+            this.BTN_Cancel.Click += new System.EventHandler(this.BTN_Cancel_Click);
             // 
             // Caractérstique
             // 
@@ -89,6 +91,13 @@
             this.Caractérstique.TabIndex = 6;
             this.Caractérstique.TabStop = false;
             // 
+            // uC_Navigator
+            // 
+            this.uC_Navigator.Location = new System.Drawing.Point(17, 198);
+            this.uC_Navigator.Name = "uC_Navigator";
+            this.uC_Navigator.Size = new System.Drawing.Size(195, 19);
+            this.uC_Navigator.TabIndex = 23;
+            // 
             // BTN_Load
             // 
             this.BTN_Load.Location = new System.Drawing.Point(97, 19);
@@ -97,14 +106,6 @@
             this.BTN_Load.TabIndex = 9;
             this.BTN_Load.Text = "Charger";
             this.BTN_Load.UseVisualStyleBackColor = true;
-            // 
-            // PBX_Logo
-            // 
-            this.PBX_Logo.Location = new System.Drawing.Point(17, 19);
-            this.PBX_Logo.Name = "PBX_Logo";
-            this.PBX_Logo.Size = new System.Drawing.Size(73, 50);
-            this.PBX_Logo.TabIndex = 22;
-            this.PBX_Logo.TabStop = false;
             // 
             // label2
             // 
@@ -200,12 +201,13 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Nom";
             // 
-            // uC_Navigator
+            // PBX_Logo
             // 
-            this.uC_Navigator.Location = new System.Drawing.Point(17, 198);
-            this.uC_Navigator.Name = "uC_Navigator";
-            this.uC_Navigator.Size = new System.Drawing.Size(195, 19);
-            this.uC_Navigator.TabIndex = 23;
+            this.PBX_Logo.Location = new System.Drawing.Point(17, 19);
+            this.PBX_Logo.Name = "PBX_Logo";
+            this.PBX_Logo.Size = new System.Drawing.Size(73, 50);
+            this.PBX_Logo.TabIndex = 22;
+            this.PBX_Logo.TabStop = false;
             // 
             // GestionEquipe
             // 
