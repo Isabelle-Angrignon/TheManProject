@@ -54,6 +54,7 @@
             // 
             // BTN_Ok
             // 
+            this.BTN_Ok.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Ok.Location = new System.Drawing.Point(235, 248);
             this.BTN_Ok.Name = "BTN_Ok";
             this.BTN_Ok.Size = new System.Drawing.Size(50, 50);
@@ -64,6 +65,7 @@
             // 
             // BTN_Cancel
             // 
+            this.BTN_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Cancel.Location = new System.Drawing.Point(291, 248);
             this.BTN_Cancel.Name = "BTN_Cancel";
             this.BTN_Cancel.Size = new System.Drawing.Size(50, 50);
@@ -99,6 +101,7 @@
             // 
             // uC_Navigator
             // 
+            this.uC_Navigator.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uC_Navigator.Location = new System.Drawing.Point(29, 195);
             this.uC_Navigator.Name = "uC_Navigator";
             this.uC_Navigator.Size = new System.Drawing.Size(206, 19);
@@ -106,6 +109,7 @@
             // 
             // BTN_Stats
             // 
+            this.BTN_Stats.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Stats.Location = new System.Drawing.Point(259, 175);
             this.BTN_Stats.Name = "BTN_Stats";
             this.BTN_Stats.Size = new System.Drawing.Size(58, 39);
@@ -154,6 +158,7 @@
             // 
             // BTN_Edit
             // 
+            this.BTN_Edit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Edit.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
             this.BTN_Edit.Location = new System.Drawing.Point(277, 116);
             this.BTN_Edit.Name = "BTN_Edit";
@@ -163,6 +168,7 @@
             // 
             // BTN_Del
             // 
+            this.BTN_Del.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Del.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Del.Image")));
             this.BTN_Del.Location = new System.Drawing.Point(277, 70);
             this.BTN_Del.Name = "BTN_Del";
@@ -172,6 +178,7 @@
             // 
             // BTN_Add
             // 
+            this.BTN_Add.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Add.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
             this.BTN_Add.Location = new System.Drawing.Point(277, 25);
             this.BTN_Add.Name = "BTN_Add";
