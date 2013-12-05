@@ -11,9 +11,10 @@
     <AssemblyName>The Main Project</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -21,6 +22,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,6 +33,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BoutonFlèche">
@@ -38,6 +42,7 @@
     <Reference Include="FlashButton">
       <HintPath>UC_Navigator\UC_Navigator\FlashButton\bin\Debug\FlashButton.dll</HintPath>
     </Reference>
+    <Reference Include="Oracle.DataAccess, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,6 +55,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="UC_Navigator">
       <HintPath>UC_Navigator\UC_Navigator\bin\Debug\UC_Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="UC_Slider">
+      <HintPath>..\..\Emploi + autre\CLG\13-b-Aut\Dev Interface\UC_Slider\bin\Debug\UC_Slider.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

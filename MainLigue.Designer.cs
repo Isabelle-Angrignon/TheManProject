@@ -359,10 +359,6 @@
             this.flashButton4.Size = new System.Drawing.Size(60, 45);
             this.flashButton4.TabIndex = 24;
             // 
-            // backgroundWorker1
-            // 
-//            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            // 
             // Form_League
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -382,6 +378,7 @@
             this.MainMenuStrip = this.MS_Main;
             this.Name = "Form_League";
             this.Text = "Bienvenue dans la ligue ";
+            this.Load += new System.EventHandler(this.Form_League_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Team)).EndInit();
             this.MS_Main.ResumeLayout(false);
             this.MS_Main.PerformLayout();
