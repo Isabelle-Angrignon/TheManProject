@@ -17,17 +17,16 @@ namespace The_Main_Project
         {
             InitializeComponent();
         }
-
         private OracleConnection conn = new OracleConnection();
         private DataSet divDataSet = new DataSet();
         string sqlShow = "Select * from Divisions";
         string sqlAdd = "INSERT INTO Division VALUES (:NOMDIV, :CREATION)";////requete ajout
-        string sqlUpdate = "UPDATE Division SET NomDivision = :NOMDIV, :CREATION";//requete met a jour
-        string sqlDelete = "requete supprime";//requete supprime
+        string sqlUpdateNom = "UPDATE Division SET NomDivision = :NOMDIV"; //requete met a jour
+        string sqlUpdateDate = "UPDATE Division SET DateCréation = :CREATION";//requete met a jour
+        string sqlDelete = "DELETE FROM Division WHERE NomDivision = :NOMDIV";//requete supprime
 
-        private const string dsHoraire = "Liste_matchs";
-        private string dsCLassement = "Classement_équipes";
-        OracleDataReader orLigue;
+        private const string dsDivision = "Divisions";
+        OracleDataReader oreadDiv;
 
         private void BTN_Ok_Click(object sender, EventArgs e)
         {
