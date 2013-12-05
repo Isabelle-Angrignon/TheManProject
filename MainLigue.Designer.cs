@@ -57,10 +57,10 @@
             this.CMS_Team_Modifier = new System.Windows.Forms.ToolStripMenuItem();
             this.CMS_Team_Supprimer = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.flashButton4 = new FlashButton.FlashButton();
-            this.flashButton3 = new FlashButton.FlashButton();
+            this.FB_Result = new FlashButton.FlashButton();
+            this.FB_Match = new FlashButton.FlashButton();
             this.flashButton2 = new FlashButton.FlashButton();
-            this.flashButton1 = new FlashButton.FlashButton();
+            this.FB_Joueur = new FlashButton.FlashButton();
             this.FLB_Team = new FlashButton.FlashButton();
             this.FLB_Division = new FlashButton.FlashButton();
             this.PBX_Logo = new System.Windows.Forms.PictureBox();
@@ -272,33 +272,33 @@
             this.CMS_Team_Supprimer.Size = new System.Drawing.Size(129, 22);
             this.CMS_Team_Supprimer.Text = "Supprimer";
             // 
-            // flashButton4
+            // FB_Result
             // 
-            this.flashButton4.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Resultat;
-            this.flashButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flashButton4.ImageClick = global::The_Main_Project.Properties.Resources.FB_Resultat_Click;
-            this.flashButton4.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Resultat_Disable;
-            this.flashButton4.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Resultat;
-            this.flashButton4.ImageOver = global::The_Main_Project.Properties.Resources.FB_Resultat_Hover;
-            this.flashButton4.Location = new System.Drawing.Point(471, 44);
-            this.flashButton4.Name = "flashButton4";
-            this.flashButton4.Size = new System.Drawing.Size(60, 45);
-            this.flashButton4.TabIndex = 24;
-            this.flashButton4.Click += new System.EventHandler(this.flashButton4_Click);
+            this.FB_Result.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Resultat;
+            this.FB_Result.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Result.ImageClick = global::The_Main_Project.Properties.Resources.FB_Resultat_Click;
+            this.FB_Result.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Resultat_Disable;
+            this.FB_Result.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Resultat;
+            this.FB_Result.ImageOver = global::The_Main_Project.Properties.Resources.FB_Resultat_Hover;
+            this.FB_Result.Location = new System.Drawing.Point(471, 44);
+            this.FB_Result.Name = "FB_Result";
+            this.FB_Result.Size = new System.Drawing.Size(60, 45);
+            this.FB_Result.TabIndex = 24;
+            this.FB_Result.Click += new System.EventHandler(this.flashButton4_Click);
             // 
-            // flashButton3
+            // FB_Match
             // 
-            this.flashButton3.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Match;
-            this.flashButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flashButton3.ImageClick = global::The_Main_Project.Properties.Resources.FB_Match_Click;
-            this.flashButton3.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Match_Disable;
-            this.flashButton3.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Match;
-            this.flashButton3.ImageOver = global::The_Main_Project.Properties.Resources.FB_Match_Hover;
-            this.flashButton3.Location = new System.Drawing.Point(405, 43);
-            this.flashButton3.Name = "flashButton3";
-            this.flashButton3.Size = new System.Drawing.Size(60, 45);
-            this.flashButton3.TabIndex = 23;
-            this.flashButton3.Click += new System.EventHandler(this.flashButton3_Click);
+            this.FB_Match.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Match;
+            this.FB_Match.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Match.ImageClick = global::The_Main_Project.Properties.Resources.FB_Match_Click;
+            this.FB_Match.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Match_Disable;
+            this.FB_Match.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Match;
+            this.FB_Match.ImageOver = global::The_Main_Project.Properties.Resources.FB_Match_Hover;
+            this.FB_Match.Location = new System.Drawing.Point(405, 43);
+            this.FB_Match.Name = "FB_Match";
+            this.FB_Match.Size = new System.Drawing.Size(60, 45);
+            this.FB_Match.TabIndex = 23;
+            this.FB_Match.Click += new System.EventHandler(this.flashButton3_Click);
             // 
             // flashButton2
             // 
@@ -314,19 +314,19 @@
             this.flashButton2.TabIndex = 22;
             this.flashButton2.Click += new System.EventHandler(this.flashButton2_Click);
             // 
-            // flashButton1
+            // FB_Joueur
             // 
-            this.flashButton1.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Player;
-            this.flashButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flashButton1.ImageClick = global::The_Main_Project.Properties.Resources.FB_Player_Click;
-            this.flashButton1.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Player_Disable;
-            this.flashButton1.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Player;
-            this.flashButton1.ImageOver = global::The_Main_Project.Properties.Resources.FB_Player_Hover;
-            this.flashButton1.Location = new System.Drawing.Point(220, 44);
-            this.flashButton1.Name = "flashButton1";
-            this.flashButton1.Size = new System.Drawing.Size(45, 45);
-            this.flashButton1.TabIndex = 21;
-            this.flashButton1.Click += new System.EventHandler(this.flashButton1_Click);
+            this.FB_Joueur.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Player;
+            this.FB_Joueur.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Joueur.ImageClick = global::The_Main_Project.Properties.Resources.FB_Player_Click;
+            this.FB_Joueur.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Player_Disable;
+            this.FB_Joueur.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Player;
+            this.FB_Joueur.ImageOver = global::The_Main_Project.Properties.Resources.FB_Player_Hover;
+            this.FB_Joueur.Location = new System.Drawing.Point(220, 44);
+            this.FB_Joueur.Name = "FB_Joueur";
+            this.FB_Joueur.Size = new System.Drawing.Size(45, 45);
+            this.FB_Joueur.TabIndex = 21;
+            this.FB_Joueur.Click += new System.EventHandler(this.flashButton1_Click);
             // 
             // FLB_Team
             // 
@@ -369,10 +369,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1015, 428);
-            this.Controls.Add(this.flashButton4);
-            this.Controls.Add(this.flashButton3);
+            this.Controls.Add(this.FB_Result);
+            this.Controls.Add(this.FB_Match);
             this.Controls.Add(this.flashButton2);
-            this.Controls.Add(this.flashButton1);
+            this.Controls.Add(this.FB_Joueur);
             this.Controls.Add(this.FLB_Team);
             this.Controls.Add(this.FLB_Division);
             this.Controls.Add(this.CBX_Division);
@@ -428,10 +428,10 @@
         private System.Windows.Forms.ToolStripMenuItem CMS_Team_Supprimer;
         private FlashButton.FlashButton FLB_Division;
         private FlashButton.FlashButton FLB_Team;
-        private FlashButton.FlashButton flashButton1;
+        private FlashButton.FlashButton FB_Joueur;
         private FlashButton.FlashButton flashButton2;
-        private FlashButton.FlashButton flashButton3;
-        private FlashButton.FlashButton flashButton4;
+        private FlashButton.FlashButton FB_Match;
+        private FlashButton.FlashButton FB_Result;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
 
     }
