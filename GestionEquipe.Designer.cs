@@ -31,7 +31,6 @@
             this.BTN_Ok = new System.Windows.Forms.Button();
             this.BTN_Cancel = new System.Windows.Forms.Button();
             this.Caractérstique = new System.Windows.Forms.GroupBox();
-            this.uC_Navigator = new UC_Navigator.UC_Navigator();
             this.BTN_Load = new System.Windows.Forms.Button();
             this.PBX_Logo = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.uC_Navigator = new UC_Navigator.UC_Navigator();
             this.Caractérstique.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Logo)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +57,6 @@
             this.BTN_Ok.TabIndex = 8;
             this.BTN_Ok.Text = "OK";
             this.BTN_Ok.UseVisualStyleBackColor = true;
-            this.BTN_Ok.Click += new System.EventHandler(this.BTN_Ok_Click);
             // 
             // BTN_Cancel
             // 
@@ -67,7 +66,6 @@
             this.BTN_Cancel.TabIndex = 7;
             this.BTN_Cancel.Text = "Cancel";
             this.BTN_Cancel.UseVisualStyleBackColor = true;
-            this.BTN_Cancel.Click += new System.EventHandler(this.BTN_Cancel_Click);
             // 
             // Caractérstique
             // 
@@ -90,13 +88,6 @@
             this.Caractérstique.Size = new System.Drawing.Size(288, 231);
             this.Caractérstique.TabIndex = 6;
             this.Caractérstique.TabStop = false;
-            // 
-            // uC_Navigator
-            // 
-            this.uC_Navigator.Location = new System.Drawing.Point(17, 198);
-            this.uC_Navigator.Name = "uC_Navigator";
-            this.uC_Navigator.Size = new System.Drawing.Size(195, 19);
-            this.uC_Navigator.TabIndex = 23;
             // 
             // BTN_Load
             // 
@@ -208,6 +199,13 @@
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nom";
+            // 
+            // uC_Navigator
+            // 
+            this.uC_Navigator.Location = new System.Drawing.Point(17, 198);
+            this.uC_Navigator.Name = "uC_Navigator";
+            this.uC_Navigator.Size = new System.Drawing.Size(195, 19);
+            this.uC_Navigator.TabIndex = 23;
             // 
             // GestionEquipe
             // 

@@ -56,6 +56,7 @@ namespace The_Main_Project
             }
             catch (Exception ex) { MessageBox.Show(ex.Message.ToString());}
         }
+<<<<<<< HEAD
         
         private void FillDGVMatch()
         {
@@ -76,6 +77,8 @@ namespace The_Main_Project
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
+=======
+>>>>>>> parent of 1c46982... Le lien entre les fenetres
     }
 
    
