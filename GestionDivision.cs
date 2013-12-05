@@ -49,17 +49,49 @@ namespace The_Main_Project
                 {
                     divDataSet.Tables[dsDivision].Clear();
                 }
-                Oraliste.Fill(divDataSet, dsDivision);
+                Oraliste.Fill(divDataSet, dsDivision);//////
                 Oraliste.Dispose();
 
                 BindingSource maSource = new BindingSource(divDataSet, dsDivision);
-
-                TB_Nom_D.DataBindings.Add("Text", divDataSet, "Divisions.NomDivision");
+                Vider();
+                Lister();
                 
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
 
+        private void Lister()
+        {
+            TB_Nom_D.DataBindings.Add("Text", divDataSet, "Divisions.NomDivision");
+            DTP_Creation.DataBindings.Add("Text", divDataSet, "Divisions.NomDivision");
+        }
+        private void Vider()
+        {
+            TB_Nom_D.DataBindings.Clear();
+            DTP_Creation.DataBindings.Clear();
+            TB_Nom_D.Clear();           
+        }
+
+        private void uC_Navigator_OnFirst(object sender, EventArgs e)
+        {
+            this.BindingContext[divDataSet, dsDivision].Position = 0;
+        }
+
+        private void uC_Navigator_OnLast(object sender, EventArgs e)
+        {
+            this.BindingContext[divDataSet, dsDivision].Position =
+                this.BindingContext[divDataSet, dsDivision].Count - 1;
+        }
+
+        private void uC_Navigator_OnNext(object sender, EventArgs e)
+        {
+            this.BindingContext[divDataSet, dsDivision].Position += 1;
+        }
+
+        private void uC_Navigator_OnPrev(object sender, EventArgs e)
+        {
+            this.BindingContext[divDataSet, dsDivision].Position -= 1;
+        }
 
         /////////////////////////////////////////
         //exemple typique de code avec paramètres

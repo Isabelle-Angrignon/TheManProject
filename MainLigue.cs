@@ -50,7 +50,7 @@ namespace The_Main_Project
                 + "(CONNECT_DATA=(SERVICE_NAME=ORCL)))";
 
                 String ChaineConnexion = "Data Source=" + Dsource
-                + ";User Id = angrigno; Password =  oracle1";
+                + ";User Id = simon007; Password =  oracle1";
                 conn.ConnectionString = ChaineConnexion;
                 conn.Open();
                 MessageBox.Show(conn.State.ToString());

@@ -84,6 +84,10 @@
             this.uC_Navigator.Name = "uC_Navigator";
             this.uC_Navigator.Size = new System.Drawing.Size(132, 19);
             this.uC_Navigator.TabIndex = 18;
+            this.uC_Navigator.OnFirst += new UC_Navigator.UC_Navigator.ClickFirstChangedHandler(this.uC_Navigator_OnFirst);
+            this.uC_Navigator.OnPrev += new UC_Navigator.UC_Navigator.ClickPreviousChangedHandler(this.uC_Navigator_OnPrev);
+            this.uC_Navigator.OnNext += new UC_Navigator.UC_Navigator.ClickNextChangedHandler(this.uC_Navigator_OnNext);
+            this.uC_Navigator.OnLast += new UC_Navigator.UC_Navigator.ClickLastChangedHandler(this.uC_Navigator_OnLast);
             // 
             // DTP_Creation
             // 
