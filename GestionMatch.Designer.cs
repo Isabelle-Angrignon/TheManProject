@@ -94,9 +94,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(9, 100);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 13);
+            this.label6.Size = new System.Drawing.Size(41, 13);
             this.label6.TabIndex = 9;
-            this.label6.Text = "Viviteur";
+            this.label6.Text = "Visiteur";
             // 
             // label5
             // 
@@ -105,7 +105,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 13);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Reveveur";
+            this.label5.Text = "Receveur";
             // 
             // TB_Lieu
             // 

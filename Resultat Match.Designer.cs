@@ -29,35 +29,35 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Resultat_Match));
-            this.label2 = new System.Windows.Forms.Label();
+            this.LB_NoMatch = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.LB_NomEquipe_R = new System.Windows.Forms.Label();
+            this.LB_DateMatch = new System.Windows.Forms.Label();
+            this.LB_Lieu_Result = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.DGV_ListeJoueur_R = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TB_Passes_R = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TB_But_R = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TB_Pen_R = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CBX_Choix_J_R = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGV_ListeJoueur_V = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TB_Passes_Visiteur = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.TB_But_Visiteur = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.TB_Pen_Visiteur = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.CBX_Choix_J_V = new System.Windows.Forms.ComboBox();
+            this.LB_NomEquipe_V = new System.Windows.Forms.Label();
             this.BTN_Ok = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BTN_Cancel = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -65,19 +65,19 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_ListeJoueur_R)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_ListeJoueur_V)).BeginInit();
             this.SuspendLayout();
             // 
-            // label2
+            // LB_NoMatch
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 11);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "00000";
+            this.LB_NoMatch.AutoSize = true;
+            this.LB_NoMatch.Location = new System.Drawing.Point(34, 11);
+            this.LB_NoMatch.Name = "LB_NoMatch";
+            this.LB_NoMatch.Size = new System.Drawing.Size(37, 13);
+            this.LB_NoMatch.TabIndex = 3;
+            this.LB_NoMatch.Text = "00000";
             // 
             // label1
             // 
@@ -97,62 +97,62 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "vs";
             // 
-            // label6
+            // LB_NomEquipe_R
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(133, 19);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "team1";
+            this.LB_NomEquipe_R.AutoSize = true;
+            this.LB_NomEquipe_R.Location = new System.Drawing.Point(133, 19);
+            this.LB_NomEquipe_R.Name = "LB_NomEquipe_R";
+            this.LB_NomEquipe_R.Size = new System.Drawing.Size(36, 13);
+            this.LB_NomEquipe_R.TabIndex = 7;
+            this.LB_NomEquipe_R.Text = "team1";
             // 
-            // label3
+            // LB_DateMatch
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(109, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Date";
+            this.LB_DateMatch.AutoSize = true;
+            this.LB_DateMatch.Location = new System.Drawing.Point(109, 11);
+            this.LB_DateMatch.Name = "LB_DateMatch";
+            this.LB_DateMatch.Size = new System.Drawing.Size(30, 13);
+            this.LB_DateMatch.TabIndex = 8;
+            this.LB_DateMatch.Text = "Date";
             // 
-            // label7
+            // LB_Lieu_Result
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(174, 11);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(27, 13);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Lieu";
+            this.LB_Lieu_Result.AutoSize = true;
+            this.LB_Lieu_Result.Location = new System.Drawing.Point(174, 11);
+            this.LB_Lieu_Result.Name = "LB_Lieu_Result";
+            this.LB_Lieu_Result.Size = new System.Drawing.Size(27, 13);
+            this.LB_Lieu_Result.TabIndex = 9;
+            this.LB_Lieu_Result.Text = "Lieu";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.dataGridView2);
+            this.groupBox1.Controls.Add(this.DGV_ListeJoueur_R);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.TB_Passes_R);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.TB_But_R);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.TB_Pen_R);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.CBX_Choix_J_R);
+            this.groupBox1.Controls.Add(this.LB_NomEquipe_R);
             this.groupBox1.Location = new System.Drawing.Point(15, 42);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(232, 252);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
-            // dataGridView2
+            // DGV_ListeJoueur_R
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 164);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(220, 82);
-            this.dataGridView2.TabIndex = 21;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            this.DGV_ListeJoueur_R.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_ListeJoueur_R.Location = new System.Drawing.Point(6, 164);
+            this.DGV_ListeJoueur_R.Name = "DGV_ListeJoueur_R";
+            this.DGV_ListeJoueur_R.Size = new System.Drawing.Size(220, 82);
+            this.DGV_ListeJoueur_R.TabIndex = 21;
+            this.DGV_ListeJoueur_R.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // label9
             // 
@@ -163,12 +163,12 @@
             this.label9.TabIndex = 19;
             this.label9.Text = "Minutes";
             // 
-            // textBox4
+            // TB_Passes_R
             // 
-            this.textBox4.Location = new System.Drawing.Point(67, 75);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(42, 20);
-            this.textBox4.TabIndex = 18;
+            this.TB_Passes_R.Location = new System.Drawing.Point(67, 75);
+            this.TB_Passes_R.Name = "TB_Passes_R";
+            this.TB_Passes_R.Size = new System.Drawing.Size(42, 20);
+            this.TB_Passes_R.TabIndex = 18;
             // 
             // label11
             // 
@@ -179,12 +179,12 @@
             this.label11.TabIndex = 17;
             this.label11.Text = "Passes";
             // 
-            // textBox3
+            // TB_But_R
             // 
-            this.textBox3.Location = new System.Drawing.Point(67, 49);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(42, 20);
-            this.textBox3.TabIndex = 16;
+            this.TB_But_R.Location = new System.Drawing.Point(67, 49);
+            this.TB_But_R.Name = "TB_But_R";
+            this.TB_But_R.Size = new System.Drawing.Size(42, 20);
+            this.TB_But_R.TabIndex = 16;
             // 
             // label10
             // 
@@ -195,12 +195,12 @@
             this.label10.TabIndex = 15;
             this.label10.Text = "Buts";
             // 
-            // textBox2
+            // TB_Pen_R
             // 
-            this.textBox2.Location = new System.Drawing.Point(67, 99);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(42, 20);
-            this.textBox2.TabIndex = 12;
+            this.TB_Pen_R.Location = new System.Drawing.Point(67, 99);
+            this.TB_Pen_R.Name = "TB_Pen_R";
+            this.TB_Pen_R.Size = new System.Drawing.Size(42, 20);
+            this.TB_Pen_R.TabIndex = 12;
             // 
             // label8
             // 
@@ -211,43 +211,43 @@
             this.label8.TabIndex = 11;
             this.label8.Text = "Pen.";
             // 
-            // comboBox1
+            // CBX_Choix_J_R
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 8;
-            this.comboBox1.Text = "Choix joueur";
+            this.CBX_Choix_J_R.FormattingEnabled = true;
+            this.CBX_Choix_J_R.Location = new System.Drawing.Point(6, 16);
+            this.CBX_Choix_J_R.Name = "CBX_Choix_J_R";
+            this.CBX_Choix_J_R.Size = new System.Drawing.Size(121, 21);
+            this.CBX_Choix_J_R.TabIndex = 8;
+            this.CBX_Choix_J_R.Text = "Choix joueur";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.button7);
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.DGV_ListeJoueur_V);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.TB_Passes_Visiteur);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.TB_But_Visiteur);
             this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.TB_Pen_Visiteur);
             this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.CBX_Choix_J_V);
+            this.groupBox2.Controls.Add(this.LB_NomEquipe_V);
             this.groupBox2.Location = new System.Drawing.Point(304, 42);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(239, 252);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             // 
-            // dataGridView1
+            // DGV_ListeJoueur_V
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 164);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(227, 82);
-            this.dataGridView1.TabIndex = 21;
+            this.DGV_ListeJoueur_V.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_ListeJoueur_V.Location = new System.Drawing.Point(6, 164);
+            this.DGV_ListeJoueur_V.Name = "DGV_ListeJoueur_V";
+            this.DGV_ListeJoueur_V.Size = new System.Drawing.Size(227, 82);
+            this.DGV_ListeJoueur_V.TabIndex = 21;
             // 
             // label12
             // 
@@ -258,12 +258,12 @@
             this.label12.TabIndex = 19;
             this.label12.Text = "Minutes";
             // 
-            // textBox1
+            // TB_Passes_Visiteur
             // 
-            this.textBox1.Location = new System.Drawing.Point(67, 75);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(42, 20);
-            this.textBox1.TabIndex = 18;
+            this.TB_Passes_Visiteur.Location = new System.Drawing.Point(67, 75);
+            this.TB_Passes_Visiteur.Name = "TB_Passes_Visiteur";
+            this.TB_Passes_Visiteur.Size = new System.Drawing.Size(42, 20);
+            this.TB_Passes_Visiteur.TabIndex = 18;
             // 
             // label13
             // 
@@ -274,12 +274,12 @@
             this.label13.TabIndex = 17;
             this.label13.Text = "Passes";
             // 
-            // textBox5
+            // TB_But_Visiteur
             // 
-            this.textBox5.Location = new System.Drawing.Point(67, 49);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(42, 20);
-            this.textBox5.TabIndex = 16;
+            this.TB_But_Visiteur.Location = new System.Drawing.Point(67, 49);
+            this.TB_But_Visiteur.Name = "TB_But_Visiteur";
+            this.TB_But_Visiteur.Size = new System.Drawing.Size(42, 20);
+            this.TB_But_Visiteur.TabIndex = 16;
             // 
             // label14
             // 
@@ -290,12 +290,12 @@
             this.label14.TabIndex = 15;
             this.label14.Text = "Buts";
             // 
-            // textBox6
+            // TB_Pen_Visiteur
             // 
-            this.textBox6.Location = new System.Drawing.Point(67, 99);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(42, 20);
-            this.textBox6.TabIndex = 12;
+            this.TB_Pen_Visiteur.Location = new System.Drawing.Point(67, 99);
+            this.TB_Pen_Visiteur.Name = "TB_Pen_Visiteur";
+            this.TB_Pen_Visiteur.Size = new System.Drawing.Size(42, 20);
+            this.TB_Pen_Visiteur.TabIndex = 12;
             // 
             // label15
             // 
@@ -306,23 +306,23 @@
             this.label15.TabIndex = 11;
             this.label15.Text = "Pen.";
             // 
-            // comboBox2
+            // CBX_Choix_J_V
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(6, 16);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 8;
-            this.comboBox2.Text = "Choix joueur";
+            this.CBX_Choix_J_V.FormattingEnabled = true;
+            this.CBX_Choix_J_V.Location = new System.Drawing.Point(6, 16);
+            this.CBX_Choix_J_V.Name = "CBX_Choix_J_V";
+            this.CBX_Choix_J_V.Size = new System.Drawing.Size(121, 21);
+            this.CBX_Choix_J_V.TabIndex = 8;
+            this.CBX_Choix_J_V.Text = "Choix joueur";
             // 
-            // label16
+            // LB_NomEquipe_V
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(133, 19);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(36, 13);
-            this.label16.TabIndex = 7;
-            this.label16.Text = "team2";
+            this.LB_NomEquipe_V.AutoSize = true;
+            this.LB_NomEquipe_V.Location = new System.Drawing.Point(133, 19);
+            this.LB_NomEquipe_V.Name = "LB_NomEquipe_V";
+            this.LB_NomEquipe_V.Size = new System.Drawing.Size(36, 13);
+            this.LB_NomEquipe_V.TabIndex = 7;
+            this.LB_NomEquipe_V.Text = "team2";
             // 
             // BTN_Ok
             // 
@@ -335,16 +335,16 @@
             this.BTN_Ok.UseVisualStyleBackColor = true;
             this.BTN_Ok.Click += new System.EventHandler(this.BTN_Ok_Click);
             // 
-            // button3
+            // BTN_Cancel
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Location = new System.Drawing.Point(493, 338);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(50, 50);
-            this.button3.TabIndex = 24;
-            this.button3.Text = "Cancel";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.BTN_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_Cancel.Location = new System.Drawing.Point(493, 338);
+            this.BTN_Cancel.Name = "BTN_Cancel";
+            this.BTN_Cancel.Size = new System.Drawing.Size(50, 50);
+            this.BTN_Cancel.TabIndex = 24;
+            this.BTN_Cancel.Text = "Cancel";
+            this.BTN_Cancel.UseVisualStyleBackColor = true;
+            this.BTN_Cancel.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -412,23 +412,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 400);
             this.Controls.Add(this.BTN_Ok);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.BTN_Cancel);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.LB_Lieu_Result);
+            this.Controls.Add(this.LB_DateMatch);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.LB_NoMatch);
             this.Controls.Add(this.label1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Name = "Resultat_Match";
             this.Text = "Resultat_Match";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_ListeJoueur_R)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_ListeJoueur_V)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,35 +436,35 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LB_NoMatch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label LB_NomEquipe_R;
+        private System.Windows.Forms.Label LB_DateMatch;
+        private System.Windows.Forms.Label LB_Lieu_Result;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CBX_Choix_J_R;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TB_Passes_R;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TB_But_R;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TB_Pen_R;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView DGV_ListeJoueur_R;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGV_ListeJoueur_V;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TB_Passes_Visiteur;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox TB_But_Visiteur;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox TB_Pen_Visiteur;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox CBX_Choix_J_V;
+        private System.Windows.Forms.Label LB_NomEquipe_V;
         private System.Windows.Forms.Button BTN_Ok;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button BTN_Cancel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;

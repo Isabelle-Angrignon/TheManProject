@@ -28,68 +28,68 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.BG_Parametre = new System.Windows.Forms.GroupBox();
+            this.RB_Sombre = new System.Windows.Forms.RadioButton();
+            this.RB_Canadien = new System.Windows.Forms.RadioButton();
+            this.RB_Defaut = new System.Windows.Forms.RadioButton();
             this.BTN_Ok = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.BTN_Cancel = new System.Windows.Forms.Button();
+            this.BTN_Appliquer = new System.Windows.Forms.Button();
+            this.BG_Parametre.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // BG_Parametre
             // 
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(113, 124);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Options";
+            this.BG_Parametre.Controls.Add(this.RB_Sombre);
+            this.BG_Parametre.Controls.Add(this.RB_Canadien);
+            this.BG_Parametre.Controls.Add(this.RB_Defaut);
+            this.BG_Parametre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BG_Parametre.Location = new System.Drawing.Point(12, 12);
+            this.BG_Parametre.Name = "BG_Parametre";
+            this.BG_Parametre.Size = new System.Drawing.Size(113, 124);
+            this.BG_Parametre.TabIndex = 0;
+            this.BG_Parametre.TabStop = false;
+            this.BG_Parametre.Text = "Options";
             // 
-            // radioButton3
+            // RB_Sombre
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.Location = new System.Drawing.Point(6, 89);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(83, 24);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Sombre";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.RB_Sombre.AutoSize = true;
+            this.RB_Sombre.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RB_Sombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RB_Sombre.Location = new System.Drawing.Point(6, 89);
+            this.RB_Sombre.Name = "RB_Sombre";
+            this.RB_Sombre.Size = new System.Drawing.Size(83, 24);
+            this.RB_Sombre.TabIndex = 2;
+            this.RB_Sombre.TabStop = true;
+            this.RB_Sombre.Text = "Sombre";
+            this.RB_Sombre.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // RB_Canadien
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(6, 59);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(95, 24);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Canadien";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.RB_Canadien.AutoSize = true;
+            this.RB_Canadien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RB_Canadien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RB_Canadien.Location = new System.Drawing.Point(6, 59);
+            this.RB_Canadien.Name = "RB_Canadien";
+            this.RB_Canadien.Size = new System.Drawing.Size(95, 24);
+            this.RB_Canadien.TabIndex = 1;
+            this.RB_Canadien.TabStop = true;
+            this.RB_Canadien.Text = "Canadien";
+            this.RB_Canadien.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // RB_Defaut
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(6, 29);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(76, 24);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Défaut";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.RB_Defaut.AutoSize = true;
+            this.RB_Defaut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RB_Defaut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RB_Defaut.Location = new System.Drawing.Point(6, 29);
+            this.RB_Defaut.Name = "RB_Defaut";
+            this.RB_Defaut.Size = new System.Drawing.Size(76, 24);
+            this.RB_Defaut.TabIndex = 0;
+            this.RB_Defaut.TabStop = true;
+            this.RB_Defaut.Text = "Défaut";
+            this.RB_Defaut.UseVisualStyleBackColor = true;
+            this.RB_Defaut.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // BTN_Ok
             // 
@@ -102,52 +102,52 @@
             this.BTN_Ok.UseVisualStyleBackColor = true;
             this.BTN_Ok.Click += new System.EventHandler(this.BTN_Ok_Click);
             // 
-            // button1
+            // BTN_Cancel
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(142, 142);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 50);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BTN_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_Cancel.Location = new System.Drawing.Point(142, 142);
+            this.BTN_Cancel.Name = "BTN_Cancel";
+            this.BTN_Cancel.Size = new System.Drawing.Size(50, 50);
+            this.BTN_Cancel.TabIndex = 9;
+            this.BTN_Cancel.Text = "Cancel";
+            this.BTN_Cancel.UseVisualStyleBackColor = true;
+            this.BTN_Cancel.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // BTN_Appliquer
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Location = new System.Drawing.Point(12, 142);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(68, 50);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Appliquer";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BTN_Appliquer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_Appliquer.Location = new System.Drawing.Point(12, 142);
+            this.BTN_Appliquer.Name = "BTN_Appliquer";
+            this.BTN_Appliquer.Size = new System.Drawing.Size(68, 50);
+            this.BTN_Appliquer.TabIndex = 11;
+            this.BTN_Appliquer.Text = "Appliquer";
+            this.BTN_Appliquer.UseVisualStyleBackColor = true;
             // 
             // Parametre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(205, 203);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.BTN_Appliquer);
             this.Controls.Add(this.BTN_Ok);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.BTN_Cancel);
+            this.Controls.Add(this.BG_Parametre);
             this.Name = "Parametre";
             this.Text = "Thèmes";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.BG_Parametre.ResumeLayout(false);
+            this.BG_Parametre.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.GroupBox BG_Parametre;
+        private System.Windows.Forms.RadioButton RB_Sombre;
+        private System.Windows.Forms.RadioButton RB_Canadien;
+        private System.Windows.Forms.RadioButton RB_Defaut;
         private System.Windows.Forms.Button BTN_Ok;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BTN_Cancel;
+        private System.Windows.Forms.Button BTN_Appliquer;
     }
 }

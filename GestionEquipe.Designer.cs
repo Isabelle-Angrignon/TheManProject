@@ -35,10 +35,10 @@
             this.uC_Navigator = new UC_Navigator.UC_Navigator();
             this.BTN_Load = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TB_DivisionEquipe = new System.Windows.Forms.TextBox();
+            this.DTP_Date_Team = new System.Windows.Forms.DateTimePicker();
+            this.TB_Nom_Team = new System.Windows.Forms.TextBox();
+            this.TB_Ville = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -78,13 +78,13 @@
             this.Caractérstique.Controls.Add(this.BTN_Load);
             this.Caractérstique.Controls.Add(this.PBX_Logo);
             this.Caractérstique.Controls.Add(this.label2);
-            this.Caractérstique.Controls.Add(this.textBox3);
-            this.Caractérstique.Controls.Add(this.dateTimePicker1);
-            this.Caractérstique.Controls.Add(this.textBox4);
+            this.Caractérstique.Controls.Add(this.TB_DivisionEquipe);
+            this.Caractérstique.Controls.Add(this.DTP_Date_Team);
+            this.Caractérstique.Controls.Add(this.TB_Nom_Team);
             this.Caractérstique.Controls.Add(this.BTN_Edit);
             this.Caractérstique.Controls.Add(this.BTN_Del);
             this.Caractérstique.Controls.Add(this.BTN_Add);
-            this.Caractérstique.Controls.Add(this.textBox2);
+            this.Caractérstique.Controls.Add(this.TB_Ville);
             this.Caractérstique.Controls.Add(this.label6);
             this.Caractérstique.Controls.Add(this.label5);
             this.Caractérstique.Controls.Add(this.label3);
@@ -121,36 +121,36 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "Division";
             // 
-            // textBox3
+            // TB_DivisionEquipe
             // 
-            this.textBox3.Location = new System.Drawing.Point(67, 157);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(131, 20);
-            this.textBox3.TabIndex = 19;
-            this.textBox3.Text = "Autofill";
+            this.TB_DivisionEquipe.Location = new System.Drawing.Point(67, 157);
+            this.TB_DivisionEquipe.Name = "TB_DivisionEquipe";
+            this.TB_DivisionEquipe.Size = new System.Drawing.Size(131, 20);
+            this.TB_DivisionEquipe.TabIndex = 19;
+            this.TB_DivisionEquipe.Text = "Autofill";
             // 
-            // dateTimePicker1
+            // DTP_Date_Team
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(83, 106);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(115, 20);
-            this.dateTimePicker1.TabIndex = 17;
+            this.DTP_Date_Team.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DTP_Date_Team.Location = new System.Drawing.Point(83, 106);
+            this.DTP_Date_Team.Name = "DTP_Date_Team";
+            this.DTP_Date_Team.Size = new System.Drawing.Size(115, 20);
+            this.DTP_Date_Team.TabIndex = 17;
             // 
-            // textBox4
+            // TB_Nom_Team
             // 
-            this.textBox4.Location = new System.Drawing.Point(67, 79);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(131, 20);
-            this.textBox4.TabIndex = 16;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.TB_Nom_Team.Location = new System.Drawing.Point(67, 79);
+            this.TB_Nom_Team.Name = "TB_Nom_Team";
+            this.TB_Nom_Team.Size = new System.Drawing.Size(131, 20);
+            this.TB_Nom_Team.TabIndex = 16;
+            this.TB_Nom_Team.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // textBox2
+            // TB_Ville
             // 
-            this.textBox2.Location = new System.Drawing.Point(67, 131);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(131, 20);
-            this.textBox2.TabIndex = 10;
+            this.TB_Ville.Location = new System.Drawing.Point(67, 131);
+            this.TB_Ville.Name = "TB_Ville";
+            this.TB_Ville.Size = new System.Drawing.Size(131, 20);
+            this.TB_Ville.TabIndex = 10;
             // 
             // label6
             // 
@@ -240,13 +240,13 @@
         private System.Windows.Forms.Button BTN_Cancel;
         private System.Windows.Forms.GroupBox Caractérstique;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TB_DivisionEquipe;
+        private System.Windows.Forms.DateTimePicker DTP_Date_Team;
+        private System.Windows.Forms.TextBox TB_Nom_Team;
         private System.Windows.Forms.Button BTN_Edit;
         private System.Windows.Forms.Button BTN_Del;
         private System.Windows.Forms.Button BTN_Add;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TB_Ville;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
