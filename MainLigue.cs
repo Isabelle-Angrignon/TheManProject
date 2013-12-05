@@ -56,47 +56,27 @@ namespace The_Main_Project
             }
             catch (Exception ex) { MessageBox.Show(ex.Message.ToString());}
         }
-
-        private void FLB_Team_Click(object sender, EventArgs e)
+        
+        private void FillDGVMatch()
         {
-            GestionEquipe Form = new GestionEquipe();
-            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            try
             {
-                ///envoyer commit?
-            }
-        }
+                OracleDataAdapter Oraliste = new OracleDataAdapter(sqlHoraire, conn);
 
-        private void flashButton1_Click(object sender, EventArgs e)
-        {
-            GestionJoueur Form = new GestionJoueur();
-            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                ///envoyer commit?
-            }
-        }
+                if (mainDataSet.Tables.Contains(dsHoraire))
+                {
+                    mainDataSet.Tables[dsHoraire].Clear();
+                }
+                Oraliste.Fill(mainDataSet, dsHoraire);
+                Oraliste.Dispose();
 
-        private void flashButton2_Click(object sender, EventArgs e)
-        {
-            Top_5 Form = new Top_5();
-            Form.ShowDialog();
-        }
+                BindingSource maSource = new BindingSource(mainDataSet, dsHoraire);
 
-        private void flashButton3_Click(object sender, EventArgs e)
-        {
-            GestionMatch Form = new GestionMatch();
-            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                ///envoyer commit?
+                DGV_Match.DataSource = maSource;
             }
-        }
-
-        private void FB_Result_Click(object sender, EventArgs e)
-        {
-            Resultat_Match Form = new Resultat_Match();
-            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                ///envoyer commit?
-            }
+            catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
     }
+
+   
 }
