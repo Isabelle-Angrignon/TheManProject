@@ -17,7 +17,7 @@ namespace The_Main_Project
         {
             InitializeComponent();
         }
-        private OracleConnection conn = new OracleConnection();
+        public OracleConnection conn = new OracleConnection();
         private DataSet divDataSet = new DataSet();
         string sqlShow = "Select * from Divisions";
         string sqlAdd = "INSERT INTO Division VALUES (:NOMDIV, :CREATION)";////requete ajout

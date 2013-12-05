@@ -29,6 +29,7 @@ namespace The_Main_Project
         private void FLB_Division_Click(object sender, EventArgs e)
         {
             GestionDivision Form = new GestionDivision();
+            Form.conn = conn;
             if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 ///envoyer commit?
@@ -37,7 +38,7 @@ namespace The_Main_Project
 
         private void Form_League_Load(object sender, EventArgs e)
         {
-
+            Connect();
         }
         private void Connect()
         {
@@ -49,7 +50,7 @@ namespace The_Main_Project
                 + "(CONNECT_DATA=(SERVICE_NAME=ORCL)))";
 
                 String ChaineConnexion = "Data Source=" + Dsource
-                + ";User Id = simon007 Password =  oracle1";
+                + ";User Id = angrigno; Password =  oracle1";
                 conn.ConnectionString = ChaineConnexion;
                 conn.Open();
                 MessageBox.Show(conn.State.ToString());
