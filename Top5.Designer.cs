@@ -71,7 +71,7 @@
             this.Controls.Add(this.LB_Top5);
             this.Controls.Add(this.BTN_Ok);
             this.Name = "Top5";
-            this.Text = "Top5";
+            this.Text = "s";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

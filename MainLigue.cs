@@ -28,6 +28,10 @@ namespace The_Main_Project
 
         private void FLB_Division_Click(object sender, EventArgs e)
         {
+            OuvertureDivision();
+        }
+        private void OuvertureDivision()
+        {
             GestionDivision Form = new GestionDivision();
             Form.conn = conn;
             if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -45,6 +49,7 @@ namespace The_Main_Project
 
         private void UpdateComboBox()
         {
+            CBX_Division.Items.Clear();
             try
             {
                 OracleCommand oraCmdProg = new OracleCommand("select NomDivision From Divisions", conn);
@@ -108,25 +113,33 @@ namespace The_Main_Project
 
         private void flashButton2_Click(object sender, EventArgs e)
         {
+            OuvertureTop5();
+        }
+        private void OuvertureTop5()
+        {
             Top5 Form = new Top5();
             Form.ShowDialog();
         }
 
         private void FLB_Team_Click(object sender, EventArgs e)
         {
+            OuvrireEquipe();
+
+        }
+        private void OuvrireEquipe()
+        {
             GestionEquipe Form = new GestionEquipe();
             if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 ///envoyer commit?
             }
-
-        }
-        private void OuvrireEquipe()
-        {
-
         }
 
         private void flashButton1_Click(object sender, EventArgs e)
+        {
+            OuvrireJoueur();
+        }
+        private void OuvrireJoueur()
         {
             GestionJoueur Form = new GestionJoueur();
             if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -137,6 +150,11 @@ namespace The_Main_Project
 
         private void flashButton3_Click(object sender, EventArgs e)
         {
+            OuvrireMatch();
+        }
+
+        private void OuvrireMatch()
+        {
             GestionMatch Form = new GestionMatch();
             if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -145,6 +163,10 @@ namespace The_Main_Project
         }
 
         private void flashButton4_Click(object sender, EventArgs e)
+        {
+            OuvrireResultat();
+        }
+        private void OuvrireResultat()
         {
             Resultat_Match Form = new Resultat_Match();
             if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -156,6 +178,58 @@ namespace The_Main_Project
         private void Form_League_SizeChanged(object sender, EventArgs e)
         {
             //constater nouvelle size, redimensionne éléments tels dgv en fonction de la nouvelle dimension
+        }
+
+        private void TSMI_Division_Click(object sender, EventArgs e)
+        {
+            OuvertureDivision();
+        }
+
+        private void TSMI_Equipe_Click(object sender, EventArgs e)
+        {
+            OuvrireEquipe();
+        }
+
+        private void TSMI_Joueur_Click(object sender, EventArgs e)
+        {
+            OuvrireJoueur();
+        }
+
+        private void TSMI_Match_Click(object sender, EventArgs e)
+        {
+            OuvrireMatch();
+        }
+
+        private void TSMI_Resultats_Click(object sender, EventArgs e)
+        {
+            OuvrireResultat();
+        }
+
+        private void OuvrireParam()
+        {
+            Parametre Form = new Parametre();
+            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                ///envoyer commit?
+            }
+        }
+
+        private void TSMI_Themes_Click(object sender, EventArgs e)
+        {
+            OuvrireParam();
+        }
+        private void OuvrireStat()
+        {
+            AfficherStat Form = new AfficherStat();
+            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                // envoyer commit ? 
+            }
+        }
+
+        private void TSMI_Stats_Joueur_Click(object sender, EventArgs e)
+        {
+            OuvrireStat();
         }
 
     }
