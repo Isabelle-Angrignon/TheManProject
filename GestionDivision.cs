@@ -24,6 +24,7 @@ namespace The_Main_Project
         private DataSet divDataSet = new DataSet();
         private const string dsDivision = "Divisions";
         OracleDataAdapter Oraliste;
+        string clePrimaire;
         
         //oParam
 
@@ -42,7 +43,7 @@ namespace The_Main_Project
         {
             try
             {
-                string sqlShow = "Select * from Divisions";
+                string sqlShow = "Select * from Divisions order by nomdivision";
                  Oraliste = new OracleDataAdapter(sqlShow, conn);
                 if (divDataSet.Tables.Contains(dsDivision))
                 {
@@ -62,62 +63,56 @@ namespace The_Main_Project
         {
             TB_Nom_D.DataBindings.Add("Text", divDataSet, "Divisions.NomDivision");
             DTP_Creation.DataBindings.Add("Text", divDataSet, "Divisions.DateCréation");
+            clePrimaire = TB_Nom_D.Text;
         }
         private void Vider()
         {
             TB_Nom_D.DataBindings.Clear();
             DTP_Creation.DataBindings.Clear();
             TB_Nom_D.Clear();
-            DTP_Creation.Value = new DateTime();
+            DTP_Creation.Value = DateTime.Now;
         }
 
         private void uC_Navigator_OnFirst(object sender, EventArgs e)
         {
             this.BindingContext[divDataSet, dsDivision].Position = 0;
+            clePrimaire = TB_Nom_D.Text;
         }
 
         private void uC_Navigator_OnLast(object sender, EventArgs e)
         {
             this.BindingContext[divDataSet, dsDivision].Position =
                 this.BindingContext[divDataSet, dsDivision].Count - 1;
+            clePrimaire = TB_Nom_D.Text;
         }
 
         private void uC_Navigator_OnNext(object sender, EventArgs e)
         {
             this.BindingContext[divDataSet, dsDivision].Position += 1;
+            clePrimaire = TB_Nom_D.Text;
         }
 
         private void uC_Navigator_OnPrev(object sender, EventArgs e)
         {
             this.BindingContext[divDataSet, dsDivision].Position -= 1;
+            clePrimaire = TB_Nom_D.Text;
         }
 
         private void BTN_Add_Click(object sender, EventArgs e)
         {
             try 
             {
-                string sqlAdd = "INSERT INTO Division VALUES (:NOMDIV, :CREATION)";////requete ajout
+                string sqlAdd = "INSERT INTO Divisions VALUES (:NOMDIV,:CREATION)";
                 OracleParameter oParamNomDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
-                OracleParameter oParamNomDiv2 = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
                 OracleParameter oParamCreation = new OracleParameter(":CREATION", OracleDbType.Date);
                 oParamNomDiv.Value = TB_Nom_D.Text;
-                oParamNomDiv2.Value = TB_Nom_D.Text;
                 oParamCreation.Value = DTP_Creation.Value;
                 
                 OracleCommand orComm = new OracleCommand(sqlAdd,conn);
                 orComm.Parameters.Add(oParamNomDiv);
-                orComm.Parameters.Add(oParamNomDiv2);
                 orComm.Parameters.Add(oParamCreation);
                 orComm.ExecuteNonQuery();
                 
-               /*
-                Oraliste.InsertCommand = new OracleCommand(sqlAdd, conn); 
-                Oraliste.InsertCommand.Parameters.Add(":NOMDIV", OracleDbType.Varchar2, 20, "nomdivision"); 
-                Oraliste.InsertCommand.Parameters.Add(":CREATION", OracleDbType.Varchar2, 20, "datecréation"); 
-                Oraliste.Update(divDataSet.Tables[dsDivision]); 
-                divDataSet.AcceptChanges();
-                Oraliste.Dispose();*/
-
                 Vider();
                 Lister();
             } 
@@ -132,11 +127,16 @@ namespace The_Main_Project
             try 
             {
                 string sqlDelete = "DELETE FROM Division WHERE NomDivision = :NOMDIV";//requete supprime
-                Oraliste.DeleteCommand = new OracleCommand(sqlDelete, conn);
-                Oraliste.DeleteCommand.Parameters.Add(":NOMDIV", OracleDbType.Varchar2, 30, "nomdivision");
-                Oraliste.Update(divDataSet.Tables[dsDivision]);
-                divDataSet.AcceptChanges();
-                Oraliste.Dispose(); 
+
+                OracleParameter oParamNomDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
+                oParamNomDiv.Value = TB_Nom_D.Text;
+                
+                OracleCommand orComm = new OracleCommand(sqlDelete, conn);
+                orComm.Parameters.Add(oParamNomDiv);                
+                orComm.ExecuteNonQuery();
+
+                Vider();
+                Lister();
             } 
             catch (Exception ex) 
             { 
@@ -146,20 +146,28 @@ namespace The_Main_Project
 
         private void BTN_Edit_Click(object sender, EventArgs e)
         {
+
             try 
             {
-                /////enregistrer la clé primaire d'abord pour pouvoir la modifier...
-                //string clePrimaire = divDataSet.Tables[dsDivision].se
-                string sqlUpdateNom = "UPDATE Division SET NomDivision = :NOMDIV AND DateCréation = :CREATION"+
-                " WHERE NomDivision = clePrimaire"; //requete met a jour
-                //string sqlUpdateDate = "UPDATE Division SET DateCréation = :CREATION";//requete met a jour
+                /////enregistrer la clé primaire d'abord pour pouvoir la modifier...                
+                string sqlUpdate = "UPDATE Divisions SET NomDivision = :NOMDIV, DateCréation = :CREATION"+
+                " WHERE NomDivision = :NOMDIV2"; //requete met a jour
 
-                Oraliste.UpdateCommand = new OracleCommand(sqlUpdateNom, conn);
-                Oraliste.UpdateCommand.Parameters.Add(":nomdiv", OracleDbType.Varchar2, 20, "nomdivision");
-                Oraliste.UpdateCommand.Parameters.Add(":creation", OracleDbType.Int32, 4, "datecréation");
-                Oraliste.Update(divDataSet.Tables[dsDivision]);
-                divDataSet.AcceptChanges(); 
-                Oraliste.Dispose(); 
+                OracleParameter oParamNomDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
+                OracleParameter oParamNomDiv2 = new OracleParameter(":NOMDIV2", OracleDbType.Varchar2, 30);
+                OracleParameter oParamCreation = new OracleParameter(":CREATION", OracleDbType.Date);
+                oParamNomDiv.Value = TB_Nom_D.Text;
+                oParamNomDiv2.Value = clePrimaire;
+                oParamCreation.Value = DTP_Creation.Value;
+
+                OracleCommand orComm = new OracleCommand(sqlUpdate, conn);
+                orComm.Parameters.Add(oParamNomDiv);
+                orComm.Parameters.Add(oParamNomDiv2);
+                orComm.Parameters.Add(oParamCreation);
+                orComm.ExecuteNonQuery();
+
+                Vider();
+                Lister();
             } 
             catch (Exception ex) 
             { 
