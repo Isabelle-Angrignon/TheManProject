@@ -74,9 +74,12 @@
             // 
             // DGV_Team
             // 
+            this.DGV_Team.AllowUserToAddRows = false;
+            this.DGV_Team.AllowUserToDeleteRows = false;
             this.DGV_Team.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Team.Location = new System.Drawing.Point(582, 146);
             this.DGV_Team.Name = "DGV_Team";
+            this.DGV_Team.RowHeadersVisible = false;
             this.DGV_Team.Size = new System.Drawing.Size(421, 270);
             this.DGV_Team.TabIndex = 1;
             // 
@@ -203,9 +206,12 @@
             // 
             // DGV_Match
             // 
+            this.DGV_Match.AllowUserToAddRows = false;
+            this.DGV_Match.AllowUserToDeleteRows = false;
             this.DGV_Match.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Match.Location = new System.Drawing.Point(29, 146);
             this.DGV_Match.Name = "DGV_Match";
+            this.DGV_Match.RowHeadersVisible = false;
             this.DGV_Match.Size = new System.Drawing.Size(421, 270);
             this.DGV_Match.TabIndex = 7;
             // 
