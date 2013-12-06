@@ -32,7 +32,7 @@ namespace The_Main_Project
             Form.conn = conn;
             if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                ///envoyer commit?
+                UpdateComboBox();
             }
         }
 
@@ -65,7 +65,8 @@ namespace The_Main_Project
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
-            } 
+            } 
+
         }
         private void Connect()
         {

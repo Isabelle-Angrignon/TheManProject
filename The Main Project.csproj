@@ -56,9 +56,6 @@
     <Reference Include="UC_Navigator">
       <HintPath>UC_Navigator\UC_Navigator\bin\Debug\UC_Navigator.dll</HintPath>
     </Reference>
-    <Reference Include="UC_Slider">
-      <HintPath>..\..\Emploi + autre\CLG\13-b-Aut\Dev Interface\UC_Slider\bin\Debug\UC_Slider.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AfficherStat.cs">
