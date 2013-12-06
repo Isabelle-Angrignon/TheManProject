@@ -15,7 +15,7 @@ namespace The_Main_Project
     {
         private OracleConnection conn = new OracleConnection();
         private DataSet mainDataSet = new DataSet();
-        string sqlHoraire = "SELECT * FROM blabla";////////////////////////////////
+        string sqlHoraire = "SELECT * FROM Matchs";////////////////////////////////
         string sqlClassement = "requete qui affiche le classement";///////////////
         private const string dsHoraire = "Liste_matchs";
         private string dsCLassement = "Classement_équipes";
@@ -40,6 +40,7 @@ namespace The_Main_Project
         {
             Connect();
             UpdateComboBox();
+            FillDGVMatch();
         }
 
         private void UpdateComboBox()
