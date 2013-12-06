@@ -390,6 +390,7 @@
             this.Name = "Form_League";
             this.Text = "Bienvenue dans la ligue ";
             this.Load += new System.EventHandler(this.Form_League_Load);
+            this.SizeChanged += new System.EventHandler(this.Form_League_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Team)).EndInit();
             this.MS_Main.ResumeLayout(false);
             this.MS_Main.PerformLayout();

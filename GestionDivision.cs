@@ -24,8 +24,7 @@ namespace The_Main_Project
         private DataSet divDataSet = new DataSet();
         private const string dsDivision = "Divisions";
         OracleDataAdapter Oraliste;
-        OracleParameter oParamNomDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
-        OracleParameter oParamCreation = new OracleParameter(":CREATION", OracleDbType.Date);
+        
         //oParam
 
         private void BTN_Ok_Click(object sender, EventArgs e)
@@ -90,7 +89,7 @@ namespace The_Main_Project
 
         private void uC_Navigator_OnPrev(object sender, EventArgs e)
         {
-            this.BindingContext[divDataSet, "Divisions"].Position -= 1;
+            this.BindingContext[divDataSet, dsDivision].Position -= 1;
         }
 
         private void BTN_Add_Click(object sender, EventArgs e)
@@ -98,12 +97,27 @@ namespace The_Main_Project
             try 
             {
                 string sqlAdd = "INSERT INTO Division VALUES (:NOMDIV, :CREATION)";////requete ajout
+                OracleParameter oParamNomDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
+                OracleParameter oParamNomDiv2 = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
+                OracleParameter oParamCreation = new OracleParameter(":CREATION", OracleDbType.Date);
+                oParamNomDiv.Value = TB_Nom_D.Text;
+                oParamNomDiv2.Value = TB_Nom_D.Text;
+                oParamCreation.Value = DTP_Creation.Value;
+                
+                OracleCommand orComm = new OracleCommand(sqlAdd,conn);
+                orComm.Parameters.Add(oParamNomDiv);
+                orComm.Parameters.Add(oParamNomDiv2);
+                orComm.Parameters.Add(oParamCreation);
+                orComm.ExecuteNonQuery();
+                
+               /*
                 Oraliste.InsertCommand = new OracleCommand(sqlAdd, conn); 
                 Oraliste.InsertCommand.Parameters.Add(":NOMDIV", OracleDbType.Varchar2, 20, "nomdivision"); 
                 Oraliste.InsertCommand.Parameters.Add(":CREATION", OracleDbType.Varchar2, 20, "datecréation"); 
                 Oraliste.Update(divDataSet.Tables[dsDivision]); 
                 divDataSet.AcceptChanges();
-                Oraliste.Dispose();
+                Oraliste.Dispose();*/
+
                 Vider();
                 Lister();
             } 

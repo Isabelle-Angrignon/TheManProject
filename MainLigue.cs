@@ -146,6 +146,11 @@ namespace The_Main_Project
             }
         }
 
+        private void Form_League_SizeChanged(object sender, EventArgs e)
+        {
+            //constater nouvelle sixe, redimensionne dgv en fonction de la nouvelle dimension
+        }
+
     }
 
    
