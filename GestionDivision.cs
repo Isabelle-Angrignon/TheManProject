@@ -41,10 +41,14 @@ namespace The_Main_Project
 
         private void GestionDivision_Load(object sender, EventArgs e)
         {
+            LoadDataset();
+        }
+        private void LoadDataset()
+        {
             try
             {
                 string sqlShow = "Select * from Divisions order by nomdivision";
-                 Oraliste = new OracleDataAdapter(sqlShow, conn);
+                Oraliste = new OracleDataAdapter(sqlShow, conn);
                 if (divDataSet.Tables.Contains(dsDivision))
                 {
                     divDataSet.Tables[dsDivision].Clear();
@@ -54,11 +58,10 @@ namespace The_Main_Project
 
                 BindingSource maSource = new BindingSource(divDataSet, dsDivision);
                 Vider();
-                Lister();                
+                Lister();
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
-
         private void Lister()
         {
             TB_Nom_D.DataBindings.Add("Text", divDataSet, "Divisions.NomDivision");
@@ -112,9 +115,8 @@ namespace The_Main_Project
                 orComm.Parameters.Add(oParamNomDiv);
                 orComm.Parameters.Add(oParamCreation);
                 orComm.ExecuteNonQuery();
-                
-                Vider();
-                Lister();
+
+                LoadDataset();
             } 
             catch (Exception ex) 
             { 
@@ -135,8 +137,7 @@ namespace The_Main_Project
                 orComm.Parameters.Add(oParamNomDiv);                
                 orComm.ExecuteNonQuery();
 
-                Vider();
-                Lister();
+                LoadDataset();
             } 
             catch (Exception ex) 
             { 
@@ -146,28 +147,26 @@ namespace The_Main_Project
 
         private void BTN_Edit_Click(object sender, EventArgs e)
         {
-
             try 
             {
                 /////enregistrer la clé primaire d'abord pour pouvoir la modifier...                
                 string sqlUpdate = "UPDATE Divisions SET NomDivision = :NOMDIV, DateCréation = :CREATION"+
                 " WHERE NomDivision = :NOMDIV2"; //requete met a jour
 
-                OracleParameter oParamNomDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
-                OracleParameter oParamNomDiv2 = new OracleParameter(":NOMDIV2", OracleDbType.Varchar2, 30);
+                OracleParameter oParamNomDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);               
                 OracleParameter oParamCreation = new OracleParameter(":CREATION", OracleDbType.Date);
-                oParamNomDiv.Value = TB_Nom_D.Text;
-                oParamNomDiv2.Value = clePrimaire;
+                OracleParameter oParamNomDiv2 = new OracleParameter(":NOMDIV2", OracleDbType.Varchar2, 30);
+                oParamNomDiv.Value = TB_Nom_D.Text;                
                 oParamCreation.Value = DTP_Creation.Value;
+                oParamNomDiv2.Value = clePrimaire;
 
                 OracleCommand orComm = new OracleCommand(sqlUpdate, conn);
-                orComm.Parameters.Add(oParamNomDiv);
-                orComm.Parameters.Add(oParamNomDiv2);
+                orComm.Parameters.Add(oParamNomDiv);                
                 orComm.Parameters.Add(oParamCreation);
+                orComm.Parameters.Add(oParamNomDiv2);
                 orComm.ExecuteNonQuery();
 
-                Vider();
-                Lister();
+                LoadDataset();
             } 
             catch (Exception ex) 
             { 
