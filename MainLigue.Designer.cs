@@ -212,6 +212,7 @@
             // CBX_Division
             // 
             this.CBX_Division.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CBX_Division.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBX_Division.FormattingEnabled = true;
             this.CBX_Division.Location = new System.Drawing.Point(684, 119);
             this.CBX_Division.Name = "CBX_Division";

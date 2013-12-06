@@ -56,6 +56,7 @@ namespace The_Main_Project
                     //ListeProgrammes.Items.Add(objRead.GetInt32(0)); 
                     CBX_Division.Items.Add(objRead.GetString(0));
                 }
+                CBX_Division.Items.Add("Toutes");
 
                 CBX_Division.SelectedIndex = 0;
                 objRead.Close();
@@ -116,6 +117,10 @@ namespace The_Main_Project
             {
                 ///envoyer commit?
             }
+
+        }
+        private void OuvrireEquipe()
+        {
 
         }
 
