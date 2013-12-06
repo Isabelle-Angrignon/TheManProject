@@ -126,7 +126,7 @@ namespace The_Main_Project
         {
             try 
             {
-                string sqlDelete = "DELETE FROM Division WHERE NomDivision = :NOMDIV";//requete supprime
+                string sqlDelete = "DELETE FROM Divisions WHERE NomDivision = :NOMDIV";//requete supprime
 
                 OracleParameter oParamNomDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
                 oParamNomDiv.Value = TB_Nom_D.Text;
