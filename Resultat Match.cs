@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.DataAccess.Client;
 
 namespace The_Main_Project
 {
@@ -16,6 +17,11 @@ namespace The_Main_Project
         {
             InitializeComponent();
         }
+        public OracleConnection conn = new OracleConnection();
+        private DataSet formDataSet = new DataSet();
+        private const string dsTable = "Table";
+        OracleDataAdapter Oraliste;
+        string clePrimaire;//////////////joueur...
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

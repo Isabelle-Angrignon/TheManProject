@@ -130,6 +130,7 @@ namespace The_Main_Project
         private void OuvrireEquipe()
         {
             GestionEquipe Form = new GestionEquipe();
+            Form.conn = conn;
             if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 ///envoyer commit?
@@ -143,6 +144,7 @@ namespace The_Main_Project
         private void OuvrireJoueur()
         {
             GestionJoueur Form = new GestionJoueur();
+            Form.conn = conn;
             if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 ///envoyer commit?
@@ -157,6 +159,7 @@ namespace The_Main_Project
         private void OuvrireMatch()
         {
             GestionMatch Form = new GestionMatch();
+            Form.conn = conn;
             if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 ///envoyer commit?
@@ -170,6 +173,7 @@ namespace The_Main_Project
         private void OuvrireResultat()
         {
             Resultat_Match Form = new Resultat_Match();
+            Form.conn = conn;
             if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 ///envoyer commit?
@@ -222,6 +226,7 @@ namespace The_Main_Project
         private void OuvrireStat()
         {
             AfficherStat Form = new AfficherStat();
+            Form.conn = conn;
             if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 // envoyer commit ? 

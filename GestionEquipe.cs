@@ -102,48 +102,48 @@ namespace The_Main_Project
             this.BindingContext[equDataSet, dsEquipe].Position -= 1;
             clePrimaire = TB_Nom_Team.Text;
         }
-
-        /*
-         * 
-        /////////////////////////////////
-        ///// template std ///////////////
-        //////////////////////////////////
-       
-
+        /////////////////////////////////////////en construction//////////////////////////////////////////////////
         private void BTN_Add_Click(object sender, EventArgs e)
         {
-            try 
+            try
             {
-                string sqlAdd = "INSERT INTO Divisions VALUES (:NOMDIV,:CREATION)";
-                OracleParameter oParamNomDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
-                OracleParameter oParamCreation = new OracleParameter(":CREATION", OracleDbType.Date);
-                oParamNomDiv.Value = TB_Nom_D.Text;
-                oParamCreation.Value = DTP_Creation.Value;
-                
-                OracleCommand orComm = new OracleCommand(sqlAdd,conn);
-                orComm.Parameters.Add(oParamNomDiv);
-                orComm.Parameters.Add(oParamCreation);
+                string sqlAdd = "INSERT INTO Équipes(noméquipe,dateintro,ville,nomdivision)"+
+                    "VALUES (:NOM,:DATE,:VILLE,:NOMDIV)";
+                OracleParameter oParamNom = new OracleParameter(":NOM", OracleDbType.Varchar2, 30);
+                OracleParameter oParamDate = new OracleParameter(":DATE", OracleDbType.Date);
+                OracleParameter oParamVille = new OracleParameter(":VILLE", OracleDbType.Varchar2, 20);
+                OracleParameter oParamDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
+                oParamNom.Value = TB_Nom_Team.Text;
+                oParamDate.Value = DTP_Date_Team.Value;
+                oParamVille.Value = TB_Ville.Text;
+                oParamDiv.Value = TB_DivisionEquipe.Text;
+
+                OracleCommand orComm = new OracleCommand(sqlAdd, conn);
+                orComm.Parameters.Add(oParamNom);
+                orComm.Parameters.Add(oParamDate);
+                orComm.Parameters.Add(oParamVille);
+                orComm.Parameters.Add(oParamDiv);
                 orComm.ExecuteNonQuery();
 
                 LoadDataset();
-            } 
-            catch (Exception ex) 
-            { 
-                MessageBox.Show(ex.Message.ToString()); 
-            } 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
-
+         
         private void BTN_Del_Click(object sender, EventArgs e)
         {
             try 
             {
-                string sqlDelete = "DELETE FROM Divisions WHERE NomDivision = :NOMDIV";//requete supprime
+                string sqlDelete = "DELETE FROM Équipes WHERE Noméquipe = :NOM";//requete supprime
 
-                OracleParameter oParamNomDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
-                oParamNomDiv.Value = TB_Nom_D.Text;
+                OracleParameter oParamNom = new OracleParameter(":NOM", OracleDbType.Varchar2, 30);
+                oParamNom.Value = TB_Nom_Team.Text;
                 
                 OracleCommand orComm = new OracleCommand(sqlDelete, conn);
-                orComm.Parameters.Add(oParamNomDiv);                
+                orComm.Parameters.Add(oParamNom);                
                 orComm.ExecuteNonQuery();
 
                 LoadDataset();
@@ -159,20 +159,25 @@ namespace The_Main_Project
             try 
             {
                 /////enregistrer la clé primaire d'abord pour pouvoir la modifier...                
-                string sqlUpdate = "UPDATE Divisions SET NomDivision = :NOMDIV, DateCréation = :CREATION"+
-                " WHERE NomDivision = :NOMDIV2"; //requete met a jour
+                string sqlUpdate = "UPDATE Équipes SET NomÉquipe = :NOM, DateIntro = :DATE," +
+                " ville = :VILLE, NomDivision = :NOMDIV WHERE NomÉquipe = :NOM2"; //requete met a jour
 
-                OracleParameter oParamNomDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);               
-                OracleParameter oParamCreation = new OracleParameter(":CREATION", OracleDbType.Date);
-                OracleParameter oParamNomDiv2 = new OracleParameter(":NOMDIV2", OracleDbType.Varchar2, 30);
-                oParamNomDiv.Value = TB_Nom_D.Text;                
-                oParamCreation.Value = DTP_Creation.Value;
-                oParamNomDiv2.Value = clePrimaire;
-
+                OracleParameter oParamNom = new OracleParameter(":NOM", OracleDbType.Varchar2, 30);
+                OracleParameter oParamDate = new OracleParameter(":DATE", OracleDbType.Date);
+                OracleParameter oParamVille = new OracleParameter(":VILLE", OracleDbType.Varchar2, 20);
+                OracleParameter oParamDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
+                OracleParameter oParamNom2 = new OracleParameter(":NOM2", OracleDbType.Varchar2, 30);
+                oParamNom.Value = TB_Nom_Team.Text;
+                oParamDate.Value = DTP_Date_Team.Value;
+                oParamVille.Value = TB_Ville.Text;
+                oParamDiv.Value = TB_DivisionEquipe.Text;
+                oParamNom2.Value = clePrimaire;
                 OracleCommand orComm = new OracleCommand(sqlUpdate, conn);
-                orComm.Parameters.Add(oParamNomDiv);                
-                orComm.Parameters.Add(oParamCreation);
-                orComm.Parameters.Add(oParamNomDiv2);
+                orComm.Parameters.Add(oParamNom);
+                orComm.Parameters.Add(oParamDate);
+                orComm.Parameters.Add(oParamVille);
+                orComm.Parameters.Add(oParamDiv);
+                orComm.Parameters.Add(oParamNom2);
                 orComm.ExecuteNonQuery();
 
                 LoadDataset();
@@ -181,7 +186,6 @@ namespace The_Main_Project
             { 
                 MessageBox.Show(ex.Message.ToString()); 
             } 
-        }
-         * */
+        }        
     }
 }
