@@ -118,9 +118,9 @@ namespace The_Main_Project
 
                 LoadDataset();
             } 
-            catch (Exception ex) 
-            { 
-                MessageBox.Show(ex.Message.ToString()); 
+            catch (OracleException ex) 
+            {
+                ErrorMessage(ex);
             } 
         }
 
@@ -139,9 +139,9 @@ namespace The_Main_Project
 
                 LoadDataset();
             } 
-            catch (Exception ex) 
-            { 
-                MessageBox.Show(ex.Message.ToString()); 
+            catch (OracleException ex) 
+            {
+                ErrorMessage(ex);
             } 
         }
 
@@ -168,10 +168,31 @@ namespace The_Main_Project
 
                 LoadDataset();
             } 
-            catch (Exception ex) 
-            { 
-                MessageBox.Show(ex.Message.ToString()); 
+            catch (OracleException ex) 
+            {
+                ErrorMessage(ex); 
             } 
+        }
+
+        private void ErrorMessage(OracleException Ex)
+        {
+            switch (Ex.Number)
+            {
+                case 1:
+                    // au lieu d'afficher violation de clé primaire, on affiche ceci:
+                    MessageBox.Show("Une division porte déjà ce nom");
+                    break;
+                case 02292:
+                    // au lieu d'afficher violation de clé étrangère , on affiche ceci:
+                    MessageBox.Show("La Division choisie n'est pas vide et ne peut donc pas être suprimer");
+                    break;
+                case 01400:
+                    MessageBox.Show("La division doit avoir un nom");
+                    break;
+                default: MessageBox.Show(Ex.Message.ToString());
+                    break;
+
+            }
         }
     }
 }
