@@ -106,6 +106,10 @@
             this.uC_Navigator.Name = "uC_Navigator";
             this.uC_Navigator.Size = new System.Drawing.Size(206, 19);
             this.uC_Navigator.TabIndex = 37;
+            this.uC_Navigator.OnFirst += new UC_Navigator.UC_Navigator.ClickFirstChangedHandler(this.uC_Navigator_OnFirst);
+            this.uC_Navigator.OnPrev += new UC_Navigator.UC_Navigator.ClickPreviousChangedHandler(this.uC_Navigator_OnPrev);
+            this.uC_Navigator.OnNext += new UC_Navigator.UC_Navigator.ClickNextChangedHandler(this.uC_Navigator_OnNext);
+            this.uC_Navigator.OnLast += new UC_Navigator.UC_Navigator.ClickLastChangedHandler(this.uC_Navigator_OnLast);
             // 
             // BTN_Stats
             // 
@@ -116,6 +120,7 @@
             this.BTN_Stats.TabIndex = 22;
             this.BTN_Stats.Text = "Stats";
             this.BTN_Stats.UseVisualStyleBackColor = true;
+            this.BTN_Stats.Click += new System.EventHandler(this.BTN_Stats_Click);
             // 
             // label2
             // 
@@ -165,6 +170,7 @@
             this.BTN_Edit.Size = new System.Drawing.Size(40, 40);
             this.BTN_Edit.TabIndex = 3;
             this.BTN_Edit.UseVisualStyleBackColor = true;
+            this.BTN_Edit.Click += new System.EventHandler(this.BTN_Edit_Click);
             // 
             // BTN_Del
             // 
@@ -175,6 +181,7 @@
             this.BTN_Del.Size = new System.Drawing.Size(40, 40);
             this.BTN_Del.TabIndex = 4;
             this.BTN_Del.UseVisualStyleBackColor = true;
+            this.BTN_Del.Click += new System.EventHandler(this.BTN_Del_Click);
             // 
             // BTN_Add
             // 
@@ -185,6 +192,7 @@
             this.BTN_Add.Size = new System.Drawing.Size(40, 40);
             this.BTN_Add.TabIndex = 5;
             this.BTN_Add.UseVisualStyleBackColor = true;
+            this.BTN_Add.Click += new System.EventHandler(this.BTN_Add_Click);
             // 
             // TB_Position
             // 
@@ -256,6 +264,7 @@
             this.Controls.Add(this.Caractérstique);
             this.Name = "GestionJoueur";
             this.Text = "GestionJoueur";
+            this.Load += new System.EventHandler(this.GestionJoueur_Load);
             this.Caractérstique.ResumeLayout(false);
             this.Caractérstique.PerformLayout();
             this.ResumeLayout(false);
