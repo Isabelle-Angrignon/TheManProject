@@ -56,26 +56,25 @@ namespace The_Main_Project
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
-        //private void Lister()
-        //{
-        //   /* CREATE VIEW VueFiche AS SELECT Nom, Prénom, NomÉquipe AS Équipe,
-        //SUM(NbrePasses) AS Passes, SUM(NbreButs) AS Buts, SUM(NbrePasses)+ 2*SUM(NbreButs) AS Points 
-        //FROM Joueurs J INNER JOIN  PrésencesMatchs P ON P.NoJoueur = J.NoJoueur group by nom,prénom, noméquipe order by totalpoint desc;*/
-        //    LB_Nom.DataBindings.Add("Text", formDataSet, "Table.");
-        //    LB_Prenom.DataBindings.Add("Text", formDataSet, "Table.");
-        //    LB_.DataBindings.Add("Text", formDataSet, "Table.");
-        //    LB_Nom.DataBindings.Add("Text", formDataSet, "Table.");
-        //    LB_Nom.DataBindings.Add("Text", formDataSet, "Table.");
-        //    LB_Nom.DataBindings.Add("Text", formDataSet, "Table.");
-            
-        //    LB_No_J.DataBindings.Add("Text", formDataSet, "Table.NoJoueur");
-        //    TB_Nom_J.DataBindings.Add("Text", formDataSet, "Table.Nom");
-        //    TB_Prenom_J.DataBindings.Add("Text", formDataSet, "Table.Prénom");
-        //    DTP_Naissance.DataBindings.Add("Text", formDataSet, "Table.Naissance");
-        //    TB_Position.DataBindings.Add("Text", formDataSet, "Table.Position");
-        //    TB_Maillot.DataBindings.Add("Text", formDataSet, "Table.nomaillot");
-        //    TB_Équipe.DataBindings.Add("Text", formDataSet, "Table.noméquipe");
-        //}
+        private void Lister()
+        {
+            /* CREATE VIEW VueFiche AS SELECT Nom, Prénom, NomÉquipe AS Équipe,
+         SUM(NbrePasses) AS Passes, SUM(NbreButs) AS Buts, SUM(NbrePasses)+ 2*SUM(NbreButs) AS Points 
+         FROM Joueurs J INNER JOIN  PrésencesMatchs P ON P.NoJoueur = J.NoJoueur group by nom,prénom, noméquipe order by totalpoint desc;*/
+            LB_Nom.DataBindings.Add("Text", formDataSet, "Table.");
+            LB_Prenom.DataBindings.Add("Text", formDataSet, "Table.");
+            LB_Team.DataBindings.Add("Text", formDataSet, "Table.");
+            LB_Passes.DataBindings.Add("Text", formDataSet, "Table.");
+            LB_But.DataBindings.Add("Text", formDataSet, "Table.");
+            LB_Points.DataBindings.Add("Text", formDataSet, "Table.");
+
+            //LB_Penalite
+            //LB_DateNaissance
+             //LB_Numero
+            //LB_Position           
+
+           
+        }
         //private void Vider()
         //{
         //    LB_No_J.DataBindings.Clear();
