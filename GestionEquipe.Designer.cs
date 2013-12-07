@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionEquipe));
             this.BTN_Ok = new System.Windows.Forms.Button();
             this.BTN_Cancel = new System.Windows.Forms.Button();
@@ -46,8 +47,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.CMS_Add = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cliquerPourAjouterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Caractérstique.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Logo)).BeginInit();
+            this.CMS_Add.SuspendLayout();
             this.SuspendLayout();
             // 
             // BTN_Ok
@@ -165,6 +169,7 @@
             this.BTN_Edit.Size = new System.Drawing.Size(40, 40);
             this.BTN_Edit.TabIndex = 3;
             this.BTN_Edit.UseVisualStyleBackColor = true;
+            this.BTN_Edit.Click += new System.EventHandler(this.BTN_Edit_Click);
             // 
             // BTN_Del
             // 
@@ -175,6 +180,7 @@
             this.BTN_Del.Size = new System.Drawing.Size(40, 40);
             this.BTN_Del.TabIndex = 4;
             this.BTN_Del.UseVisualStyleBackColor = true;
+            this.BTN_Del.Click += new System.EventHandler(this.BTN_Del_Click);
             // 
             // BTN_Add
             // 
@@ -185,6 +191,7 @@
             this.BTN_Add.Size = new System.Drawing.Size(40, 40);
             this.BTN_Add.TabIndex = 5;
             this.BTN_Add.UseVisualStyleBackColor = true;
+            this.BTN_Add.Click += new System.EventHandler(this.BTN_Add_Click);
             // 
             // TB_Ville
             // 
@@ -220,6 +227,19 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Nom";
             // 
+            // CMS_Add
+            // 
+            this.CMS_Add.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cliquerPourAjouterToolStripMenuItem});
+            this.CMS_Add.Name = "CMS_Add";
+            this.CMS_Add.Size = new System.Drawing.Size(181, 26);
+            // 
+            // cliquerPourAjouterToolStripMenuItem
+            // 
+            this.cliquerPourAjouterToolStripMenuItem.Name = "cliquerPourAjouterToolStripMenuItem";
+            this.cliquerPourAjouterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cliquerPourAjouterToolStripMenuItem.Text = "Cliquer pour ajouter";
+            // 
             // GestionEquipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,6 +254,7 @@
             this.Caractérstique.ResumeLayout(false);
             this.Caractérstique.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Logo)).EndInit();
+            this.CMS_Add.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -257,5 +278,7 @@
         private System.Windows.Forms.Button BTN_Load;
         private System.Windows.Forms.PictureBox PBX_Logo;
         private UC_Navigator.UC_Navigator uC_Navigator;
+        private System.Windows.Forms.ContextMenuStrip CMS_Add;
+        private System.Windows.Forms.ToolStripMenuItem cliquerPourAjouterToolStripMenuItem;
     }
 }

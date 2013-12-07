@@ -19,7 +19,7 @@ namespace The_Main_Project
         }
         public OracleConnection conn = new OracleConnection();
         private DataSet equDataSet = new DataSet();
-        private const string dsEquipe = "Équipe";
+        private const string dsEquipe = "Équipes";
         OracleDataAdapter Oraliste;
         string clePrimaire;
 
@@ -59,11 +59,11 @@ namespace The_Main_Project
         }
         private void Lister()
         {
-            TB_Nom_Team.DataBindings.Add("Text", equDataSet, "Équipe.Noméquipe");
-            DTP_Date_Team.DataBindings.Add("Text", equDataSet, "Équipe.DateIntro");
+            TB_Nom_Team.DataBindings.Add("Text", equDataSet, "Équipes.Noméquipe");
+            DTP_Date_Team.DataBindings.Add("Text", equDataSet, "Équipes.DateIntro");
             clePrimaire = TB_Nom_Team.Text;
-            TB_Ville.DataBindings.Add("Text", equDataSet, "Équipe.ville");
-            TB_DivisionEquipe.DataBindings.Add("Text", equDataSet, "Équipe.nomdivision");
+            TB_Ville.DataBindings.Add("Text", equDataSet, "Équipes.ville");
+            TB_DivisionEquipe.DataBindings.Add("Text", equDataSet, "Équipes.nomdivision");
             ////logo//////
         }
         private void Vider()
@@ -108,9 +108,9 @@ namespace The_Main_Project
             try
             {
                 string sqlAdd = "INSERT INTO Équipes(noméquipe,dateintro,ville,nomdivision)"+
-                    "VALUES (:NOM,:DATE,:VILLE,:NOMDIV)";
+                    "VALUES (:NOM,:DATEI,:VILLE,:NOMDIV)";
                 OracleParameter oParamNom = new OracleParameter(":NOM", OracleDbType.Varchar2, 30);
-                OracleParameter oParamDate = new OracleParameter(":DATE", OracleDbType.Date);
+                OracleParameter oParamDate = new OracleParameter(":DATEI", OracleDbType.Date);
                 OracleParameter oParamVille = new OracleParameter(":VILLE", OracleDbType.Varchar2, 20);
                 OracleParameter oParamDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
                 oParamNom.Value = TB_Nom_Team.Text;
@@ -159,11 +159,11 @@ namespace The_Main_Project
             try 
             {
                 /////enregistrer la clé primaire d'abord pour pouvoir la modifier...                
-                string sqlUpdate = "UPDATE Équipes SET NomÉquipe = :NOM, DateIntro = :DATE," +
+                string sqlUpdate = "UPDATE Équipes SET NomÉquipe = :NOM, DateIntro = :DATEI," +
                 " ville = :VILLE, NomDivision = :NOMDIV WHERE NomÉquipe = :NOM2"; //requete met a jour
 
                 OracleParameter oParamNom = new OracleParameter(":NOM", OracleDbType.Varchar2, 30);
-                OracleParameter oParamDate = new OracleParameter(":DATE", OracleDbType.Date);
+                OracleParameter oParamDate = new OracleParameter(":DATEI", OracleDbType.Date);
                 OracleParameter oParamVille = new OracleParameter(":VILLE", OracleDbType.Varchar2, 20);
                 OracleParameter oParamDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
                 OracleParameter oParamNom2 = new OracleParameter(":NOM2", OracleDbType.Varchar2, 30);
