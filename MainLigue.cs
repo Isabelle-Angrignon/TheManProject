@@ -15,8 +15,8 @@ namespace The_Main_Project
     {
         private OracleConnection conn = new OracleConnection();
         private DataSet mainDataSet = new DataSet();
-        string sqlHoraire = "SELECT NOMATCH AS No , RECEVEUR AS Receveur , VISITEUR AS Visiteur ,"+
-            " DATEMATCH AS Match , LIEU AS Cité , BUTSRECEVEUR AS R , BUTSVISITEUR AS V FROM Matchs ";////////////////////////////////
+        string sqlHoraire = "SELECT DATEMATCH AS Match, NOMATCH AS No , RECEVEUR AS Receveur , VISITEUR AS Visiteur ," +
+            " LIEU AS Cité , BUTSRECEVEUR AS R , BUTSVISITEUR AS V FROM Matchs ";////////////////////////////////
         string sqlClassement = "requete qui affiche le classement";///////////////
         private const string dsHoraire = "Liste_matchs";
         private string dsCLassement = "Classement_équipes";
