@@ -49,6 +49,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.LB_No_J = new System.Windows.Forms.Label();
             this.Caractérstique.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +77,7 @@
             // 
             // Caractérstique
             // 
+            this.Caractérstique.Controls.Add(this.LB_No_J);
             this.Caractérstique.Controls.Add(this.uC_Navigator);
             this.Caractérstique.Controls.Add(this.BTN_Stats);
             this.Caractérstique.Controls.Add(this.label2);
@@ -254,6 +256,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "# Chandail";
             // 
+            // LB_No_J
+            // 
+            this.LB_No_J.AutoSize = true;
+            this.LB_No_J.Location = new System.Drawing.Point(220, 20);
+            this.LB_No_J.Name = "LB_No_J";
+            this.LB_No_J.Size = new System.Drawing.Size(0, 13);
+            this.LB_No_J.TabIndex = 38;
+            this.LB_No_J.Visible = false;
+            // 
             // GestionJoueur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,5 +304,6 @@
         private System.Windows.Forms.TextBox TB_Équipe;
         private System.Windows.Forms.DateTimePicker DTP_Naissance;
         private UC_Navigator.UC_Navigator uC_Navigator;
+        private System.Windows.Forms.Label LB_No_J;
     }
 }

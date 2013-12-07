@@ -31,13 +31,7 @@ namespace The_Main_Project
         private void BTN_Cancel_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void BTN_Cancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        } 
         private void GestionJoueur_Load(object sender, EventArgs e)
         {
             LoadDataset();
@@ -63,6 +57,7 @@ namespace The_Main_Project
         }
         private void Lister()
         {
+            LB_No_J.DataBindings.Add("Text", formDataSet, "Table.NoJoueur");
             TB_Nom_J.DataBindings.Add("Text", formDataSet, "Table.Nom");
             TB_Prenom_J.DataBindings.Add("Text", formDataSet, "Table.Prénom");
             DTP_Naissance.DataBindings.Add("Text", formDataSet, "Table.Naissance");
@@ -72,13 +67,14 @@ namespace The_Main_Project
         }
         private void Vider()
         {
+            LB_No_J.DataBindings.Clear();
             TB_Nom_J.DataBindings.Clear();
             TB_Prenom_J.DataBindings.Clear();
             DTP_Naissance.DataBindings.Clear();
             TB_Position.DataBindings.Clear();
             TB_Maillot.DataBindings.Clear();
             TB_Équipe.DataBindings.Clear();
-
+            //LB_No_J.  pas de clear...invisible anyway
             TB_Nom_J.Clear();
             TB_Prenom_J.Clear();
             DTP_Naissance.Value = DateTime.Now;
@@ -105,28 +101,33 @@ namespace The_Main_Project
         private void uC_Navigator_OnPrev(object sender, EventArgs e)
         {
             this.BindingContext[formDataSet, dsTable].Position -= 1;
-        }
-        /////////////////////////////////////////en construction//////////////////////////////////////////////////
+        }        
         private void BTN_Add_Click(object sender, EventArgs e)
         {
             try
             {
-                string sqlAdd = "INSERT INTO Équipes(noméquipe,dateintro,ville,nomdivision)" +
-                    "VALUES (:NOM,:DATEI,:VILLE,:NOMDIV)";
-                OracleParameter oParamNom = new OracleParameter(":NOM", OracleDbType.Varchar2, 30);
-                OracleParameter oParamDate = new OracleParameter(":DATEI", OracleDbType.Date);
-                OracleParameter oParamVille = new OracleParameter(":VILLE", OracleDbType.Varchar2, 20);
-                OracleParameter oParamDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
-                oParamNom.Value = TB_Nom_Team.Text;
-                oParamDate.Value = DTP_Date_Team.Value;
-                oParamVille.Value = TB_Ville.Text;
-                oParamDiv.Value = TB_DivisionEquipe.Text;
+                string sqlAdd = "INSERT INTO Joueurs VALUES (seqJoueurs.nextval,:NOM,:PRENOM,:"+
+                    " NAISSANCE,:POSITION,:MAILLOT,:EQUIPE)";
+                OracleParameter oParamNom = new OracleParameter(":NOM", OracleDbType.Varchar2, 20);
+                OracleParameter oParamPrenom = new OracleParameter(":PRENOM", OracleDbType.Varchar2, 20);
+                OracleParameter oParamDate = new OracleParameter(":NAISSANCE", OracleDbType.Date);
+                OracleParameter oParamPos = new OracleParameter(":POSITION", OracleDbType.Varchar2, 1);
+                OracleParameter oParamMail = new OracleParameter(":MAILLOT", OracleDbType.Varchar2, 2);
+                OracleParameter oParamEqu = new OracleParameter(":EQUIPE", OracleDbType.Varchar2, 30);
+                oParamNom.Value = TB_Nom_J.Text;
+                oParamPrenom.Value = TB_Prenom_J.Text;
+                oParamDate.Value = DTP_Naissance.Value;
+                oParamPos.Value = TB_Position.Text;
+                oParamMail.Value = TB_Maillot.Text;
+                oParamEqu.Value = TB_Équipe.Text;
 
                 OracleCommand orComm = new OracleCommand(sqlAdd, conn);
                 orComm.Parameters.Add(oParamNom);
+                orComm.Parameters.Add(oParamPrenom);
                 orComm.Parameters.Add(oParamDate);
-                orComm.Parameters.Add(oParamVille);
-                orComm.Parameters.Add(oParamDiv);
+                orComm.Parameters.Add(oParamPos);
+                orComm.Parameters.Add(oParamMail);
+                orComm.Parameters.Add(oParamEqu);
                 orComm.ExecuteNonQuery();
 
                 LoadDataset();
@@ -141,13 +142,13 @@ namespace The_Main_Project
         {
             try
             {
-                string sqlDelete = "DELETE FROM Équipes WHERE Noméquipe = :NOM";//requete supprime
+                string sqlDelete = "DELETE FROM Joueurs WHERE NoJoueur = :NO";
 
-                OracleParameter oParamNom = new OracleParameter(":NOM", OracleDbType.Varchar2, 30);
-                oParamNom.Value = TB_Nom_Team.Text;
+                OracleParameter oParamNo = new OracleParameter(":NO", OracleDbType.Int32, 4);
+                oParamNo.Value = LB_No_J.Text;
 
                 OracleCommand orComm = new OracleCommand(sqlDelete, conn);
-                orComm.Parameters.Add(oParamNom);
+                orComm.Parameters.Add(oParamNo);
                 orComm.ExecuteNonQuery();
 
                 LoadDataset();
@@ -163,25 +164,32 @@ namespace The_Main_Project
             try
             {
                 /////enregistrer la clé primaire d'abord pour pouvoir la modifier...                
-                string sqlUpdate = "UPDATE Équipes SET NomÉquipe = :NOM, DateIntro = :DATEI," +
-                " ville = :VILLE, NomDivision = :NOMDIV WHERE NomÉquipe = :NOM2"; //requete met a jour
+                string sqlUpdate = "UPDATE Joueurs SET Nom = :NOM, Prénom = :PRENOM, Naissance = :Naissance," +
+                " Position = :POSITION, NomÉquipe = :EQUIPE WHERE NoJoueur = :NO"; //requete met a jour
 
-                OracleParameter oParamNom = new OracleParameter(":NOM", OracleDbType.Varchar2, 30);
-                OracleParameter oParamDate = new OracleParameter(":DATEI", OracleDbType.Date);
-                OracleParameter oParamVille = new OracleParameter(":VILLE", OracleDbType.Varchar2, 20);
-                OracleParameter oParamDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
-                OracleParameter oParamNom2 = new OracleParameter(":NOM2", OracleDbType.Varchar2, 30);
-                oParamNom.Value = TB_Nom_Team.Text;
-                oParamDate.Value = DTP_Date_Team.Value;
-                oParamVille.Value = TB_Ville.Text;
-                oParamDiv.Value = TB_DivisionEquipe.Text;
-                oParamNom2.Value = clePrimaire;
+                OracleParameter oParamNom = new OracleParameter(":NOM", OracleDbType.Varchar2, 20);
+                OracleParameter oParamPrenom = new OracleParameter(":PRENOM", OracleDbType.Varchar2, 20);
+                OracleParameter oParamDate = new OracleParameter(":NAISSANCE", OracleDbType.Date);
+                OracleParameter oParamPos = new OracleParameter(":POSITION", OracleDbType.Varchar2, 1);
+                OracleParameter oParamMail = new OracleParameter(":MAILLOT", OracleDbType.Varchar2, 2);
+                OracleParameter oParamEqu = new OracleParameter(":EQUIPE", OracleDbType.Varchar2, 30);
+                OracleParameter oParamNo = new OracleParameter(":NO", OracleDbType.Int32, 4);
+                oParamNom.Value = TB_Nom_J.Text;
+                oParamPrenom.Value = TB_Prenom_J.Text;
+                oParamDate.Value = DTP_Naissance.Value;
+                oParamPos.Value = TB_Position.Text;
+                oParamMail.Value = TB_Maillot.Text;
+                oParamEqu.Value = TB_Équipe.Text;
+                oParamNo.Value = LB_No_J.Text;
+
                 OracleCommand orComm = new OracleCommand(sqlUpdate, conn);
                 orComm.Parameters.Add(oParamNom);
+                orComm.Parameters.Add(oParamPrenom);
                 orComm.Parameters.Add(oParamDate);
-                orComm.Parameters.Add(oParamVille);
-                orComm.Parameters.Add(oParamDiv);
-                orComm.Parameters.Add(oParamNom2);
+                orComm.Parameters.Add(oParamPos);
+                orComm.Parameters.Add(oParamMail);
+                orComm.Parameters.Add(oParamEqu);
+                orComm.Parameters.Add(oParamNo);
                 orComm.ExecuteNonQuery();
 
                 LoadDataset();
