@@ -18,7 +18,7 @@ namespace The_Main_Project
             InitializeComponent();
         }
         public OracleConnection conn = new OracleConnection();
-        private DataSet formDataSet = new DataSet();//////ou data reader?
+        private DataSet formDataSet = new DataSet();
         private const string dsTable = "Table";
         OracleDataAdapter Oraliste;       
 
@@ -32,5 +32,93 @@ namespace The_Main_Project
         {
             Close();
         }
+
+        private void AfficherStat_Load(object sender, EventArgs e)
+        {
+            LoadDataset();
+        }
+        private void LoadDataset()
+        {
+            try
+            {
+                string sqlShow = "Select * from VueFiche order by nomaillot";////ou par nom, prénom
+                Oraliste = new OracleDataAdapter(sqlShow, conn);
+                if (formDataSet.Tables.Contains(dsTable))
+                {
+                    formDataSet.Tables[dsTable].Clear();
+                }
+                Oraliste.Fill(formDataSet, dsTable);
+                Oraliste.Dispose();
+
+                BindingSource maSource = new BindingSource(formDataSet, dsTable);
+     //           Vider();
+   //             Lister();
+            }
+            catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
+        }
+        //private void Lister()
+        //{
+        //   /* CREATE VIEW VueFiche AS SELECT Nom, Prénom, NomÉquipe AS Équipe,
+        //SUM(NbrePasses) AS Passes, SUM(NbreButs) AS Buts, SUM(NbrePasses)+ 2*SUM(NbreButs) AS Points 
+        //FROM Joueurs J INNER JOIN  PrésencesMatchs P ON P.NoJoueur = J.NoJoueur group by nom,prénom, noméquipe order by totalpoint desc;*/
+        //    LB_Nom.DataBindings.Add("Text", formDataSet, "Table.");
+        //    LB_Prenom.DataBindings.Add("Text", formDataSet, "Table.");
+        //    LB_.DataBindings.Add("Text", formDataSet, "Table.");
+        //    LB_Nom.DataBindings.Add("Text", formDataSet, "Table.");
+        //    LB_Nom.DataBindings.Add("Text", formDataSet, "Table.");
+        //    LB_Nom.DataBindings.Add("Text", formDataSet, "Table.");
+            
+        //    LB_No_J.DataBindings.Add("Text", formDataSet, "Table.NoJoueur");
+        //    TB_Nom_J.DataBindings.Add("Text", formDataSet, "Table.Nom");
+        //    TB_Prenom_J.DataBindings.Add("Text", formDataSet, "Table.Prénom");
+        //    DTP_Naissance.DataBindings.Add("Text", formDataSet, "Table.Naissance");
+        //    TB_Position.DataBindings.Add("Text", formDataSet, "Table.Position");
+        //    TB_Maillot.DataBindings.Add("Text", formDataSet, "Table.nomaillot");
+        //    TB_Équipe.DataBindings.Add("Text", formDataSet, "Table.noméquipe");
+        //}
+        //private void Vider()
+        //{
+        //    LB_No_J.DataBindings.Clear();
+        //    TB_Nom_J.DataBindings.Clear();
+        //    TB_Prenom_J.DataBindings.Clear();
+        //    DTP_Naissance.DataBindings.Clear();
+        //    TB_Position.DataBindings.Clear();
+        //    TB_Maillot.DataBindings.Clear();
+        //    TB_Équipe.DataBindings.Clear();
+        //    //LB_No_J.  pas de clear...invisible anyway
+        //    TB_Nom_J.Clear();
+        //    TB_Prenom_J.Clear();
+        //    DTP_Naissance.Value = DateTime.Now;
+        //    TB_Position.Clear();
+        //    TB_Maillot.Clear();
+        //    TB_Équipe.Clear();
+        //}
+
+        private void uC_Navigator_OnFirst(object sender, EventArgs e)
+        {
+            this.BindingContext[formDataSet, dsTable].Position = 0;
+        }
+
+        private void uC_Navigator_OnLast(object sender, EventArgs e)
+        {
+            this.BindingContext[formDataSet, dsTable].Position =
+                this.BindingContext[formDataSet, dsTable].Count - 1;
+        }
+        private void uC_Navigator_OnNext(object sender, EventArgs e)
+        {
+            this.BindingContext[formDataSet, dsTable].Position += 1;
+        }
+
+        private void uC_Navigator_OnPrev(object sender, EventArgs e)
+        {
+            this.BindingContext[formDataSet, dsTable].Position -= 1;
+        }        
+
+
+
+
+
+
+
     }
 }
