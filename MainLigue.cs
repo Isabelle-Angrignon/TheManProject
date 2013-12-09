@@ -17,9 +17,12 @@ namespace The_Main_Project
         private DataSet mainDataSet = new DataSet();
         string sqlHoraire = "SELECT DATEMATCH AS Match, NOMATCH AS No , RECEVEUR AS Receveur , VISITEUR AS Visiteur ," +
             " LIEU AS Cité , BUTSRECEVEUR AS R , BUTSVISITEUR AS V FROM Matchs ";////////////////////////////////
-        string sqlClassement = "requete qui affiche le classement";///////////////
+        string sqlClassement = "select sum(Nbpoints)as total ,equipe from classement  group by equipe order by total desc";///////////////
+        /*
+         select sum(Nbpoints)as total ,equipe from classement  group by equipe order by total desc;
+        */
         private const string dsHoraire = "Liste_matchs";
-        private string dsCLassement = "Classement_équipes";
+        private string dsClassement = "Classement_équipes";
         OracleDataReader orLigue;
 
         public Form_League()
@@ -46,6 +49,7 @@ namespace The_Main_Project
             Connect();
             UpdateComboBox();
             FillDGVMatch();
+            FillDGVEquipe();
         }
 
         private void UpdateComboBox()
@@ -111,7 +115,26 @@ namespace The_Main_Project
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
+                
+        private void FillDGVEquipe()
+        {
+            try
+            {
+                OracleDataAdapter Oraliste = new OracleDataAdapter(sqlClassement, conn);
 
+                if (mainDataSet.Tables.Contains(dsClassement))
+                {
+                    mainDataSet.Tables[dsClassement].Clear();
+                }
+                Oraliste.Fill(mainDataSet, dsClassement);
+                Oraliste.Dispose();
+
+                BindingSource maSource = new BindingSource(mainDataSet, dsClassement);
+
+                DGV_Team.DataSource = maSource;
+            }
+            catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
+        }        
         private void flashButton2_Click(object sender, EventArgs e)
         {
             OuvertureTop5();
@@ -150,6 +173,7 @@ namespace The_Main_Project
                 ///envoyer commit?
             }
         }
+
 
         private void flashButton3_Click(object sender, EventArgs e)
         {

@@ -14,7 +14,7 @@ namespace The_Main_Project
     public partial class GestionDivision : Form
     {
         public GestionDivision()
-        {
+        { 
             InitializeComponent();
         }
         //////////////////////////////////

@@ -79,6 +79,7 @@
             this.DGV_Team.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Team.Location = new System.Drawing.Point(582, 146);
             this.DGV_Team.Name = "DGV_Team";
+            this.DGV_Team.ReadOnly = true;
             this.DGV_Team.RowHeadersVisible = false;
             this.DGV_Team.Size = new System.Drawing.Size(421, 270);
             this.DGV_Team.TabIndex = 1;
@@ -111,35 +112,35 @@
             // TSMI_Division
             // 
             this.TSMI_Division.Name = "TSMI_Division";
-            this.TSMI_Division.Size = new System.Drawing.Size(152, 22);
+            this.TSMI_Division.Size = new System.Drawing.Size(125, 22);
             this.TSMI_Division.Text = "Division...";
             this.TSMI_Division.Click += new System.EventHandler(this.TSMI_Division_Click);
             // 
             // TSMI_Equipe
             // 
             this.TSMI_Equipe.Name = "TSMI_Equipe";
-            this.TSMI_Equipe.Size = new System.Drawing.Size(152, 22);
+            this.TSMI_Equipe.Size = new System.Drawing.Size(125, 22);
             this.TSMI_Equipe.Text = "Équipe...";
             this.TSMI_Equipe.Click += new System.EventHandler(this.TSMI_Equipe_Click);
             // 
             // TSMI_Joueur
             // 
             this.TSMI_Joueur.Name = "TSMI_Joueur";
-            this.TSMI_Joueur.Size = new System.Drawing.Size(152, 22);
+            this.TSMI_Joueur.Size = new System.Drawing.Size(125, 22);
             this.TSMI_Joueur.Text = "Joueur...";
             this.TSMI_Joueur.Click += new System.EventHandler(this.TSMI_Joueur_Click);
             // 
             // TSMI_Match
             // 
             this.TSMI_Match.Name = "TSMI_Match";
-            this.TSMI_Match.Size = new System.Drawing.Size(152, 22);
+            this.TSMI_Match.Size = new System.Drawing.Size(125, 22);
             this.TSMI_Match.Text = "Match ...";
             this.TSMI_Match.Click += new System.EventHandler(this.TSMI_Match_Click);
             // 
             // TSMI_Resultats
             // 
             this.TSMI_Resultats.Name = "TSMI_Resultats";
-            this.TSMI_Resultats.Size = new System.Drawing.Size(152, 22);
+            this.TSMI_Resultats.Size = new System.Drawing.Size(125, 22);
             this.TSMI_Resultats.Text = "Résultat...";
             this.TSMI_Resultats.Click += new System.EventHandler(this.TSMI_Resultats_Click);
             // 
@@ -170,7 +171,7 @@
             // TSMI_Stats_Joueur
             // 
             this.TSMI_Stats_Joueur.Name = "TSMI_Stats_Joueur";
-            this.TSMI_Stats_Joueur.Size = new System.Drawing.Size(152, 22);
+            this.TSMI_Stats_Joueur.Size = new System.Drawing.Size(122, 22);
             this.TSMI_Stats_Joueur.Text = "Joueur...";
             this.TSMI_Stats_Joueur.Click += new System.EventHandler(this.TSMI_Stats_Joueur_Click);
             // 
@@ -185,7 +186,7 @@
             // TSMI_Themes
             // 
             this.TSMI_Themes.Name = "TSMI_Themes";
-            this.TSMI_Themes.Size = new System.Drawing.Size(152, 22);
+            this.TSMI_Themes.Size = new System.Drawing.Size(125, 22);
             this.TSMI_Themes.Text = "Thèmes...";
             this.TSMI_Themes.Click += new System.EventHandler(this.TSMI_Themes_Click);
             // 
@@ -218,6 +219,7 @@
             this.DGV_Match.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Match.Location = new System.Drawing.Point(29, 146);
             this.DGV_Match.Name = "DGV_Match";
+            this.DGV_Match.ReadOnly = true;
             this.DGV_Match.RowHeadersVisible = false;
             this.DGV_Match.Size = new System.Drawing.Size(421, 270);
             this.DGV_Match.TabIndex = 7;

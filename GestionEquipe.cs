@@ -126,6 +126,7 @@ namespace The_Main_Project
                 orComm.ExecuteNonQuery();
 
                 LoadDataset();
+                MessageBox.Show("Enregistrement ajouté avec succès");
             }
             catch (Exception ex)
             {
@@ -137,16 +138,20 @@ namespace The_Main_Project
         {
             try 
             {
-                string sqlDelete = "DELETE FROM Équipes WHERE Noméquipe = :NOM";//requete supprime
+                if (MessageBox.Show("message", "Attention", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    string sqlDelete = "DELETE FROM Équipes WHERE Noméquipe = :NOM";//requete supprime
 
-                OracleParameter oParamNom = new OracleParameter(":NOM", OracleDbType.Varchar2, 30);
-                oParamNom.Value = TB_Nom_Team.Text;
-                
-                OracleCommand orComm = new OracleCommand(sqlDelete, conn);
-                orComm.Parameters.Add(oParamNom);                
-                orComm.ExecuteNonQuery();
+                    OracleParameter oParamNom = new OracleParameter(":NOM", OracleDbType.Varchar2, 30);
+                    oParamNom.Value = TB_Nom_Team.Text;
 
-                LoadDataset();
+                    OracleCommand orComm = new OracleCommand(sqlDelete, conn);
+                    orComm.Parameters.Add(oParamNom);
+                    orComm.ExecuteNonQuery();
+
+                    LoadDataset();
+                    MessageBox.Show("Enregistrement supprimé avec succès");
+                }
             } 
             catch (Exception ex) 
             { 
@@ -181,6 +186,7 @@ namespace The_Main_Project
                 orComm.ExecuteNonQuery();
 
                 LoadDataset();
+                MessageBox.Show("Enregistrement modifié avec succès");
             } 
             catch (Exception ex) 
             { 
