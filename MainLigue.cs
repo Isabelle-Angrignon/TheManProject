@@ -134,11 +134,8 @@ namespace The_Main_Project
                 DGV_Team.DataSource = maSource;
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
-        }        
-        private void flashButton2_Click(object sender, EventArgs e)
-        {
-            OuvertureTop5();
-        }
+        }    
+
         private void OuvertureTop5()
         {
             Top5 Form = new Top5();
@@ -174,7 +171,6 @@ namespace The_Main_Project
             }
         }
 
-
         private void flashButton3_Click(object sender, EventArgs e)
         {
             OuvrireMatch();
@@ -188,6 +184,11 @@ namespace The_Main_Project
             {
                 ///envoyer commit?
             }
+        }
+
+        private void FB_Top5_Click(object sender, EventArgs e)
+        {
+            OuvertureTop5();
         }
 
         private void flashButton4_Click(object sender, EventArgs e)
@@ -261,6 +262,8 @@ namespace The_Main_Project
         {
             OuvrireStat();
         }
+
+        
 
     }
 

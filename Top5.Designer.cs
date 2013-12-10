@@ -30,8 +30,8 @@
         {
             this.BTN_Ok = new System.Windows.Forms.Button();
             this.LB_Top5 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.DGV_Top5 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Top5)).BeginInit();
             this.SuspendLayout();
             // 
             // BTN_Ok
@@ -54,25 +54,26 @@
             this.LB_Top5.TabIndex = 4;
             this.LB_Top5.Text = "Les meilleurs joueurs sont ...";
             // 
-            // dataGridView1
+            // DGV_Top5
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 25);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(317, 241);
-            this.dataGridView1.TabIndex = 5;
+            this.DGV_Top5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_Top5.Location = new System.Drawing.Point(15, 25);
+            this.DGV_Top5.Name = "DGV_Top5";
+            this.DGV_Top5.Size = new System.Drawing.Size(317, 241);
+            this.DGV_Top5.TabIndex = 5;
             // 
             // Top5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 334);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGV_Top5);
             this.Controls.Add(this.LB_Top5);
             this.Controls.Add(this.BTN_Ok);
             this.Name = "Top5";
-            this.Text = "s";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "Top 5 des joueurs de la ligue";
+            this.Load += new System.EventHandler(this.Top5_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Top5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,6 +83,6 @@
 
         private System.Windows.Forms.Button BTN_Ok;
         private System.Windows.Forms.Label LB_Top5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGV_Top5;
     }
 }

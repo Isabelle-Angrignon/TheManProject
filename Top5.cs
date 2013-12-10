@@ -21,10 +21,31 @@ namespace The_Main_Project
         private DataSet formDataSet = new DataSet();
         private const string dsTable = "Table";
         OracleDataAdapter Oraliste;
+        string sqlTop5 = "select * from vuefiche order by Points";
 
         private void BTN_Ok_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void Top5_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                OracleDataAdapter Oraliste = new OracleDataAdapter(sqlTop5, conn);
+
+                if (formDataSet.Tables.Contains(sqlTop5))
+                {
+                    formDataSet.Tables[sqlTop5].Clear();
+                }
+                Oraliste.Fill(formDataSet, sqlTop5);
+                Oraliste.Dispose();
+
+                BindingSource maSource = new BindingSource(formDataSet, sqlTop5);
+
+                DGV_Top5.DataSource = maSource;
+            }
+            catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
     }
 }

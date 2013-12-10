@@ -59,7 +59,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.FB_Result = new FlashButton.FlashButton();
             this.FB_Match = new FlashButton.FlashButton();
-            this.flashButton2 = new FlashButton.FlashButton();
+            this.FB_Top5 = new FlashButton.FlashButton();
             this.FB_Joueur = new FlashButton.FlashButton();
             this.FLB_Team = new FlashButton.FlashButton();
             this.FLB_Division = new FlashButton.FlashButton();
@@ -318,20 +318,20 @@
             this.FB_Match.TabIndex = 23;
             this.FB_Match.Click += new System.EventHandler(this.flashButton3_Click);
             // 
-            // flashButton2
+            // FB_Top5
             // 
-            this.flashButton2.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Top_5;
-            this.flashButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flashButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flashButton2.ImageClick = global::The_Main_Project.Properties.Resources.FB_Top_5_Click;
-            this.flashButton2.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Top_5_Disable;
-            this.flashButton2.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Top_5;
-            this.flashButton2.ImageOver = global::The_Main_Project.Properties.Resources.FB_Top_5_hover;
-            this.flashButton2.Location = new System.Drawing.Point(277, 44);
-            this.flashButton2.Name = "flashButton2";
-            this.flashButton2.Size = new System.Drawing.Size(45, 45);
-            this.flashButton2.TabIndex = 22;
-            this.flashButton2.Click += new System.EventHandler(this.flashButton2_Click);
+            this.FB_Top5.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Top_5;
+            this.FB_Top5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Top5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FB_Top5.ImageClick = global::The_Main_Project.Properties.Resources.FB_Top_5_Click;
+            this.FB_Top5.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Top_5_Disable;
+            this.FB_Top5.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Top_5;
+            this.FB_Top5.ImageOver = global::The_Main_Project.Properties.Resources.FB_Top_5_hover;
+            this.FB_Top5.Location = new System.Drawing.Point(277, 44);
+            this.FB_Top5.Name = "FB_Top5";
+            this.FB_Top5.Size = new System.Drawing.Size(45, 45);
+            this.FB_Top5.TabIndex = 22;
+            this.FB_Top5.Click += new System.EventHandler(this.FB_Top5_Click);
             // 
             // FB_Joueur
             // 
@@ -393,7 +393,7 @@
             this.ClientSize = new System.Drawing.Size(1015, 428);
             this.Controls.Add(this.FB_Result);
             this.Controls.Add(this.FB_Match);
-            this.Controls.Add(this.flashButton2);
+            this.Controls.Add(this.FB_Top5);
             this.Controls.Add(this.FB_Joueur);
             this.Controls.Add(this.FLB_Team);
             this.Controls.Add(this.FLB_Division);
@@ -452,7 +452,7 @@
         private FlashButton.FlashButton FLB_Division;
         private FlashButton.FlashButton FLB_Team;
         private FlashButton.FlashButton FB_Joueur;
-        private FlashButton.FlashButton flashButton2;
+        private FlashButton.FlashButton FB_Top5;
         private FlashButton.FlashButton FB_Match;
         private FlashButton.FlashButton FB_Result;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
