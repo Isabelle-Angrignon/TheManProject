@@ -64,19 +64,20 @@
             this.FLB_Team = new FlashButton.FlashButton();
             this.FLB_Division = new FlashButton.FlashButton();
             this.PBX_Logo = new System.Windows.Forms.PictureBox();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Team)).BeginInit();
             this.MS_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Match)).BeginInit();
             this.CMS_Match.SuspendLayout();
             this.CMS_Team.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // DGV_Team
             // 
             this.DGV_Team.AllowUserToAddRows = false;
             this.DGV_Team.AllowUserToDeleteRows = false;
-
             this.DGV_Team.AllowUserToResizeColumns = false;
             this.DGV_Team.AllowUserToResizeRows = false;
             this.DGV_Team.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -84,8 +85,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DGV_Team.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGV_Team.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-
-
             this.DGV_Team.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Team.Location = new System.Drawing.Point(582, 146);
             this.DGV_Team.MultiSelect = false;
@@ -95,7 +94,6 @@
             this.DGV_Team.RowHeadersVisible = false;
             this.DGV_Team.Size = new System.Drawing.Size(266, 270);
             this.DGV_Team.TabIndex = 1;
-//            this.DGV_Team.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Team_CellContentClick);
             // 
             // MS_Main
             // 
@@ -229,17 +227,12 @@
             // 
             this.DGV_Match.AllowUserToAddRows = false;
             this.DGV_Match.AllowUserToDeleteRows = false;
-
             this.DGV_Match.AllowUserToResizeColumns = false;
             this.DGV_Match.AllowUserToResizeRows = false;
             this.DGV_Match.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.DGV_Match.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGV_Match.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-
-            this.DGV_Match.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-
             this.DGV_Match.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Match.Location = new System.Drawing.Point(29, 146);
             this.DGV_Match.Name = "DGV_Match";
@@ -250,8 +243,6 @@
             // 
             // CBX_Division
             // 
-
-            this.CBX_Division.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CBX_Division.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBX_Division.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBX_Division.FormattingEnabled = true;
@@ -414,6 +405,11 @@
             this.PBX_Logo.TabIndex = 6;
             this.PBX_Logo.TabStop = false;
             // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
             // Form_League
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -442,6 +438,7 @@
             this.CMS_Match.ResumeLayout(false);
             this.CMS_Team.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -484,6 +481,7 @@
         private FlashButton.FlashButton FB_Match;
         private FlashButton.FlashButton FB_Result;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
 
     }
 }

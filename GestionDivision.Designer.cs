@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BTN_Ok = new System.Windows.Forms.Button();
-            this.BTN_Cancel = new System.Windows.Forms.Button();
             this.Caractérstique = new System.Windows.Forms.GroupBox();
             this.uC_Navigator = new UC_Navigator.UC_Navigator();
             this.DTP_Creation = new System.Windows.Forms.DateTimePicker();
@@ -39,28 +37,9 @@
             this.BTN_Add = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.FB_Close = new FlashButton.FlashButton();
             this.Caractérstique.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // BTN_Ok
-            // 
-            this.BTN_Ok.Location = new System.Drawing.Point(128, 175);
-            this.BTN_Ok.Name = "BTN_Ok";
-            this.BTN_Ok.Size = new System.Drawing.Size(50, 50);
-            this.BTN_Ok.TabIndex = 11;
-            this.BTN_Ok.Text = "OK";
-            this.BTN_Ok.UseVisualStyleBackColor = true;
-            this.BTN_Ok.Click += new System.EventHandler(this.BTN_Ok_Click);
-            // 
-            // BTN_Cancel
-            // 
-            this.BTN_Cancel.Location = new System.Drawing.Point(184, 175);
-            this.BTN_Cancel.Name = "BTN_Cancel";
-            this.BTN_Cancel.Size = new System.Drawing.Size(50, 50);
-            this.BTN_Cancel.TabIndex = 10;
-            this.BTN_Cancel.Text = "Cancel";
-            this.BTN_Cancel.UseVisualStyleBackColor = true;
-            this.BTN_Cancel.Click += new System.EventHandler(this.BTN_Cancel_Click);
             // 
             // Caractérstique
             // 
@@ -151,13 +130,27 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Nom";
             // 
+            // FB_Close
+            // 
+            this.FB_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Close.BackgroundImage = global::The_Main_Project.Properties.Resources.Porte;
+            this.FB_Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Close.ImageClick = global::The_Main_Project.Properties.Resources.PorteCLic;
+            this.FB_Close.ImageDisable = null;
+            this.FB_Close.ImageNeutral = global::The_Main_Project.Properties.Resources.Porte;
+            this.FB_Close.ImageOver = global::The_Main_Project.Properties.Resources.PorteOver;
+            this.FB_Close.Location = new System.Drawing.Point(187, 175);
+            this.FB_Close.Name = "FB_Close";
+            this.FB_Close.Size = new System.Drawing.Size(47, 52);
+            this.FB_Close.TabIndex = 26;
+            this.FB_Close.Click += new System.EventHandler(this.BTN_Ok_Click);
+            // 
             // GestionDivision
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(246, 239);
-            this.Controls.Add(this.BTN_Ok);
-            this.Controls.Add(this.BTN_Cancel);
+            this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.Caractérstique);
             this.Name = "GestionDivision";
             this.Text = "GestionDivision";
@@ -170,8 +163,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button BTN_Ok;
-        private System.Windows.Forms.Button BTN_Cancel;
         private System.Windows.Forms.GroupBox Caractérstique;
         private System.Windows.Forms.DateTimePicker DTP_Creation;
         private System.Windows.Forms.TextBox TB_Nom_D;
@@ -181,5 +172,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private UC_Navigator.UC_Navigator uC_Navigator;
+        private FlashButton.FlashButton FB_Close;
     }
 }
