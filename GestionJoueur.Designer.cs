@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionJoueur));
-            this.BTN_Ok = new System.Windows.Forms.Button();
-            this.BTN_Cancel = new System.Windows.Forms.Button();
             this.Caractérstique = new System.Windows.Forms.GroupBox();
+            this.LB_No_J = new System.Windows.Forms.Label();
             this.uC_Navigator = new UC_Navigator.UC_Navigator();
             this.BTN_Stats = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,31 +48,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.LB_No_J = new System.Windows.Forms.Label();
+            this.FB_Close = new FlashButton.FlashButton();
             this.Caractérstique.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // BTN_Ok
-            // 
-            this.BTN_Ok.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN_Ok.Location = new System.Drawing.Point(235, 248);
-            this.BTN_Ok.Name = "BTN_Ok";
-            this.BTN_Ok.Size = new System.Drawing.Size(50, 50);
-            this.BTN_Ok.TabIndex = 5;
-            this.BTN_Ok.Text = "OK";
-            this.BTN_Ok.UseVisualStyleBackColor = true;
-            this.BTN_Ok.Click += new System.EventHandler(this.BTN_Ok_Click);
-            // 
-            // BTN_Cancel
-            // 
-            this.BTN_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN_Cancel.Location = new System.Drawing.Point(291, 248);
-            this.BTN_Cancel.Name = "BTN_Cancel";
-            this.BTN_Cancel.Size = new System.Drawing.Size(50, 50);
-            this.BTN_Cancel.TabIndex = 4;
-            this.BTN_Cancel.Text = "Cancel";
-            this.BTN_Cancel.UseVisualStyleBackColor = true;
-            this.BTN_Cancel.Click += new System.EventHandler(this.BTN_Cancel_Click);
             // 
             // Caractérstique
             // 
@@ -100,6 +77,15 @@
             this.Caractérstique.Size = new System.Drawing.Size(329, 230);
             this.Caractérstique.TabIndex = 3;
             this.Caractérstique.TabStop = false;
+            // 
+            // LB_No_J
+            // 
+            this.LB_No_J.AutoSize = true;
+            this.LB_No_J.Location = new System.Drawing.Point(220, 20);
+            this.LB_No_J.Name = "LB_No_J";
+            this.LB_No_J.Size = new System.Drawing.Size(0, 13);
+            this.LB_No_J.TabIndex = 38;
+            this.LB_No_J.Visible = false;
             // 
             // uC_Navigator
             // 
@@ -256,22 +242,27 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "# Chandail";
             // 
-            // LB_No_J
+            // FB_Close
             // 
-            this.LB_No_J.AutoSize = true;
-            this.LB_No_J.Location = new System.Drawing.Point(220, 20);
-            this.LB_No_J.Name = "LB_No_J";
-            this.LB_No_J.Size = new System.Drawing.Size(0, 13);
-            this.LB_No_J.TabIndex = 38;
-            this.LB_No_J.Visible = false;
+            this.FB_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Close.BackgroundImage = global::The_Main_Project.Properties.Resources.Porte;
+            this.FB_Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Close.ImageClick = global::The_Main_Project.Properties.Resources.PorteCLic;
+            this.FB_Close.ImageDisable = null;
+            this.FB_Close.ImageNeutral = global::The_Main_Project.Properties.Resources.Porte;
+            this.FB_Close.ImageOver = global::The_Main_Project.Properties.Resources.PorteOver;
+            this.FB_Close.Location = new System.Drawing.Point(296, 248);
+            this.FB_Close.Name = "FB_Close";
+            this.FB_Close.Size = new System.Drawing.Size(40, 46);
+            this.FB_Close.TabIndex = 39;
+            this.FB_Close.Click += new System.EventHandler(this.BTN_Ok_Click);
             // 
             // GestionJoueur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(348, 306);
-            this.Controls.Add(this.BTN_Ok);
-            this.Controls.Add(this.BTN_Cancel);
+            this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.Caractérstique);
             this.Name = "GestionJoueur";
             this.Text = "GestionJoueur";
@@ -284,8 +275,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button BTN_Ok;
-        private System.Windows.Forms.Button BTN_Cancel;
         private System.Windows.Forms.GroupBox Caractérstique;
         private System.Windows.Forms.Button BTN_Edit;
         private System.Windows.Forms.Button BTN_Del;
@@ -305,5 +294,6 @@
         private System.Windows.Forms.DateTimePicker DTP_Naissance;
         private UC_Navigator.UC_Navigator uC_Navigator;
         private System.Windows.Forms.Label LB_No_J;
+        private FlashButton.FlashButton FB_Close;
     }
 }

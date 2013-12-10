@@ -36,6 +36,9 @@
             this.LB_DateMatch = new System.Windows.Forms.Label();
             this.LB_Lieu_Result = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.DGV_ListeJoueur_R = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.TB_Passes_R = new System.Windows.Forms.TextBox();
@@ -46,6 +49,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.CBX_Choix_J_R = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.DGV_ListeJoueur_V = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
             this.TB_Passes_Visiteur = new System.Windows.Forms.TextBox();
@@ -56,14 +62,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.CBX_Choix_J_V = new System.Windows.Forms.ComboBox();
             this.LB_NomEquipe_V = new System.Windows.Forms.Label();
-            this.BTN_Ok = new System.Windows.Forms.Button();
-            this.BTN_Cancel = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.FB_Close = new FlashButton.FlashButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_ListeJoueur_R)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -144,6 +143,36 @@
             this.groupBox1.Size = new System.Drawing.Size(232, 252);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
+            this.button1.Location = new System.Drawing.Point(186, 115);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(40, 40);
+            this.button1.TabIndex = 22;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(186, 69);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(40, 40);
+            this.button4.TabIndex = 23;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
+            this.button5.Location = new System.Drawing.Point(186, 23);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(40, 40);
+            this.button5.TabIndex = 24;
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // DGV_ListeJoueur_R
             // 
@@ -241,6 +270,36 @@
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
+            this.button2.Location = new System.Drawing.Point(189, 118);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(40, 40);
+            this.button2.TabIndex = 25;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.Location = new System.Drawing.Point(189, 75);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(40, 40);
+            this.button6.TabIndex = 26;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
+            this.button7.Location = new System.Drawing.Point(189, 32);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(40, 40);
+            this.button7.TabIndex = 27;
+            this.button7.UseVisualStyleBackColor = true;
+            // 
             // DGV_ListeJoueur_V
             // 
             this.DGV_ListeJoueur_V.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -324,95 +383,27 @@
             this.LB_NomEquipe_V.TabIndex = 7;
             this.LB_NomEquipe_V.Text = "team2";
             // 
-            // BTN_Ok
+            // FB_Close
             // 
-            this.BTN_Ok.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN_Ok.Location = new System.Drawing.Point(437, 338);
-            this.BTN_Ok.Name = "BTN_Ok";
-            this.BTN_Ok.Size = new System.Drawing.Size(50, 50);
-            this.BTN_Ok.TabIndex = 25;
-            this.BTN_Ok.Text = "OK";
-            this.BTN_Ok.UseVisualStyleBackColor = true;
-            this.BTN_Ok.Click += new System.EventHandler(this.BTN_Ok_Click);
-            // 
-            // BTN_Cancel
-            // 
-            this.BTN_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN_Cancel.Location = new System.Drawing.Point(493, 338);
-            this.BTN_Cancel.Name = "BTN_Cancel";
-            this.BTN_Cancel.Size = new System.Drawing.Size(50, 50);
-            this.BTN_Cancel.TabIndex = 24;
-            this.BTN_Cancel.Text = "Cancel";
-            this.BTN_Cancel.UseVisualStyleBackColor = true;
-            this.BTN_Cancel.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
-            this.button2.Location = new System.Drawing.Point(189, 118);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(40, 40);
-            this.button2.TabIndex = 25;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(189, 75);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(40, 40);
-            this.button6.TabIndex = 26;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
-            this.button7.Location = new System.Drawing.Point(189, 32);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(40, 40);
-            this.button7.TabIndex = 27;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
-            this.button1.Location = new System.Drawing.Point(186, 115);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 40);
-            this.button1.TabIndex = 22;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(186, 69);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(40, 40);
-            this.button4.TabIndex = 23;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
-            this.button5.Location = new System.Drawing.Point(186, 23);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(40, 40);
-            this.button5.TabIndex = 24;
-            this.button5.UseVisualStyleBackColor = true;
+            this.FB_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Close.BackgroundImage = global::The_Main_Project.Properties.Resources.Porte;
+            this.FB_Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Close.ImageClick = global::The_Main_Project.Properties.Resources.PorteCLic;
+            this.FB_Close.ImageDisable = null;
+            this.FB_Close.ImageNeutral = global::The_Main_Project.Properties.Resources.Porte;
+            this.FB_Close.ImageOver = global::The_Main_Project.Properties.Resources.PorteOver;
+            this.FB_Close.Location = new System.Drawing.Point(493, 336);
+            this.FB_Close.Name = "FB_Close";
+            this.FB_Close.Size = new System.Drawing.Size(50, 52);
+            this.FB_Close.TabIndex = 28;
+            this.FB_Close.Click += new System.EventHandler(this.BTN_Ok_Click);
             // 
             // Resultat_Match
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 400);
-            this.Controls.Add(this.BTN_Ok);
-            this.Controls.Add(this.BTN_Cancel);
+            this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.LB_Lieu_Result);
@@ -463,13 +454,12 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox CBX_Choix_J_V;
         private System.Windows.Forms.Label LB_NomEquipe_V;
-        private System.Windows.Forms.Button BTN_Ok;
-        private System.Windows.Forms.Button BTN_Cancel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private FlashButton.FlashButton FB_Close;
     }
 }

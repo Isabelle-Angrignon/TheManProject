@@ -32,9 +32,8 @@
             this.RB_Sombre = new System.Windows.Forms.RadioButton();
             this.RB_Canadien = new System.Windows.Forms.RadioButton();
             this.RB_Defaut = new System.Windows.Forms.RadioButton();
-            this.BTN_Ok = new System.Windows.Forms.Button();
-            this.BTN_Cancel = new System.Windows.Forms.Button();
             this.BTN_Appliquer = new System.Windows.Forms.Button();
+            this.FB_Close = new FlashButton.FlashButton();
             this.BG_Parametre.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,28 +90,6 @@
             this.RB_Defaut.UseVisualStyleBackColor = true;
             this.RB_Defaut.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // BTN_Ok
-            // 
-            this.BTN_Ok.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN_Ok.Location = new System.Drawing.Point(86, 142);
-            this.BTN_Ok.Name = "BTN_Ok";
-            this.BTN_Ok.Size = new System.Drawing.Size(50, 50);
-            this.BTN_Ok.TabIndex = 10;
-            this.BTN_Ok.Text = "OK";
-            this.BTN_Ok.UseVisualStyleBackColor = true;
-            this.BTN_Ok.Click += new System.EventHandler(this.BTN_Ok_Click);
-            // 
-            // BTN_Cancel
-            // 
-            this.BTN_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN_Cancel.Location = new System.Drawing.Point(142, 142);
-            this.BTN_Cancel.Name = "BTN_Cancel";
-            this.BTN_Cancel.Size = new System.Drawing.Size(50, 50);
-            this.BTN_Cancel.TabIndex = 9;
-            this.BTN_Cancel.Text = "Cancel";
-            this.BTN_Cancel.UseVisualStyleBackColor = true;
-            this.BTN_Cancel.Click += new System.EventHandler(this.button1_Click);
-            // 
             // BTN_Appliquer
             // 
             this.BTN_Appliquer.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -123,14 +100,28 @@
             this.BTN_Appliquer.Text = "Appliquer";
             this.BTN_Appliquer.UseVisualStyleBackColor = true;
             // 
+            // FB_Close
+            // 
+            this.FB_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Close.BackgroundImage = global::The_Main_Project.Properties.Resources.Porte;
+            this.FB_Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Close.ImageClick = global::The_Main_Project.Properties.Resources.PorteCLic;
+            this.FB_Close.ImageDisable = null;
+            this.FB_Close.ImageNeutral = global::The_Main_Project.Properties.Resources.Porte;
+            this.FB_Close.ImageOver = global::The_Main_Project.Properties.Resources.PorteOver;
+            this.FB_Close.Location = new System.Drawing.Point(151, 142);
+            this.FB_Close.Name = "FB_Close";
+            this.FB_Close.Size = new System.Drawing.Size(42, 50);
+            this.FB_Close.TabIndex = 26;
+            this.FB_Close.Click += new System.EventHandler(this.BTN_Ok_Click);
+            // 
             // Parametre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(205, 203);
+            this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.BTN_Appliquer);
-            this.Controls.Add(this.BTN_Ok);
-            this.Controls.Add(this.BTN_Cancel);
             this.Controls.Add(this.BG_Parametre);
             this.Name = "Parametre";
             this.Text = "Thèmes";
@@ -146,8 +137,7 @@
         private System.Windows.Forms.RadioButton RB_Sombre;
         private System.Windows.Forms.RadioButton RB_Canadien;
         private System.Windows.Forms.RadioButton RB_Defaut;
-        private System.Windows.Forms.Button BTN_Ok;
-        private System.Windows.Forms.Button BTN_Cancel;
         private System.Windows.Forms.Button BTN_Appliquer;
+        private FlashButton.FlashButton FB_Close;
     }
 }

@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionMatch));
             this.BTN_MOD = new System.Windows.Forms.GroupBox();
             this.UC_Navigator = new UC_Navigator.UC_Navigator();
+            this.button2 = new System.Windows.Forms.Button();
+            this.BTN_Delete = new System.Windows.Forms.Button();
+            this.BTN_Add = new System.Windows.Forms.Button();
             this.TB_Receveur = new System.Windows.Forms.TextBox();
             this.TB_Visiteur = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -39,11 +42,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.DTP_Date = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.BTN_Ok = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.BTN_Delete = new System.Windows.Forms.Button();
-            this.BTN_Add = new System.Windows.Forms.Button();
+            this.FB_Close = new FlashButton.FlashButton();
             this.BTN_MOD.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +73,36 @@
             this.UC_Navigator.Name = "UC_Navigator";
             this.UC_Navigator.Size = new System.Drawing.Size(206, 19);
             this.UC_Navigator.TabIndex = 38;
+            // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
+            this.button2.Location = new System.Drawing.Point(214, 83);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(44, 43);
+            this.button2.TabIndex = 3;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // BTN_Delete
+            // 
+            this.BTN_Delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_Delete.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Delete.Image")));
+            this.BTN_Delete.Location = new System.Drawing.Point(214, 47);
+            this.BTN_Delete.Name = "BTN_Delete";
+            this.BTN_Delete.Size = new System.Drawing.Size(44, 40);
+            this.BTN_Delete.TabIndex = 4;
+            this.BTN_Delete.UseVisualStyleBackColor = true;
+            // 
+            // BTN_Add
+            // 
+            this.BTN_Add.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_Add.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
+            this.BTN_Add.Location = new System.Drawing.Point(214, 10);
+            this.BTN_Add.Name = "BTN_Add";
+            this.BTN_Add.Size = new System.Drawing.Size(44, 35);
+            this.BTN_Add.TabIndex = 5;
+            this.BTN_Add.UseVisualStyleBackColor = true;
             // 
             // TB_Receveur
             // 
@@ -139,65 +168,27 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Date";
             // 
-            // button1
+            // FB_Close
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(226, 185);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 50);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // BTN_Ok
-            // 
-            this.BTN_Ok.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN_Ok.Location = new System.Drawing.Point(170, 185);
-            this.BTN_Ok.Name = "BTN_Ok";
-            this.BTN_Ok.Size = new System.Drawing.Size(50, 50);
-            this.BTN_Ok.TabIndex = 2;
-            this.BTN_Ok.Text = "OK";
-            this.BTN_Ok.UseVisualStyleBackColor = true;
-            this.BTN_Ok.Click += new System.EventHandler(this.BTN_Ok_Click);
-            // 
-            // button2
-            // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
-            this.button2.Location = new System.Drawing.Point(214, 83);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(44, 43);
-            this.button2.TabIndex = 3;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // BTN_Delete
-            // 
-            this.BTN_Delete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN_Delete.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Delete.Image")));
-            this.BTN_Delete.Location = new System.Drawing.Point(214, 47);
-            this.BTN_Delete.Name = "BTN_Delete";
-            this.BTN_Delete.Size = new System.Drawing.Size(44, 40);
-            this.BTN_Delete.TabIndex = 4;
-            this.BTN_Delete.UseVisualStyleBackColor = true;
-            // 
-            // BTN_Add
-            // 
-            this.BTN_Add.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN_Add.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
-            this.BTN_Add.Location = new System.Drawing.Point(214, 10);
-            this.BTN_Add.Name = "BTN_Add";
-            this.BTN_Add.Size = new System.Drawing.Size(44, 35);
-            this.BTN_Add.TabIndex = 5;
-            this.BTN_Add.UseVisualStyleBackColor = true;
+            this.FB_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Close.BackgroundImage = global::The_Main_Project.Properties.Resources.Porte;
+            this.FB_Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Close.ImageClick = global::The_Main_Project.Properties.Resources.PorteCLic;
+            this.FB_Close.ImageDisable = null;
+            this.FB_Close.ImageNeutral = global::The_Main_Project.Properties.Resources.Porte;
+            this.FB_Close.ImageOver = global::The_Main_Project.Properties.Resources.PorteOver;
+            this.FB_Close.Location = new System.Drawing.Point(226, 185);
+            this.FB_Close.Name = "FB_Close";
+            this.FB_Close.Size = new System.Drawing.Size(49, 46);
+            this.FB_Close.TabIndex = 39;
+            this.FB_Close.Click += new System.EventHandler(this.BTN_Ok_Click);
             // 
             // GestionMatch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(287, 241);
-            this.Controls.Add(this.BTN_Ok);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.BTN_MOD);
             this.Name = "GestionMatch";
             this.Text = "GestionMatch";
@@ -218,11 +209,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker DTP_Date;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button BTN_Ok;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button BTN_Delete;
         private System.Windows.Forms.Button BTN_Add;
         private UC_Navigator.UC_Navigator UC_Navigator;
+        private FlashButton.FlashButton FB_Close;
     }
 }

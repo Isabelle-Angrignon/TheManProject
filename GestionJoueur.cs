@@ -194,7 +194,7 @@ namespace The_Main_Project
 
                 LoadDataset();
             }
-            catch (Exception ex)
+            catch (OracleException ex)
             {
                 MessageBox.Show(ex.Message.ToString());
             }
