@@ -185,6 +185,7 @@
             this.CB_Division.Name = "CB_Division";
             this.CB_Division.Size = new System.Drawing.Size(131, 21);
             this.CB_Division.TabIndex = 24;
+            this.CB_Division.SelectedIndexChanged += new System.EventHandler(this.CB_Division_SelectedIndexChanged);
             // 
             // FB_Close
             // 

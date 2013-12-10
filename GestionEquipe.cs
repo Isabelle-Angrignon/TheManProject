@@ -36,8 +36,7 @@ namespace The_Main_Project
                     {
                         PBX_Logo.Image = Image.FromStream(ms);
                     }
-                }
-            
+                }            
             }
         }
 
@@ -49,6 +48,7 @@ namespace The_Main_Project
         private void GestionEquipe_Load(object sender, EventArgs e)
         {
             LoadDataset();
+            Fill_CBX_Division();
         }
         private void LoadDataset()
         {
@@ -75,11 +75,29 @@ namespace The_Main_Project
             DTP_Date_Team.DataBindings.Add("Text", equDataSet, "Équipes.DateIntro");
             clePrimaire = TB_Nom_Team.Text;
             TB_Ville.DataBindings.Add("Text", equDataSet, "Équipes.ville");
-            //TB_DivisionEquipe.DataBindings.Add("Text", equDataSet, "Équipes.nomdivision");
-           // CB_Division.Datas = new BindingSource(equDataSet, "Équipes.nomdivision");
+            TB_DivisionEquipe.DataBindings.Add("Text", equDataSet, "Équipes.nomdivision");///invisible
+            CB_Division.SelectedItem = TB_DivisionEquipe.Text;
 
             ////logo//////
         }
+        private void Fill_CBX_Division()
+        {
+            try
+            {
+                string sqlDivision = "select nomdivision from divisions";
+                OracleCommand oraDivision = new OracleCommand(sqlDivision, conn);
+                oraDivision.CommandType = CommandType.Text;
+                OracleDataReader OraReadDiv = oraDivision.ExecuteReader();
+                while (OraReadDiv.Read())
+                {
+                    CB_Division.Items.Add(OraReadDiv.GetString(0));
+                }                
+            }
+            catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
+
+        }
+
+
         private void Vider()
         {
             TB_Nom_Team.DataBindings.Clear();
@@ -117,6 +135,8 @@ namespace The_Main_Project
             clePrimaire = TB_Nom_Team.Text;
         }
         /////////////////////////////////////////en construction//////////////////////////////////////////////////
+        
+        //ajouter logo
         private void BTN_Add_Click(object sender, EventArgs e)
         {
             try
@@ -172,7 +192,8 @@ namespace The_Main_Project
                 MessageBox.Show(ex.Message.ToString()); 
             } 
         }
-
+        
+        //ajouter logo
         private void BTN_Edit_Click(object sender, EventArgs e)
         {
             try 
@@ -223,6 +244,11 @@ namespace The_Main_Project
                 logo = File.ReadAllBytes(file.FileName);
                 PBX_Logo.Image = Image.FromFile(file.FileName);
             }
+        }
+
+        private void CB_Division_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }                       
     }
 }
