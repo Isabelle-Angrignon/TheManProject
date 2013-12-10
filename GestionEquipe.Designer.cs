@@ -30,59 +30,37 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionEquipe));
-            this.BTN_Ok = new System.Windows.Forms.Button();
-            this.BTN_Cancel = new System.Windows.Forms.Button();
             this.Caractérstique = new System.Windows.Forms.GroupBox();
             this.uC_Navigator = new UC_Navigator.UC_Navigator();
             this.BTN_Load = new System.Windows.Forms.Button();
-            this.PBX_Logo = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TB_DivisionEquipe = new System.Windows.Forms.TextBox();
             this.DTP_Date_Team = new System.Windows.Forms.DateTimePicker();
             this.TB_Nom_Team = new System.Windows.Forms.TextBox();
-            this.BTN_Edit = new System.Windows.Forms.Button();
-            this.BTN_Del = new System.Windows.Forms.Button();
-            this.BTN_Add = new System.Windows.Forms.Button();
             this.TB_Ville = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.CMS_Add = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cliquerPourAjouterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CB_Division = new System.Windows.Forms.ComboBox();
+            this.FB_Close = new FlashButton.FlashButton();
+            this.PBX_Logo = new System.Windows.Forms.PictureBox();
+            this.BTN_Edit = new System.Windows.Forms.Button();
+            this.BTN_Del = new System.Windows.Forms.Button();
+            this.BTN_Add = new System.Windows.Forms.Button();
             this.Caractérstique.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Logo)).BeginInit();
             this.CMS_Add.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Logo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // BTN_Ok
-            // 
-            this.BTN_Ok.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN_Ok.Location = new System.Drawing.Point(194, 249);
-            this.BTN_Ok.Name = "BTN_Ok";
-            this.BTN_Ok.Size = new System.Drawing.Size(50, 50);
-            this.BTN_Ok.TabIndex = 8;
-            this.BTN_Ok.Text = "OK";
-            this.BTN_Ok.UseVisualStyleBackColor = true;
-            this.BTN_Ok.Click += new System.EventHandler(this.BTN_Ok_Click);
-            // 
-            // BTN_Cancel
-            // 
-            this.BTN_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN_Cancel.Location = new System.Drawing.Point(253, 249);
-            this.BTN_Cancel.Name = "BTN_Cancel";
-            this.BTN_Cancel.Size = new System.Drawing.Size(50, 50);
-            this.BTN_Cancel.TabIndex = 7;
-            this.BTN_Cancel.Text = "Cancel";
-            this.BTN_Cancel.UseVisualStyleBackColor = true;
-            this.BTN_Cancel.Click += new System.EventHandler(this.BTN_Cancel_Click);
             // 
             // Caractérstique
             // 
+            this.Caractérstique.Controls.Add(this.CB_Division);
             this.Caractérstique.Controls.Add(this.uC_Navigator);
             this.Caractérstique.Controls.Add(this.BTN_Load);
             this.Caractérstique.Controls.Add(this.PBX_Logo);
             this.Caractérstique.Controls.Add(this.label2);
-            this.Caractérstique.Controls.Add(this.TB_DivisionEquipe);
             this.Caractérstique.Controls.Add(this.DTP_Date_Team);
             this.Caractérstique.Controls.Add(this.TB_Nom_Team);
             this.Caractérstique.Controls.Add(this.BTN_Edit);
@@ -120,14 +98,6 @@
             this.BTN_Load.Text = "Charger";
             this.BTN_Load.UseVisualStyleBackColor = true;
             // 
-            // PBX_Logo
-            // 
-            this.PBX_Logo.Location = new System.Drawing.Point(17, 19);
-            this.PBX_Logo.Name = "PBX_Logo";
-            this.PBX_Logo.Size = new System.Drawing.Size(73, 50);
-            this.PBX_Logo.TabIndex = 22;
-            this.PBX_Logo.TabStop = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -139,7 +109,7 @@
             // 
             // TB_DivisionEquipe
             // 
-            this.TB_DivisionEquipe.Location = new System.Drawing.Point(67, 157);
+            this.TB_DivisionEquipe.Location = new System.Drawing.Point(39, 279);
             this.TB_DivisionEquipe.Name = "TB_DivisionEquipe";
             this.TB_DivisionEquipe.Size = new System.Drawing.Size(131, 20);
             this.TB_DivisionEquipe.TabIndex = 19;
@@ -159,39 +129,6 @@
             this.TB_Nom_Team.Name = "TB_Nom_Team";
             this.TB_Nom_Team.Size = new System.Drawing.Size(131, 20);
             this.TB_Nom_Team.TabIndex = 16;
-            // 
-            // BTN_Edit
-            // 
-            this.BTN_Edit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN_Edit.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
-            this.BTN_Edit.Location = new System.Drawing.Point(221, 137);
-            this.BTN_Edit.Name = "BTN_Edit";
-            this.BTN_Edit.Size = new System.Drawing.Size(40, 40);
-            this.BTN_Edit.TabIndex = 3;
-            this.BTN_Edit.UseVisualStyleBackColor = true;
-            this.BTN_Edit.Click += new System.EventHandler(this.BTN_Edit_Click);
-            // 
-            // BTN_Del
-            // 
-            this.BTN_Del.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN_Del.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Del.Image")));
-            this.BTN_Del.Location = new System.Drawing.Point(221, 91);
-            this.BTN_Del.Name = "BTN_Del";
-            this.BTN_Del.Size = new System.Drawing.Size(40, 40);
-            this.BTN_Del.TabIndex = 4;
-            this.BTN_Del.UseVisualStyleBackColor = true;
-            this.BTN_Del.Click += new System.EventHandler(this.BTN_Del_Click);
-            // 
-            // BTN_Add
-            // 
-            this.BTN_Add.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN_Add.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
-            this.BTN_Add.Location = new System.Drawing.Point(221, 46);
-            this.BTN_Add.Name = "BTN_Add";
-            this.BTN_Add.Size = new System.Drawing.Size(40, 40);
-            this.BTN_Add.TabIndex = 5;
-            this.BTN_Add.UseVisualStyleBackColor = true;
-            this.BTN_Add.Click += new System.EventHandler(this.BTN_Add_Click);
             // 
             // TB_Ville
             // 
@@ -240,29 +177,92 @@
             this.cliquerPourAjouterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cliquerPourAjouterToolStripMenuItem.Text = "Cliquer pour ajouter";
             // 
+            // CB_Division
+            // 
+            this.CB_Division.FormattingEnabled = true;
+            this.CB_Division.Location = new System.Drawing.Point(67, 156);
+            this.CB_Division.Name = "CB_Division";
+            this.CB_Division.Size = new System.Drawing.Size(131, 21);
+            this.CB_Division.TabIndex = 24;
+            // 
+            // FB_Close
+            // 
+            this.FB_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Close.BackgroundImage = global::The_Main_Project.Properties.Resources.Porte;
+            this.FB_Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Close.ImageClick = global::The_Main_Project.Properties.Resources.PorteCLic;
+            this.FB_Close.ImageDisable = null;
+            this.FB_Close.ImageNeutral = global::The_Main_Project.Properties.Resources.Porte;
+            this.FB_Close.ImageOver = global::The_Main_Project.Properties.Resources.PorteOver;
+            this.FB_Close.Location = new System.Drawing.Point(233, 240);
+            this.FB_Close.Name = "FB_Close";
+            this.FB_Close.Size = new System.Drawing.Size(55, 62);
+            this.FB_Close.TabIndex = 25;
+            this.FB_Close.Click += new System.EventHandler(this.FB_Close_Click);
+            // 
+            // PBX_Logo
+            // 
+            this.PBX_Logo.Location = new System.Drawing.Point(17, 19);
+            this.PBX_Logo.Name = "PBX_Logo";
+            this.PBX_Logo.Size = new System.Drawing.Size(73, 50);
+            this.PBX_Logo.TabIndex = 22;
+            this.PBX_Logo.TabStop = false;
+            // 
+            // BTN_Edit
+            // 
+            this.BTN_Edit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_Edit.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
+            this.BTN_Edit.Location = new System.Drawing.Point(221, 137);
+            this.BTN_Edit.Name = "BTN_Edit";
+            this.BTN_Edit.Size = new System.Drawing.Size(40, 40);
+            this.BTN_Edit.TabIndex = 3;
+            this.BTN_Edit.UseVisualStyleBackColor = true;
+            this.BTN_Edit.Click += new System.EventHandler(this.BTN_Edit_Click);
+            // 
+            // BTN_Del
+            // 
+            this.BTN_Del.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_Del.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Del.Image")));
+            this.BTN_Del.Location = new System.Drawing.Point(221, 91);
+            this.BTN_Del.Name = "BTN_Del";
+            this.BTN_Del.Size = new System.Drawing.Size(40, 40);
+            this.BTN_Del.TabIndex = 4;
+            this.BTN_Del.UseVisualStyleBackColor = true;
+            this.BTN_Del.Click += new System.EventHandler(this.BTN_Del_Click);
+            // 
+            // BTN_Add
+            // 
+            this.BTN_Add.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_Add.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
+            this.BTN_Add.Location = new System.Drawing.Point(221, 46);
+            this.BTN_Add.Name = "BTN_Add";
+            this.BTN_Add.Size = new System.Drawing.Size(40, 40);
+            this.BTN_Add.TabIndex = 5;
+            this.BTN_Add.UseVisualStyleBackColor = true;
+            this.BTN_Add.Click += new System.EventHandler(this.BTN_Add_Click);
+            // 
             // GestionEquipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(315, 314);
-            this.Controls.Add(this.BTN_Ok);
-            this.Controls.Add(this.BTN_Cancel);
+            this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.Caractérstique);
+            this.Controls.Add(this.TB_DivisionEquipe);
             this.Name = "GestionEquipe";
             this.Text = "GestionEquipe";
             this.Load += new System.EventHandler(this.GestionEquipe_Load);
             this.Caractérstique.ResumeLayout(false);
             this.Caractérstique.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Logo)).EndInit();
             this.CMS_Add.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Logo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button BTN_Ok;
-        private System.Windows.Forms.Button BTN_Cancel;
         private System.Windows.Forms.GroupBox Caractérstique;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TB_DivisionEquipe;
@@ -280,5 +280,7 @@
         private UC_Navigator.UC_Navigator uC_Navigator;
         private System.Windows.Forms.ContextMenuStrip CMS_Add;
         private System.Windows.Forms.ToolStripMenuItem cliquerPourAjouterToolStripMenuItem;
+        private System.Windows.Forms.ComboBox CB_Division;
+        private FlashButton.FlashButton FB_Close;
     }
 }

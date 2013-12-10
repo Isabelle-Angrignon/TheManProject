@@ -22,17 +22,11 @@ namespace The_Main_Project
         private const string dsEquipe = "Équipes";
         OracleDataAdapter Oraliste;
         string clePrimaire;
-
-        private void BTN_Ok_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-        }
-
-        private void BTN_Cancel_Click(object sender, EventArgs e)
+        
+        private void FB_Close_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
+        } 
 
         private void GestionEquipe_Load(object sender, EventArgs e)
         {
@@ -63,7 +57,9 @@ namespace The_Main_Project
             DTP_Date_Team.DataBindings.Add("Text", equDataSet, "Équipes.DateIntro");
             clePrimaire = TB_Nom_Team.Text;
             TB_Ville.DataBindings.Add("Text", equDataSet, "Équipes.ville");
-            TB_DivisionEquipe.DataBindings.Add("Text", equDataSet, "Équipes.nomdivision");
+            //TB_DivisionEquipe.DataBindings.Add("Text", equDataSet, "Équipes.nomdivision");
+           // CB_Division.Datas = new BindingSource(equDataSet, "Équipes.nomdivision");
+
             ////logo//////
         }
         private void Vider()
@@ -192,6 +188,8 @@ namespace The_Main_Project
             { 
                 MessageBox.Show(ex.Message.ToString()); 
             } 
-        }        
+        }
+
+               
     }
 }

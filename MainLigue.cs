@@ -15,12 +15,10 @@ namespace The_Main_Project
     {
         private OracleConnection conn = new OracleConnection();
         private DataSet mainDataSet = new DataSet();
-        string sqlHoraire = "SELECT DATEMATCH AS Match, NOMATCH AS No , RECEVEUR AS Receveur , VISITEUR AS Visiteur ," +
-            " LIEU AS Cité , BUTSRECEVEUR AS R , BUTSVISITEUR AS V FROM Matchs ";////////////////////////////////
+        string sqlHoraire = "SELECT DATEMATCH AS Match, NOMATCH AS No , RECEVEUR AS Receveur , BUTSRECEVEUR AS B,  VISITEUR AS Visiteur ," +
+            " BUTSVISITEUR AS B,  LIEU AS Cité  FROM Matchs ";
         string sqlClassement = "select sum(Nbpoints)as total ,equipe from classement  group by equipe order by total desc";///////////////
-        /*
-         select sum(Nbpoints)as total ,equipe from classement  group by equipe order by total desc;
-        */
+       
         private const string dsHoraire = "Liste_matchs";
         private string dsClassement = "Classement_équipes";
         OracleDataReader orLigue;
@@ -49,7 +47,7 @@ namespace The_Main_Project
             Connect();
             UpdateComboBox();
             FillDGVMatch();
-            FillDGVEquipe();
+            FillDGVEquipe(sqlClassement);
         }
 
         private void UpdateComboBox()
@@ -61,13 +59,12 @@ namespace The_Main_Project
                 oraCmdProg.CommandType = CommandType.Text;
 
                 OracleDataReader objRead = oraCmdProg.ExecuteReader();
-
+                
+                CBX_Division.Items.Add("(Toutes)");
                 while (objRead.Read())
                 {
-                    //ListeProgrammes.Items.Add(objRead.GetInt32(0)); 
                     CBX_Division.Items.Add(objRead.GetString(0));
-                }
-                CBX_Division.Items.Add("Toutes");
+                }                
 
                 CBX_Division.SelectedIndex = 0;
                 objRead.Close();
@@ -116,11 +113,11 @@ namespace The_Main_Project
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
                 
-        private void FillDGVEquipe()
+        private void FillDGVEquipe(string sql)
         {
             try
             {
-                OracleDataAdapter Oraliste = new OracleDataAdapter(sqlClassement, conn);
+                OracleDataAdapter Oraliste = new OracleDataAdapter(sql, conn);
 
                 if (mainDataSet.Tables.Contains(dsClassement))
                 {
@@ -139,6 +136,7 @@ namespace The_Main_Project
         private void OuvertureTop5()
         {
             Top5 Form = new Top5();
+            Form.conn = conn;
             Form.ShowDialog();
         }
 
@@ -261,6 +259,21 @@ namespace The_Main_Project
         private void TSMI_Stats_Joueur_Click(object sender, EventArgs e)
         {
             OuvrireStat();
+        }
+
+        private void CBX_Division_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CBX_Division.SelectedIndex == 0)
+            {
+                FillDGVEquipe(sqlClassement);
+            }
+            else
+            {
+                string sqlEquipeParDiv = "select sum(Nbpoints) as total, equipe from classement" +
+                    " group by equipe having equipe in (select noméquipe from Équipes where" +
+                    " nomdivision = '" + CBX_Division.SelectedItem.ToString() + "') order by total desc" ;
+                FillDGVEquipe(sqlEquipeParDiv);
+            }
         }
 
         

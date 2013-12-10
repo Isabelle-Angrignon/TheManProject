@@ -76,12 +76,21 @@
             // 
             this.DGV_Team.AllowUserToAddRows = false;
             this.DGV_Team.AllowUserToDeleteRows = false;
+            this.DGV_Team.AllowUserToResizeColumns = false;
+            this.DGV_Team.AllowUserToResizeRows = false;
+            this.DGV_Team.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DGV_Team.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DGV_Team.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGV_Team.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Team.Location = new System.Drawing.Point(582, 146);
+            this.DGV_Team.MultiSelect = false;
             this.DGV_Team.Name = "DGV_Team";
             this.DGV_Team.ReadOnly = true;
+            this.DGV_Team.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DGV_Team.RowHeadersVisible = false;
-            this.DGV_Team.Size = new System.Drawing.Size(421, 270);
+            this.DGV_Team.Size = new System.Drawing.Size(266, 270);
             this.DGV_Team.TabIndex = 1;
             // 
             // MS_Main
@@ -93,7 +102,7 @@
             this.TSMI_Aide});
             this.MS_Main.Location = new System.Drawing.Point(0, 0);
             this.MS_Main.Name = "MS_Main";
-            this.MS_Main.Size = new System.Drawing.Size(1015, 24);
+            this.MS_Main.Size = new System.Drawing.Size(860, 24);
             this.MS_Main.TabIndex = 4;
             this.MS_Main.Text = "menuStrip1";
             // 
@@ -216,23 +225,30 @@
             // 
             this.DGV_Match.AllowUserToAddRows = false;
             this.DGV_Match.AllowUserToDeleteRows = false;
+            this.DGV_Match.AllowUserToResizeColumns = false;
+            this.DGV_Match.AllowUserToResizeRows = false;
+            this.DGV_Match.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.DGV_Match.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DGV_Match.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGV_Match.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Match.Location = new System.Drawing.Point(29, 146);
             this.DGV_Match.Name = "DGV_Match";
             this.DGV_Match.ReadOnly = true;
             this.DGV_Match.RowHeadersVisible = false;
-            this.DGV_Match.Size = new System.Drawing.Size(421, 270);
+            this.DGV_Match.Size = new System.Drawing.Size(444, 270);
             this.DGV_Match.TabIndex = 7;
             // 
             // CBX_Division
             // 
-            this.CBX_Division.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CBX_Division.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CBX_Division.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBX_Division.FormattingEnabled = true;
-            this.CBX_Division.Location = new System.Drawing.Point(684, 119);
+            this.CBX_Division.Location = new System.Drawing.Point(582, 119);
             this.CBX_Division.Name = "CBX_Division";
-            this.CBX_Division.Size = new System.Drawing.Size(225, 21);
+            this.CBX_Division.Size = new System.Drawing.Size(266, 21);
             this.CBX_Division.TabIndex = 8;
+            this.CBX_Division.SelectedIndexChanged += new System.EventHandler(this.CBX_Division_SelectedIndexChanged);
             // 
             // CMS_Match
             // 
@@ -382,7 +398,7 @@
             // 
             this.PBX_Logo.Location = new System.Drawing.Point(503, 146);
             this.PBX_Logo.Name = "PBX_Logo";
-            this.PBX_Logo.Size = new System.Drawing.Size(73, 56);
+            this.PBX_Logo.Size = new System.Drawing.Size(75, 75);
             this.PBX_Logo.TabIndex = 6;
             this.PBX_Logo.TabStop = false;
             // 
@@ -390,7 +406,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1015, 428);
+            this.ClientSize = new System.Drawing.Size(860, 428);
             this.Controls.Add(this.FB_Result);
             this.Controls.Add(this.FB_Match);
             this.Controls.Add(this.FB_Top5);

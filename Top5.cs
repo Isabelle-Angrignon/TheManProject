@@ -21,11 +21,11 @@ namespace The_Main_Project
         private DataSet formDataSet = new DataSet();
         private const string dsTable = "Table";
         OracleDataAdapter Oraliste;
-        string sqlTop5 = "select * from vuefiche order by Points";
+        string sqlTop5 = "select * from vuefiche where rownum <= 5";
 
-        private void BTN_Ok_Click(object sender, EventArgs e)
+                private void FB_Close_Click(object sender, EventArgs e)
         {
-            Close();
+             Close();
         }
 
         private void Top5_Load(object sender, EventArgs e)
@@ -47,5 +47,7 @@ namespace The_Main_Project
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
+
+        
     }
 }
