@@ -54,7 +54,6 @@
             // 
             // Caractérstique
             // 
-            this.Caractérstique.Controls.Add(this.LB_No_J);
             this.Caractérstique.Controls.Add(this.uC_Navigator);
             this.Caractérstique.Controls.Add(this.BTN_Stats);
             this.Caractérstique.Controls.Add(this.label2);
@@ -81,11 +80,10 @@
             // LB_No_J
             // 
             this.LB_No_J.AutoSize = true;
-            this.LB_No_J.Location = new System.Drawing.Point(220, 20);
+            this.LB_No_J.Location = new System.Drawing.Point(12, 284);
             this.LB_No_J.Name = "LB_No_J";
             this.LB_No_J.Size = new System.Drawing.Size(0, 13);
             this.LB_No_J.TabIndex = 38;
-            this.LB_No_J.Visible = false;
             // 
             // uC_Navigator
             // 
@@ -102,7 +100,7 @@
             // BTN_Stats
             // 
             this.BTN_Stats.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN_Stats.Location = new System.Drawing.Point(259, 175);
+            this.BTN_Stats.Location = new System.Drawing.Point(265, 182);
             this.BTN_Stats.Name = "BTN_Stats";
             this.BTN_Stats.Size = new System.Drawing.Size(58, 39);
             this.BTN_Stats.TabIndex = 22;
@@ -121,7 +119,7 @@
             // 
             // TB_Maillot
             // 
-            this.TB_Maillot.Location = new System.Drawing.Point(96, 20);
+            this.TB_Maillot.Location = new System.Drawing.Point(96, 18);
             this.TB_Maillot.Name = "TB_Maillot";
             this.TB_Maillot.Size = new System.Drawing.Size(100, 20);
             this.TB_Maillot.TabIndex = 20;
@@ -262,6 +260,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(348, 306);
+            this.Controls.Add(this.LB_No_J);
             this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.Caractérstique);
             this.Name = "GestionJoueur";
@@ -270,6 +269,7 @@
             this.Caractérstique.ResumeLayout(false);
             this.Caractérstique.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

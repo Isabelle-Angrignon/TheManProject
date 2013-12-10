@@ -145,7 +145,7 @@ namespace The_Main_Project
                 string sqlDelete = "DELETE FROM Joueurs WHERE NoJoueur = :NO";
 
                 OracleParameter oParamNo = new OracleParameter(":NO", OracleDbType.Int32, 4);
-                oParamNo.Value = LB_No_J.Text;
+                oParamNo.Value = int.Parse(LB_No_J.Text);
 
                 OracleCommand orComm = new OracleCommand(sqlDelete, conn);
                 orComm.Parameters.Add(oParamNo);
@@ -165,22 +165,22 @@ namespace The_Main_Project
             {
                 /////enregistrer la clé primaire d'abord pour pouvoir la modifier...                
                 string sqlUpdate = "UPDATE Joueurs SET Nom = :NOM, Prénom = :PRENOM, Naissance = :Naissance," +
-                " Position = :POSITION, NomÉquipe = :EQUIPE WHERE NoJoueur = :NO"; //requete met a jour
+                " Position = :POSITION, nomaillot = :MAILLOT, NomÉquipe = :EQUIPE WHERE NoJoueur = :NO"; //requete met a jour
 
                 OracleParameter oParamNom = new OracleParameter(":NOM", OracleDbType.Varchar2, 20);
                 OracleParameter oParamPrenom = new OracleParameter(":PRENOM", OracleDbType.Varchar2, 20);
                 OracleParameter oParamDate = new OracleParameter(":NAISSANCE", OracleDbType.Date);
                 OracleParameter oParamPos = new OracleParameter(":POSITION", OracleDbType.Varchar2, 1);
-                OracleParameter oParamMail = new OracleParameter(":MAILLOT", OracleDbType.Varchar2, 2);
+                OracleParameter oParamMail = new OracleParameter(":MAILLOT", OracleDbType.Int32, 2);
                 OracleParameter oParamEqu = new OracleParameter(":EQUIPE", OracleDbType.Varchar2, 30);
                 OracleParameter oParamNo = new OracleParameter(":NO", OracleDbType.Int32, 4);
                 oParamNom.Value = TB_Nom_J.Text;
                 oParamPrenom.Value = TB_Prenom_J.Text;
                 oParamDate.Value = DTP_Naissance.Value;
                 oParamPos.Value = TB_Position.Text;
-                oParamMail.Value = TB_Maillot.Text;
+                oParamMail.Value = int.Parse(TB_Maillot.Text);
                 oParamEqu.Value = TB_Équipe.Text;
-                oParamNo.Value = LB_No_J.Text;
+                oParamNo.Value = int.Parse(LB_No_J.Text);
 
                 OracleCommand orComm = new OracleCommand(sqlUpdate, conn);
                 orComm.Parameters.Add(oParamNom);
