@@ -245,10 +245,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(315, 314);
             this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.Caractérstique);
             this.Controls.Add(this.TB_DivisionEquipe);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "GestionEquipe";
             this.Text = "GestionEquipe";
             this.Load += new System.EventHandler(this.GestionEquipe_Load);
