@@ -18,10 +18,10 @@ namespace The_Main_Project
         string sqlHoraire = "SELECT DATEMATCH AS Match, NOMATCH AS No , RECEVEUR AS Receveur , BUTSRECEVEUR AS B,  VISITEUR AS Visiteur ," +
             " BUTSVISITEUR AS B,  LIEU AS Cité  FROM Matchs ";
         string sqlClassement = "select sum(Nbpoints)as total ,equipe from classement  group by equipe order by total desc";///////////////
-       
+        private byte[] logo = null;
         private const string dsHoraire = "Liste_matchs";
         private string dsClassement = "Classement_équipes";
-        OracleDataReader orLigue;
+       // OracleDataReader orLigue;
 
         public Form_League()
         {
@@ -132,6 +132,7 @@ namespace The_Main_Project
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }    
+        
 
         private void OuvertureTop5()
         {

@@ -86,13 +86,13 @@
             this.DGV_Team.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGV_Team.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGV_Team.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_Team.Location = new System.Drawing.Point(582, 146);
+            this.DGV_Team.Location = new System.Drawing.Point(639, 146);
             this.DGV_Team.MultiSelect = false;
             this.DGV_Team.Name = "DGV_Team";
             this.DGV_Team.ReadOnly = true;
             this.DGV_Team.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DGV_Team.RowHeadersVisible = false;
-            this.DGV_Team.Size = new System.Drawing.Size(266, 270);
+            this.DGV_Team.Size = new System.Drawing.Size(156, 150);
             this.DGV_Team.TabIndex = 1;
             // 
             // MS_Main
@@ -104,7 +104,7 @@
             this.TSMI_Aide});
             this.MS_Main.Location = new System.Drawing.Point(0, 0);
             this.MS_Main.Name = "MS_Main";
-            this.MS_Main.Size = new System.Drawing.Size(860, 24);
+            this.MS_Main.Size = new System.Drawing.Size(807, 24);
             this.MS_Main.TabIndex = 4;
             this.MS_Main.Text = "menuStrip1";
             // 
@@ -238,17 +238,18 @@
             this.DGV_Match.Name = "DGV_Match";
             this.DGV_Match.ReadOnly = true;
             this.DGV_Match.RowHeadersVisible = false;
-            this.DGV_Match.Size = new System.Drawing.Size(444, 270);
+            this.DGV_Match.Size = new System.Drawing.Size(465, 150);
             this.DGV_Match.TabIndex = 7;
             // 
             // CBX_Division
             // 
-            this.CBX_Division.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.CBX_Division.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+
             this.CBX_Division.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBX_Division.FormattingEnabled = true;
-            this.CBX_Division.Location = new System.Drawing.Point(582, 119);
+            this.CBX_Division.Location = new System.Drawing.Point(639, 119);
             this.CBX_Division.Name = "CBX_Division";
-            this.CBX_Division.Size = new System.Drawing.Size(266, 21);
+            this.CBX_Division.Size = new System.Drawing.Size(156, 21);
             this.CBX_Division.TabIndex = 8;
             this.CBX_Division.SelectedIndexChanged += new System.EventHandler(this.CBX_Division_SelectedIndexChanged);
             // 
@@ -398,8 +399,7 @@
             // 
             // PBX_Logo
             // 
-            this.PBX_Logo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.PBX_Logo.Location = new System.Drawing.Point(503, 146);
+            this.PBX_Logo.Location = new System.Drawing.Point(558, 146);
             this.PBX_Logo.Name = "PBX_Logo";
             this.PBX_Logo.Size = new System.Drawing.Size(75, 75);
             this.PBX_Logo.TabIndex = 6;
@@ -414,7 +414,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(860, 428);
+            this.ClientSize = new System.Drawing.Size(807, 308);
             this.Controls.Add(this.FB_Result);
             this.Controls.Add(this.FB_Match);
             this.Controls.Add(this.FB_Top5);
@@ -427,6 +427,7 @@
             this.Controls.Add(this.DGV_Team);
             this.Controls.Add(this.MS_Main);
             this.MainMenuStrip = this.MS_Main;
+            this.MinimumSize = new System.Drawing.Size(800, 300);
             this.Name = "Form_League";
             this.Text = "Bienvenue dans la ligue ";
             this.Load += new System.EventHandler(this.Form_League_Load);

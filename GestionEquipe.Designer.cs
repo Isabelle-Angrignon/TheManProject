@@ -97,6 +97,7 @@
             this.BTN_Load.TabIndex = 9;
             this.BTN_Load.Text = "Charger";
             this.BTN_Load.UseVisualStyleBackColor = true;
+            this.BTN_Load.Click += new System.EventHandler(this.BTN_Load_Click);
             // 
             // label2
             // 

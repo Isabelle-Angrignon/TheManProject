@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
+using System.IO;
 
 namespace The_Main_Project
 {
@@ -22,7 +23,24 @@ namespace The_Main_Project
         private const string dsEquipe = "Équipes";
         OracleDataAdapter Oraliste;
         string clePrimaire;
-        
+        private byte[] logo_;
+        public byte[] logo 
+        {
+            get { return logo_; }
+            set 
+            {
+                logo_ = value;
+                if (logo_ != null)
+                {
+                    using (MemoryStream ms = new MemoryStream(logo_)) 
+                    {
+                        PBX_Logo.Image = Image.FromStream(ms);
+                    }
+                }
+            
+            }
+        }
+
         private void FB_Close_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -190,6 +208,21 @@ namespace The_Main_Project
             } 
         }
 
-               
+        private void BTN_Load_Click(object sender, EventArgs e)
+        {
+            logo=null;
+            OpenFileDialog file = new OpenFileDialog();
+            file.Title = "Sélectionner le logo d'équipe";
+            file.CheckFileExists = true;
+            file.InitialDirectory = @":C\";
+            file.Filter = "Fichiers images (*.BMP; *.JPG; *.GIF; *.PNG)|*.BMP; *.JPG; *.GIF; *.PNG|Tous les fichiers(*.*)|*.*";
+            file.FilterIndex = 1;
+            file.RestoreDirectory = true;
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                logo = File.ReadAllBytes(file.FileName);
+                PBX_Logo.Image = Image.FromFile(file.FileName);
+            }
+        }                       
     }
 }
