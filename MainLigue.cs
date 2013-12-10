@@ -261,6 +261,7 @@ namespace The_Main_Project
             OuvrireStat();
         }
 
+
         private void CBX_Division_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (CBX_Division.SelectedIndex == 0)
@@ -277,6 +278,7 @@ namespace The_Main_Project
         }
 
         
+
 
     }
 

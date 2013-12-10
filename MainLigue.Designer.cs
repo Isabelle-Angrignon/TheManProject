@@ -76,6 +76,7 @@
             // 
             this.DGV_Team.AllowUserToAddRows = false;
             this.DGV_Team.AllowUserToDeleteRows = false;
+
             this.DGV_Team.AllowUserToResizeColumns = false;
             this.DGV_Team.AllowUserToResizeRows = false;
             this.DGV_Team.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -83,6 +84,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DGV_Team.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGV_Team.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+
+
             this.DGV_Team.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Team.Location = new System.Drawing.Point(582, 146);
             this.DGV_Team.MultiSelect = false;
@@ -92,6 +95,7 @@
             this.DGV_Team.RowHeadersVisible = false;
             this.DGV_Team.Size = new System.Drawing.Size(266, 270);
             this.DGV_Team.TabIndex = 1;
+            this.DGV_Team.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Team_CellContentClick);
             // 
             // MS_Main
             // 
@@ -225,12 +229,17 @@
             // 
             this.DGV_Match.AllowUserToAddRows = false;
             this.DGV_Match.AllowUserToDeleteRows = false;
+<<<<<<< HEAD
             this.DGV_Match.AllowUserToResizeColumns = false;
             this.DGV_Match.AllowUserToResizeRows = false;
             this.DGV_Match.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.DGV_Match.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGV_Match.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+=======
+            this.DGV_Match.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+>>>>>>> euh Change ...
             this.DGV_Match.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Match.Location = new System.Drawing.Point(29, 146);
             this.DGV_Match.Name = "DGV_Match";
@@ -241,7 +250,11 @@
             // 
             // CBX_Division
             // 
+<<<<<<< HEAD
             this.CBX_Division.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+=======
+            this.CBX_Division.Anchor = System.Windows.Forms.AnchorStyles.Top;
+>>>>>>> euh Change ...
             this.CBX_Division.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBX_Division.FormattingEnabled = true;
             this.CBX_Division.Location = new System.Drawing.Point(582, 119);
@@ -396,6 +409,7 @@
             // 
             // PBX_Logo
             // 
+            this.PBX_Logo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.PBX_Logo.Location = new System.Drawing.Point(503, 146);
             this.PBX_Logo.Name = "PBX_Logo";
             this.PBX_Logo.Size = new System.Drawing.Size(75, 75);

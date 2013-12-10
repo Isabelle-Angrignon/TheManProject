@@ -184,7 +184,7 @@ namespace The_Main_Project
                     break;
                 case 02292:
                     // au lieu d'afficher violation de clé étrangère , on affiche ceci:
-                    MessageBox.Show("La Division choisie n'est pas vide et ne peut donc pas être suprimer");
+                    MessageBox.Show("La Division choisie n'est pas vide et ne peut donc pas être suprimer ou son nom ne peut être modifier");
                     break;
                 case 01400:
                     MessageBox.Show("La division doit avoir un nom");
