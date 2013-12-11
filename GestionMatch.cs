@@ -97,6 +97,7 @@ namespace The_Main_Project
         }
         private void Lister()
         {
+            LB_No_Match.DataBindings.Add("Text", formDataSet, "Table.nomatch");
             DTP_Date.DataBindings.Add("Text", formDataSet, "Table.datematch");
             TB_Lieu.DataBindings.Add("Text", formDataSet, "Table.lieu");
             TB_Receveur.DataBindings.Add("Text", formDataSet, "Table.receveur");
@@ -106,13 +107,14 @@ namespace The_Main_Project
         }
         private void Vider()
         {
+            LB_No_Match.DataBindings.Clear();
             DTP_Date.DataBindings.Clear();
             TB_Lieu.DataBindings.Clear();
             TB_Receveur.DataBindings.Clear();
             TB_Visiteur.DataBindings.Clear();
             TB_R_Pts.DataBindings.Clear();
             TB_V_Pts.DataBindings.Clear();
-
+                      
             DTP_Date.Value = DateTime.Now;
             TB_Lieu.Clear();
             TB_Receveur.Clear();
@@ -189,17 +191,17 @@ namespace The_Main_Project
         {
             try
             {
-                string sqlDelete = "DELETE FROM Joueurs WHERE NoJoueur = :NO";
-                string Nom = TB_Prenom_J.Text + " " + TB_Nom_J.Text;
-                OracleParameter oParamNo = new OracleParameter(":NO", OracleDbType.Int32, 4);
-                oParamNo.Value = int.Parse(LB_No_J.Text);
+                string sqlDelete = "DELETE FROM matchs WHERE Nomatch = :NO";
+                
+                OracleParameter oParamNo = new OracleParameter(":NO", OracleDbType.Int32, 3);
+                oParamNo.Value = int.Parse(LB_No_Match.Text);
 
                 OracleCommand orComm = new OracleCommand(sqlDelete, conn);
                 orComm.Parameters.Add(oParamNo);
                 orComm.ExecuteNonQuery();
 
                 LoadDataset();
-                MessageBox.Show(" Le joueur " + Nom + " a été suprimer");
+                MessageBox.Show(" Le match à été suprimé");
             }
             catch (OracleException ex)
             {
@@ -215,36 +217,33 @@ namespace The_Main_Project
         {
             try
             {
-                /////enregistrer la clé primaire d'abord pour pouvoir la modifier...  
-                string Nom = TB_Prenom_J.Text + " " + TB_Nom_J.Text;
-                string sqlUpdate = "UPDATE Joueurs SET Nom = :NOM, Prénom = :PRENOM, Naissance = :Naissance," +
-                " Position = :POSITION, nomaillot = :MAILLOT, NomÉquipe = :EQUIPE WHERE NoJoueur = :NO"; //requete met a jour
+                string sqlUpdate = "UPDATE matchs SET Reveceur = :RECEV, Visiteur = :VISIT, datematch = :DATEMATCH," +
+                " Lieu = :LIEU, butsreceveur = :BUTSR, butsvisiteur = :BUTSV WHERE Nomatch = :NO"; //requete met a jour
+ 
+                OracleParameter oParamRecev = new OracleParameter(":RECEV", OracleDbType.Varchar2, 20);
+                OracleParameter oParamVisit = new OracleParameter(":VISIT", OracleDbType.Varchar2, 20);
+                OracleParameter oParamDate = new OracleParameter(":DATEMATCH", OracleDbType.Date);
+                OracleParameter oParamLieu = new OracleParameter(":LIEU", OracleDbType.Varchar2, 1);
+                OracleParameter oParamButsR = new OracleParameter(":BUTSR", OracleDbType.Varchar2, 2);
+                OracleParameter oParamButsV = new OracleParameter(":BUTSV", OracleDbType.Varchar2, 30);
 
-                OracleParameter oParamNom = new OracleParameter(":NOM", OracleDbType.Varchar2, 20);
-                OracleParameter oParamPrenom = new OracleParameter(":PRENOM", OracleDbType.Varchar2, 20);
-                OracleParameter oParamDate = new OracleParameter(":NAISSANCE", OracleDbType.Date);
-                OracleParameter oParamPos = new OracleParameter(":POSITION", OracleDbType.Varchar2, 1);
-                OracleParameter oParamMail = new OracleParameter(":MAILLOT", OracleDbType.Int32, 2);
-                OracleParameter oParamEqu = new OracleParameter(":EQUIPE", OracleDbType.Varchar2, 30);
-                OracleParameter oParamNo = new OracleParameter(":NO", OracleDbType.Int32, 4);
-                oParamNom.Value = TB_Nom_J.Text;
-                oParamPrenom.Value = TB_Prenom_J.Text;
-                oParamDate.Value = DTP_Naissance.Value;
-                oParamPos.Value = TB_Position.Text[0];
-                oParamMail.Value = int.Parse(TB_Maillot.Text);
-                oParamEqu.Value = TB_Équipe.Text;
-                oParamNo.Value = int.Parse(LB_No_J.Text);
+                oParamRecev.Value = TB_Receveur.Text;
+                oParamVisit.Value = TB_Visiteur.Text;
+                oParamDate.Value = DTP_Date.Value;
+                oParamLieu.Value = TB_Lieu.Text[0];
+                oParamButsR.Value = TB_R_Pts.Text;
+                oParamButsV.Value = TB_V_Pts.Text;
 
                 OracleCommand orComm = new OracleCommand(sqlUpdate, conn);
-                orComm.Parameters.Add(oParamNom);
-                orComm.Parameters.Add(oParamPrenom);
+                orComm.Parameters.Add(oParamRecev);
+                orComm.Parameters.Add(oParamVisit);
                 orComm.Parameters.Add(oParamDate);
-                orComm.Parameters.Add(oParamPos);
-                orComm.Parameters.Add(oParamMail);
-                orComm.Parameters.Add(oParamEqu);
-                orComm.Parameters.Add(oParamNo);
+                orComm.Parameters.Add(oParamLieu);
+                orComm.Parameters.Add(oParamButsR);
+                orComm.Parameters.Add(oParamButsV);
                 orComm.ExecuteNonQuery();
-                MessageBox.Show(" Le joueur " + Nom + " a été modifier");
+
+                MessageBox.Show(" Le match à été modifié");              
 
                 LoadDataset();
             }
@@ -257,14 +256,7 @@ namespace The_Main_Project
                 MessageBox.Show(ex.Message.ToString());
             }
         }
-
-        private void BTN_Stats_Click(object sender, EventArgs e)
-        {
-            AfficherStat Form = new AfficherStat();
-            Form.NoJoueur = int.Parse(LB_No_J.Text);
-            Form.conn = conn;
-            Form.ShowDialog();
-        }
+            
 
         private void ErrorMessage(OracleException Ex)
         {
@@ -286,7 +278,7 @@ namespace The_Main_Project
         private void FB_Fiche_Resultat_Click(object sender, EventArgs e)
         {
             OuvrireResultat();
-        }        
+        }
         private void OuvrireResultat()
         {
             Resultat_Match Form = new Resultat_Match();
@@ -296,5 +288,6 @@ namespace The_Main_Project
             {
                 ///envoyer commit?
             }
+        }
     }
 }

@@ -56,7 +56,6 @@
             this.CMS_Team_Modifier = new System.Windows.Forms.ToolStripMenuItem();
             this.CMS_Team_Supprimer = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.FB_Result = new FlashButton.FlashButton();
             this.FB_Match = new FlashButton.FlashButton();
             this.FB_Top5 = new FlashButton.FlashButton();
             this.FB_Joueur = new FlashButton.FlashButton();
@@ -122,28 +121,28 @@
             // TSMI_Division
             // 
             this.TSMI_Division.Name = "TSMI_Division";
-            this.TSMI_Division.Size = new System.Drawing.Size(152, 22);
+            this.TSMI_Division.Size = new System.Drawing.Size(125, 22);
             this.TSMI_Division.Text = "Division...";
             this.TSMI_Division.Click += new System.EventHandler(this.TSMI_Division_Click);
             // 
             // TSMI_Equipe
             // 
             this.TSMI_Equipe.Name = "TSMI_Equipe";
-            this.TSMI_Equipe.Size = new System.Drawing.Size(152, 22);
+            this.TSMI_Equipe.Size = new System.Drawing.Size(125, 22);
             this.TSMI_Equipe.Text = "Équipe...";
             this.TSMI_Equipe.Click += new System.EventHandler(this.TSMI_Equipe_Click);
             // 
             // TSMI_Joueur
             // 
             this.TSMI_Joueur.Name = "TSMI_Joueur";
-            this.TSMI_Joueur.Size = new System.Drawing.Size(152, 22);
+            this.TSMI_Joueur.Size = new System.Drawing.Size(125, 22);
             this.TSMI_Joueur.Text = "Joueur...";
             this.TSMI_Joueur.Click += new System.EventHandler(this.TSMI_Joueur_Click);
             // 
             // TSMI_Match
             // 
             this.TSMI_Match.Name = "TSMI_Match";
-            this.TSMI_Match.Size = new System.Drawing.Size(152, 22);
+            this.TSMI_Match.Size = new System.Drawing.Size(125, 22);
             this.TSMI_Match.Text = "Match ...";
             this.TSMI_Match.Click += new System.EventHandler(this.TSMI_Match_Click);
             // 
@@ -161,20 +160,20 @@
             // 
             this.divisonToolStripMenuItem.Enabled = false;
             this.divisonToolStripMenuItem.Name = "divisonToolStripMenuItem";
-            this.divisonToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.divisonToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.divisonToolStripMenuItem.Text = "Divison...";
             // 
             // équipeToolStripMenuItem1
             // 
             this.équipeToolStripMenuItem1.Enabled = false;
             this.équipeToolStripMenuItem1.Name = "équipeToolStripMenuItem1";
-            this.équipeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.équipeToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.équipeToolStripMenuItem1.Text = "Équipe...";
             // 
             // TSMI_Stats_Joueur
             // 
             this.TSMI_Stats_Joueur.Name = "TSMI_Stats_Joueur";
-            this.TSMI_Stats_Joueur.Size = new System.Drawing.Size(152, 22);
+            this.TSMI_Stats_Joueur.Size = new System.Drawing.Size(122, 22);
             this.TSMI_Stats_Joueur.Text = "Joueur...";
             this.TSMI_Stats_Joueur.Click += new System.EventHandler(this.TSMI_Stats_Joueur_Click);
             // 
@@ -189,7 +188,7 @@
             // TSMI_Themes
             // 
             this.TSMI_Themes.Name = "TSMI_Themes";
-            this.TSMI_Themes.Size = new System.Drawing.Size(152, 22);
+            this.TSMI_Themes.Size = new System.Drawing.Size(125, 22);
             this.TSMI_Themes.Text = "Thèmes...";
             this.TSMI_Themes.Click += new System.EventHandler(this.TSMI_Themes_Click);
             // 
@@ -301,21 +300,6 @@
             this.CMS_Team_Supprimer.Size = new System.Drawing.Size(129, 22);
             this.CMS_Team_Supprimer.Text = "Supprimer";
             // 
-            // FB_Result
-            // 
-            this.FB_Result.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Resultat;
-            this.FB_Result.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_Result.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FB_Result.ImageClick = global::The_Main_Project.Properties.Resources.FB_Resultat_Click;
-            this.FB_Result.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Resultat_Disable;
-            this.FB_Result.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Resultat;
-            this.FB_Result.ImageOver = global::The_Main_Project.Properties.Resources.FB_Resultat_Hover;
-            this.FB_Result.Location = new System.Drawing.Point(471, 44);
-            this.FB_Result.Name = "FB_Result";
-            this.FB_Result.Size = new System.Drawing.Size(60, 45);
-            this.FB_Result.TabIndex = 24;
-            this.FB_Result.Click += new System.EventHandler(this.flashButton4_Click);
-            // 
             // FB_Match
             // 
             this.FB_Match.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Match;
@@ -425,7 +409,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(807, 308);
             this.Controls.Add(this.FB_Close);
-            this.Controls.Add(this.FB_Result);
             this.Controls.Add(this.FB_Match);
             this.Controls.Add(this.FB_Top5);
             this.Controls.Add(this.FB_Joueur);
@@ -489,7 +472,6 @@
         private FlashButton.FlashButton FB_Joueur;
         private FlashButton.FlashButton FB_Top5;
         private FlashButton.FlashButton FB_Match;
-        private FlashButton.FlashButton FB_Result;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private FlashButton.FlashButton FB_Close;

@@ -47,6 +47,8 @@
             this.TB_V_Pts = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.FB_Fiche_Resultat = new FlashButton.FlashButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.LB_No_Match = new System.Windows.Forms.Label();
             this.BTN_MOD.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -235,11 +237,30 @@
             this.FB_Fiche_Resultat.TabIndex = 24;
             this.FB_Fiche_Resultat.Click += new System.EventHandler(this.FB_Fiche_Resultat_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(14, 13);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "#";
+            // 
+            // LB_No_Match
+            // 
+            this.LB_No_Match.AutoSize = true;
+            this.LB_No_Match.Location = new System.Drawing.Point(34, 7);
+            this.LB_No_Match.Name = "LB_No_Match";
+            this.LB_No_Match.Size = new System.Drawing.Size(0, 13);
+            this.LB_No_Match.TabIndex = 41;
+            // 
             // GestionMatch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(321, 242);
+            this.Controls.Add(this.LB_No_Match);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.BTN_MOD);
             this.Controls.Add(this.FB_Fiche_Resultat);
@@ -249,6 +270,7 @@
             this.BTN_MOD.ResumeLayout(false);
             this.BTN_MOD.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -272,5 +294,7 @@
         private System.Windows.Forms.TextBox TB_R_Pts;
         private System.Windows.Forms.TextBox TB_V_Pts;
         private FlashButton.FlashButton FB_Fiche_Resultat;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LB_No_Match;
     }
 }

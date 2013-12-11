@@ -238,8 +238,7 @@ namespace The_Main_Project
             OuvertureTop5();
         }
 
-        
-        }
+               
 
         private void Form_League_SizeChanged(object sender, EventArgs e)
         {
