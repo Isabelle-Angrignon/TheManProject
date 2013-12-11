@@ -21,7 +21,7 @@ namespace The_Main_Project
         private byte[] logo = null;
         private const string dsHoraire = "Liste_matchs";
         private string dsClassement = "Classement_équipes";
-       // OracleDataReader orLigue;
+        OracleDataReader orLigue;
 
         public Form_League()
         {
@@ -132,10 +132,25 @@ namespace The_Main_Project
                 //on selected item
                 Vider();
                 Lister();
-
+                UpdateLogo();
                // PBX_Logo.DataBindings.Add("Image", mainDataSet, "Classement_équipes.logo", true);
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
+        }
+        private void UpdateLogo()
+        {
+            string sqlLogo = "SELECT logo FROM équipes where noméquipe = '" +
+                DGV_Team.SelectedCells.ToString() + "'";
+            OracleCommand CMD = new OracleCommand(sqlLogo, conn);
+            CMD.CommandType = CommandType.Text;
+            orLigue = CMD.ExecuteReader();
+            while (orLigue.Read())
+            {
+         //      PBX_Logo.Image.Clone(     //(orLigue.GetString(0));
+            }
+            //récupérer le nom d'équipe du selected row du dgv
+            //trouver ligne équivalente dans le data reader
+            //associer le logo de cette ligne au CBX
         }
         private void Vider()
         {
