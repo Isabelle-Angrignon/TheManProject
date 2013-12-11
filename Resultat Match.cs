@@ -47,7 +47,13 @@ namespace The_Main_Project
                 OracleDataReader objRead = oraCmdProg.ExecuteReader();
                 while (objRead.Read())
                 {
-                   
+                    LB_NoMatch.Text = objRead.GetInt32(0).ToString();
+                    LB_Lieu_Result.Text = objRead.GetString(0);
+                    char[] splitters = new char[] { ' ' };
+                    string[] CeQueJeVeux = objRead.GetDateTime(3).Date.ToString().Split(splitters);
+                    LB_DateMatch.Text = CeQueJeVeux[0];
+                    LB_NomEquipe_R.Text = objRead.GetString(5);
+                    LB_NomEquipe_V.Text = objRead.GetString(6);
                 }
                 objRead.Close();
             }
