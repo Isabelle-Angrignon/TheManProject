@@ -65,6 +65,7 @@
             this.FLB_Division = new FlashButton.FlashButton();
             this.PBX_Logo = new System.Windows.Forms.PictureBox();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.FB_Close = new FlashButton.FlashButton();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Team)).BeginInit();
             this.MS_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Match)).BeginInit();
@@ -244,7 +245,6 @@
             // CBX_Division
             // 
             this.CBX_Division.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-
             this.CBX_Division.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBX_Division.FormattingEnabled = true;
             this.CBX_Division.Location = new System.Drawing.Point(639, 119);
@@ -410,11 +410,27 @@
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
+            // FB_Close
+            // 
+            this.FB_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Close.BackgroundImage = global::The_Main_Project.Properties.Resources.Porte;
+            this.FB_Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Close.ImageClick = global::The_Main_Project.Properties.Resources.PorteCLic;
+            this.FB_Close.ImageDisable = null;
+            this.FB_Close.ImageNeutral = global::The_Main_Project.Properties.Resources.Porte;
+            this.FB_Close.ImageOver = global::The_Main_Project.Properties.Resources.PorteOver;
+            this.FB_Close.Location = new System.Drawing.Point(755, 44);
+            this.FB_Close.Name = "FB_Close";
+            this.FB_Close.Size = new System.Drawing.Size(40, 46);
+            this.FB_Close.TabIndex = 40;
+            this.FB_Close.Click += new System.EventHandler(this.FB_Close_Click);
+            // 
             // Form_League
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(807, 308);
+            this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.FB_Result);
             this.Controls.Add(this.FB_Match);
             this.Controls.Add(this.FB_Top5);
@@ -483,6 +499,7 @@
         private FlashButton.FlashButton FB_Result;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private FlashButton.FlashButton FB_Close;
 
     }
 }

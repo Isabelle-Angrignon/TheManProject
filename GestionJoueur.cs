@@ -164,6 +164,7 @@ namespace The_Main_Project
         {
             try
             {
+                string Nom = TB_Prenom_J.Text + " " + TB_Nom_J.Text;
                 string sqlAdd = "INSERT INTO Joueurs VALUES (seqJoueurs.nextval,:NOM,:PRENOM,:"+
                     " NAISSANCE,:POSITION,:MAILLOT,:EQUIPE)";
                 OracleParameter oParamNom = new OracleParameter(":NOM", OracleDbType.Varchar2, 20);
@@ -187,8 +188,13 @@ namespace The_Main_Project
                 orComm.Parameters.Add(oParamMail);
                 orComm.Parameters.Add(oParamEqu);
                 orComm.ExecuteNonQuery();
+                MessageBox.Show(" Le joueur " + Nom + " a été ajouter");
 
                 LoadDataset();
+            }
+            catch (OracleException ex)
+            {
+                ErrorMessage(ex);
             }
             catch (Exception ex)
             {
@@ -201,7 +207,7 @@ namespace The_Main_Project
             try
             {
                 string sqlDelete = "DELETE FROM Joueurs WHERE NoJoueur = :NO";
-
+                string Nom = TB_Prenom_J.Text + " " + TB_Nom_J.Text;
                 OracleParameter oParamNo = new OracleParameter(":NO", OracleDbType.Int32, 4);
                 oParamNo.Value = int.Parse(LB_No_J.Text);
 
@@ -210,6 +216,11 @@ namespace The_Main_Project
                 orComm.ExecuteNonQuery();
 
                 LoadDataset();
+                MessageBox.Show(" Le joueur " + Nom + " a été suprimer");
+            }
+            catch (OracleException ex)
+            {
+                ErrorMessage(ex);
             }
             catch (Exception ex)
             {
@@ -221,7 +232,8 @@ namespace The_Main_Project
         {
             try
             {
-                /////enregistrer la clé primaire d'abord pour pouvoir la modifier...                
+                /////enregistrer la clé primaire d'abord pour pouvoir la modifier...  
+                string Nom = TB_Prenom_J.Text + " " + TB_Nom_J.Text;
                 string sqlUpdate = "UPDATE Joueurs SET Nom = :NOM, Prénom = :PRENOM, Naissance = :Naissance," +
                 " Position = :POSITION, nomaillot = :MAILLOT, NomÉquipe = :EQUIPE WHERE NoJoueur = :NO"; //requete met a jour
 
@@ -249,10 +261,15 @@ namespace The_Main_Project
                 orComm.Parameters.Add(oParamEqu);
                 orComm.Parameters.Add(oParamNo);
                 orComm.ExecuteNonQuery();
+                MessageBox.Show(" Le joueur " + Nom + " a été modifier");
 
                 LoadDataset();
             }
             catch (OracleException ex)
+            {
+                ErrorMessage(ex);
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
             }
@@ -261,7 +278,24 @@ namespace The_Main_Project
         private void BTN_Stats_Click(object sender, EventArgs e)
         {
 
-        }        
+        }
+
+        private void ErrorMessage(OracleException Ex)
+        {
+            switch (Ex.Number)
+            {
+                case 02290:
+                    // au lieu d'afficher violation de clé étrangère , on affiche ceci:
+                    MessageBox.Show("Entrée invalide");
+                    break;
+                case 01400:
+                    MessageBox.Show("Il y a des champs vide");
+                    break;
+                default: MessageBox.Show(Ex.Message.ToString());
+                    break;
+
+            }
+        }
 
 
     }

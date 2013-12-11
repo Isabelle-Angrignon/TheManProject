@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionJoueur));
             this.Caractérstique = new System.Windows.Forms.GroupBox();
-            this.LB_No_J = new System.Windows.Forms.Label();
             this.uC_Navigator = new UC_Navigator.UC_Navigator();
             this.BTN_Stats = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.LB_No_J = new System.Windows.Forms.Label();
             this.FB_Close = new FlashButton.FlashButton();
             this.Caractérstique.SuspendLayout();
             this.SuspendLayout();
@@ -76,14 +76,6 @@
             this.Caractérstique.Size = new System.Drawing.Size(329, 230);
             this.Caractérstique.TabIndex = 3;
             this.Caractérstique.TabStop = false;
-            // 
-            // LB_No_J
-            // 
-            this.LB_No_J.AutoSize = true;
-            this.LB_No_J.Location = new System.Drawing.Point(9, 284);
-            this.LB_No_J.Name = "LB_No_J";
-            this.LB_No_J.Size = new System.Drawing.Size(0, 13);
-            this.LB_No_J.TabIndex = 38;
             // 
             // uC_Navigator
             // 
@@ -239,6 +231,14 @@
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "# Chandail";
+            // 
+            // LB_No_J
+            // 
+            this.LB_No_J.AutoSize = true;
+            this.LB_No_J.Location = new System.Drawing.Point(9, 284);
+            this.LB_No_J.Name = "LB_No_J";
+            this.LB_No_J.Size = new System.Drawing.Size(0, 13);
+            this.LB_No_J.TabIndex = 38;
             // 
             // FB_Close
             // 

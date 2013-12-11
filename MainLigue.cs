@@ -278,6 +278,12 @@ namespace The_Main_Project
             }
         }
 
+        private void FB_Close_Click(object sender, EventArgs e)
+        {
+            conn.Close();
+            Application.Exit();
+        }
+
         
 
 

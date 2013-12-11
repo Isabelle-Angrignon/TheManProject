@@ -105,6 +105,7 @@ namespace The_Main_Project
         {
             try 
             {
+                string Nom = TB_Nom_D.Text;
                 string sqlAdd = "INSERT INTO Divisions VALUES (:NOMDIV,:CREATION)";
                 OracleParameter oParamNomDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
                 OracleParameter oParamCreation = new OracleParameter(":CREATION", OracleDbType.Date);
@@ -115,6 +116,7 @@ namespace The_Main_Project
                 orComm.Parameters.Add(oParamNomDiv);
                 orComm.Parameters.Add(oParamCreation);
                 orComm.ExecuteNonQuery();
+                MessageBox.Show("La Divsion " + Nom + " a été ajouté");
 
                 LoadDataset();
             } 
@@ -128,6 +130,7 @@ namespace The_Main_Project
         {
             try 
             {
+                string Nom = TB_Nom_D.Text;
                 string sqlDelete = "DELETE FROM Divisions WHERE NomDivision = :NOMDIV";//requete supprime
 
                 OracleParameter oParamNomDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
@@ -138,6 +141,7 @@ namespace The_Main_Project
                 orComm.ExecuteNonQuery();
 
                 LoadDataset();
+                MessageBox.Show("La Divsion " + Nom + " a été supprimé");
             } 
             catch (OracleException ex) 
             {
@@ -149,7 +153,8 @@ namespace The_Main_Project
         {
             try 
             {
-                /////enregistrer la clé primaire d'abord pour pouvoir la modifier...                
+                /////enregistrer la clé primaire d'abord pour pouvoir la modifier...
+                string Nom = TB_Nom_D.Text;
                 string sqlUpdate = "UPDATE Divisions SET NomDivision = :NOMDIV, DateCréation = :CREATION"+
                 " WHERE NomDivision = :NOMDIV2"; //requete met a jour
 
@@ -167,6 +172,7 @@ namespace The_Main_Project
                 orComm.ExecuteNonQuery();
 
                 LoadDataset();
+                MessageBox.Show("La Divsion " + Nom + " a été modifié");
             } 
             catch (OracleException ex) 
             {
