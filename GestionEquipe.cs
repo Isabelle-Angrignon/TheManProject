@@ -30,13 +30,13 @@ namespace The_Main_Project
             set 
             {
                 logo_ = value;
-                if (logo_ != null)
-                {
-                    using (MemoryStream ms = new MemoryStream(logo_)) 
-                    {
-                        PBX_Logo.Image = Image.FromStream(ms);
-                    }
-                }            
+            //    if (logo_ != null)
+            //    {
+            //        using (MemoryStream ms = new MemoryStream(logo_)) 
+            //        {
+            //            PBX_Logo.Image = Image.FromStream(ms);
+            //        }
+            //    }            
             }
         }
 
@@ -78,8 +78,7 @@ namespace The_Main_Project
             TB_Ville.DataBindings.Add("Text", equDataSet, "Équipes.ville");
             TB_DivisionEquipe.DataBindings.Add("Text", equDataSet, "Équipes.nomdivision");///invisible
             CB_Division.SelectedItem = TB_DivisionEquipe.Text;
-            PBX_Logo.DataBindings.Add("Image", equDataSet, "Équipes.logo", true);/////////
-            
+            PBX_Logo.DataBindings.Add("Image", equDataSet, "Équipes.logo", true);/////////            
         }
 
         ///À éliminer??

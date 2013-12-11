@@ -43,11 +43,17 @@
             this.DTP_Date = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.FB_Close = new FlashButton.FlashButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.BTN_MOD.SuspendLayout();
             this.SuspendLayout();
             // 
             // BTN_MOD
             // 
+            this.BTN_MOD.Controls.Add(this.label1);
+            this.BTN_MOD.Controls.Add(this.textBox1);
+            this.BTN_MOD.Controls.Add(this.textBox2);
             this.BTN_MOD.Controls.Add(this.UC_Navigator);
             this.BTN_MOD.Controls.Add(this.button2);
             this.BTN_MOD.Controls.Add(this.BTN_Delete);
@@ -62,7 +68,7 @@
             this.BTN_MOD.Controls.Add(this.label3);
             this.BTN_MOD.Location = new System.Drawing.Point(12, 12);
             this.BTN_MOD.Name = "BTN_MOD";
-            this.BTN_MOD.Size = new System.Drawing.Size(264, 167);
+            this.BTN_MOD.Size = new System.Drawing.Size(295, 167);
             this.BTN_MOD.TabIndex = 0;
             this.BTN_MOD.TabStop = false;
             // 
@@ -78,7 +84,7 @@
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
-            this.button2.Location = new System.Drawing.Point(214, 83);
+            this.button2.Location = new System.Drawing.Point(240, 85);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(44, 43);
             this.button2.TabIndex = 3;
@@ -88,7 +94,7 @@
             // 
             this.BTN_Delete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Delete.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Delete.Image")));
-            this.BTN_Delete.Location = new System.Drawing.Point(214, 47);
+            this.BTN_Delete.Location = new System.Drawing.Point(240, 49);
             this.BTN_Delete.Name = "BTN_Delete";
             this.BTN_Delete.Size = new System.Drawing.Size(44, 40);
             this.BTN_Delete.TabIndex = 4;
@@ -98,7 +104,7 @@
             // 
             this.BTN_Add.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Add.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
-            this.BTN_Add.Location = new System.Drawing.Point(214, 10);
+            this.BTN_Add.Location = new System.Drawing.Point(240, 12);
             this.BTN_Add.Name = "BTN_Add";
             this.BTN_Add.Size = new System.Drawing.Size(44, 35);
             this.BTN_Add.TabIndex = 5;
@@ -177,17 +183,40 @@
             this.FB_Close.ImageDisable = null;
             this.FB_Close.ImageNeutral = global::The_Main_Project.Properties.Resources.Porte;
             this.FB_Close.ImageOver = global::The_Main_Project.Properties.Resources.PorteOver;
-            this.FB_Close.Location = new System.Drawing.Point(226, 185);
+            this.FB_Close.Location = new System.Drawing.Point(252, 160);
             this.FB_Close.Name = "FB_Close";
             this.FB_Close.Size = new System.Drawing.Size(49, 46);
             this.FB_Close.TabIndex = 39;
             this.FB_Close.Click += new System.EventHandler(this.BTN_Ok_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(171, 71);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(39, 20);
+            this.textBox1.TabIndex = 40;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(171, 97);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(39, 20);
+            this.textBox2.TabIndex = 39;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(183, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(22, 13);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Pts";
+            // 
             // GestionMatch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(287, 241);
+            this.ClientSize = new System.Drawing.Size(313, 216);
             this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.BTN_MOD);
             this.Name = "GestionMatch";
@@ -214,5 +243,8 @@
         private System.Windows.Forms.Button BTN_Add;
         private UC_Navigator.UC_Navigator UC_Navigator;
         private FlashButton.FlashButton FB_Close;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

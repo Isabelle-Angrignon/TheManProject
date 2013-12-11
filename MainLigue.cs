@@ -21,6 +21,7 @@ namespace The_Main_Project
         private byte[] logo = null;
         private const string dsHoraire = "Liste_matchs";
         private string dsClassement = "Classement_équipes";
+        private string dsLogo = "Logo";
         OracleDataReader orLigue;
 
         public Form_League()
@@ -130,37 +131,55 @@ namespace The_Main_Project
 
                 DGV_Team.DataSource = maSource;
                 //on selected item
-                Vider();
-                Lister();
-                UpdateLogo();
+                //Vider();
+                //Lister();
+                //UpdateLogo();
                // PBX_Logo.DataBindings.Add("Image", mainDataSet, "Classement_équipes.logo", true);
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
         private void UpdateLogo()
         {
-            string sqlLogo = "SELECT logo FROM équipes where noméquipe = '" +
-                DGV_Team.SelectedCells.ToString() + "'";
-            OracleCommand CMD = new OracleCommand(sqlLogo, conn);
-            CMD.CommandType = CommandType.Text;
-            orLigue = CMD.ExecuteReader();
-            while (orLigue.Read())
-            {
-         //      PBX_Logo.Image.Clone(     //(orLigue.GetString(0));
-            }
+            //string sqlLogo = "SELECT logo FROM équipes where noméquipe = '" +
+            //    DGV_Team.SelectedCells.ToString() + "'";
+            ////dataset
+            //OracleDataAdapter Oraliste = new OracleDataAdapter(dsLogo, conn);
+
+            //if (mainDataSet.Tables.Contains(dsLogo))
+            //{
+            //    mainDataSet.Tables[dsLogo].Clear();
+            //}
+            //Oraliste.Fill(mainDataSet, dsLogo);
+            //Oraliste.Dispose();
+
+            //BindingSource maSource = new BindingSource(mainDataSet, dsLogo);
+
+            //DGV_Team.DataSource = maSource;
+            ////on selected item
+            //Vider();
+            //Lister();
+                
+
+         //   OracleCommand CMD = new OracleCommand(sqlLogo, conn);
+         //   CMD.CommandType = CommandType.Text;
+         //   orLigue = CMD.ExecuteReader();
+         //   while (orLigue.Read())
+         //   {
+         ////      PBX_Logo.Image.Clone(     //(orLigue.GetString(0));
+         //   }
             //récupérer le nom d'équipe du selected row du dgv
             //trouver ligne équivalente dans le data reader
             //associer le logo de cette ligne au CBX
         }
-        private void Vider()
-        {
-            PBX_Logo.DataBindings.Clear();
-            PBX_Logo.Image = null;
-        }
-        private void Lister()
-        {
-            PBX_Logo.DataBindings.Add("Image", mainDataSet, "Classement_équipes.logo", true);
-        }
+        //private void Vider()
+        //{
+        //    PBX_Logo.DataBindings.Clear();
+        //    PBX_Logo.Image = null;
+        //}
+        //private void Lister()
+        //{
+        //    PBX_Logo.DataBindings.Add("Image", mainDataSet, "Classement_équipes.logo", true);
+        //}
         
 
         private void OuvertureTop5()
