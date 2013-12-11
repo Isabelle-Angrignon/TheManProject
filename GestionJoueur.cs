@@ -165,8 +165,8 @@ namespace The_Main_Project
             try
             {
                 string Nom = TB_Prenom_J.Text + " " + TB_Nom_J.Text;
-                string sqlAdd = "INSERT INTO Joueurs VALUES (seqJoueurs.nextval,:NOM,:PRENOM,:"+
-                    " NAISSANCE,:POSITION,:MAILLOT,:EQUIPE)";
+                string sqlAdd = "INSERT INTO Joueurs VALUES (seqJoueurs.nextval,:NOM,:PRENOM, "+
+                    " :NAISSANCE,:POSITION,:MAILLOT,:EQUIPE)";
                 OracleParameter oParamNom = new OracleParameter(":NOM", OracleDbType.Varchar2, 20);
                 OracleParameter oParamPrenom = new OracleParameter(":PRENOM", OracleDbType.Varchar2, 20);
                 OracleParameter oParamDate = new OracleParameter(":NAISSANCE", OracleDbType.Date);

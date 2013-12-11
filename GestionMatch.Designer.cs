@@ -43,17 +43,18 @@
             this.DTP_Date = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.FB_Close = new FlashButton.FlashButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TB_R_Pts = new System.Windows.Forms.TextBox();
+            this.TB_V_Pts = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.FB_Fiche_Resultat = new FlashButton.FlashButton();
             this.BTN_MOD.SuspendLayout();
             this.SuspendLayout();
             // 
             // BTN_MOD
             // 
             this.BTN_MOD.Controls.Add(this.label1);
-            this.BTN_MOD.Controls.Add(this.textBox1);
-            this.BTN_MOD.Controls.Add(this.textBox2);
+            this.BTN_MOD.Controls.Add(this.TB_R_Pts);
+            this.BTN_MOD.Controls.Add(this.TB_V_Pts);
             this.BTN_MOD.Controls.Add(this.UC_Navigator);
             this.BTN_MOD.Controls.Add(this.button2);
             this.BTN_MOD.Controls.Add(this.BTN_Delete);
@@ -79,6 +80,10 @@
             this.UC_Navigator.Name = "UC_Navigator";
             this.UC_Navigator.Size = new System.Drawing.Size(206, 19);
             this.UC_Navigator.TabIndex = 38;
+            this.UC_Navigator.OnFirst += new UC_Navigator.UC_Navigator.ClickFirstChangedHandler(this.uC_Navigator_OnFirst);
+            this.UC_Navigator.OnPrev += new UC_Navigator.UC_Navigator.ClickPreviousChangedHandler(this.uC_Navigator_OnPrev);
+            this.UC_Navigator.OnNext += new UC_Navigator.UC_Navigator.ClickNextChangedHandler(this.uC_Navigator_OnNext);
+            this.UC_Navigator.OnLast += new UC_Navigator.UC_Navigator.ClickLastChangedHandler(this.uC_Navigator_OnLast);
             // 
             // button2
             // 
@@ -89,6 +94,7 @@
             this.button2.Size = new System.Drawing.Size(44, 43);
             this.button2.TabIndex = 3;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.BTN_Edit_Click);
             // 
             // BTN_Delete
             // 
@@ -99,6 +105,7 @@
             this.BTN_Delete.Size = new System.Drawing.Size(44, 40);
             this.BTN_Delete.TabIndex = 4;
             this.BTN_Delete.UseVisualStyleBackColor = true;
+            this.BTN_Delete.Click += new System.EventHandler(this.BTN_Del_Click);
             // 
             // BTN_Add
             // 
@@ -109,6 +116,7 @@
             this.BTN_Add.Size = new System.Drawing.Size(44, 35);
             this.BTN_Add.TabIndex = 5;
             this.BTN_Add.UseVisualStyleBackColor = true;
+            this.BTN_Add.Click += new System.EventHandler(this.BTN_Add_Click);
             // 
             // TB_Receveur
             // 
@@ -183,25 +191,25 @@
             this.FB_Close.ImageDisable = null;
             this.FB_Close.ImageNeutral = global::The_Main_Project.Properties.Resources.Porte;
             this.FB_Close.ImageOver = global::The_Main_Project.Properties.Resources.PorteOver;
-            this.FB_Close.Location = new System.Drawing.Point(252, 160);
+            this.FB_Close.Location = new System.Drawing.Point(260, 186);
             this.FB_Close.Name = "FB_Close";
             this.FB_Close.Size = new System.Drawing.Size(49, 46);
             this.FB_Close.TabIndex = 39;
             this.FB_Close.Click += new System.EventHandler(this.BTN_Ok_Click);
             // 
-            // textBox1
+            // TB_R_Pts
             // 
-            this.textBox1.Location = new System.Drawing.Point(171, 71);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(39, 20);
-            this.textBox1.TabIndex = 40;
+            this.TB_R_Pts.Location = new System.Drawing.Point(171, 71);
+            this.TB_R_Pts.Name = "TB_R_Pts";
+            this.TB_R_Pts.Size = new System.Drawing.Size(39, 20);
+            this.TB_R_Pts.TabIndex = 40;
             // 
-            // textBox2
+            // TB_V_Pts
             // 
-            this.textBox2.Location = new System.Drawing.Point(171, 97);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(39, 20);
-            this.textBox2.TabIndex = 39;
+            this.TB_V_Pts.Location = new System.Drawing.Point(171, 97);
+            this.TB_V_Pts.Name = "TB_V_Pts";
+            this.TB_V_Pts.Size = new System.Drawing.Size(39, 20);
+            this.TB_V_Pts.TabIndex = 39;
             // 
             // label1
             // 
@@ -212,15 +220,32 @@
             this.label1.TabIndex = 41;
             this.label1.Text = "Pts";
             // 
+            // FB_Fiche_Resultat
+            // 
+            this.FB_Fiche_Resultat.BackgroundImage = global::The_Main_Project.Properties.Resources.FB_Resultat;
+            this.FB_Fiche_Resultat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Fiche_Resultat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FB_Fiche_Resultat.ImageClick = global::The_Main_Project.Properties.Resources.FB_Resultat_Click;
+            this.FB_Fiche_Resultat.ImageDisable = global::The_Main_Project.Properties.Resources.FB_Resultat_Disable;
+            this.FB_Fiche_Resultat.ImageNeutral = global::The_Main_Project.Properties.Resources.FB_Resultat;
+            this.FB_Fiche_Resultat.ImageOver = global::The_Main_Project.Properties.Resources.FB_Resultat_Hover;
+            this.FB_Fiche_Resultat.Location = new System.Drawing.Point(12, 187);
+            this.FB_Fiche_Resultat.Name = "FB_Fiche_Resultat";
+            this.FB_Fiche_Resultat.Size = new System.Drawing.Size(60, 45);
+            this.FB_Fiche_Resultat.TabIndex = 24;
+            this.FB_Fiche_Resultat.Click += new System.EventHandler(this.FB_Fiche_Resultat_Click);
+            // 
             // GestionMatch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 216);
+            this.ClientSize = new System.Drawing.Size(321, 242);
             this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.BTN_MOD);
+            this.Controls.Add(this.FB_Fiche_Resultat);
             this.Name = "GestionMatch";
             this.Text = "GestionMatch";
+            this.Load += new System.EventHandler(this.GestionMatch_Load);
             this.BTN_MOD.ResumeLayout(false);
             this.BTN_MOD.PerformLayout();
             this.ResumeLayout(false);
@@ -244,7 +269,8 @@
         private UC_Navigator.UC_Navigator UC_Navigator;
         private FlashButton.FlashButton FB_Close;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TB_R_Pts;
+        private System.Windows.Forms.TextBox TB_V_Pts;
+        private FlashButton.FlashButton FB_Fiche_Resultat;
     }
 }

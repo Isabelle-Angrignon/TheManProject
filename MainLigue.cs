@@ -238,18 +238,7 @@ namespace The_Main_Project
             OuvertureTop5();
         }
 
-        private void flashButton4_Click(object sender, EventArgs e)
-        {
-            OuvrireResultat();
-        }
-        private void OuvrireResultat()
-        {
-            Resultat_Match Form = new Resultat_Match();
-            Form.conn = conn;
-            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                ///envoyer commit?
-            }
+        
         }
 
         private void Form_League_SizeChanged(object sender, EventArgs e)
