@@ -35,6 +35,59 @@ namespace The_Main_Project
         private void GestionJoueur_Load(object sender, EventArgs e)
         {
             LoadDataset();
+            AutoCompletePosition();
+            ContournerBinding(TB_Position.Text);
+            AutoCompleteEquipe();
+        }
+
+        private void AutoCompleteEquipe()
+        {
+            try
+            {
+                OracleCommand oraCmdProg = new OracleCommand("select NomÉquipe From JOUEURS", conn);
+                oraCmdProg.CommandType = CommandType.Text;
+
+                OracleDataReader objRead = oraCmdProg.ExecuteReader();
+                while (objRead.Read())
+                {
+                    TB_Équipe.AutoCompleteCustomSource.Add(objRead.GetString(0));
+                }
+                TB_Équipe.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                TB_Équipe.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                objRead.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+        private void AutoCompletePosition()
+        {
+            char[] séparateur = { '\r', '\n' };
+            String[] Positions = The_Main_Project.Properties.Resources.Position.Split(séparateur, StringSplitOptions.RemoveEmptyEntries);
+
+            foreach (String position in Positions)
+            {
+                TB_Position.AutoCompleteCustomSource.Add(position);
+            }
+
+            TB_Position.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            TB_Position.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        }
+        private void ContournerBinding(string ARemplacer)
+        {
+            if (ARemplacer == "G")
+            {
+                TB_Position.Text = "Guardien";
+            }
+            if (ARemplacer == "A")
+            {
+                TB_Position.Text = "Attaquant";
+            }
+            if (ARemplacer == "D")
+            {
+                TB_Position.Text = "Défenseur";
+            }
         }
         private void LoadDataset()
         {
@@ -52,6 +105,7 @@ namespace The_Main_Project
                 BindingSource maSource = new BindingSource(formDataSet, dsTable);
                 Vider();
                 Lister();
+                ContournerBinding(TB_Position.Text);
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
@@ -85,22 +139,26 @@ namespace The_Main_Project
 
         private void uC_Navigator_OnFirst(object sender, EventArgs e)
         {
-            this.BindingContext[formDataSet, dsTable].Position = 0;            
+            this.BindingContext[formDataSet, dsTable].Position = 0;
+            ContournerBinding(TB_Position.Text);
         }
 
         private void uC_Navigator_OnLast(object sender, EventArgs e)
         {
             this.BindingContext[formDataSet, dsTable].Position =
                 this.BindingContext[formDataSet, dsTable].Count - 1;
+            ContournerBinding(TB_Position.Text);
         }
         private void uC_Navigator_OnNext(object sender, EventArgs e)
         {
             this.BindingContext[formDataSet, dsTable].Position += 1;
+            ContournerBinding(TB_Position.Text);
         }
 
         private void uC_Navigator_OnPrev(object sender, EventArgs e)
         {
             this.BindingContext[formDataSet, dsTable].Position -= 1;
+            ContournerBinding(TB_Position.Text);
         }        
         private void BTN_Add_Click(object sender, EventArgs e)
         {
@@ -117,7 +175,7 @@ namespace The_Main_Project
                 oParamNom.Value = TB_Nom_J.Text;
                 oParamPrenom.Value = TB_Prenom_J.Text;
                 oParamDate.Value = DTP_Naissance.Value;
-                oParamPos.Value = TB_Position.Text;
+                oParamPos.Value = TB_Position.Text[0];
                 oParamMail.Value = TB_Maillot.Text;
                 oParamEqu.Value = TB_Équipe.Text;
 
@@ -177,7 +235,7 @@ namespace The_Main_Project
                 oParamNom.Value = TB_Nom_J.Text;
                 oParamPrenom.Value = TB_Prenom_J.Text;
                 oParamDate.Value = DTP_Naissance.Value;
-                oParamPos.Value = TB_Position.Text;
+                oParamPos.Value = TB_Position.Text[0];
                 oParamMail.Value = int.Parse(TB_Maillot.Text);
                 oParamEqu.Value = TB_Équipe.Text;
                 oParamNo.Value = int.Parse(LB_No_J.Text);
