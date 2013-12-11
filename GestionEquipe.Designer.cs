@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionEquipe));
             this.Caractérstique = new System.Windows.Forms.GroupBox();
-            this.CB_Division = new System.Windows.Forms.ComboBox();
             this.uC_Navigator = new UC_Navigator.UC_Navigator();
             this.BTN_Load = new System.Windows.Forms.Button();
             this.PBX_Logo = new System.Windows.Forms.PictureBox();
@@ -56,10 +55,10 @@
             // 
             // Caractérstique
             // 
-            this.Caractérstique.Controls.Add(this.CB_Division);
             this.Caractérstique.Controls.Add(this.uC_Navigator);
             this.Caractérstique.Controls.Add(this.BTN_Load);
             this.Caractérstique.Controls.Add(this.PBX_Logo);
+            this.Caractérstique.Controls.Add(this.TB_DivisionEquipe);
             this.Caractérstique.Controls.Add(this.label2);
             this.Caractérstique.Controls.Add(this.DTP_Date_Team);
             this.Caractérstique.Controls.Add(this.TB_Nom_Team);
@@ -75,15 +74,6 @@
             this.Caractérstique.Size = new System.Drawing.Size(288, 249);
             this.Caractérstique.TabIndex = 6;
             this.Caractérstique.TabStop = false;
-            // 
-            // CB_Division
-            // 
-            this.CB_Division.FormattingEnabled = true;
-            this.CB_Division.Location = new System.Drawing.Point(67, 173);
-            this.CB_Division.Name = "CB_Division";
-            this.CB_Division.Size = new System.Drawing.Size(131, 21);
-            this.CB_Division.TabIndex = 24;
-            this.CB_Division.SelectedIndexChanged += new System.EventHandler(this.CB_Division_SelectedIndexChanged);
             // 
             // uC_Navigator
             // 
@@ -210,7 +200,7 @@
             // 
             // TB_DivisionEquipe
             // 
-            this.TB_DivisionEquipe.Location = new System.Drawing.Point(39, 279);
+            this.TB_DivisionEquipe.Location = new System.Drawing.Point(67, 172);
             this.TB_DivisionEquipe.Name = "TB_DivisionEquipe";
             this.TB_DivisionEquipe.Size = new System.Drawing.Size(131, 20);
             this.TB_DivisionEquipe.TabIndex = 19;
@@ -252,7 +242,6 @@
             this.ClientSize = new System.Drawing.Size(315, 341);
             this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.Caractérstique);
-            this.Controls.Add(this.TB_DivisionEquipe);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "GestionEquipe";
             this.Text = "GestionEquipe";
@@ -262,7 +251,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Logo)).EndInit();
             this.CMS_Add.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -285,7 +273,6 @@
         private UC_Navigator.UC_Navigator uC_Navigator;
         private System.Windows.Forms.ContextMenuStrip CMS_Add;
         private System.Windows.Forms.ToolStripMenuItem cliquerPourAjouterToolStripMenuItem;
-        private System.Windows.Forms.ComboBox CB_Division;
         private FlashButton.FlashButton FB_Close;
     }
 }
