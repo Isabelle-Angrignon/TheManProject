@@ -49,7 +49,7 @@ namespace The_Main_Project
             FillDGVMatch();
             FillDGVEquipe(sqlClassement);
         }
-
+        
         private void UpdateComboBox()
         {
             CBX_Division.Items.Clear();
@@ -129,9 +129,23 @@ namespace The_Main_Project
                 BindingSource maSource = new BindingSource(mainDataSet, dsClassement);
 
                 DGV_Team.DataSource = maSource;
+                //on selected item
+                Vider();
+                Lister();
+
+               // PBX_Logo.DataBindings.Add("Image", mainDataSet, "Classement_équipes.logo", true);
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
-        }    
+        }
+        private void Vider()
+        {
+            PBX_Logo.DataBindings.Clear();
+            PBX_Logo.Image = null;
+        }
+        private void Lister()
+        {
+            PBX_Logo.DataBindings.Add("Image", mainDataSet, "Classement_équipes.logo", true);
+        }
         
 
         private void OuvertureTop5()

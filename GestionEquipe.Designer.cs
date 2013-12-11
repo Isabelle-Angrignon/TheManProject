@@ -72,14 +72,14 @@
             this.Caractérstique.Controls.Add(this.label3);
             this.Caractérstique.Location = new System.Drawing.Point(12, 12);
             this.Caractérstique.Name = "Caractérstique";
-            this.Caractérstique.Size = new System.Drawing.Size(288, 231);
+            this.Caractérstique.Size = new System.Drawing.Size(288, 249);
             this.Caractérstique.TabIndex = 6;
             this.Caractérstique.TabStop = false;
             // 
             // CB_Division
             // 
             this.CB_Division.FormattingEnabled = true;
-            this.CB_Division.Location = new System.Drawing.Point(67, 156);
+            this.CB_Division.Location = new System.Drawing.Point(67, 173);
             this.CB_Division.Name = "CB_Division";
             this.CB_Division.Size = new System.Drawing.Size(131, 21);
             this.CB_Division.TabIndex = 24;
@@ -88,7 +88,7 @@
             // uC_Navigator
             // 
             this.uC_Navigator.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uC_Navigator.Location = new System.Drawing.Point(17, 198);
+            this.uC_Navigator.Location = new System.Drawing.Point(17, 215);
             this.uC_Navigator.Name = "uC_Navigator";
             this.uC_Navigator.Size = new System.Drawing.Size(195, 19);
             this.uC_Navigator.TabIndex = 23;
@@ -112,7 +112,7 @@
             // 
             this.PBX_Logo.Location = new System.Drawing.Point(17, 19);
             this.PBX_Logo.Name = "PBX_Logo";
-            this.PBX_Logo.Size = new System.Drawing.Size(73, 50);
+            this.PBX_Logo.Size = new System.Drawing.Size(75, 75);
             this.PBX_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBX_Logo.TabIndex = 22;
             this.PBX_Logo.TabStop = false;
@@ -120,7 +120,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 155);
+            this.label2.Location = new System.Drawing.Point(14, 172);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 21;
@@ -129,14 +129,14 @@
             // DTP_Date_Team
             // 
             this.DTP_Date_Team.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DTP_Date_Team.Location = new System.Drawing.Point(83, 106);
+            this.DTP_Date_Team.Location = new System.Drawing.Point(83, 123);
             this.DTP_Date_Team.Name = "DTP_Date_Team";
             this.DTP_Date_Team.Size = new System.Drawing.Size(115, 20);
             this.DTP_Date_Team.TabIndex = 17;
             // 
             // TB_Nom_Team
             // 
-            this.TB_Nom_Team.Location = new System.Drawing.Point(67, 79);
+            this.TB_Nom_Team.Location = new System.Drawing.Point(67, 96);
             this.TB_Nom_Team.Name = "TB_Nom_Team";
             this.TB_Nom_Team.Size = new System.Drawing.Size(131, 20);
             this.TB_Nom_Team.TabIndex = 16;
@@ -176,7 +176,7 @@
             // 
             // TB_Ville
             // 
-            this.TB_Ville.Location = new System.Drawing.Point(67, 131);
+            this.TB_Ville.Location = new System.Drawing.Point(67, 148);
             this.TB_Ville.Name = "TB_Ville";
             this.TB_Ville.Size = new System.Drawing.Size(131, 20);
             this.TB_Ville.TabIndex = 10;
@@ -184,7 +184,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 134);
+            this.label6.Location = new System.Drawing.Point(14, 151);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(26, 13);
             this.label6.TabIndex = 9;
@@ -193,7 +193,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 109);
+            this.label5.Location = new System.Drawing.Point(14, 126);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 8;
@@ -202,7 +202,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 82);
+            this.label3.Location = new System.Drawing.Point(14, 99);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 2;
@@ -238,7 +238,7 @@
             this.FB_Close.ImageDisable = null;
             this.FB_Close.ImageNeutral = global::The_Main_Project.Properties.Resources.Porte;
             this.FB_Close.ImageOver = global::The_Main_Project.Properties.Resources.PorteOver;
-            this.FB_Close.Location = new System.Drawing.Point(233, 240);
+            this.FB_Close.Location = new System.Drawing.Point(233, 267);
             this.FB_Close.Name = "FB_Close";
             this.FB_Close.Size = new System.Drawing.Size(55, 62);
             this.FB_Close.TabIndex = 25;
@@ -249,7 +249,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(315, 314);
+            this.ClientSize = new System.Drawing.Size(315, 341);
             this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.Caractérstique);
             this.Controls.Add(this.TB_DivisionEquipe);
