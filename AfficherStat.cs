@@ -18,6 +18,7 @@ namespace The_Main_Project
             InitializeComponent();
         }
         public OracleConnection conn = new OracleConnection();
+        public int NoJoueur;
         private DataSet formDataSet = new DataSet();
         private const string dsTable = "Table";
         OracleDataAdapter Oraliste;       

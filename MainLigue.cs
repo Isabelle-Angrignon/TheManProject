@@ -249,11 +249,11 @@ namespace The_Main_Project
         }
         private void OuvrireStat()
         {
-            AfficherStat Form = new AfficherStat();
+            Top5 Form = new Top5();
             Form.conn = conn;
             if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                // envoyer commit ? 
+           
             }
         }
 
