@@ -63,5 +63,10 @@ namespace The_Main_Project
                 MessageBox.Show(ex.Message.ToString());
             } 
         }
+
+        private void Resultat_Match_Load(object sender, EventArgs e)
+        {
+            LoadMatch();
+        }
     }
 }

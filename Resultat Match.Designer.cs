@@ -414,6 +414,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Name = "Resultat_Match";
             this.Text = "Resultat_Match";
+            this.Load += new System.EventHandler(this.Resultat_Match_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_ListeJoueur_R)).EndInit();
