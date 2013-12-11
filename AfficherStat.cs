@@ -83,6 +83,7 @@ namespace The_Main_Project
         {
             LoadDataset();
             LoadTableJoueur();
+            LoadMinutesJoueur();
             ArrangeZero();
         }
         private void LoadTableJoueur()
@@ -137,7 +138,30 @@ namespace The_Main_Project
             {
                 LB_Points.Text = "0";
             }
+            if (LB_Minute.Text == "")
+            {
+                LB_Minute.Text = "0";
+            }
 
+        }
+        private void LoadMinutesJoueur()
+        {
+            try
+            {
+                OracleCommand oraCmdProg = new OracleCommand("select TEMPSPUNITION From PRÉSENCESMATCHS where NoJoueur = " + NoJoueur, conn);
+                oraCmdProg.CommandType = CommandType.Text;
+                OracleDataReader objRead = oraCmdProg.ExecuteReader();
+                while (objRead.Read())
+                {
+                    LB_Minute.Text = objRead.GetInt32(0).ToString();
+                }
+                objRead.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            } 
         }
         private void Caractérstique_Enter(object sender, EventArgs e)
         {
