@@ -48,7 +48,7 @@ namespace The_Main_Project
         private void GestionEquipe_Load(object sender, EventArgs e)
         {
             LoadDataset();
-            Fill_CBX_Division();
+            AutoCompleteDivision();
         }
         
         private void LoadDataset()
@@ -77,28 +77,13 @@ namespace The_Main_Project
             clePrimaire = TB_Nom_Team.Text;
             TB_Ville.DataBindings.Add("Text", equDataSet, "Équipes.ville");
             TB_DivisionEquipe.DataBindings.Add("Text", equDataSet, "Équipes.nomdivision");///invisible
-            CB_Division.SelectedItem = TB_DivisionEquipe.Text;
+            
             PBX_Logo.DataBindings.Add("Image", equDataSet, "Équipes.logo", true);/////////
             
         }
 
         ///À éliminer??
-        private void Fill_CBX_Division()
-        {
-            try
-            {
-                string sqlDivision = "select nomdivision from divisions";
-                OracleCommand oraDivision = new OracleCommand(sqlDivision, conn);
-                oraDivision.CommandType = CommandType.Text;
-                OracleDataReader OraReadDiv = oraDivision.ExecuteReader();
-                while (OraReadDiv.Read())
-                {
-                    CB_Division.Items.Add(OraReadDiv.GetString(0));
-                }                
-            }
-            catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
-
-        }
+      
         
         private void Vider()
         {
@@ -293,7 +278,27 @@ namespace The_Main_Project
             }
         }
 
+        private void AutoCompleteDivision()
+        {
+            try
+            {
+                OracleCommand oraCmdProg = new OracleCommand("select NomDivision From Divisions", conn);
+                oraCmdProg.CommandType = CommandType.Text;
 
+                OracleDataReader objRead = oraCmdProg.ExecuteReader();
+                while (objRead.Read())
+                {
+                    TB_DivisionEquipe.AutoCompleteCustomSource.Add(objRead.GetString(0));
+                }
+                TB_DivisionEquipe.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                TB_DivisionEquipe.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                objRead.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
         private void CB_Division_SelectedIndexChanged(object sender, EventArgs e)
         {
 

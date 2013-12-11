@@ -34,7 +34,6 @@
             this.LB_Passes = new System.Windows.Forms.Label();
             this.LB_But = new System.Windows.Forms.Label();
             this.LB_Penalite = new System.Windows.Forms.Label();
-            this.PBX_Equipe = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -52,7 +51,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Caractérstique.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Equipe)).BeginInit();
             this.SuspendLayout();
             // 
             // Caractérstique
@@ -66,7 +64,6 @@
             this.Caractérstique.Controls.Add(this.LB_Passes);
             this.Caractérstique.Controls.Add(this.LB_But);
             this.Caractérstique.Controls.Add(this.LB_Penalite);
-            this.Caractérstique.Controls.Add(this.PBX_Equipe);
             this.Caractérstique.Controls.Add(this.label7);
             this.Caractérstique.Controls.Add(this.label9);
             this.Caractérstique.Controls.Add(this.label11);
@@ -80,7 +77,7 @@
             this.Caractérstique.Controls.Add(this.LB_Numero);
             this.Caractérstique.Location = new System.Drawing.Point(12, 12);
             this.Caractérstique.Name = "Caractérstique";
-            this.Caractérstique.Size = new System.Drawing.Size(240, 208);
+            this.Caractérstique.Size = new System.Drawing.Size(172, 208);
             this.Caractérstique.TabIndex = 4;
             this.Caractérstique.TabStop = false;
             this.Caractérstique.Enter += new System.EventHandler(this.Caractérstique_Enter);
@@ -124,14 +121,6 @@
             this.LB_Penalite.Name = "LB_Penalite";
             this.LB_Penalite.Size = new System.Drawing.Size(0, 13);
             this.LB_Penalite.TabIndex = 31;
-            // 
-            // PBX_Equipe
-            // 
-            this.PBX_Equipe.Location = new System.Drawing.Point(152, 11);
-            this.PBX_Equipe.Name = "PBX_Equipe";
-            this.PBX_Equipe.Size = new System.Drawing.Size(75, 75);
-            this.PBX_Equipe.TabIndex = 30;
-            this.PBX_Equipe.TabStop = false;
             // 
             // label7
             // 
@@ -241,7 +230,7 @@
             this.FB_Close.ImageDisable = null;
             this.FB_Close.ImageNeutral = global::The_Main_Project.Properties.Resources.Porte;
             this.FB_Close.ImageOver = global::The_Main_Project.Properties.Resources.PorteOver;
-            this.FB_Close.Location = new System.Drawing.Point(222, 229);
+            this.FB_Close.Location = new System.Drawing.Point(159, 229);
             this.FB_Close.Name = "FB_Close";
             this.FB_Close.Size = new System.Drawing.Size(50, 51);
             this.FB_Close.TabIndex = 36;
@@ -287,7 +276,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(291, 292);
+            this.ClientSize = new System.Drawing.Size(228, 292);
             this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.Caractérstique);
             this.Name = "AfficherStat";
@@ -295,7 +284,6 @@
             this.Load += new System.EventHandler(this.AfficherStat_Load_1);
             this.Caractérstique.ResumeLayout(false);
             this.Caractérstique.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Equipe)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -309,7 +297,6 @@
         private System.Windows.Forms.Label LB_Prenom;
         private System.Windows.Forms.Label LB_Nom;
         private System.Windows.Forms.Label LB_Numero;
-        private System.Windows.Forms.PictureBox PBX_Equipe;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
