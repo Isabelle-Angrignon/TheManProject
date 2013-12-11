@@ -158,7 +158,8 @@ namespace The_Main_Project
                 oParamVille.Value = TB_Ville.Text;
                 oParamDiv.Value = TB_DivisionEquipe.Text;
 
-
+                
+                //FileStream Streamp = new FileStream(logo, FileMode.Open, FileAccess.Read);
                 /*
                  * // récuper le fichier nomFichier et le convertir en Byte. 
                 //le résultat est dans buffer1
@@ -169,8 +170,7 @@ namespace The_Main_Project
                 Streamp.Close();
                 // ajout de la photo dans la BD.
 
-                pphoto.Value = buffer1;
-                oraIns.Parameters.Add(pphoto);
+               
                  * */
 
                 OracleCommand orComm = new OracleCommand(sqlAdd, conn);
@@ -243,6 +243,9 @@ namespace The_Main_Project
                 orComm.Parameters.Add(oParamDiv);
                 orComm.Parameters.Add(oParamNom2);
                 orComm.ExecuteNonQuery();
+                
+                oParamLogo.Value = logo;
+                
 
                 LoadDataset();
                 MessageBox.Show("Enregistrement modifié avec succès");
