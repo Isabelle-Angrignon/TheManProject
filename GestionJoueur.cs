@@ -44,7 +44,7 @@ namespace The_Main_Project
         {
             try
             {
-                OracleCommand oraCmdProg = new OracleCommand("select NomÉquipe From JOUEURS", conn);
+                OracleCommand oraCmdProg = new OracleCommand("select NomÉquipe From Équipes", conn);
                 oraCmdProg.CommandType = CommandType.Text;
 
                 OracleDataReader objRead = oraCmdProg.ExecuteReader();
