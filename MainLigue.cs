@@ -249,12 +249,10 @@ namespace The_Main_Project
         }
         private void OuvrireStat()
         {
-            Top5 Form = new Top5();
+            Stats Form = new Stats();
             Form.conn = conn;
-            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-           
-            }
+            Form.ShowDialog();
+            
         }
 
         private void TSMI_Stats_Joueur_Click(object sender, EventArgs e)
