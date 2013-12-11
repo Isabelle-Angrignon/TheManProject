@@ -36,7 +36,6 @@
             this.TSMI_Equipe = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_Joueur = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_Match = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMI_Resultats = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_Stats = new System.Windows.Forms.ToolStripMenuItem();
             this.divisonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.équipeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -115,8 +114,7 @@
             this.TSMI_Division,
             this.TSMI_Equipe,
             this.TSMI_Joueur,
-            this.TSMI_Match,
-            this.TSMI_Resultats});
+            this.TSMI_Match});
             this.TSMI_Gestion.Name = "TSMI_Gestion";
             this.TSMI_Gestion.Size = new System.Drawing.Size(59, 20);
             this.TSMI_Gestion.Text = "Gestion";
@@ -124,37 +122,30 @@
             // TSMI_Division
             // 
             this.TSMI_Division.Name = "TSMI_Division";
-            this.TSMI_Division.Size = new System.Drawing.Size(125, 22);
+            this.TSMI_Division.Size = new System.Drawing.Size(152, 22);
             this.TSMI_Division.Text = "Division...";
             this.TSMI_Division.Click += new System.EventHandler(this.TSMI_Division_Click);
             // 
             // TSMI_Equipe
             // 
             this.TSMI_Equipe.Name = "TSMI_Equipe";
-            this.TSMI_Equipe.Size = new System.Drawing.Size(125, 22);
+            this.TSMI_Equipe.Size = new System.Drawing.Size(152, 22);
             this.TSMI_Equipe.Text = "Équipe...";
             this.TSMI_Equipe.Click += new System.EventHandler(this.TSMI_Equipe_Click);
             // 
             // TSMI_Joueur
             // 
             this.TSMI_Joueur.Name = "TSMI_Joueur";
-            this.TSMI_Joueur.Size = new System.Drawing.Size(125, 22);
+            this.TSMI_Joueur.Size = new System.Drawing.Size(152, 22);
             this.TSMI_Joueur.Text = "Joueur...";
             this.TSMI_Joueur.Click += new System.EventHandler(this.TSMI_Joueur_Click);
             // 
             // TSMI_Match
             // 
             this.TSMI_Match.Name = "TSMI_Match";
-            this.TSMI_Match.Size = new System.Drawing.Size(125, 22);
+            this.TSMI_Match.Size = new System.Drawing.Size(152, 22);
             this.TSMI_Match.Text = "Match ...";
             this.TSMI_Match.Click += new System.EventHandler(this.TSMI_Match_Click);
-            // 
-            // TSMI_Resultats
-            // 
-            this.TSMI_Resultats.Name = "TSMI_Resultats";
-            this.TSMI_Resultats.Size = new System.Drawing.Size(125, 22);
-            this.TSMI_Resultats.Text = "Résultat...";
-            this.TSMI_Resultats.Click += new System.EventHandler(this.TSMI_Resultats_Click);
             // 
             // TSMI_Stats
             // 
@@ -170,20 +161,20 @@
             // 
             this.divisonToolStripMenuItem.Enabled = false;
             this.divisonToolStripMenuItem.Name = "divisonToolStripMenuItem";
-            this.divisonToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.divisonToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.divisonToolStripMenuItem.Text = "Divison...";
             // 
             // équipeToolStripMenuItem1
             // 
             this.équipeToolStripMenuItem1.Enabled = false;
             this.équipeToolStripMenuItem1.Name = "équipeToolStripMenuItem1";
-            this.équipeToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
+            this.équipeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.équipeToolStripMenuItem1.Text = "Équipe...";
             // 
             // TSMI_Stats_Joueur
             // 
             this.TSMI_Stats_Joueur.Name = "TSMI_Stats_Joueur";
-            this.TSMI_Stats_Joueur.Size = new System.Drawing.Size(122, 22);
+            this.TSMI_Stats_Joueur.Size = new System.Drawing.Size(152, 22);
             this.TSMI_Stats_Joueur.Text = "Joueur...";
             this.TSMI_Stats_Joueur.Click += new System.EventHandler(this.TSMI_Stats_Joueur_Click);
             // 
@@ -198,7 +189,7 @@
             // TSMI_Themes
             // 
             this.TSMI_Themes.Name = "TSMI_Themes";
-            this.TSMI_Themes.Size = new System.Drawing.Size(125, 22);
+            this.TSMI_Themes.Size = new System.Drawing.Size(152, 22);
             this.TSMI_Themes.Text = "Thèmes...";
             this.TSMI_Themes.Click += new System.EventHandler(this.TSMI_Themes_Click);
             // 
@@ -260,26 +251,26 @@
             this.CMS_Match_Modifier,
             this.CMS_Match_Supprimer});
             this.CMS_Match.Name = "CMS_Match";
-            this.CMS_Match.Size = new System.Drawing.Size(153, 92);
+            this.CMS_Match.Size = new System.Drawing.Size(130, 70);
             // 
             // CMS_Match_Afficher
             // 
             this.CMS_Match_Afficher.Name = "CMS_Match_Afficher";
-            this.CMS_Match_Afficher.Size = new System.Drawing.Size(152, 22);
+            this.CMS_Match_Afficher.Size = new System.Drawing.Size(129, 22);
             this.CMS_Match_Afficher.Text = "Afficher...";
             this.CMS_Match_Afficher.Click += new System.EventHandler(this.CMS_Match_Afficher_Click);
             // 
             // CMS_Match_Modifier
             // 
             this.CMS_Match_Modifier.Name = "CMS_Match_Modifier";
-            this.CMS_Match_Modifier.Size = new System.Drawing.Size(152, 22);
+            this.CMS_Match_Modifier.Size = new System.Drawing.Size(129, 22);
             this.CMS_Match_Modifier.Text = "Modifier...";
             this.CMS_Match_Modifier.Click += new System.EventHandler(this.CMS_Match_Modifier_Click);
             // 
             // CMS_Match_Supprimer
             // 
             this.CMS_Match_Supprimer.Name = "CMS_Match_Supprimer";
-            this.CMS_Match_Supprimer.Size = new System.Drawing.Size(152, 22);
+            this.CMS_Match_Supprimer.Size = new System.Drawing.Size(129, 22);
             this.CMS_Match_Supprimer.Text = "Supprimer";
             this.CMS_Match_Supprimer.Click += new System.EventHandler(this.CMS_Match_Supprimer_Click);
             // 
@@ -473,7 +464,6 @@
         private System.Windows.Forms.ToolStripMenuItem TSMI_Equipe;
         private System.Windows.Forms.ToolStripMenuItem TSMI_Joueur;
         private System.Windows.Forms.ToolStripMenuItem TSMI_Match;
-        private System.Windows.Forms.ToolStripMenuItem TSMI_Resultats;
         private System.Windows.Forms.ToolStripMenuItem TSMI_Stats;
         private System.Windows.Forms.ToolStripMenuItem divisonToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem équipeToolStripMenuItem1;

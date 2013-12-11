@@ -37,8 +37,8 @@
             this.LB_Lieu_Result = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.BTN = new System.Windows.Forms.Button();
+            this.BTN_Add_R = new System.Windows.Forms.Button();
             this.DGV_ListeJoueur_R = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.TB_Passes_R = new System.Windows.Forms.TextBox();
@@ -101,9 +101,9 @@
             this.LB_NomEquipe_R.AutoSize = true;
             this.LB_NomEquipe_R.Location = new System.Drawing.Point(133, 19);
             this.LB_NomEquipe_R.Name = "LB_NomEquipe_R";
-            this.LB_NomEquipe_R.Size = new System.Drawing.Size(36, 13);
+            this.LB_NomEquipe_R.Size = new System.Drawing.Size(54, 13);
             this.LB_NomEquipe_R.TabIndex = 7;
-            this.LB_NomEquipe_R.Text = "team1";
+            this.LB_NomEquipe_R.Text = "Receveur";
             // 
             // LB_DateMatch
             // 
@@ -126,8 +126,8 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.BTN);
+            this.groupBox1.Controls.Add(this.BTN_Add_R);
             this.groupBox1.Controls.Add(this.DGV_ListeJoueur_R);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.TB_Passes_R);
@@ -154,25 +154,25 @@
             this.button1.TabIndex = 22;
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // BTN
             // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(186, 69);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(40, 40);
-            this.button4.TabIndex = 23;
-            this.button4.UseVisualStyleBackColor = true;
+            this.BTN.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN.Image = ((System.Drawing.Image)(resources.GetObject("BTN.Image")));
+            this.BTN.Location = new System.Drawing.Point(186, 69);
+            this.BTN.Name = "BTN";
+            this.BTN.Size = new System.Drawing.Size(40, 40);
+            this.BTN.TabIndex = 23;
+            this.BTN.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // BTN_Add_R
             // 
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
-            this.button5.Location = new System.Drawing.Point(186, 23);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(40, 40);
-            this.button5.TabIndex = 24;
-            this.button5.UseVisualStyleBackColor = true;
+            this.BTN_Add_R.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_Add_R.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
+            this.BTN_Add_R.Location = new System.Drawing.Point(186, 23);
+            this.BTN_Add_R.Name = "BTN_Add_R";
+            this.BTN_Add_R.Size = new System.Drawing.Size(40, 40);
+            this.BTN_Add_R.TabIndex = 24;
+            this.BTN_Add_R.UseVisualStyleBackColor = true;
             // 
             // DGV_ListeJoueur_R
             // 
@@ -379,9 +379,9 @@
             this.LB_NomEquipe_V.AutoSize = true;
             this.LB_NomEquipe_V.Location = new System.Drawing.Point(133, 19);
             this.LB_NomEquipe_V.Name = "LB_NomEquipe_V";
-            this.LB_NomEquipe_V.Size = new System.Drawing.Size(36, 13);
+            this.LB_NomEquipe_V.Size = new System.Drawing.Size(41, 13);
             this.LB_NomEquipe_V.TabIndex = 7;
-            this.LB_NomEquipe_V.Text = "team2";
+            this.LB_NomEquipe_V.Text = "Visiteur";
             // 
             // FB_Close
             // 
@@ -455,8 +455,8 @@
         private System.Windows.Forms.ComboBox CBX_Choix_J_V;
         private System.Windows.Forms.Label LB_NomEquipe_V;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button BTN;
+        private System.Windows.Forms.Button BTN_Add_R;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;

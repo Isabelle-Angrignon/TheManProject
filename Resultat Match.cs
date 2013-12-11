@@ -20,8 +20,7 @@ namespace The_Main_Project
         public OracleConnection conn = new OracleConnection();
         private DataSet formDataSet = new DataSet();
         private const string dsTable = "Table";
-        OracleDataAdapter Oraliste;
-        string clePrimaire;//////////////joueur...
+        public int NoMatch;
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -37,6 +36,26 @@ namespace The_Main_Project
         private void button3_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void LoadMatch()
+        {
+            try
+            {
+                OracleCommand oraCmdProg = new OracleCommand("select * From Matchs where NoMatch = " + NoMatch, conn);
+                oraCmdProg.CommandType = CommandType.Text;
+                OracleDataReader objRead = oraCmdProg.ExecuteReader();
+                while (objRead.Read())
+                {
+                   
+                }
+                objRead.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            } 
         }
     }
 }
