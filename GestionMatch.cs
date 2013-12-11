@@ -45,17 +45,17 @@ namespace The_Main_Project
         {
             try
             {
-                OracleCommand oraCmdProg = new OracleCommand("select NomÉquipe From JOUEURS", conn);
-                oraCmdProg.CommandType = CommandType.Text;
+                //OracleCommand oraCmdProg = new OracleCommand("select NomÉquipe From JOUEURS", conn);
+                //oraCmdProg.CommandType = CommandType.Text;
 
-                OracleDataReader objRead = oraCmdProg.ExecuteReader();
-                while (objRead.Read())
-                {
-                    TB_Équipe.AutoCompleteCustomSource.Add(objRead.GetString(0));
-                }
-                TB_Équipe.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                TB_Équipe.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                objRead.Close();
+                //OracleDataReader objRead = oraCmdProg.ExecuteReader();
+                //while (objRead.Read())
+                //{
+                //    TB_Équipe.AutoCompleteCustomSource.Add(objRead.GetString(0));
+                //}
+                //TB_Équipe.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                //TB_Équipe.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                //objRead.Close();
             }
             catch (Exception ex)
             {
@@ -64,16 +64,16 @@ namespace The_Main_Project
         }
         private void AutoCompletePosition()
         {
-            char[] séparateur = { '\r', '\n' };
-            String[] Positions = The_Main_Project.Properties.Resources.Position.Split(séparateur, StringSplitOptions.RemoveEmptyEntries);
+            //char[] séparateur = { '\r', '\n' };
+            //String[] Positions = The_Main_Project.Properties.Resources.Position.Split(séparateur, StringSplitOptions.RemoveEmptyEntries);
 
-            foreach (String position in Positions)
-            {
-                TB_Position.AutoCompleteCustomSource.Add(position);
-            }
+            //foreach (String position in Positions)
+            //{
+            //    TB_Position.AutoCompleteCustomSource.Add(position);
+            //}
 
-            TB_Position.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            TB_Position.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            //TB_Position.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            //TB_Position.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
         
         private void LoadDataset()
