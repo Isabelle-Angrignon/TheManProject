@@ -238,10 +238,6 @@ namespace The_Main_Project
             OuvertureTop5();
         }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> b88393fbda4ff014429ce4c38287fe1a2154f1ea
         private void Form_League_SizeChanged(object sender, EventArgs e)
         {
             //constater nouvelle size, redimensionne éléments tels dgv en fonction de la nouvelle dimension
@@ -265,9 +261,7 @@ namespace The_Main_Project
         private void TSMI_Match_Click(object sender, EventArgs e)
         {
             OuvrireMatch();
-        }
-
-       
+        }       
 
         private void OuvrireParam()
         {
