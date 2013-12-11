@@ -278,10 +278,26 @@ namespace The_Main_Project
             }
         }
 
+
         private void FB_Close_Click(object sender, EventArgs e)
         {
             conn.Close();
             Application.Exit();
+	}
+
+        private void CMS_Match_Afficher_Click(object sender, EventArgs e)
+        {
+            OuvrireMatch();
+        }
+
+        private void CMS_Match_Modifier_Click(object sender, EventArgs e)
+        {
+            OuvrireMatch();
+        }
+
+        private void CMS_Match_Supprimer_Click(object sender, EventArgs e)
+        {
+            //doit supprimer l'élément sélectionné dans le DGV
         }
 
         

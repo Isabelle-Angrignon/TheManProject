@@ -260,25 +260,28 @@
             this.CMS_Match_Modifier,
             this.CMS_Match_Supprimer});
             this.CMS_Match.Name = "CMS_Match";
-            this.CMS_Match.Size = new System.Drawing.Size(130, 70);
+            this.CMS_Match.Size = new System.Drawing.Size(153, 92);
             // 
             // CMS_Match_Afficher
             // 
             this.CMS_Match_Afficher.Name = "CMS_Match_Afficher";
-            this.CMS_Match_Afficher.Size = new System.Drawing.Size(129, 22);
+            this.CMS_Match_Afficher.Size = new System.Drawing.Size(152, 22);
             this.CMS_Match_Afficher.Text = "Afficher...";
+            this.CMS_Match_Afficher.Click += new System.EventHandler(this.CMS_Match_Afficher_Click);
             // 
             // CMS_Match_Modifier
             // 
             this.CMS_Match_Modifier.Name = "CMS_Match_Modifier";
-            this.CMS_Match_Modifier.Size = new System.Drawing.Size(129, 22);
+            this.CMS_Match_Modifier.Size = new System.Drawing.Size(152, 22);
             this.CMS_Match_Modifier.Text = "Modifier...";
+            this.CMS_Match_Modifier.Click += new System.EventHandler(this.CMS_Match_Modifier_Click);
             // 
             // CMS_Match_Supprimer
             // 
             this.CMS_Match_Supprimer.Name = "CMS_Match_Supprimer";
-            this.CMS_Match_Supprimer.Size = new System.Drawing.Size(129, 22);
+            this.CMS_Match_Supprimer.Size = new System.Drawing.Size(152, 22);
             this.CMS_Match_Supprimer.Text = "Supprimer";
+            this.CMS_Match_Supprimer.Click += new System.EventHandler(this.CMS_Match_Supprimer_Click);
             // 
             // CMS_Team
             // 

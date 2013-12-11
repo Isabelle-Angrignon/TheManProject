@@ -158,6 +158,21 @@ namespace The_Main_Project
                 oParamVille.Value = TB_Ville.Text;
                 oParamDiv.Value = TB_DivisionEquipe.Text;
 
+
+                /*
+                 * // récuper le fichier nomFichier et le convertir en Byte. 
+                //le résultat est dans buffer1
+                // oracle stocke les images sous forme de Bytes.
+                FileStream Streamp = new FileStream(nomFichier, FileMode.Open, FileAccess.Read);
+                byte[] buffer1 = new byte[Streamp.Length];
+                Streamp.Read(buffer1, 0, System.Convert.ToInt32(Streamp.Length));
+                Streamp.Close();
+                // ajout de la photo dans la BD.
+
+                pphoto.Value = buffer1;
+                oraIns.Parameters.Add(pphoto);
+                 * */
+
                 OracleCommand orComm = new OracleCommand(sqlAdd, conn);
                 orComm.Parameters.Add(oParamNom);
                 orComm.Parameters.Add(oParamDate);
@@ -240,20 +255,27 @@ namespace The_Main_Project
 
         private void BTN_Load_Click(object sender, EventArgs e)
         {
-            logo=null;
+            //logo=null;
             OpenFileDialog file = new OpenFileDialog();
             file.Title = "Sélectionner le logo d'équipe";
             file.CheckFileExists = true;
             file.InitialDirectory = @":C\";
+            file.InitialDirectory = Application.StartupPath;
             file.Filter = "Fichiers images (*.BMP; *.JPG; *.GIF; *.PNG)|*.BMP; *.JPG; *.GIF; *.PNG|Tous les fichiers(*.*)|*.*";
             file.FilterIndex = 1;
             file.RestoreDirectory = true;
+
             if (file.ShowDialog() == DialogResult.OK)
             {
-                logo = File.ReadAllBytes(file.FileName);
+                logo = File.ReadAllBytes(file.FileName);////file.Filename;
                 PBX_Logo.Image = Image.FromFile(file.FileName);
             }
+            else
+            {
+                logo = null;
+            }
         }
+
 
         private void CB_Division_SelectedIndexChanged(object sender, EventArgs e)
         {
