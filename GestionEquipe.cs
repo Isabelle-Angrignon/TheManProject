@@ -199,7 +199,7 @@ namespace The_Main_Project
             try 
             {
                 /////enregistrer la clé primaire d'abord pour pouvoir la modifier...                
-                string sqlUpdate = "UPDATE Équipes SET NomÉquipe = :NOM, DateIntro = :DATEI," +
+                string sqlUpdate = "UPDATE Équipes SET NomÉquipe = :NOM, DateIntro = :DATEI, logo = :logo" +
                 " ville = :VILLE, NomDivision = :NOMDIV WHERE NomÉquipe = :NOM2"; //requete met a jour
 
                 OracleParameter oParamNom = new OracleParameter(":NOM", OracleDbType.Varchar2, 30);
