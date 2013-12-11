@@ -238,12 +238,6 @@ namespace The_Main_Project
             OuvertureTop5();
         }
 
-<<<<<<< HEAD
-               
-=======
-        
-        
->>>>>>> e867adb761ad948e8db818de8e67e4c1a0e5f93e
 
         private void Form_League_SizeChanged(object sender, EventArgs e)
         {
@@ -270,10 +264,7 @@ namespace The_Main_Project
             OuvrireMatch();
         }
 
-        private void TSMI_Resultats_Click(object sender, EventArgs e)
-        {
-            OuvrireResultat();
-        }
+       
 
         private void OuvrireParam()
         {

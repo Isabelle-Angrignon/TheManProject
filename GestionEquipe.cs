@@ -77,14 +77,12 @@ namespace The_Main_Project
             clePrimaire = TB_Nom_Team.Text;
             TB_Ville.DataBindings.Add("Text", equDataSet, "Équipes.ville");
             TB_DivisionEquipe.DataBindings.Add("Text", equDataSet, "Équipes.nomdivision");///invisible
-<<<<<<< HEAD
-            CB_Division.SelectedItem = TB_DivisionEquipe.Text;
             PBX_Logo.DataBindings.Add("Image", equDataSet, "Équipes.logo", true);/////////            
-=======
+
             
             PBX_Logo.DataBindings.Add("Image", equDataSet, "Équipes.logo", true);/////////
             
->>>>>>> a86b10a4da7af80545bf6d528df60a65bcd37668
+
         }
 
         ///À éliminer??
