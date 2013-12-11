@@ -37,45 +37,52 @@ namespace The_Main_Project
         private void GestionMatch_Load(object sender, EventArgs e)
         {
             LoadDataset();
-          //  AutoCompletePosition();
-          //  AutoCompleteEquipe();
+            AutoCompleteVisiteur();
+            AutoCompleteReceveur();
         }
 
-        private void AutoCompleteEquipe()
+        private void AutoCompleteReceveur()
         {
             try
             {
-                //OracleCommand oraCmdProg = new OracleCommand("select NomÉquipe From JOUEURS", conn);
-                //oraCmdProg.CommandType = CommandType.Text;
+                OracleCommand oraCmdProg = new OracleCommand("select NomÉquipe From Équipes", conn);
+                oraCmdProg.CommandType = CommandType.Text;
 
-                //OracleDataReader objRead = oraCmdProg.ExecuteReader();
-                //while (objRead.Read())
-                //{
-                //    TB_Équipe.AutoCompleteCustomSource.Add(objRead.GetString(0));
-                //}
-                //TB_Équipe.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                //TB_Équipe.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                //objRead.Close();
+                OracleDataReader objRead = oraCmdProg.ExecuteReader();
+                while (objRead.Read())
+                {
+                    TB_Receveur.AutoCompleteCustomSource.Add(objRead.GetString(0));
+                }
+                TB_Receveur.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                TB_Receveur.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                objRead.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
             }
         }
-        private void AutoCompletePosition()
+        private void AutoCompleteVisiteur()
         {
-            //char[] séparateur = { '\r', '\n' };
-            //String[] Positions = The_Main_Project.Properties.Resources.Position.Split(séparateur, StringSplitOptions.RemoveEmptyEntries);
+            try
+            {
+                OracleCommand oraCmdProg = new OracleCommand("select NomÉquipe From Équipes", conn);
+                oraCmdProg.CommandType = CommandType.Text;
 
-            //foreach (String position in Positions)
-            //{
-            //    TB_Position.AutoCompleteCustomSource.Add(position);
-            //}
-
-            //TB_Position.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            //TB_Position.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                OracleDataReader objRead = oraCmdProg.ExecuteReader();
+                while (objRead.Read())
+                {
+                    TB_Visiteur.AutoCompleteCustomSource.Add(objRead.GetString(0));
+                }
+                TB_Visiteur.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                TB_Visiteur.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                objRead.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
-        
         private void LoadDataset()
         {
             try
@@ -146,24 +153,23 @@ namespace The_Main_Project
         private void BTN_Add_Click(object sender, EventArgs e)
         {
             try
-            {
-               // string Nom = TB_Prenom_J.Text + " " + TB_Nom_J.Text;
+            {               
                 string sqlAdd = "INSERT INTO Matchs VALUES (SeqMatchs.nextval,:RECEV,:VISIT," +
                     " :DATEMATCH, :LIEU, BUTSR, :BUTSV)";
 
-                OracleParameter oParamRecev = new OracleParameter(":RECEV", OracleDbType.Varchar2, 20);
-                OracleParameter oParamVisit = new OracleParameter(":VISIT", OracleDbType.Varchar2, 20);
+                OracleParameter oParamRecev = new OracleParameter(":RECEV", OracleDbType.Varchar2, 30);
+                OracleParameter oParamVisit = new OracleParameter(":VISIT", OracleDbType.Varchar2, 30);
                 OracleParameter oParamDate = new OracleParameter(":DATEMATCH", OracleDbType.Date);
-                OracleParameter oParamLieu = new OracleParameter(":LIEU", OracleDbType.Varchar2, 1);
-                OracleParameter oParamButsR = new OracleParameter(":BUTSR", OracleDbType.Varchar2, 2);
-                OracleParameter oParamButsV = new OracleParameter(":BUTSV", OracleDbType.Varchar2, 30);
+                OracleParameter oParamLieu = new OracleParameter(":LIEU", OracleDbType.Varchar2, 30);
+                OracleParameter oParamButsR = new OracleParameter(":BUTSR", OracleDbType.Int32, 2);
+                OracleParameter oParamButsV = new OracleParameter(":BUTSV", OracleDbType.Int32, 2);
 
                 oParamRecev.Value = TB_Receveur.Text;
                 oParamVisit.Value = TB_Visiteur.Text;
                 oParamDate.Value = DTP_Date.Value;
                 oParamLieu.Value = TB_Lieu.Text[0];
-                oParamButsR.Value = TB_R_Pts.Text;
-                oParamButsV.Value = TB_V_Pts.Text;
+                oParamButsR.Value = int.Parse(TB_R_Pts.Text);
+                oParamButsV.Value = int.Parse(TB_V_Pts.Text);
 
                 OracleCommand orComm = new OracleCommand(sqlAdd, conn);
                 orComm.Parameters.Add(oParamRecev);
@@ -220,19 +226,19 @@ namespace The_Main_Project
                 string sqlUpdate = "UPDATE matchs SET Reveceur = :RECEV, Visiteur = :VISIT, datematch = :DATEMATCH," +
                 " Lieu = :LIEU, butsreceveur = :BUTSR, butsvisiteur = :BUTSV WHERE Nomatch = :NO"; //requete met a jour
  
-                OracleParameter oParamRecev = new OracleParameter(":RECEV", OracleDbType.Varchar2, 20);
-                OracleParameter oParamVisit = new OracleParameter(":VISIT", OracleDbType.Varchar2, 20);
+                OracleParameter oParamRecev = new OracleParameter(":RECEV", OracleDbType.Varchar2, 30);
+                OracleParameter oParamVisit = new OracleParameter(":VISIT", OracleDbType.Varchar2, 30);
                 OracleParameter oParamDate = new OracleParameter(":DATEMATCH", OracleDbType.Date);
-                OracleParameter oParamLieu = new OracleParameter(":LIEU", OracleDbType.Varchar2, 1);
-                OracleParameter oParamButsR = new OracleParameter(":BUTSR", OracleDbType.Varchar2, 2);
-                OracleParameter oParamButsV = new OracleParameter(":BUTSV", OracleDbType.Varchar2, 30);
+                OracleParameter oParamLieu = new OracleParameter(":LIEU", OracleDbType.Varchar2, 30);
+                OracleParameter oParamButsR = new OracleParameter(":BUTSR", OracleDbType.Int32, 2);
+                OracleParameter oParamButsV = new OracleParameter(":BUTSV", OracleDbType.Int32, 2);
 
                 oParamRecev.Value = TB_Receveur.Text;
                 oParamVisit.Value = TB_Visiteur.Text;
                 oParamDate.Value = DTP_Date.Value;
-                oParamLieu.Value = TB_Lieu.Text[0];
-                oParamButsR.Value = TB_R_Pts.Text;
-                oParamButsV.Value = TB_V_Pts.Text;
+                oParamLieu.Value = TB_Lieu.Text;
+                oParamButsR.Value = int.Parse(TB_R_Pts.Text);
+                oParamButsV.Value = int.Parse(TB_V_Pts.Text);
 
                 OracleCommand orComm = new OracleCommand(sqlUpdate, conn);
                 orComm.Parameters.Add(oParamRecev);
@@ -255,8 +261,7 @@ namespace The_Main_Project
             {
                 MessageBox.Show(ex.Message.ToString());
             }
-        }
-            
+        }           
 
         private void ErrorMessage(OracleException Ex)
         {
@@ -267,11 +272,10 @@ namespace The_Main_Project
                     MessageBox.Show("Entrée invalide");
                     break;
                 case 01400:
-                    MessageBox.Show("Il y a des champs vide");
+                    MessageBox.Show("Il y à des champs vides");
                     break;
                 default: MessageBox.Show(Ex.Message.ToString());
                     break;
-
             }
         }
 
@@ -282,7 +286,6 @@ namespace The_Main_Project
         private void OuvrireResultat()
         {
             Resultat_Match Form = new Resultat_Match();
-            //ajouter params du match sélectionner
             Form.conn = conn;
             Form.NoMatch = int.Parse(LB_No_Match.Text);
             if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
