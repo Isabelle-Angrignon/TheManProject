@@ -102,7 +102,7 @@ namespace The_Main_Project
             TB_Lieu.DataBindings.Add("Text", formDataSet, "Table.lieu");
             TB_Receveur.DataBindings.Add("Text", formDataSet, "Table.receveur");
             TB_Visiteur.DataBindings.Add("Text", formDataSet, "Table.visiteur");
-            TB_R_Pts.DataBindings.Add("Text", formDataSet, "Table.butesreceveur");
+            TB_R_Pts.DataBindings.Add("Text", formDataSet, "Table.butsreceveur");
             TB_V_Pts.DataBindings.Add("Text", formDataSet, "Table.butsvisiteur");
         }
         private void Vider()
