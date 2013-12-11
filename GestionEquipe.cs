@@ -78,9 +78,11 @@ namespace The_Main_Project
             TB_Ville.DataBindings.Add("Text", equDataSet, "Équipes.ville");
             TB_DivisionEquipe.DataBindings.Add("Text", equDataSet, "Équipes.nomdivision");///invisible
             CB_Division.SelectedItem = TB_DivisionEquipe.Text;
-
-            ////logo//////
+            PBX_Logo.DataBindings.Add("Text", equDataSet, "Équipes.logo");/////////
+            
         }
+
+        ///À éliminer??
         private void Fill_CBX_Division()
         {
             try
@@ -97,20 +99,22 @@ namespace The_Main_Project
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
 
         }
-
-
+        
         private void Vider()
         {
             TB_Nom_Team.DataBindings.Clear();
             DTP_Date_Team.DataBindings.Clear();
             TB_Ville.DataBindings.Clear();
             TB_DivisionEquipe.DataBindings.Clear();
+            PBX_Logo.DataBindings.Clear();
             TB_Nom_Team.Clear();
             DTP_Date_Team.Value = DateTime.Now;
             TB_Ville.Clear();
             TB_DivisionEquipe.Clear();
-            ////logo///////
+  //          PBX_Logo.Dispose();/////?????
+            
         }
+        #region "Navigation"
 
         private void uC_Navigator_OnFirst(object sender, EventArgs e)
         {
@@ -135,6 +139,7 @@ namespace The_Main_Project
             this.BindingContext[equDataSet, dsEquipe].Position -= 1;
             clePrimaire = TB_Nom_Team.Text;
         }
+        #endregion
         /////////////////////////////////////////en construction//////////////////////////////////////////////////
         
         //ajouter logo
@@ -205,17 +210,20 @@ namespace The_Main_Project
 
                 OracleParameter oParamNom = new OracleParameter(":NOM", OracleDbType.Varchar2, 30);
                 OracleParameter oParamDate = new OracleParameter(":DATEI", OracleDbType.Date);
+                OracleParameter oParamLogo = new OracleParameter(":LOGO", OracleDbType.Blob);
                 OracleParameter oParamVille = new OracleParameter(":VILLE", OracleDbType.Varchar2, 20);
                 OracleParameter oParamDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
                 OracleParameter oParamNom2 = new OracleParameter(":NOM2", OracleDbType.Varchar2, 30);
                 oParamNom.Value = TB_Nom_Team.Text;
                 oParamDate.Value = DTP_Date_Team.Value;
+                oParamLogo.Value = PBX_Logo.Image;/////////ajoué
                 oParamVille.Value = TB_Ville.Text;
                 oParamDiv.Value = TB_DivisionEquipe.Text;
                 oParamNom2.Value = clePrimaire;
                 OracleCommand orComm = new OracleCommand(sqlUpdate, conn);
                 orComm.Parameters.Add(oParamNom);
                 orComm.Parameters.Add(oParamDate);
+                orComm.Parameters.Add(oParamLogo);
                 orComm.Parameters.Add(oParamVille);
                 orComm.Parameters.Add(oParamDiv);
                 orComm.Parameters.Add(oParamNom2);

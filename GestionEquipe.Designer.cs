@@ -31,27 +31,27 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionEquipe));
             this.Caractérstique = new System.Windows.Forms.GroupBox();
+            this.CB_Division = new System.Windows.Forms.ComboBox();
             this.uC_Navigator = new UC_Navigator.UC_Navigator();
             this.BTN_Load = new System.Windows.Forms.Button();
+            this.PBX_Logo = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.TB_DivisionEquipe = new System.Windows.Forms.TextBox();
             this.DTP_Date_Team = new System.Windows.Forms.DateTimePicker();
             this.TB_Nom_Team = new System.Windows.Forms.TextBox();
+            this.BTN_Edit = new System.Windows.Forms.Button();
+            this.BTN_Del = new System.Windows.Forms.Button();
+            this.BTN_Add = new System.Windows.Forms.Button();
             this.TB_Ville = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.TB_DivisionEquipe = new System.Windows.Forms.TextBox();
             this.CMS_Add = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cliquerPourAjouterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CB_Division = new System.Windows.Forms.ComboBox();
             this.FB_Close = new FlashButton.FlashButton();
-            this.PBX_Logo = new System.Windows.Forms.PictureBox();
-            this.BTN_Edit = new System.Windows.Forms.Button();
-            this.BTN_Del = new System.Windows.Forms.Button();
-            this.BTN_Add = new System.Windows.Forms.Button();
             this.Caractérstique.SuspendLayout();
-            this.CMS_Add.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Logo)).BeginInit();
+            this.CMS_Add.SuspendLayout();
             this.SuspendLayout();
             // 
             // Caractérstique
@@ -76,6 +76,15 @@
             this.Caractérstique.TabIndex = 6;
             this.Caractérstique.TabStop = false;
             // 
+            // CB_Division
+            // 
+            this.CB_Division.FormattingEnabled = true;
+            this.CB_Division.Location = new System.Drawing.Point(67, 156);
+            this.CB_Division.Name = "CB_Division";
+            this.CB_Division.Size = new System.Drawing.Size(131, 21);
+            this.CB_Division.TabIndex = 24;
+            this.CB_Division.SelectedIndexChanged += new System.EventHandler(this.CB_Division_SelectedIndexChanged);
+            // 
             // uC_Navigator
             // 
             this.uC_Navigator.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -99,6 +108,15 @@
             this.BTN_Load.UseVisualStyleBackColor = true;
             this.BTN_Load.Click += new System.EventHandler(this.BTN_Load_Click);
             // 
+            // PBX_Logo
+            // 
+            this.PBX_Logo.Location = new System.Drawing.Point(17, 19);
+            this.PBX_Logo.Name = "PBX_Logo";
+            this.PBX_Logo.Size = new System.Drawing.Size(73, 50);
+            this.PBX_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBX_Logo.TabIndex = 22;
+            this.PBX_Logo.TabStop = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -107,14 +125,6 @@
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 21;
             this.label2.Text = "Division";
-            // 
-            // TB_DivisionEquipe
-            // 
-            this.TB_DivisionEquipe.Location = new System.Drawing.Point(39, 279);
-            this.TB_DivisionEquipe.Name = "TB_DivisionEquipe";
-            this.TB_DivisionEquipe.Size = new System.Drawing.Size(131, 20);
-            this.TB_DivisionEquipe.TabIndex = 19;
-            this.TB_DivisionEquipe.Text = "Autofill";
             // 
             // DTP_Date_Team
             // 
@@ -130,6 +140,39 @@
             this.TB_Nom_Team.Name = "TB_Nom_Team";
             this.TB_Nom_Team.Size = new System.Drawing.Size(131, 20);
             this.TB_Nom_Team.TabIndex = 16;
+            // 
+            // BTN_Edit
+            // 
+            this.BTN_Edit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_Edit.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
+            this.BTN_Edit.Location = new System.Drawing.Point(221, 137);
+            this.BTN_Edit.Name = "BTN_Edit";
+            this.BTN_Edit.Size = new System.Drawing.Size(40, 40);
+            this.BTN_Edit.TabIndex = 3;
+            this.BTN_Edit.UseVisualStyleBackColor = true;
+            this.BTN_Edit.Click += new System.EventHandler(this.BTN_Edit_Click);
+            // 
+            // BTN_Del
+            // 
+            this.BTN_Del.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_Del.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Del.Image")));
+            this.BTN_Del.Location = new System.Drawing.Point(221, 91);
+            this.BTN_Del.Name = "BTN_Del";
+            this.BTN_Del.Size = new System.Drawing.Size(40, 40);
+            this.BTN_Del.TabIndex = 4;
+            this.BTN_Del.UseVisualStyleBackColor = true;
+            this.BTN_Del.Click += new System.EventHandler(this.BTN_Del_Click);
+            // 
+            // BTN_Add
+            // 
+            this.BTN_Add.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_Add.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
+            this.BTN_Add.Location = new System.Drawing.Point(221, 46);
+            this.BTN_Add.Name = "BTN_Add";
+            this.BTN_Add.Size = new System.Drawing.Size(40, 40);
+            this.BTN_Add.TabIndex = 5;
+            this.BTN_Add.UseVisualStyleBackColor = true;
+            this.BTN_Add.Click += new System.EventHandler(this.BTN_Add_Click);
             // 
             // TB_Ville
             // 
@@ -165,6 +208,14 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Nom";
             // 
+            // TB_DivisionEquipe
+            // 
+            this.TB_DivisionEquipe.Location = new System.Drawing.Point(39, 279);
+            this.TB_DivisionEquipe.Name = "TB_DivisionEquipe";
+            this.TB_DivisionEquipe.Size = new System.Drawing.Size(131, 20);
+            this.TB_DivisionEquipe.TabIndex = 19;
+            this.TB_DivisionEquipe.Text = "Autofill";
+            // 
             // CMS_Add
             // 
             this.CMS_Add.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -177,15 +228,6 @@
             this.cliquerPourAjouterToolStripMenuItem.Name = "cliquerPourAjouterToolStripMenuItem";
             this.cliquerPourAjouterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cliquerPourAjouterToolStripMenuItem.Text = "Cliquer pour ajouter";
-            // 
-            // CB_Division
-            // 
-            this.CB_Division.FormattingEnabled = true;
-            this.CB_Division.Location = new System.Drawing.Point(67, 156);
-            this.CB_Division.Name = "CB_Division";
-            this.CB_Division.Size = new System.Drawing.Size(131, 21);
-            this.CB_Division.TabIndex = 24;
-            this.CB_Division.SelectedIndexChanged += new System.EventHandler(this.CB_Division_SelectedIndexChanged);
             // 
             // FB_Close
             // 
@@ -202,47 +244,6 @@
             this.FB_Close.TabIndex = 25;
             this.FB_Close.Click += new System.EventHandler(this.FB_Close_Click);
             // 
-            // PBX_Logo
-            // 
-            this.PBX_Logo.Location = new System.Drawing.Point(17, 19);
-            this.PBX_Logo.Name = "PBX_Logo";
-            this.PBX_Logo.Size = new System.Drawing.Size(73, 50);
-            this.PBX_Logo.TabIndex = 22;
-            this.PBX_Logo.TabStop = false;
-            // 
-            // BTN_Edit
-            // 
-            this.BTN_Edit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN_Edit.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
-            this.BTN_Edit.Location = new System.Drawing.Point(221, 137);
-            this.BTN_Edit.Name = "BTN_Edit";
-            this.BTN_Edit.Size = new System.Drawing.Size(40, 40);
-            this.BTN_Edit.TabIndex = 3;
-            this.BTN_Edit.UseVisualStyleBackColor = true;
-            this.BTN_Edit.Click += new System.EventHandler(this.BTN_Edit_Click);
-            // 
-            // BTN_Del
-            // 
-            this.BTN_Del.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN_Del.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Del.Image")));
-            this.BTN_Del.Location = new System.Drawing.Point(221, 91);
-            this.BTN_Del.Name = "BTN_Del";
-            this.BTN_Del.Size = new System.Drawing.Size(40, 40);
-            this.BTN_Del.TabIndex = 4;
-            this.BTN_Del.UseVisualStyleBackColor = true;
-            this.BTN_Del.Click += new System.EventHandler(this.BTN_Del_Click);
-            // 
-            // BTN_Add
-            // 
-            this.BTN_Add.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN_Add.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
-            this.BTN_Add.Location = new System.Drawing.Point(221, 46);
-            this.BTN_Add.Name = "BTN_Add";
-            this.BTN_Add.Size = new System.Drawing.Size(40, 40);
-            this.BTN_Add.TabIndex = 5;
-            this.BTN_Add.UseVisualStyleBackColor = true;
-            this.BTN_Add.Click += new System.EventHandler(this.BTN_Add_Click);
-            // 
             // GestionEquipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,8 +259,8 @@
             this.Load += new System.EventHandler(this.GestionEquipe_Load);
             this.Caractérstique.ResumeLayout(false);
             this.Caractérstique.PerformLayout();
-            this.CMS_Add.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Logo)).EndInit();
+            this.CMS_Add.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
