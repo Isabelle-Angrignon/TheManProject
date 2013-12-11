@@ -284,6 +284,7 @@ namespace The_Main_Project
             Resultat_Match Form = new Resultat_Match();
             //ajouter params du match sélectionner
             Form.conn = conn;
+            Form.NoMatch = int.Parse(LB_No_Match.Text);
             if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 ///envoyer commit?
