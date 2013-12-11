@@ -359,5 +359,16 @@ namespace The_Main_Project.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Guardien
+        ///Attaquant
+        ///Défenseur.
+        /// </summary>
+        internal static string Position {
+            get {
+                return ResourceManager.GetString("Position", resourceCulture);
+            }
+        }
     }
 }

@@ -80,7 +80,7 @@
             // LB_No_J
             // 
             this.LB_No_J.AutoSize = true;
-            this.LB_No_J.Location = new System.Drawing.Point(12, 284);
+            this.LB_No_J.Location = new System.Drawing.Point(9, 284);
             this.LB_No_J.Name = "LB_No_J";
             this.LB_No_J.Size = new System.Drawing.Size(0, 13);
             this.LB_No_J.TabIndex = 38;
