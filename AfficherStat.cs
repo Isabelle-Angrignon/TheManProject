@@ -34,15 +34,12 @@ namespace The_Main_Project
             Close();
         }
 
-        private void AfficherStat_Load(object sender, EventArgs e)
-        {
-            LoadDataset();
-        }
+       
         private void LoadDataset()
         {
             try
             {
-                string sqlShow = "Select * from VueFiche order by nomaillot";////ou par nom, prénom
+                string sqlShow = "Select * from VueFiche where Nom = (Select Nom From Joueurs where NoJoueur = " + NoJoueur + ")";
                 Oraliste = new OracleDataAdapter(sqlShow, conn);
                 if (formDataSet.Tables.Contains(dsTable))
                 {
@@ -52,67 +49,102 @@ namespace The_Main_Project
                 Oraliste.Dispose();
 
                 BindingSource maSource = new BindingSource(formDataSet, dsTable);
-     //           Vider();
-   //             Lister();
+                Vider();
+                Lister();
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
         private void Lister()
         {
-            /* CREATE VIEW VueFiche AS SELECT Nom, Prénom, NomÉquipe AS Équipe,
-         SUM(NbrePasses) AS Passes, SUM(NbreButs) AS Buts, SUM(NbrePasses)+ 2*SUM(NbreButs) AS Points 
-         FROM Joueurs J INNER JOIN  PrésencesMatchs P ON P.NoJoueur = J.NoJoueur group by nom,prénom, noméquipe order by totalpoint desc;*/
-            LB_Nom.DataBindings.Add("Text", formDataSet, "Table.");
-            LB_Prenom.DataBindings.Add("Text", formDataSet, "Table.");
-            LB_Team.DataBindings.Add("Text", formDataSet, "Table.");
-            LB_Passes.DataBindings.Add("Text", formDataSet, "Table.");
-            LB_But.DataBindings.Add("Text", formDataSet, "Table.");
-            LB_Points.DataBindings.Add("Text", formDataSet, "Table.");
-
-            //LB_Penalite
-            //LB_DateNaissance
-             //LB_Numero
-            //LB_Position           
-
-           
+          //  string Sql = "CREATE VIEW VueFiche AS SELECT Nom, Prénom, NomÉquipe AS Équipe," +
+          // "SUM(NbrePasses) AS Passes, SUM(NbreButs) AS Buts, SUM(NbrePasses)+ 2*SUM(NbreButs) AS Points " +
+          //" FROM Joueurs J INNER JOIN  PrésencesMatchs P ON P.NoJoueur = J.NoJoueur " +
+          // "group by nom,prénom, noméquipe order by totalpoint desc having J.NoJoueur = " + NoJoueur + ";";
+            LB_Nom.DataBindings.Add("Text", formDataSet, "Table.nom");
+            LB_Prenom.DataBindings.Add("Text", formDataSet, "Table.prénom");
+            LB_Team.DataBindings.Add("Text", formDataSet, "Table.Équipe");
+            LB_Passes.DataBindings.Add("Text", formDataSet, "Table.Passes");
+            LB_But.DataBindings.Add("Text", formDataSet, "Table.Buts");
+            LB_Points.DataBindings.Add("Text", formDataSet, "Table.Points");
+                     
         }
-        //private void Vider()
-        //{
-        //    LB_No_J.DataBindings.Clear();
-        //    TB_Nom_J.DataBindings.Clear();
-        //    TB_Prenom_J.DataBindings.Clear();
-        //    DTP_Naissance.DataBindings.Clear();
-        //    TB_Position.DataBindings.Clear();
-        //    TB_Maillot.DataBindings.Clear();
-        //    TB_Équipe.DataBindings.Clear();
-        //    //LB_No_J.  pas de clear...invisible anyway
-        //    TB_Nom_J.Clear();
-        //    TB_Prenom_J.Clear();
-        //    DTP_Naissance.Value = DateTime.Now;
-        //    TB_Position.Clear();
-        //    TB_Maillot.Clear();
-        //    TB_Équipe.Clear();
-        //}
-
-        private void uC_Navigator_OnFirst(object sender, EventArgs e)
+        private void Vider()
         {
-            this.BindingContext[formDataSet, dsTable].Position = 0;
+            LB_Nom.DataBindings.Clear();
+            LB_Prenom.DataBindings.Clear();
+            LB_Team.DataBindings.Clear();
+            LB_Passes.DataBindings.Clear();
+            LB_But.DataBindings.Clear();
+            LB_Points.DataBindings.Clear();
+            
         }
 
-        private void uC_Navigator_OnLast(object sender, EventArgs e)
+        private void AfficherStat_Load_1(object sender, EventArgs e)
         {
-            this.BindingContext[formDataSet, dsTable].Position =
-                this.BindingContext[formDataSet, dsTable].Count - 1;
+            LoadDataset();
+            LoadTableJoueur();
+            ArrangeZero();
         }
-        private void uC_Navigator_OnNext(object sender, EventArgs e)
+        private void LoadTableJoueur()
         {
-            this.BindingContext[formDataSet, dsTable].Position += 1;
+            try
+            {
+                OracleCommand oraCmdProg = new OracleCommand("select * From Joueurs where NoJoueur = "+NoJoueur, conn);
+                oraCmdProg.CommandType = CommandType.Text;
+                OracleDataReader objRead = oraCmdProg.ExecuteReader();
+                while (objRead.Read())
+                {
+                    LB_Numero.Text = objRead.GetInt32(5).ToString();
+                    char[] splitters = new char[] { ' ' };
+                    string[] CeQueJeVeux = objRead.GetDateTime(3).Date.ToString().Split(splitters);
+                    LB_DateNaissance.Text = CeQueJeVeux[0];
+                    LB_Nom.Text = objRead.GetString(1);
+                    LB_Prenom.Text = objRead.GetString(2);
+                    LB_Team.Text = objRead.GetString(6);
+                    if (objRead.GetString(4) == "G")
+                    {
+                        LB_Position.Text = "Guardien";
+                    }
+                    if (objRead.GetString(4) == "A")
+                    {
+                        LB_Position.Text = "Attaquant";
+                    }
+                    if (objRead.GetString(4) == "D")
+                    {
+                        LB_Position.Text = "Défenseur";
+                    }
+                }
+                objRead.Close();
+            }
+            
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            } 
         }
 
-        private void uC_Navigator_OnPrev(object sender, EventArgs e)
+        private void ArrangeZero()
         {
-            this.BindingContext[formDataSet, dsTable].Position -= 1;
-        }        
+            if (LB_But.Text == "")
+            {
+                LB_But.Text = "0";
+            }
+            if (LB_Passes.Text == "")
+            {
+                LB_Passes.Text = "0";
+            }
+            if (LB_Points.Text == "")
+            {
+                LB_Points.Text = "0";
+            }
+
+        }
+        private void Caractérstique_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+              
 
 
 

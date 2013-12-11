@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.Caractérstique = new System.Windows.Forms.GroupBox();
-            this.uC_Navigator_Division = new UC_Navigator.UC_Navigator();
             this.LB_Points = new System.Windows.Forms.Label();
             this.LB_Minute = new System.Windows.Forms.Label();
             this.LB_Passes = new System.Windows.Forms.Label();
@@ -55,7 +54,6 @@
             // 
             // Caractérstique
             // 
-            this.Caractérstique.Controls.Add(this.uC_Navigator_Division);
             this.Caractérstique.Controls.Add(this.LB_Points);
             this.Caractérstique.Controls.Add(this.LB_Minute);
             this.Caractérstique.Controls.Add(this.LB_Passes);
@@ -78,58 +76,47 @@
             this.Caractérstique.Size = new System.Drawing.Size(422, 170);
             this.Caractérstique.TabIndex = 4;
             this.Caractérstique.TabStop = false;
-            // 
-            // uC_Navigator_Division
-            // 
-            this.uC_Navigator_Division.Location = new System.Drawing.Point(34, 132);
-            this.uC_Navigator_Division.Name = "uC_Navigator_Division";
-            this.uC_Navigator_Division.Size = new System.Drawing.Size(206, 19);
-            this.uC_Navigator_Division.TabIndex = 36;
+            this.Caractérstique.Enter += new System.EventHandler(this.Caractérstique_Enter);
             // 
             // LB_Points
             // 
             this.LB_Points.AutoSize = true;
             this.LB_Points.Location = new System.Drawing.Point(117, 89);
             this.LB_Points.Name = "LB_Points";
-            this.LB_Points.Size = new System.Drawing.Size(22, 13);
+            this.LB_Points.Size = new System.Drawing.Size(0, 13);
             this.LB_Points.TabIndex = 35;
-            this.LB_Points.Text = "Pts";
             // 
             // LB_Minute
             // 
             this.LB_Minute.AutoSize = true;
             this.LB_Minute.Location = new System.Drawing.Point(196, 89);
             this.LB_Minute.Name = "LB_Minute";
-            this.LB_Minute.Size = new System.Drawing.Size(44, 13);
+            this.LB_Minute.Size = new System.Drawing.Size(0, 13);
             this.LB_Minute.TabIndex = 34;
-            this.LB_Minute.Text = "Minutes";
             // 
             // LB_Passes
             // 
             this.LB_Passes.AutoSize = true;
             this.LB_Passes.Location = new System.Drawing.Point(70, 89);
             this.LB_Passes.Name = "LB_Passes";
-            this.LB_Passes.Size = new System.Drawing.Size(41, 13);
+            this.LB_Passes.Size = new System.Drawing.Size(0, 13);
             this.LB_Passes.TabIndex = 33;
-            this.LB_Passes.Text = "Passes";
             // 
             // LB_But
             // 
             this.LB_But.AutoSize = true;
             this.LB_But.Location = new System.Drawing.Point(36, 89);
             this.LB_But.Name = "LB_But";
-            this.LB_But.Size = new System.Drawing.Size(28, 13);
+            this.LB_But.Size = new System.Drawing.Size(0, 13);
             this.LB_But.TabIndex = 32;
-            this.LB_But.Text = "Buts";
             // 
             // LB_Penalite
             // 
             this.LB_Penalite.AutoSize = true;
             this.LB_Penalite.Location = new System.Drawing.Point(161, 89);
             this.LB_Penalite.Name = "LB_Penalite";
-            this.LB_Penalite.Size = new System.Drawing.Size(29, 13);
+            this.LB_Penalite.Size = new System.Drawing.Size(0, 13);
             this.LB_Penalite.TabIndex = 31;
-            this.LB_Penalite.Text = "Pen.";
             // 
             // PBX_Equipe
             // 
@@ -267,7 +254,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Caractérstique);
             this.Name = "AfficherStat";
-            this.Text = "AfficherStat";
+            this.Text = "Fiche du joueur";
+            this.Load += new System.EventHandler(this.AfficherStat_Load_1);
             this.Caractérstique.ResumeLayout(false);
             this.Caractérstique.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Equipe)).EndInit();
@@ -297,6 +285,5 @@
         private System.Windows.Forms.Label LB_Passes;
         private System.Windows.Forms.Label LB_But;
         private System.Windows.Forms.Label LB_Penalite;
-        private UC_Navigator.UC_Navigator uC_Navigator_Division;
     }
 }
