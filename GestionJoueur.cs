@@ -277,7 +277,10 @@ namespace The_Main_Project
 
         private void BTN_Stats_Click(object sender, EventArgs e)
         {
-
+            AfficherStat Form = new AfficherStat();
+            Form.NoJoueur = int.Parse(LB_No_J.Text);
+            Form.conn = conn;
+            Form.ShowDialog();
         }
 
         private void ErrorMessage(OracleException Ex)
