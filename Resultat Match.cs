@@ -153,6 +153,7 @@ namespace The_Main_Project
             objRead.Close();
             LoadDatasetV();
         }        
+       
         private void CBX_Choix_J_R_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sqlMatchEquipe = "SELECT Prénom , Nom , NoMatch , J.Nojoueur , NbreButs , NbrePasses , TempsPunition FROM (SELECT Prénom , Nom , J.Nojoueur, J.NomÉquipe FROM Joueurs J   INNER JOIN Équipes E on E.NomÉquipe = J.NomÉquipe where E.NomÉquipe = '" + LB_NomEquipe_R.Text + "')J LEFT OUTER JOIN PrésencesMatchs P ON P.NoJoueur = J.NoJoueur";
@@ -223,6 +224,7 @@ namespace The_Main_Project
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
+       
         private void LoadDatasetV()//pour le DGV de l'équipe qui visite.
         {
             try
@@ -255,7 +257,6 @@ namespace The_Main_Project
         {
             try
             {
-                //////  :NOMATCH, :NOJOUEUR, :NBREBUTS,:NBREPASSES,:TEMPSPUNITION   all numbers
                 string sqlAdd = "INSERT INTO PRÉSENCESMATCHS VALUES (:NOMATCH, :NOJOUEUR, :BUTS,:PASSES,:PUNITION)";
 
                 OracleParameter oParamMatch = new OracleParameter(":NOMATCH", OracleDbType.Int32, 3);
@@ -376,23 +377,115 @@ namespace The_Main_Project
                     break;
             }
         }
-
-
-       
+               
         ///visiteur////////////////////////////////
         private void BTN_Add_V_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string sqlAdd = "INSERT INTO PRÉSENCESMATCHS VALUES (:NOMATCH, :NOJOUEUR, :BUTS,:PASSES,:PUNITION)";
 
+                OracleParameter oParamMatch = new OracleParameter(":NOMATCH", OracleDbType.Int32, 3);
+                OracleParameter oParamJoueur = new OracleParameter(":NOJOUEUR", OracleDbType.Int32, 4);
+                OracleParameter oParamButs = new OracleParameter(":BUTS", OracleDbType.Int32, 2);
+                OracleParameter oParamPasses = new OracleParameter(":PASSES", OracleDbType.Int32, 2);
+                OracleParameter oParamPunit = new OracleParameter(":PUNITION", OracleDbType.Int32, 3);
+
+                oParamMatch.Value = int.Parse(LB_NoMatch.Text);
+                oParamJoueur.Value = int.Parse(LB_ID_V.Text);
+                oParamButs.Value = int.Parse(TB_But_Visiteur.Text);
+                oParamPasses.Value = int.Parse(TB_Passes_Visiteur.Text);
+                oParamPunit.Value = int.Parse(TB_Pen_Visiteur.Text);
+
+                OracleCommand orComm = new OracleCommand(sqlAdd, conn);
+                orComm.Parameters.Add(oParamMatch);
+                orComm.Parameters.Add(oParamJoueur);
+                orComm.Parameters.Add(oParamButs);
+                orComm.Parameters.Add(oParamPasses);
+                orComm.Parameters.Add(oParamPunit);
+                orComm.ExecuteNonQuery();
+                MessageBox.Show(" Le joueur à été ajouté au match");
+
+                LoadDatasetV();
+            }
+            catch (OracleException ex)
+            {
+                ErrorMessage(ex);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         private void BTN_Del_V_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string sqlDelete = "DELETE FROM PRÉSENCESMATCHS WHERE Nomatch = :NOMATCH AND NoJoueur = :NOJOUEUR";
 
+                OracleParameter oParamNo = new OracleParameter(":NOMATCH", OracleDbType.Int32, 3);
+                OracleParameter oParamNumber = new OracleParameter(":NOJOUEUR", OracleDbType.Int32, 4);
+                oParamNo.Value = int.Parse(LB_NoMatch.Text);
+                oParamNumber.Value = int.Parse(LB_ID_V.Text);
+
+                OracleCommand orComm = new OracleCommand(sqlDelete, conn);
+                orComm.Parameters.Add(oParamNo);
+                orComm.Parameters.Add(oParamNumber);
+                int res = orComm.ExecuteNonQuery();
+
+                LoadDatasetV();
+                MessageBox.Show(res + " participation supprimée avec succès");
+            }
+            catch (OracleException ex)
+            {
+                ErrorMessage(ex);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         private void BTN_Mod_V_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string sqlUpdate = "UPDATE PrésencesMatchs SET nbrebuts = :BUTS, nbrepasses = :PASSES, " +
+                    "tempspunition = :PEN WHERE Nomatch = :NOMATCH AND NoJoueur = :NOJOUEUR"; //requete met a jour
 
+                OracleParameter oParamButs = new OracleParameter(":BUTS", OracleDbType.Int32, 2);
+                OracleParameter oParamPasses = new OracleParameter(":PASSES", OracleDbType.Int32, 2);
+                OracleParameter oParamPunit = new OracleParameter(":PUNITION", OracleDbType.Int32, 3);
+                OracleParameter oParamMatch = new OracleParameter(":NOMATCH", OracleDbType.Int32, 3);
+                OracleParameter oParamJoueur = new OracleParameter(":NOJOUEUR", OracleDbType.Int32, 4);
+
+                oParamButs.Value = int.Parse(TB_But_Visiteur.Text);
+                oParamPasses.Value = int.Parse(TB_Passes_Visiteur.Text);
+                oParamPunit.Value = int.Parse(TB_Pen_Visiteur.Text);
+                oParamMatch.Value = int.Parse(LB_NoMatch.Text);
+                oParamJoueur.Value = int.Parse(LB_ID_V.Text);
+
+                OracleCommand orComm = new OracleCommand(sqlUpdate, conn);
+
+                orComm.Parameters.Add(oParamButs);
+                orComm.Parameters.Add(oParamPasses);
+                orComm.Parameters.Add(oParamPunit);
+                orComm.Parameters.Add(oParamMatch);
+                orComm.Parameters.Add(oParamJoueur);
+                orComm.ExecuteNonQuery();
+
+                MessageBox.Show(" La participation au match à été modifié");
+                LoadDatasetV();
+            }
+            catch (OracleException ex)
+            {
+                ErrorMessage(ex);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
     }
 }
