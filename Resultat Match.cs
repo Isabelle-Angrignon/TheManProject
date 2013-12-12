@@ -67,7 +67,7 @@ namespace The_Main_Project
         {
             LoadMatch();
             FillComboBox();
-            LoadDatasetR();
+            //LoadDatasetR();
             //LoadDatasetV();
         }
         private void FillComboBox()
@@ -94,17 +94,19 @@ namespace The_Main_Project
                 objRead.Close();
             }
 
-            catch (Exception ex)
+            
+catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
             } 
         }
 
         private void CBX_Choix_J_V_SelectedIndexChanged(object sender, EventArgs e)
-        {           
-            string sqlMatchEquipe = "select prénom , Nom , NoMatch ,P.Nojoueur , NBREBUTS , NBREPASSES , TEMPSPUNITION" +
-                " From Joueurs j INNER JOIN PRÉSENCESMATCHS P ON P.NOJOUEUR = j.nojoueur right outer join ÉQUIPES E" +
-                " on E.noméquipe = j.noméquipe where nomatch = " + LB_NoMatch + " and j.nomÉquipe = '" + LB_NomEquipe_V + "'";
+
+        {
+            string sqlMatchEquipe = "SELECT Prénom , Nom , NoMatch , J.Nojoueur , NbreButs , NbrePasses , TempsPunition FROM (SELECT Prénom , Nom , J.Nojoueur, J.NomÉquipe FROM Joueurs J   INNER JOIN Équipes E on E.NomÉquipe = J.NomÉquipe where E.NomÉquipe = '" + LB_NomEquipe_V.Text + "')J LEFT OUTER JOIN PrésencesMatchs P ON P.NoJoueur = J.NoJoueur";
+                       
+
             OracleCommand oraCmdProg = new OracleCommand(sqlMatchEquipe, conn);
             oraCmdProg.CommandType = CommandType.Text;
             OracleDataReader objRead = oraCmdProg.ExecuteReader();
@@ -115,20 +117,51 @@ namespace The_Main_Project
                 if (CeQueJeVeux[0] == objRead.GetString(0) && CeQueJeVeux[1] == objRead.GetString(1))
                 {
                     LB_ID_V.Text = objRead.GetInt32(3).ToString();
-                    TB_But_Visiteur.Text = objRead.GetInt32(4).ToString();
-                    TB_Passes_Visiteur.Text = objRead.GetInt32(5).ToString();
-                    TB_Pen_Visiteur.Text = objRead.GetInt32(6).ToString();
+                    if (ChampsVide(objRead.GetInt32(4)))
+                    {
+                        TB_But_Visiteur.Clear();
+                    }
+                    else
+                    {
+                        TB_But_Visiteur.Text = objRead.GetInt32(4).ToString();
+                    }
+                    if (ChampsVide(objRead.GetInt32(5)))
+                    {
+                        TB_Passes_Visiteur.Clear();
+                    }
+                    else
+                    {
+                        TB_Passes_Visiteur.Text = objRead.GetInt32(5).ToString();
+                    }
+                    if (ChampsVide(objRead.GetInt32(6)))
+                    {
+                        TB_Pen_Visiteur.Clear();
+                    }
+                    else
+                    {
+                        TB_Pen_Visiteur.Text = objRead.GetInt32(6).ToString();
+                    }               
+                    
                 }
             }
             objRead.Close();
            // LoadDatasetV();
         }
+        private bool ChampsVide(int champ)
+        {
+            return champ == null;
+        }
 
         private void CBX_Choix_J_R_SelectedIndexChanged(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             string sqlMatchEquipe = "select prénom , Nom , NoMatch ,P.Nojoueur , NBREBUTS , NBREPASSES , TEMPSPUNITION" +
                 " From Joueurs j INNER JOIN PRÉSENCESMATCHS P ON P.NOJOUEUR = j.nojoueur right outer join ÉQUIPES E" +
                 " on E.noméquipe = j.noméquipe where nomatch = " + LB_NoMatch.Text + " and j.nomÉquipe = '" + LB_NomEquipe_R.Text + "'";
+=======
+            string sqlMatchEquipe = "SELECT Prénom , Nom , NoMatch , J.Nojoueur , NbreButs , NbrePasses , TempsPunition FROM (SELECT Prénom , Nom , J.Nojoueur, J.NomÉquipe FROM Joueurs J   INNER JOIN Équipes E on E.NomÉquipe = J.NomÉquipe where E.NomÉquipe = '" + LB_NomEquipe_R.Text + "')J LEFT OUTER JOIN PrésencesMatchs P ON P.NoJoueur = J.NoJoueur";
+            
+>>>>>>> Foutu champs nulls
             OracleCommand oraCmdProg = new OracleCommand(sqlMatchEquipe, conn);
             oraCmdProg.CommandType = CommandType.Text;
             OracleDataReader objRead = oraCmdProg.ExecuteReader();
@@ -139,13 +172,35 @@ namespace The_Main_Project
                 if (CeQueJeVeux[0] == objRead.GetString(0) && CeQueJeVeux[1] == objRead.GetString(1))
                 {
                     LB_ID_R.Text = objRead.GetInt32(3).ToString();
-                    TB_But_R.Text = objRead.GetInt32(4).ToString();
-                    TB_Passes_R.Text = objRead.GetInt32(5).ToString();
-                    TB_Pen_R.Text = objRead.GetInt32(6).ToString();
+                    
+                    if (ChampsVide(objRead.GetInt32(4)))
+                    {
+                        TB_But_R.Clear();
+                    }
+                    else
+                    {
+                        TB_But_R.Text = objRead.GetInt32(4).ToString();
+                    }
+                    if (ChampsVide(objRead.GetInt32(5)))
+                    {
+                        TB_Passes_R.Clear();
+                    }
+                    else
+                    {
+                        TB_Passes_R.Text = objRead.GetInt32(5).ToString();
+                    }
+                    if (ChampsVide(objRead.GetInt32(6)))
+                    {
+                        TB_Pen_R.Clear();
+                    }
+                    else
+                    {
+                        TB_Pen_R.Text = objRead.GetInt32(6).ToString();
+                    }   
                 }
             }
             objRead.Close();
-            LoadDatasetR();           
+  //          LoadDatasetR();           
         }
 
         private void LoadDatasetR()//pour le DGV de l'équipe qui reçoit.
