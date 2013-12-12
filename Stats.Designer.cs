@@ -59,7 +59,7 @@
             this.DGV_Top5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGV_Top5.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGV_Top5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_Top5.Cursor = System.Windows.Forms.Cursors.No;
+            this.DGV_Top5.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.DGV_Top5.Location = new System.Drawing.Point(12, 21);
             this.DGV_Top5.MultiSelect = false;
             this.DGV_Top5.Name = "DGV_Top5";
