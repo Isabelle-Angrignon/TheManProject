@@ -223,7 +223,7 @@ namespace The_Main_Project
         {
             try
             {
-                string sqlUpdate = "UPDATE matchs SET Reveceur = :RECEV, Visiteur = :VISIT, datematch = :DATEMATCH," +
+                string sqlUpdate = "UPDATE matchs SET Receveur = :RECEV, Visiteur = :VISIT, datematch = :DATEMATCH," +
                 " Lieu = :LIEU, butsreceveur = :BUTSR, butsvisiteur = :BUTSV WHERE Nomatch = :NO"; //requete met a jour
  
                 OracleParameter oParamRecev = new OracleParameter(":RECEV", OracleDbType.Varchar2, 30);

@@ -326,6 +326,11 @@ namespace The_Main_Project
             //doit supprimer l'élément sélectionné dans le DGV
         }
 
+        private void DGV_Match_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
         
 
 

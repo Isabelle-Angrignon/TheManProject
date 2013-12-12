@@ -231,6 +231,7 @@
             this.DGV_Match.RowHeadersVisible = false;
             this.DGV_Match.Size = new System.Drawing.Size(465, 150);
             this.DGV_Match.TabIndex = 7;
+            this.DGV_Match.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Match_CellClick);
             // 
             // CBX_Division
             // 
