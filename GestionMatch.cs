@@ -300,7 +300,14 @@ namespace The_Main_Project
 
         private void FB_Fiche_Resultat_Click(object sender, EventArgs e)
         {
-            OuvrireResultat();
+            try
+            {
+                OuvrireResultat();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Il n'y a pas de joueur dans une des équipes");
+            }
         }
         private void OuvrireResultat()
         {

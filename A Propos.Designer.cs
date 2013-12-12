@@ -81,7 +81,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 13);
             this.label5.TabIndex = 4;
-            this.label5.Text = "0.143 Alpha test";
+            this.label5.Text = "0.144 Alpha test";
             // 
             // FB_Close
             // 
