@@ -151,7 +151,7 @@ namespace The_Main_Project
                 }
             }
             objRead.Close();
-           // LoadDatasetV();
+            LoadDatasetV();
         }        
         private void CBX_Choix_J_R_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -223,15 +223,31 @@ namespace The_Main_Project
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
-        private void Lister()
+        private void LoadDatasetV()//pour le DGV de l'équipe qui visite.
         {
-            
-            
-        }
-        private void Vider()
-        {
-            
-        }
+            try
+            {
+                //Afficher tous les joueurs et leurs b/p/p participant à un match dans l'équipe qui visite.
+                string sqlShow = "Select J.nojoueur as no, nom, prénom, nbrebuts as b, nbrepasses as p, " +
+                    "tempspunition as pen from PRÉSENCESMATCHS P inner join joueurs J " +
+                    "on P.nojoueur = J.nojoueur where nomatch = " + LB_NoMatch.Text +
+                    " AND P.nojoueur in (select nojoueur FROM Joueurs where noméquipe in " +
+                    "(select receveur from matchs where Visiteur = '" + LB_NomEquipe_V.Text + "'))";
+
+                Oraliste = new OracleDataAdapter(sqlShow, conn);
+
+                if (formDataSet.Tables.Contains("Visiteur"))
+                {
+                    formDataSet.Tables["Visiteur"].Clear();
+                }
+                Oraliste.Fill(formDataSet, "Visiteur");
+                Oraliste.Dispose();
+
+                BindingSource maSource = new BindingSource(formDataSet, "Visiteur");
+                DGV_ListeJoueur_V.DataSource = maSource;
+            }
+            catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
+        } 
         ///////////////////////////////
         // boutons  + - mod
         //////////////////////////////

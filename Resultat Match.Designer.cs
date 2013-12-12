@@ -56,7 +56,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.BTN_Del_V = new System.Windows.Forms.Button();
             this.BTN_Add_V = new System.Windows.Forms.Button();
-            this.DGV_ListeJoueur_V = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
             this.TB_Passes_Visiteur = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -67,6 +66,7 @@
             this.CBX_Choix_J_V = new System.Windows.Forms.ComboBox();
             this.LB_NomEquipe_V = new System.Windows.Forms.Label();
             this.FB_Close = new FlashButton.FlashButton();
+            this.DGV_ListeJoueur_V = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_ListeJoueur_R)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -139,7 +139,6 @@
             this.groupBox1.Controls.Add(this.BTN_Mod_R);
             this.groupBox1.Controls.Add(this.BTN_Del_R);
             this.groupBox1.Controls.Add(this.BTN_Add_R);
-            this.groupBox1.Controls.Add(this.DGV_ListeJoueur_R);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.TB_Passes_R);
             this.groupBox1.Controls.Add(this.label11);
@@ -151,7 +150,7 @@
             this.groupBox1.Controls.Add(this.LB_NomEquipe_R);
             this.groupBox1.Location = new System.Drawing.Point(15, 42);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(369, 320);
+            this.groupBox1.Size = new System.Drawing.Size(369, 154);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
@@ -176,7 +175,7 @@
             // 
             this.BTN_Mod_R.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Mod_R.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
-            this.BTN_Mod_R.Location = new System.Drawing.Point(186, 115);
+            this.BTN_Mod_R.Location = new System.Drawing.Point(185, 104);
             this.BTN_Mod_R.Name = "BTN_Mod_R";
             this.BTN_Mod_R.Size = new System.Drawing.Size(40, 40);
             this.BTN_Mod_R.TabIndex = 22;
@@ -187,7 +186,7 @@
             // 
             this.BTN_Del_R.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Del_R.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Del_R.Image")));
-            this.BTN_Del_R.Location = new System.Drawing.Point(186, 69);
+            this.BTN_Del_R.Location = new System.Drawing.Point(185, 58);
             this.BTN_Del_R.Name = "BTN_Del_R";
             this.BTN_Del_R.Size = new System.Drawing.Size(40, 40);
             this.BTN_Del_R.TabIndex = 23;
@@ -198,7 +197,7 @@
             // 
             this.BTN_Add_R.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Add_R.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
-            this.BTN_Add_R.Location = new System.Drawing.Point(186, 23);
+            this.BTN_Add_R.Location = new System.Drawing.Point(185, 12);
             this.BTN_Add_R.Name = "BTN_Add_R";
             this.BTN_Add_R.Size = new System.Drawing.Size(40, 40);
             this.BTN_Add_R.TabIndex = 24;
@@ -211,13 +210,14 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.DGV_ListeJoueur_R.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGV_ListeJoueur_R.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_ListeJoueur_R.Location = new System.Drawing.Point(6, 164);
+            this.DGV_ListeJoueur_R.Cursor = System.Windows.Forms.Cursors.No;
+            this.DGV_ListeJoueur_R.Location = new System.Drawing.Point(15, 214);
             this.DGV_ListeJoueur_R.MinimumSize = new System.Drawing.Size(220, 82);
             this.DGV_ListeJoueur_R.MultiSelect = false;
             this.DGV_ListeJoueur_R.Name = "DGV_ListeJoueur_R";
             this.DGV_ListeJoueur_R.ReadOnly = true;
             this.DGV_ListeJoueur_R.RowHeadersVisible = false;
-            this.DGV_ListeJoueur_R.Size = new System.Drawing.Size(357, 150);
+            this.DGV_ListeJoueur_R.Size = new System.Drawing.Size(369, 150);
             this.DGV_ListeJoueur_R.TabIndex = 21;
             // 
             // label9
@@ -296,7 +296,6 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.BTN_Del_V);
             this.groupBox2.Controls.Add(this.BTN_Add_V);
-            this.groupBox2.Controls.Add(this.DGV_ListeJoueur_V);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.TB_Passes_Visiteur);
             this.groupBox2.Controls.Add(this.label13);
@@ -308,7 +307,7 @@
             this.groupBox2.Controls.Add(this.LB_NomEquipe_V);
             this.groupBox2.Location = new System.Drawing.Point(429, 42);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(369, 320);
+            this.groupBox2.Size = new System.Drawing.Size(369, 154);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             // 
@@ -324,7 +323,7 @@
             // 
             this.BTN_Mod_V.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Mod_V.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
-            this.BTN_Mod_V.Location = new System.Drawing.Point(314, 112);
+            this.BTN_Mod_V.Location = new System.Drawing.Point(314, 100);
             this.BTN_Mod_V.Name = "BTN_Mod_V";
             this.BTN_Mod_V.Size = new System.Drawing.Size(40, 40);
             this.BTN_Mod_V.TabIndex = 25;
@@ -344,7 +343,7 @@
             // 
             this.BTN_Del_V.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Del_V.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Del_V.Image")));
-            this.BTN_Del_V.Location = new System.Drawing.Point(314, 69);
+            this.BTN_Del_V.Location = new System.Drawing.Point(314, 57);
             this.BTN_Del_V.Name = "BTN_Del_V";
             this.BTN_Del_V.Size = new System.Drawing.Size(40, 40);
             this.BTN_Del_V.TabIndex = 26;
@@ -355,20 +354,12 @@
             // 
             this.BTN_Add_V.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Add_V.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
-            this.BTN_Add_V.Location = new System.Drawing.Point(314, 26);
+            this.BTN_Add_V.Location = new System.Drawing.Point(314, 14);
             this.BTN_Add_V.Name = "BTN_Add_V";
             this.BTN_Add_V.Size = new System.Drawing.Size(40, 40);
             this.BTN_Add_V.TabIndex = 27;
             this.BTN_Add_V.UseVisualStyleBackColor = true;
             this.BTN_Add_V.Click += new System.EventHandler(this.BTN_Add_V_Click);
-            // 
-            // DGV_ListeJoueur_V
-            // 
-            this.DGV_ListeJoueur_V.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_ListeJoueur_V.Location = new System.Drawing.Point(6, 164);
-            this.DGV_ListeJoueur_V.Name = "DGV_ListeJoueur_V";
-            this.DGV_ListeJoueur_V.Size = new System.Drawing.Size(357, 150);
-            this.DGV_ListeJoueur_V.TabIndex = 21;
             // 
             // label12
             // 
@@ -462,16 +453,34 @@
             this.FB_Close.TabIndex = 28;
             this.FB_Close.Click += new System.EventHandler(this.BTN_Ok_Click);
             // 
+            // DGV_ListeJoueur_V
+            // 
+            this.DGV_ListeJoueur_V.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.DGV_ListeJoueur_V.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DGV_ListeJoueur_V.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_ListeJoueur_V.Cursor = System.Windows.Forms.Cursors.No;
+            this.DGV_ListeJoueur_V.Location = new System.Drawing.Point(429, 214);
+            this.DGV_ListeJoueur_V.MinimumSize = new System.Drawing.Size(220, 82);
+            this.DGV_ListeJoueur_V.MultiSelect = false;
+            this.DGV_ListeJoueur_V.Name = "DGV_ListeJoueur_V";
+            this.DGV_ListeJoueur_V.ReadOnly = true;
+            this.DGV_ListeJoueur_V.RowHeadersVisible = false;
+            this.DGV_ListeJoueur_V.Size = new System.Drawing.Size(369, 150);
+            this.DGV_ListeJoueur_V.TabIndex = 29;
+            // 
             // Resultat_Match
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 432);
+            this.Controls.Add(this.DGV_ListeJoueur_V);
             this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.LB_Lieu_Result);
             this.Controls.Add(this.LB_DateMatch);
+            this.Controls.Add(this.DGV_ListeJoueur_R);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.LB_NoMatch);
             this.Controls.Add(this.label1);
@@ -510,7 +519,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView DGV_ListeJoueur_R;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView DGV_ListeJoueur_V;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox TB_Passes_Visiteur;
         private System.Windows.Forms.Label label13;
@@ -531,5 +539,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label LB_ID_V;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView DGV_ListeJoueur_V;
     }
 }
