@@ -187,7 +187,7 @@ namespace The_Main_Project
                 }
             }
             objRead.Close();
-  //          LoadDatasetR();           
+            LoadDatasetR();           
         }
 
         private void LoadDatasetR()//pour le DGV de l'équipe qui reçoit.
@@ -195,8 +195,11 @@ namespace The_Main_Project
             try
             {
                 //Afficher tous les joueurs et leurs b/p/p participant à un match dans l'équipe qui reçoit.
-                string sqlShow = "Select * from PRÉSENCESMATCHS where nomatch = " + LB_NoMatch.Text + " AND nojoueur in (select nojoueur FROM Joueurs" + 
-                    " where noméquipe in (select receveur from matchs where receveur = '" + LB_NomEquipe_R.Text + "'));";
+                string sqlShow = "Select * from PRÉSENCESMATCHS where nomatch = " + LB_NoMatch.Text + 
+                    " AND nojoueur in (select nojoueur FROM Joueurs where noméquipe in "+
+                    "(select receveur from matchs where receveur = '" + LB_NomEquipe_R.Text + "'))";
+                ////remplacer lb par params
+                
                 Oraliste = new OracleDataAdapter(sqlShow, conn);
 
                 if (formDataSet.Tables.Contains("Receveur"))

@@ -128,8 +128,7 @@ namespace The_Main_Project
             DTP_Naissance.DataBindings.Clear();
             TB_Position.DataBindings.Clear();
             TB_Maillot.DataBindings.Clear();
-            TB_Équipe.DataBindings.Clear();
-            //LB_No_J.  pas de clear...invisible anyway
+            TB_Équipe.DataBindings.Clear();            
             TB_Nom_J.Clear();
             TB_Prenom_J.Clear();
             DTP_Naissance.Value = DateTime.Now;
