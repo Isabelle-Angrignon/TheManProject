@@ -210,17 +210,27 @@ namespace The_Main_Project
         {
             try
             {
-                string sqlDelete = "DELETE FROM Joueurs WHERE NoJoueur = :NO";
-                string Nom = TB_Prenom_J.Text + " " + TB_Nom_J.Text;
-                OracleParameter oParamNo = new OracleParameter(":NO", OracleDbType.Int32, 4);
-                oParamNo.Value = int.Parse(LB_No_J.Text);
+                if (MessageBox.Show("Voulez-vous vraiment supprimer cet enregistrement?", "Attention", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    string sqlDelete = "DELETE FROM Joueurs WHERE NoJoueur = :NO";
+                    string Nom = TB_Prenom_J.Text + " " + TB_Nom_J.Text;
+                    OracleParameter oParamNo = new OracleParameter(":NO", OracleDbType.Int32, 4);
+                    oParamNo.Value = int.Parse(LB_No_J.Text);
 
-                OracleCommand orComm = new OracleCommand(sqlDelete, conn);
-                orComm.Parameters.Add(oParamNo);
-                orComm.ExecuteNonQuery();
+                    OracleCommand orComm = new OracleCommand(sqlDelete, conn);
+                    orComm.Parameters.Add(oParamNo);
+                    int res = orComm.ExecuteNonQuery();
 
-                LoadDataset();
-                MessageBox.Show(" Le joueur " + Nom + " a été suprimer");
+                    LoadDataset();
+                    if (res > 0)
+                    {
+                        MessageBox.Show(" Le joueur " + Nom + " a été suprimer");
+                    }
+                    else
+                    {
+                        MessageBox.Show(" Aucune entrée");
+                    }
+                }
             }
             catch (OracleException ex)
             {

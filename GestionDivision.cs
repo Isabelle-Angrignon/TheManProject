@@ -125,18 +125,28 @@ namespace The_Main_Project
         {
             try 
             {
-                string Nom = TB_Nom_D.Text;
-                string sqlDelete = "DELETE FROM Divisions WHERE NomDivision = :NOMDIV";//requete supprime
+                if (MessageBox.Show("Voulez-vous vraiment supprimer cet enregistrement?", "Attention", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    string Nom = TB_Nom_D.Text;
+                    string sqlDelete = "DELETE FROM Divisions WHERE NomDivision = :NOMDIV";//requete supprime
 
-                OracleParameter oParamNomDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
-                oParamNomDiv.Value = TB_Nom_D.Text;
-                
-                OracleCommand orComm = new OracleCommand(sqlDelete, conn);
-                orComm.Parameters.Add(oParamNomDiv);                
-                orComm.ExecuteNonQuery();
+                    OracleParameter oParamNomDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
+                    oParamNomDiv.Value = TB_Nom_D.Text;
 
-                LoadDataset();
-                MessageBox.Show("La Divsion " + Nom + " a été supprimé");
+                    OracleCommand orComm = new OracleCommand(sqlDelete, conn);
+                    orComm.Parameters.Add(oParamNomDiv);
+                    int res = orComm.ExecuteNonQuery();
+
+                    LoadDataset();
+                    if (res > 0)
+                    {
+                        MessageBox.Show("La Divsion " + Nom + " a été supprimé");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Aucune entrée");
+                    }
+                }
             } 
             catch (OracleException ex) 
             {

@@ -203,17 +203,27 @@ namespace The_Main_Project
         {
             try
             {
-                string sqlDelete = "DELETE FROM matchs WHERE Nomatch = :NO";
-                
-                OracleParameter oParamNo = new OracleParameter(":NO", OracleDbType.Int32, 3);
-                oParamNo.Value = int.Parse(LB_No_Match.Text);
+                if (MessageBox.Show("Voulez-vous vraiment supprimer cet enregistrement?", "Attention", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    string sqlDelete = "DELETE FROM matchs WHERE Nomatch = :NO";
 
-                OracleCommand orComm = new OracleCommand(sqlDelete, conn);
-                orComm.Parameters.Add(oParamNo);
-                orComm.ExecuteNonQuery();
+                    OracleParameter oParamNo = new OracleParameter(":NO", OracleDbType.Int32, 3);
+                    oParamNo.Value = int.Parse(LB_No_Match.Text);
 
-                LoadDataset();
-                MessageBox.Show(" Le match à été suprimé");
+                    OracleCommand orComm = new OracleCommand(sqlDelete, conn);
+                    orComm.Parameters.Add(oParamNo);
+                    int res = orComm.ExecuteNonQuery();
+
+                    LoadDataset();
+                    if (res > 0)
+                    {
+                        MessageBox.Show(" Le match à été suprimé");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Aucune entrée n'est présente");
+                    }
+                }
             }
             catch (OracleException ex)
             {
