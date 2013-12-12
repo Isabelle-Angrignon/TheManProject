@@ -38,8 +38,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.LB_ID_R = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.BTN = new System.Windows.Forms.Button();
+            this.BTN_Mod_R = new System.Windows.Forms.Button();
+            this.BTN_Del_R = new System.Windows.Forms.Button();
             this.BTN_Add_R = new System.Windows.Forms.Button();
             this.DGV_ListeJoueur_R = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
@@ -52,10 +52,10 @@
             this.CBX_Choix_J_R = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.LB_ID_V = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BTN_Mod_V = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.BTN_Del_V = new System.Windows.Forms.Button();
+            this.BTN_Add_V = new System.Windows.Forms.Button();
             this.DGV_ListeJoueur_V = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
             this.TB_Passes_Visiteur = new System.Windows.Forms.TextBox();
@@ -131,8 +131,8 @@
             // 
             this.groupBox1.Controls.Add(this.LB_ID_R);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.BTN);
+            this.groupBox1.Controls.Add(this.BTN_Mod_R);
+            this.groupBox1.Controls.Add(this.BTN_Del_R);
             this.groupBox1.Controls.Add(this.BTN_Add_R);
             this.groupBox1.Controls.Add(this.DGV_ListeJoueur_R);
             this.groupBox1.Controls.Add(this.label9);
@@ -149,7 +149,6 @@
             this.groupBox1.Size = new System.Drawing.Size(232, 252);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // LB_ID_R
             // 
@@ -168,25 +167,27 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "ID :";
             // 
-            // button1
+            // BTN_Mod_R
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
-            this.button1.Location = new System.Drawing.Point(186, 115);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 40);
-            this.button1.TabIndex = 22;
-            this.button1.UseVisualStyleBackColor = true;
+            this.BTN_Mod_R.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_Mod_R.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
+            this.BTN_Mod_R.Location = new System.Drawing.Point(186, 115);
+            this.BTN_Mod_R.Name = "BTN_Mod_R";
+            this.BTN_Mod_R.Size = new System.Drawing.Size(40, 40);
+            this.BTN_Mod_R.TabIndex = 22;
+            this.BTN_Mod_R.UseVisualStyleBackColor = true;
+            this.BTN_Mod_R.Click += new System.EventHandler(this.BTN_Mod_R_Click);
             // 
-            // BTN
+            // BTN_Del_R
             // 
-            this.BTN.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN.Image = ((System.Drawing.Image)(resources.GetObject("BTN.Image")));
-            this.BTN.Location = new System.Drawing.Point(186, 69);
-            this.BTN.Name = "BTN";
-            this.BTN.Size = new System.Drawing.Size(40, 40);
-            this.BTN.TabIndex = 23;
-            this.BTN.UseVisualStyleBackColor = true;
+            this.BTN_Del_R.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_Del_R.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Del_R.Image")));
+            this.BTN_Del_R.Location = new System.Drawing.Point(186, 69);
+            this.BTN_Del_R.Name = "BTN_Del_R";
+            this.BTN_Del_R.Size = new System.Drawing.Size(40, 40);
+            this.BTN_Del_R.TabIndex = 23;
+            this.BTN_Del_R.UseVisualStyleBackColor = true;
+            this.BTN_Del_R.Click += new System.EventHandler(this.BTN_Del_R_Click);
             // 
             // BTN_Add_R
             // 
@@ -197,6 +198,7 @@
             this.BTN_Add_R.Size = new System.Drawing.Size(40, 40);
             this.BTN_Add_R.TabIndex = 24;
             this.BTN_Add_R.UseVisualStyleBackColor = true;
+            this.BTN_Add_R.Click += new System.EventHandler(this.BTN_Add_R_Click);
             // 
             // DGV_ListeJoueur_R
             // 
@@ -205,7 +207,6 @@
             this.DGV_ListeJoueur_R.Name = "DGV_ListeJoueur_R";
             this.DGV_ListeJoueur_R.Size = new System.Drawing.Size(220, 82);
             this.DGV_ListeJoueur_R.TabIndex = 21;
-            this.DGV_ListeJoueur_R.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // label9
             // 
@@ -277,10 +278,10 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.LB_ID_V);
-            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.BTN_Mod_V);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.button6);
-            this.groupBox2.Controls.Add(this.button7);
+            this.groupBox2.Controls.Add(this.BTN_Del_V);
+            this.groupBox2.Controls.Add(this.BTN_Add_V);
             this.groupBox2.Controls.Add(this.DGV_ListeJoueur_V);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.TB_Passes_Visiteur);
@@ -305,15 +306,16 @@
             this.LB_ID_V.Size = new System.Drawing.Size(0, 13);
             this.LB_ID_V.TabIndex = 28;
             // 
-            // button2
+            // BTN_Mod_V
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
-            this.button2.Location = new System.Drawing.Point(189, 118);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(40, 40);
-            this.button2.TabIndex = 25;
-            this.button2.UseVisualStyleBackColor = true;
+            this.BTN_Mod_V.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_Mod_V.Image = global::The_Main_Project.Properties.Resources.Crayon_petit;
+            this.BTN_Mod_V.Location = new System.Drawing.Point(189, 118);
+            this.BTN_Mod_V.Name = "BTN_Mod_V";
+            this.BTN_Mod_V.Size = new System.Drawing.Size(40, 40);
+            this.BTN_Mod_V.TabIndex = 25;
+            this.BTN_Mod_V.UseVisualStyleBackColor = true;
+            this.BTN_Mod_V.Click += new System.EventHandler(this.BTN_Mod_V_Click);
             // 
             // label4
             // 
@@ -324,25 +326,27 @@
             this.label4.TabIndex = 27;
             this.label4.Text = "ID :";
             // 
-            // button6
+            // BTN_Del_V
             // 
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(189, 75);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(40, 40);
-            this.button6.TabIndex = 26;
-            this.button6.UseVisualStyleBackColor = true;
+            this.BTN_Del_V.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_Del_V.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Del_V.Image")));
+            this.BTN_Del_V.Location = new System.Drawing.Point(189, 75);
+            this.BTN_Del_V.Name = "BTN_Del_V";
+            this.BTN_Del_V.Size = new System.Drawing.Size(40, 40);
+            this.BTN_Del_V.TabIndex = 26;
+            this.BTN_Del_V.UseVisualStyleBackColor = true;
+            this.BTN_Del_V.Click += new System.EventHandler(this.BTN_Del_V_Click);
             // 
-            // button7
+            // BTN_Add_V
             // 
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
-            this.button7.Location = new System.Drawing.Point(189, 32);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(40, 40);
-            this.button7.TabIndex = 27;
-            this.button7.UseVisualStyleBackColor = true;
+            this.BTN_Add_V.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_Add_V.Image = global::The_Main_Project.Properties.Resources.BTN_Plus1;
+            this.BTN_Add_V.Location = new System.Drawing.Point(189, 32);
+            this.BTN_Add_V.Name = "BTN_Add_V";
+            this.BTN_Add_V.Size = new System.Drawing.Size(40, 40);
+            this.BTN_Add_V.TabIndex = 27;
+            this.BTN_Add_V.UseVisualStyleBackColor = true;
+            this.BTN_Add_V.Click += new System.EventHandler(this.BTN_Add_V_Click);
             // 
             // DGV_ListeJoueur_V
             // 
@@ -500,12 +504,12 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox CBX_Choix_J_V;
         private System.Windows.Forms.Label LB_NomEquipe_V;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button BTN;
+        private System.Windows.Forms.Button BTN_Mod_R;
+        private System.Windows.Forms.Button BTN_Del_R;
         private System.Windows.Forms.Button BTN_Add_R;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button BTN_Mod_V;
+        private System.Windows.Forms.Button BTN_Del_V;
+        private System.Windows.Forms.Button BTN_Add_V;
         private FlashButton.FlashButton FB_Close;
         private System.Windows.Forms.Label LB_ID_R;
         private System.Windows.Forms.Label label2;

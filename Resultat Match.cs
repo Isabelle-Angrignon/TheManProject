@@ -25,11 +25,6 @@ namespace The_Main_Project
         private int BindingNoJoueurR;
         private int BindingNoJoueurV;
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void BTN_Ok_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
@@ -148,11 +143,11 @@ namespace The_Main_Project
             LoadDataset();
         }
 
-        private void LoadDataset()
+        private void LoadDataset()//pour les DGV
         {
             try
             {
-                string sqlShow = "Select * from PRÉSENCESMATCHS";////ou par nom, prénom
+                string sqlShow = "Select * from PRÉSENCESMATCHS";
                 Oraliste = new OracleDataAdapter(sqlShow, conn);
                 if (formDataSet.Tables.Contains(dsTable))
                 {
@@ -176,8 +171,154 @@ namespace The_Main_Project
         {
             
         }
+        ///////////////////////////////
+        // boutons  + - mod
+        //////////////////////////////
+        private void BTN_Add_R_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //////  :NOMATCH, :NOJOUEUR, :NBREBUTS,:NBREPASSES,:TEMPSPUNITION   all numbers
+                string sqlAdd = "INSERT INTO PRÉSENCESMATCHS VALUES (:NOMATCH, :NOJOUEUR, :BUTS,:PASSES,:PUNITION)";
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+                OracleParameter oParam = new OracleParameter(":NOMATCH", OracleDbType.Int32, 2);
+                OracleParameter oParam = new OracleParameter(":NOJOUEUR", OracleDbType.Int32, 2);
+                OracleParameter oParam = new OracleParameter(":BUTS", OracleDbType.Int32, 2);
+                OracleParameter oParam = new OracleParameter(":PASSES", OracleDbType.Int32, 2);
+                OracleParameter oParam = new OracleParameter(":PUNITION", OracleDbType.Int32, 2);
+
+                oParamRecev.Value = TB_Receveur.Text;
+                oParamVisit.Value = TB_Visiteur.Text;
+                oParamDate.Value = DTP_Date.Value;
+                oParamLieu.Value = TB_Lieu.Text;
+                oParamButsR.Value = int.Parse(TB_R_Pts.Text);
+                oParamButsV.Value = int.Parse(TB_V_Pts.Text);
+
+                OracleCommand orComm = new OracleCommand(sqlAdd, conn);
+                orComm.Parameters.Add(oParamRecev);
+                orComm.Parameters.Add(oParamVisit);
+                orComm.Parameters.Add(oParamDate);
+                orComm.Parameters.Add(oParamLieu);
+                orComm.Parameters.Add(oParamButsR);
+                orComm.Parameters.Add(oParamButsV);
+                orComm.ExecuteNonQuery();
+                MessageBox.Show(" Le match à été ajouté");
+
+                LoadDataset();
+            }
+            catch (OracleException ex)
+            {
+                ErrorMessage(ex);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        private void BTN_Del_R_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string sqlDelete = "DELETE FROM matchs WHERE Nomatch = :NO";
+
+                OracleParameter oParamNo = new OracleParameter(":NO", OracleDbType.Int32, 3);
+                oParamNo.Value = int.Parse(LB_No_Match.Text);
+
+                OracleCommand orComm = new OracleCommand(sqlDelete, conn);
+                orComm.Parameters.Add(oParamNo);
+                orComm.ExecuteNonQuery();
+
+                LoadDataset();
+                MessageBox.Show(" Le match à été suprimé");
+            }
+            catch (OracleException ex)
+            {
+                ErrorMessage(ex);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        private void BTN_Mod_R_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string sqlUpdate = "UPDATE matchs SET Reveceur = :RECEV, Visiteur = :VISIT, datematch = :DATEMATCH," +
+                " Lieu = :LIEU, butsreceveur = :BUTSR, butsvisiteur = :BUTSV WHERE Nomatch = :NO"; //requete met a jour
+
+                OracleParameter oParamRecev = new OracleParameter(":RECEV", OracleDbType.Varchar2, 30);
+                OracleParameter oParamVisit = new OracleParameter(":VISIT", OracleDbType.Varchar2, 30);
+                OracleParameter oParamDate = new OracleParameter(":DATEMATCH", OracleDbType.Date);
+                OracleParameter oParamLieu = new OracleParameter(":LIEU", OracleDbType.Varchar2, 30);
+                OracleParameter oParamButsR = new OracleParameter(":BUTSR", OracleDbType.Int32, 2);
+                OracleParameter oParamButsV = new OracleParameter(":BUTSV", OracleDbType.Int32, 2);
+                OracleParameter oParamNo = new OracleParameter(":NO", OracleDbType.Int32, 3);
+
+                oParamRecev.Value = TB_Receveur.Text;
+                oParamVisit.Value = TB_Visiteur.Text;
+                oParamDate.Value = DTP_Date.Value;
+                oParamLieu.Value = TB_Lieu.Text;
+                oParamButsR.Value = int.Parse(TB_R_Pts.Text);
+                oParamButsV.Value = int.Parse(TB_V_Pts.Text);
+                oParamNo.Value = int.Parse(LB_No_Match.Text);
+
+                OracleCommand orComm = new OracleCommand(sqlUpdate, conn);
+                orComm.Parameters.Add(oParamRecev);
+                orComm.Parameters.Add(oParamVisit);
+                orComm.Parameters.Add(oParamDate);
+                orComm.Parameters.Add(oParamLieu);
+                orComm.Parameters.Add(oParamButsR);
+                orComm.Parameters.Add(oParamButsV);
+                orComm.Parameters.Add(oParamNo);
+                orComm.ExecuteNonQuery();
+
+                MessageBox.Show(" Le match à été modifié");
+
+                LoadDataset();
+            }
+            catch (OracleException ex)
+            {
+                ErrorMessage(ex);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        private void ErrorMessage(OracleException Ex)
+        {
+            switch (Ex.Number)
+            {
+                case 02290:
+                    // au lieu d'afficher violation de clé étrangère , on affiche ceci:
+                    MessageBox.Show("Entrée invalide");
+                    break;
+                case 01400:
+                    MessageBox.Show("Il y à des champs vides");
+                    break;
+                default: MessageBox.Show(Ex.Message.ToString());
+                    break;
+            }
+        }
+
+
+       
+        ///visiteur////////////////////////////////
+        private void BTN_Add_V_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTN_Del_V_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTN_Mod_V_Click(object sender, EventArgs e)
         {
 
         }

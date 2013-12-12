@@ -155,7 +155,7 @@ namespace The_Main_Project
             try
             {               
                 string sqlAdd = "INSERT INTO Matchs VALUES (SeqMatchs.nextval,:RECEV,:VISIT," +
-                    " :DATEMATCH, :LIEU, BUTSR, :BUTSV)";
+                    " :DATEMATCH, :LIEU, :BUTSR, :BUTSV)";
 
                 OracleParameter oParamRecev = new OracleParameter(":RECEV", OracleDbType.Varchar2, 30);
                 OracleParameter oParamVisit = new OracleParameter(":VISIT", OracleDbType.Varchar2, 30);
