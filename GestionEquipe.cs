@@ -30,13 +30,13 @@ namespace The_Main_Project
             set 
             {
                 logo_ = value;
-            //    if (logo_ != null)
-            //    {
-            //        using (MemoryStream ms = new MemoryStream(logo_)) 
-            //        {
-            //            PBX_Logo.Image = Image.FromStream(ms);
-            //        }
-            //    }            
+                if (logo_ != null)
+                {
+                    using (MemoryStream ms = new MemoryStream(logo_)) 
+                    {
+                        PBX_Logo.Image = Image.FromStream(ms);
+                    }
+                }            
             }
         }
 
@@ -77,16 +77,9 @@ namespace The_Main_Project
             clePrimaire = TB_Nom_Team.Text;
             TB_Ville.DataBindings.Add("Text", equDataSet, "Équipes.ville");
             TB_DivisionEquipe.DataBindings.Add("Text", equDataSet, "Équipes.nomdivision");///invisible
-            PBX_Logo.DataBindings.Add("Image", equDataSet, "Équipes.logo", true);/////////            
-
+            PBX_Logo.DataBindings.Add("Image", equDataSet, "Équipes.logo", true);/////////           
             
-            PBX_Logo.DataBindings.Add("Image", equDataSet, "Équipes.logo", true);/////////
-            
-
-        }
-
-        ///À éliminer??
-      
+}
         
         private void Vider()
         {
@@ -99,8 +92,7 @@ namespace The_Main_Project
             DTP_Date_Team.Value = DateTime.Now;
             TB_Ville.Clear();
             TB_DivisionEquipe.Clear();
-            PBX_Logo.Image = null;
-            
+            PBX_Logo.Image = null;            
         }
         #region "Navigation"
 
@@ -129,8 +121,7 @@ namespace The_Main_Project
         }
         #endregion
         /////////////////////////////////////////en construction//////////////////////////////////////////////////
-        
-        //ajouter logo
+                
         private void BTN_Add_Click(object sender, EventArgs e)
         {
             try
@@ -144,12 +135,13 @@ namespace The_Main_Project
                 OracleParameter oParamDiv = new OracleParameter(":NOMDIV", OracleDbType.Varchar2, 30);
                 oParamNom.Value = TB_Nom_Team.Text;
                 oParamDate.Value = DTP_Date_Team.Value;
-                //////
+                //traduire l'image en BYTE
+                byte[] buffer1 = imageToByteArray(PBX_Logo.Image);
+                //Mettre le byte dans les param..
+                oParamLogo.Value = buffer1;
                 oParamVille.Value = TB_Ville.Text;
                 oParamDiv.Value = TB_DivisionEquipe.Text;
-
-                               
-
+                
                 OracleCommand orComm = new OracleCommand(sqlAdd, conn);
                 orComm.Parameters.Add(oParamNom);
                 orComm.Parameters.Add(oParamDate);
@@ -165,6 +157,14 @@ namespace The_Main_Project
             {
                 MessageBox.Show(ex.Message.ToString());
             }
+        }
+
+        //Conversion de l'image du picture box en byte pour blob.
+        public byte[] imageToByteArray(System.Drawing.Image imageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+            return ms.ToArray();
         }
          
         private void BTN_Del_Click(object sender, EventArgs e)
@@ -195,10 +195,9 @@ namespace The_Main_Project
         private void BTN_Edit_Click(object sender, EventArgs e)
         {
             try 
-            {
-                /////enregistrer la clé primaire d'abord pour pouvoir la modifier...                
+            {                                
                 string sqlUpdate = "UPDATE Équipes SET NomÉquipe = :NOM, DateIntro = :DATEI, logo = :logo," +
-                " ville = :VILLE, NomDivision = :NOMDIV WHERE NomÉquipe = :NOM2"; //requete met a jour
+                " ville = :VILLE, NomDivision = :NOMDIV WHERE NomÉquipe = :NOM2";
 
                 OracleParameter oParamNom = new OracleParameter(":NOM", OracleDbType.Varchar2, 30);
                 OracleParameter oParamDate = new OracleParameter(":DATEI", OracleDbType.Date);
@@ -210,31 +209,11 @@ namespace The_Main_Project
                 oParamDate.Value = DTP_Date_Team.Value;
 
                 //traduire l'image en BYTE
-                //Récupérer le fichier:
-                string fichier = PBX_Logo.ImageLocation;
-                //le lire et traduire en byte
-                FileStream Streamp = new FileStream(fichier, FileMode.Open, FileAccess.Read);
-                byte[] buffer1 = new byte[Streamp.Length];
-                Streamp.Read(buffer1, 0, System.Convert.ToInt32(Streamp.Length));
-                Streamp.Close();
+                byte[] buffer1 = imageToByteArray(PBX_Logo.Image);
                 //Mettre le byte dans les param..
                 oParamLogo.Value = buffer1;
+                oParamLogo.Value = buffer1;
 
-                
-                //FileStream Streamp = new FileStream(logo, FileMode.Open, FileAccess.Read);
-                /*
-                 * // récuper le fichier nomFichier et le convertir en Byte. 
-                //le résultat est dans buffer1
-                // oracle stocke les images sous forme de Bytes.
-                FileStream Streamp = new FileStream(nomFichier, FileMode.Open, FileAccess.Read);
-                byte[] buffer1 = new byte[Streamp.Length];
-                Streamp.Read(buffer1, 0, System.Convert.ToInt32(Streamp.Length));
-                Streamp.Close();
-                // ajout de la photo dans la BD.
-               
-                pphoto.Value = buffer1;
-                oraIns.Parameters.Add(pphoto);
-                 * */                
                 //Mettre le byte dans logo;
                 oParamVille.Value = TB_Ville.Text;
                 oParamDiv.Value = TB_DivisionEquipe.Text;
@@ -259,7 +238,6 @@ namespace The_Main_Project
 
         private void BTN_Load_Click(object sender, EventArgs e)
         {
-            //logo=null;
             OpenFileDialog file = new OpenFileDialog();
             file.Title = "Sélectionner le logo d'équipe";
             file.CheckFileExists = true;
@@ -301,10 +279,6 @@ namespace The_Main_Project
             {
                 MessageBox.Show(ex.Message.ToString());
             }
-        }
-        private void CB_Division_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }                       
+        }                               
     }
 }
