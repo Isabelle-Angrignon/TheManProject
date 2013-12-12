@@ -45,7 +45,8 @@ namespace The_Main_Project
         {
             try
             {
-                OracleCommand oraCmdProg = new OracleCommand("select * From Matchs where NoMatch = " + NoMatch, conn);
+                string sqlMatch= "select * From Matchs where NoMatch = " + "'" + NoMatch + "'";
+                OracleCommand oraCmdProg = new OracleCommand(sqlMatch, conn);
                 oraCmdProg.CommandType = CommandType.Text;
                 OracleDataReader objRead = oraCmdProg.ExecuteReader();
                 while (objRead.Read())
@@ -82,6 +83,7 @@ namespace The_Main_Project
                 OracleDataReader objRead = oraCmdProg.ExecuteReader();
                 while (objRead.Read())
                 {
+                    //6 ie colonne == équipe
                     if (objRead.GetString(6) == LB_NomEquipe_R.Text)
                     {
                         CBX_Choix_J_R.Items.Add(objRead.GetString(2) + " " + objRead.GetString(1));
