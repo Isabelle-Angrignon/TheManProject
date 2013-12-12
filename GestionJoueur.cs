@@ -20,7 +20,8 @@ namespace The_Main_Project
         public OracleConnection conn = new OracleConnection();
         private DataSet formDataSet = new DataSet();
         private const string dsTable = "Table";
-        OracleDataAdapter Oraliste;        
+        OracleDataAdapter Oraliste;
+        public string NomEquipe = "";
 
         private void BTN_Ok_Click(object sender, EventArgs e)
         {

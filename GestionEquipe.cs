@@ -21,6 +21,7 @@ namespace The_Main_Project
         public OracleConnection conn = new OracleConnection();
         private DataSet equDataSet = new DataSet();
         private const string dsEquipe = "Équipes";
+        public string NomEquipe = "";
         OracleDataAdapter Oraliste;
         string clePrimaire;
         private byte[] logo_;
@@ -56,6 +57,10 @@ namespace The_Main_Project
             try
             {
                 string sqlShow = "Select * from Équipes order by noméquipe";
+                if (NomEquipe != "")
+                {
+                    sqlShow = "Select * from Équipes where noméquipe ='" + NomEquipe+"'";
+                }
                 Oraliste = new OracleDataAdapter(sqlShow, conn);
                 if (equDataSet.Tables.Contains(dsEquipe))
                 {

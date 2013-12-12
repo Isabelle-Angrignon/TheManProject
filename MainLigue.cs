@@ -360,11 +360,14 @@ namespace The_Main_Project
 
         private void CMS_Team_Afficher_Click(object sender, EventArgs e)
         {
-
+             int LaLigne = DGV_Team.CurrentCellAddress.Y;
+            int LaColonne = 1;
+            string NomEquipe = DGV_Team.Rows[LaLigne].Cells[LaColonne].Value.ToString();
+            GestionEquipe Form = new GestionEquipe();
+            Form.NomEquipe = NomEquipe;
+            Form.conn = conn;
+            Form.ShowDialog();
         }
-
-        
-
 
     }
 
