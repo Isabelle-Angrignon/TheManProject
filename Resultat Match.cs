@@ -193,13 +193,14 @@ namespace The_Main_Project
         private void LoadDatasetR()//pour le DGV de l'équipe qui reçoit.
         {
             try
-            {
+            {                
                 //Afficher tous les joueurs et leurs b/p/p participant à un match dans l'équipe qui reçoit.
-                string sqlShow = "Select * from PRÉSENCESMATCHS where nomatch = " + LB_NoMatch.Text + 
-                    " AND nojoueur in (select nojoueur FROM Joueurs where noméquipe in "+
+                string sqlShow = "Select J.nojoueur as no, nom, prénom, nbrebuts as b, nbrepasses as p, "+
+                    "tempspunition as pen from PRÉSENCESMATCHS P inner join joueurs J "+
+                    "on P.nojoueur = J.nojoueur where nomatch = " + LB_NoMatch.Text + 
+                    " AND P.nojoueur in (select nojoueur FROM Joueurs where noméquipe in "+
                     "(select receveur from matchs where receveur = '" + LB_NomEquipe_R.Text + "'))";
-                ////remplacer lb par params
-                
+                               
                 Oraliste = new OracleDataAdapter(sqlShow, conn);
 
                 if (formDataSet.Tables.Contains("Receveur"))
@@ -270,11 +271,11 @@ namespace The_Main_Project
         {
             try
             {
-                string sqlDelete = "DELETE FROM PRÉSENCESMATCHS WHERE Nomatch = :NO AND NoJoueur = :Number";
+                string sqlDelete = "DELETE FROM PRÉSENCESMATCHS WHERE Nomatch = :NOMATCH AND NoJoueur = :NOJOUEUR";
 
-                OracleParameter oParamNo = new OracleParameter(":NO", OracleDbType.Int32, 3);
+                OracleParameter oParamNo = new OracleParameter(":NOMATCH", OracleDbType.Int32, 3);
+                OracleParameter oParamNumber = new OracleParameter(":NOJOUEUR", OracleDbType.Int32, 4);
                 oParamNo.Value = int.Parse(LB_NoMatch.Text);
-                OracleParameter oParamNumber = new OracleParameter(":Number", OracleDbType.Int32, 4);
                 oParamNumber.Value = int.Parse(LB_ID_R.Text);
 
                 OracleCommand orComm = new OracleCommand(sqlDelete, conn);
@@ -299,7 +300,7 @@ namespace The_Main_Project
         {
             try
             {
-                string sqlUpdate = "UPDATE matchs SET Reveceur = :RECEV, Visiteur = :VISIT, datematch = :DATEMATCH," +
+                string sqlUpdate = "UPDATE matchs SET Receveur = :RECEV, Visiteur = :VISIT, datematch = :DATEMATCH," +
                 " Lieu = :LIEU, butsreceveur = :BUTSR, butsvisiteur = :BUTSV WHERE Nomatch = :NO"; //requete met a jour
 
                 OracleParameter oParamRecev = new OracleParameter(":RECEV", OracleDbType.Varchar2, 30);
