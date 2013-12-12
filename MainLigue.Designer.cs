@@ -119,28 +119,32 @@
             // TSMI_Division
             // 
             this.TSMI_Division.Name = "TSMI_Division";
-            this.TSMI_Division.Size = new System.Drawing.Size(125, 22);
+            this.TSMI_Division.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.TSMI_Division.Size = new System.Drawing.Size(167, 22);
             this.TSMI_Division.Text = "Division...";
             this.TSMI_Division.Click += new System.EventHandler(this.TSMI_Division_Click);
             // 
             // TSMI_Equipe
             // 
             this.TSMI_Equipe.Name = "TSMI_Equipe";
-            this.TSMI_Equipe.Size = new System.Drawing.Size(125, 22);
+            this.TSMI_Equipe.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
+            this.TSMI_Equipe.Size = new System.Drawing.Size(167, 22);
             this.TSMI_Equipe.Text = "Équipe...";
             this.TSMI_Equipe.Click += new System.EventHandler(this.TSMI_Equipe_Click);
             // 
             // TSMI_Joueur
             // 
             this.TSMI_Joueur.Name = "TSMI_Joueur";
-            this.TSMI_Joueur.Size = new System.Drawing.Size(125, 22);
+            this.TSMI_Joueur.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.J)));
+            this.TSMI_Joueur.Size = new System.Drawing.Size(167, 22);
             this.TSMI_Joueur.Text = "Joueur...";
             this.TSMI_Joueur.Click += new System.EventHandler(this.TSMI_Joueur_Click);
             // 
             // TSMI_Match
             // 
             this.TSMI_Match.Name = "TSMI_Match";
-            this.TSMI_Match.Size = new System.Drawing.Size(125, 22);
+            this.TSMI_Match.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
+            this.TSMI_Match.Size = new System.Drawing.Size(167, 22);
             this.TSMI_Match.Text = "Match ...";
             this.TSMI_Match.Click += new System.EventHandler(this.TSMI_Match_Click);
             // 
@@ -253,7 +257,7 @@
             // CMS_Match_Afficher
             // 
             this.CMS_Match_Afficher.Name = "CMS_Match_Afficher";
-            this.CMS_Match_Afficher.Size = new System.Drawing.Size(180, 22);
+            this.CMS_Match_Afficher.Size = new System.Drawing.Size(184, 22);
             this.CMS_Match_Afficher.Text = "Gérer Match";
             this.CMS_Match_Afficher.Click += new System.EventHandler(this.CMS_Match_Afficher_Click);
             // 
