@@ -93,9 +93,7 @@ namespace The_Main_Project
                 CBX_Choix_J_V.SelectedIndex = 0;
                 objRead.Close();
             }
-
-            
-catch (Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
             } 
@@ -115,9 +113,9 @@ catch (Exception ex)
                 char[] splitters = new char[] { ' ' };
                 string[] CeQueJeVeux = CBX_Choix_J_V.Text.Split(splitters);
                 if (CeQueJeVeux[0] == objRead.GetString(0) && CeQueJeVeux[1] == objRead.GetString(1))
-                {
+                {                   
                     LB_ID_V.Text = objRead.GetInt32(3).ToString();
-                    if (ChampsVide(objRead.GetInt32(4)))
+                    if (objRead.IsDBNull(4))                    
                     {
                         TB_But_Visiteur.Clear();
                     }
@@ -125,7 +123,7 @@ catch (Exception ex)
                     {
                         TB_But_Visiteur.Text = objRead.GetInt32(4).ToString();
                     }
-                    if (ChampsVide(objRead.GetInt32(5)))
+                    if (objRead.IsDBNull(5))
                     {
                         TB_Passes_Visiteur.Clear();
                     }
@@ -133,7 +131,7 @@ catch (Exception ex)
                     {
                         TB_Passes_Visiteur.Text = objRead.GetInt32(5).ToString();
                     }
-                    if (ChampsVide(objRead.GetInt32(6)))
+                    if (objRead.IsDBNull(6))
                     {
                         TB_Pen_Visiteur.Clear();
                     }
@@ -146,12 +144,7 @@ catch (Exception ex)
             }
             objRead.Close();
            // LoadDatasetV();
-        }
-        private bool ChampsVide(int champ)
-        {
-            return champ == null;
-        }
-
+        }        
         private void CBX_Choix_J_R_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sqlMatchEquipe = "SELECT Prénom , Nom , NoMatch , J.Nojoueur , NbreButs , NbrePasses , TempsPunition FROM (SELECT Prénom , Nom , J.Nojoueur, J.NomÉquipe FROM Joueurs J   INNER JOIN Équipes E on E.NomÉquipe = J.NomÉquipe where E.NomÉquipe = '" + LB_NomEquipe_R.Text + "')J LEFT OUTER JOIN PrésencesMatchs P ON P.NoJoueur = J.NoJoueur";
@@ -167,7 +160,7 @@ catch (Exception ex)
                 {
                     LB_ID_R.Text = objRead.GetInt32(3).ToString();
                     
-                    if (ChampsVide(objRead.GetInt32(4)))
+                    if (objRead.IsDBNull(4))
                     {
                         TB_But_R.Clear();
                     }
@@ -175,7 +168,7 @@ catch (Exception ex)
                     {
                         TB_But_R.Text = objRead.GetInt32(4).ToString();
                     }
-                    if (ChampsVide(objRead.GetInt32(5)))
+                    if (objRead.IsDBNull(5))
                     {
                         TB_Passes_R.Clear();
                     }
@@ -183,7 +176,7 @@ catch (Exception ex)
                     {
                         TB_Passes_R.Text = objRead.GetInt32(5).ToString();
                     }
-                    if (ChampsVide(objRead.GetInt32(6)))
+                    if (objRead.IsDBNull(6))
                     {
                         TB_Pen_R.Clear();
                     }
