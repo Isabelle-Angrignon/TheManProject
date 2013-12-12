@@ -67,7 +67,8 @@ namespace The_Main_Project
         {
             LoadMatch();
             FillComboBox();
-            LoadDataset();
+            LoadDatasetR();
+            //LoadDatasetV();
         }
         private void FillComboBox()
         {
@@ -100,9 +101,11 @@ namespace The_Main_Project
         }
 
         private void CBX_Choix_J_V_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            OracleCommand oraCmdProg = new OracleCommand("select prénom , Nom , NoMatch ,P.Nojoueur , NBREBUTS , NBREPASSES , TEMPSPUNITION" +
-                " From Joueurs INNER JOIN PRÉSENCESMATCHS P ON P.NOJOUEUR = joueurs.nojoueur", conn);
+        {           
+            string sqlMatchEquipe = "select prénom , Nom , NoMatch ,P.Nojoueur , NBREBUTS , NBREPASSES , TEMPSPUNITION" +
+                " From Joueurs j INNER JOIN PRÉSENCESMATCHS P ON P.NOJOUEUR = j.nojoueur right outer join ÉQUIPES E" +
+                " on E.noméquipe = j.noméquipe where nomatch = " + LB_NoMatch + " and j.nomÉquipe = '" + LB_NomEquipe_V + "';";
+            OracleCommand oraCmdProg = new OracleCommand(sqlMatchEquipe, conn);
             oraCmdProg.CommandType = CommandType.Text;
             OracleDataReader objRead = oraCmdProg.ExecuteReader();
             while (objRead.Read())
@@ -118,13 +121,15 @@ namespace The_Main_Project
                 }
             }
             objRead.Close();
-            LoadDataset();
+           // LoadDatasetV();
         }
 
         private void CBX_Choix_J_R_SelectedIndexChanged(object sender, EventArgs e)
         {
-            OracleCommand oraCmdProg = new OracleCommand("select prénom , Nom , NoMatch ,P.Nojoueur , NBREBUTS , NBREPASSES , TEMPSPUNITION"+
-                " From Joueurs INNER JOIN PRÉSENCESMATCHS P ON P.NOJOUEUR = joueurs.nojoueur", conn);
+            string sqlMatchEquipe = "select prénom , Nom , NoMatch ,P.Nojoueur , NBREBUTS , NBREPASSES , TEMPSPUNITION" +
+                " From Joueurs j INNER JOIN PRÉSENCESMATCHS P ON P.NOJOUEUR = j.nojoueur right outer join ÉQUIPES E" +
+                " on E.noméquipe = j.noméquipe where nomatch = " + LB_NoMatch.Text + " and j.nomÉquipe = '" + LB_NomEquipe_R.Text + "';";
+            OracleCommand oraCmdProg = new OracleCommand(sqlMatchEquipe, conn);
             oraCmdProg.CommandType = CommandType.Text;
             OracleDataReader objRead = oraCmdProg.ExecuteReader();
             while (objRead.Read())
@@ -140,25 +145,27 @@ namespace The_Main_Project
                 }
             }
             objRead.Close();
-            LoadDataset();
+            LoadDatasetR();           
         }
 
-        private void LoadDataset()//pour les DGV
+        private void LoadDatasetR()//pour le DGV de l'équipe qui reçoit.
         {
             try
             {
-                string sqlShow = "Select * from PRÉSENCESMATCHS";
+                //Afficher tous les joueurs et leurs b/p/p participant à un match dans l'équipe qui reçoit.
+                string sqlShow = "Select * from PRÉSENCESMATCHS where nomatch = " + LB_NoMatch.Text + " AND nojoueur in (select nojoueur FROM Joueurs" + 
+                    " where noméquipe in (select receveur from matchs where receveur = '" + LB_NomEquipe_R.Text + "'));";
                 Oraliste = new OracleDataAdapter(sqlShow, conn);
-                if (formDataSet.Tables.Contains(dsTable))
+
+                if (formDataSet.Tables.Contains("Receveur"))
                 {
-                    formDataSet.Tables[dsTable].Clear();
+                    formDataSet.Tables["Receveur"].Clear();
                 }
-                Oraliste.Fill(formDataSet, dsTable);
+                Oraliste.Fill(formDataSet, "Receveur");
                 Oraliste.Dispose();
 
-                BindingSource maSource = new BindingSource(formDataSet, dsTable);
-                Vider();
-                Lister();
+                BindingSource maSource = new BindingSource(formDataSet, "Receveur");
+                DGV_ListeJoueur_R.DataSource = maSource;                
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
@@ -202,7 +209,7 @@ namespace The_Main_Project
                 orComm.ExecuteNonQuery();
                 MessageBox.Show(" Le joueur à été ajouté au match");
 
-                LoadDataset();
+                LoadDatasetR();
             }
             catch (OracleException ex)
             {
@@ -230,7 +237,7 @@ namespace The_Main_Project
                 orComm.Parameters.Add(oParamNumber);
                 orComm.ExecuteNonQuery();
 
-                LoadDataset();
+                LoadDatasetR();
                 MessageBox.Show(" Le match à été suprimé");
             }
             catch (OracleException ex)
@@ -278,7 +285,7 @@ namespace The_Main_Project
 
                 MessageBox.Show(" Le match à été modifié");
 
-                LoadDataset();
+                LoadDatasetR();
             }
             catch (OracleException ex)
             {
