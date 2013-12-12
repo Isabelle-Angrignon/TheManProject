@@ -167,7 +167,7 @@ namespace The_Main_Project
                 oParamRecev.Value = TB_Receveur.Text;
                 oParamVisit.Value = TB_Visiteur.Text;
                 oParamDate.Value = DTP_Date.Value;
-                oParamLieu.Value = TB_Lieu.Text[0];
+                oParamLieu.Value = TB_Lieu.Text;
                 oParamButsR.Value = int.Parse(TB_R_Pts.Text);
                 oParamButsV.Value = int.Parse(TB_V_Pts.Text);
 
@@ -232,6 +232,7 @@ namespace The_Main_Project
                 OracleParameter oParamLieu = new OracleParameter(":LIEU", OracleDbType.Varchar2, 30);
                 OracleParameter oParamButsR = new OracleParameter(":BUTSR", OracleDbType.Int32, 2);
                 OracleParameter oParamButsV = new OracleParameter(":BUTSV", OracleDbType.Int32, 2);
+                OracleParameter oParamNo = new OracleParameter(":NO", OracleDbType.Int32, 3);
 
                 oParamRecev.Value = TB_Receveur.Text;
                 oParamVisit.Value = TB_Visiteur.Text;
@@ -239,6 +240,7 @@ namespace The_Main_Project
                 oParamLieu.Value = TB_Lieu.Text;
                 oParamButsR.Value = int.Parse(TB_R_Pts.Text);
                 oParamButsV.Value = int.Parse(TB_V_Pts.Text);
+                oParamNo.Value = int.Parse(LB_No_Match.Text);
 
                 OracleCommand orComm = new OracleCommand(sqlUpdate, conn);
                 orComm.Parameters.Add(oParamRecev);
@@ -247,6 +249,7 @@ namespace The_Main_Project
                 orComm.Parameters.Add(oParamLieu);
                 orComm.Parameters.Add(oParamButsR);
                 orComm.Parameters.Add(oParamButsV);
+                orComm.Parameters.Add(oParamNo);
                 orComm.ExecuteNonQuery();
 
                 MessageBox.Show(" Le match à été modifié");              
