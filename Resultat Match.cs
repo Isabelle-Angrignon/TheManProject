@@ -104,7 +104,7 @@ namespace The_Main_Project
         {           
             string sqlMatchEquipe = "select prénom , Nom , NoMatch ,P.Nojoueur , NBREBUTS , NBREPASSES , TEMPSPUNITION" +
                 " From Joueurs j INNER JOIN PRÉSENCESMATCHS P ON P.NOJOUEUR = j.nojoueur right outer join ÉQUIPES E" +
-                " on E.noméquipe = j.noméquipe where nomatch = " + LB_NoMatch + " and j.nomÉquipe = '" + LB_NomEquipe_V + "';";
+                " on E.noméquipe = j.noméquipe where nomatch = " + LB_NoMatch + " and j.nomÉquipe = '" + LB_NomEquipe_V + "'";
             OracleCommand oraCmdProg = new OracleCommand(sqlMatchEquipe, conn);
             oraCmdProg.CommandType = CommandType.Text;
             OracleDataReader objRead = oraCmdProg.ExecuteReader();
@@ -128,7 +128,7 @@ namespace The_Main_Project
         {
             string sqlMatchEquipe = "select prénom , Nom , NoMatch ,P.Nojoueur , NBREBUTS , NBREPASSES , TEMPSPUNITION" +
                 " From Joueurs j INNER JOIN PRÉSENCESMATCHS P ON P.NOJOUEUR = j.nojoueur right outer join ÉQUIPES E" +
-                " on E.noméquipe = j.noméquipe where nomatch = " + LB_NoMatch.Text + " and j.nomÉquipe = '" + LB_NomEquipe_R.Text + "';";
+                " on E.noméquipe = j.noméquipe where nomatch = " + LB_NoMatch.Text + " and j.nomÉquipe = '" + LB_NomEquipe_R.Text + "'";
             OracleCommand oraCmdProg = new OracleCommand(sqlMatchEquipe, conn);
             oraCmdProg.CommandType = CommandType.Text;
             OracleDataReader objRead = oraCmdProg.ExecuteReader();

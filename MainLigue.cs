@@ -313,12 +313,24 @@ namespace The_Main_Project
 
         private void CMS_Match_Afficher_Click(object sender, EventArgs e)
         {
-            OuvrireMatch();
+            int LaLigne = DGV_Match.CurrentCellAddress.Y;
+            int LaColonne = 1;
+            int NoMatch = int.Parse(DGV_Match.Rows[LaLigne].Cells[LaColonne].Value.ToString());
+            GestionMatch Form = new GestionMatch();
+            Form.NoMatch = NoMatch;
+            Form.conn = conn;
+            Form.ShowDialog();
         }
 
         private void CMS_Match_Modifier_Click(object sender, EventArgs e)
         {
-            OuvrireMatch();
+            int LaLigne = DGV_Match.CurrentCellAddress.Y;
+            int LaColonne = 1;
+            int NoMatch = int.Parse(DGV_Match.Rows[LaLigne].Cells[LaColonne].Value.ToString());
+            Resultat_Match Form = new Resultat_Match();
+            Form.NoMatch = NoMatch;
+            Form.conn = conn;
+            Form.ShowDialog();
         }
 
         private void CMS_Match_Supprimer_Click(object sender, EventArgs e)
@@ -326,9 +338,29 @@ namespace The_Main_Project
             //doit supprimer l'élément sélectionné dans le DGV
         }
 
-        private void DGV_Match_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DGV_Match_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
         {
-            
+            if (e.Button == MouseButtons.Right)
+            {
+                CMS_Match.Show(Cursor.Position);
+                
+            }
+
+
+        }
+
+        private void DGV_Team_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                CMS_Team.Show(Cursor.Position);
+
+            }
+        }
+
+        private void CMS_Team_Afficher_Click(object sender, EventArgs e)
+        {
+
         }
 
         

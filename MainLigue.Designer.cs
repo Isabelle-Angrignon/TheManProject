@@ -50,11 +50,8 @@
             this.CMS_Match = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CMS_Match_Afficher = new System.Windows.Forms.ToolStripMenuItem();
             this.CMS_Match_Modifier = new System.Windows.Forms.ToolStripMenuItem();
-            this.CMS_Match_Supprimer = new System.Windows.Forms.ToolStripMenuItem();
             this.CMS_Team = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CMS_Team_Afficher = new System.Windows.Forms.ToolStripMenuItem();
-            this.CMS_Team_Modifier = new System.Windows.Forms.ToolStripMenuItem();
-            this.CMS_Team_Supprimer = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.FB_Match = new FlashButton.FlashButton();
             this.FB_Top5 = new FlashButton.FlashButton();
@@ -93,6 +90,7 @@
             this.DGV_Team.RowHeadersVisible = false;
             this.DGV_Team.Size = new System.Drawing.Size(156, 150);
             this.DGV_Team.TabIndex = 1;
+            this.DGV_Team.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Team_CellMouseUp);
             // 
             // MS_Main
             // 
@@ -231,7 +229,7 @@
             this.DGV_Match.RowHeadersVisible = false;
             this.DGV_Match.Size = new System.Drawing.Size(465, 150);
             this.DGV_Match.TabIndex = 7;
-            this.DGV_Match.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Match_CellClick);
+            this.DGV_Match.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Match_CellMouseUp);
             // 
             // CBX_Division
             // 
@@ -248,58 +246,37 @@
             // 
             this.CMS_Match.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CMS_Match_Afficher,
-            this.CMS_Match_Modifier,
-            this.CMS_Match_Supprimer});
+            this.CMS_Match_Modifier});
             this.CMS_Match.Name = "CMS_Match";
-            this.CMS_Match.Size = new System.Drawing.Size(130, 70);
+            this.CMS_Match.Size = new System.Drawing.Size(185, 48);
             // 
             // CMS_Match_Afficher
             // 
             this.CMS_Match_Afficher.Name = "CMS_Match_Afficher";
-            this.CMS_Match_Afficher.Size = new System.Drawing.Size(129, 22);
-            this.CMS_Match_Afficher.Text = "Afficher...";
+            this.CMS_Match_Afficher.Size = new System.Drawing.Size(180, 22);
+            this.CMS_Match_Afficher.Text = "Gérer Match";
             this.CMS_Match_Afficher.Click += new System.EventHandler(this.CMS_Match_Afficher_Click);
             // 
             // CMS_Match_Modifier
             // 
             this.CMS_Match_Modifier.Name = "CMS_Match_Modifier";
-            this.CMS_Match_Modifier.Size = new System.Drawing.Size(129, 22);
-            this.CMS_Match_Modifier.Text = "Modifier...";
+            this.CMS_Match_Modifier.Size = new System.Drawing.Size(184, 22);
+            this.CMS_Match_Modifier.Text = "Gérer Résultat Match";
             this.CMS_Match_Modifier.Click += new System.EventHandler(this.CMS_Match_Modifier_Click);
-            // 
-            // CMS_Match_Supprimer
-            // 
-            this.CMS_Match_Supprimer.Name = "CMS_Match_Supprimer";
-            this.CMS_Match_Supprimer.Size = new System.Drawing.Size(129, 22);
-            this.CMS_Match_Supprimer.Text = "Supprimer";
-            this.CMS_Match_Supprimer.Click += new System.EventHandler(this.CMS_Match_Supprimer_Click);
             // 
             // CMS_Team
             // 
             this.CMS_Team.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CMS_Team_Afficher,
-            this.CMS_Team_Modifier,
-            this.CMS_Team_Supprimer});
+            this.CMS_Team_Afficher});
             this.CMS_Team.Name = "CMS_Match";
-            this.CMS_Team.Size = new System.Drawing.Size(130, 70);
+            this.CMS_Team.Size = new System.Drawing.Size(156, 26);
             // 
             // CMS_Team_Afficher
             // 
             this.CMS_Team_Afficher.Name = "CMS_Team_Afficher";
-            this.CMS_Team_Afficher.Size = new System.Drawing.Size(129, 22);
-            this.CMS_Team_Afficher.Text = "Afficher...";
-            // 
-            // CMS_Team_Modifier
-            // 
-            this.CMS_Team_Modifier.Name = "CMS_Team_Modifier";
-            this.CMS_Team_Modifier.Size = new System.Drawing.Size(129, 22);
-            this.CMS_Team_Modifier.Text = "Modifier...";
-            // 
-            // CMS_Team_Supprimer
-            // 
-            this.CMS_Team_Supprimer.Name = "CMS_Team_Supprimer";
-            this.CMS_Team_Supprimer.Size = new System.Drawing.Size(129, 22);
-            this.CMS_Team_Supprimer.Text = "Supprimer";
+            this.CMS_Team_Afficher.Size = new System.Drawing.Size(155, 22);
+            this.CMS_Team_Afficher.Text = "Afficher Équipe";
+            this.CMS_Team_Afficher.Click += new System.EventHandler(this.CMS_Team_Afficher_Click);
             // 
             // FB_Match
             // 
@@ -463,11 +440,8 @@
         private System.Windows.Forms.ContextMenuStrip CMS_Match;
         private System.Windows.Forms.ToolStripMenuItem CMS_Match_Afficher;
         private System.Windows.Forms.ToolStripMenuItem CMS_Match_Modifier;
-        private System.Windows.Forms.ToolStripMenuItem CMS_Match_Supprimer;
         private System.Windows.Forms.ContextMenuStrip CMS_Team;
         private System.Windows.Forms.ToolStripMenuItem CMS_Team_Afficher;
-        private System.Windows.Forms.ToolStripMenuItem CMS_Team_Modifier;
-        private System.Windows.Forms.ToolStripMenuItem CMS_Team_Supprimer;
         private FlashButton.FlashButton FLB_Division;
         private FlashButton.FlashButton FLB_Team;
         private FlashButton.FlashButton FB_Joueur;

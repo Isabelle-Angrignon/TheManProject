@@ -21,7 +21,8 @@ namespace The_Main_Project
         public OracleConnection conn = new OracleConnection();
         private DataSet formDataSet = new DataSet();
         private const string dsTable = "Table";
-        OracleDataAdapter Oraliste;        
+        OracleDataAdapter Oraliste;
+        public int NoMatch = -1;
 
         private void BTN_Ok_Click(object sender, EventArgs e)
         {
@@ -87,7 +88,12 @@ namespace The_Main_Project
         {
             try
             {
-                string sqlShow = "Select * from matchs order by nomatch";////ou par nom, prénom
+                string sqlShow = "Select * from matchs order by nomatch";
+                if (NoMatch != -1)
+                {
+                    sqlShow = "Select * from matchs where nomatch =" + NoMatch;
+                }
+                
                 Oraliste = new OracleDataAdapter(sqlShow, conn);
                 if (formDataSet.Tables.Contains(dsTable))
                 {
