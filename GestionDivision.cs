@@ -17,17 +17,12 @@ namespace The_Main_Project
         { 
             InitializeComponent();
         }
-        //////////////////////////////////
-        ///// template std ///////////////
-        //////////////////////////////////
         public OracleConnection conn = new OracleConnection();
         private DataSet divDataSet = new DataSet();
         private const string dsDivision = "Divisions";
         OracleDataAdapter Oraliste;
         string clePrimaire;
         
-        //oParam
-
         private void BTN_Ok_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;

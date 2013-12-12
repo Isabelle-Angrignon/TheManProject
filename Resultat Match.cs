@@ -284,7 +284,7 @@ namespace The_Main_Project
                 orComm.ExecuteNonQuery();
 
                 LoadDatasetR();
-                MessageBox.Show(" Le match à été suprimé");
+                MessageBox.Show("Le match à été suprimé");
             }
             catch (OracleException ex)
             {

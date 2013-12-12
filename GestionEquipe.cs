@@ -125,7 +125,6 @@ namespace The_Main_Project
             clePrimaire = TB_Nom_Team.Text;
         }
         #endregion
-        /////////////////////////////////////////en construction//////////////////////////////////////////////////
                 
         private void BTN_Add_Click(object sender, EventArgs e)
         {
@@ -176,7 +175,7 @@ namespace The_Main_Project
         {
             try 
             {
-                if (MessageBox.Show("message", "Attention", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                if (MessageBox.Show("Voulez-vous vraiment supprimer cet enregistrement?", "Attention", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 {
                     string sqlDelete = "DELETE FROM Équipes WHERE Noméquipe = :NOM";//requete supprime
 
