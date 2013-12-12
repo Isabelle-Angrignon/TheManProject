@@ -190,7 +190,7 @@
             // TSMI_Themes
             // 
             this.TSMI_Themes.Name = "TSMI_Themes";
-            this.TSMI_Themes.Size = new System.Drawing.Size(125, 22);
+            this.TSMI_Themes.Size = new System.Drawing.Size(152, 22);
             this.TSMI_Themes.Text = "Thèmes...";
             this.TSMI_Themes.Click += new System.EventHandler(this.TSMI_Themes_Click);
             // 
@@ -207,14 +207,15 @@
             // 
             this.aideToolStripMenuItem1.Enabled = false;
             this.aideToolStripMenuItem1.Name = "aideToolStripMenuItem1";
-            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
+            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.aideToolStripMenuItem1.Text = "Aide...";
             // 
             // TSMI_A_Propos
             // 
             this.TSMI_A_Propos.Name = "TSMI_A_Propos";
-            this.TSMI_A_Propos.Size = new System.Drawing.Size(131, 22);
+            this.TSMI_A_Propos.Size = new System.Drawing.Size(152, 22);
             this.TSMI_A_Propos.Text = "A Propos...";
+            this.TSMI_A_Propos.Click += new System.EventHandler(this.TSMI_A_Propos_Click);
             // 
             // DGV_Match
             // 

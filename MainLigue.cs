@@ -369,6 +369,12 @@ namespace The_Main_Project
             Form.ShowDialog();
         }
 
+        private void TSMI_A_Propos_Click(object sender, EventArgs e)
+        {
+            A_Propos Form = new A_Propos();
+            Form.ShowDialog();
+        }
+
     }
 
    
