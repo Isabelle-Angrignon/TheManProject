@@ -21,6 +21,9 @@ namespace The_Main_Project
         private DataSet formDataSet = new DataSet();
         private const string dsTable = "Table";
         public int NoMatch;
+        OracleDataAdapter Oraliste;
+        private int BindingNoJoueurR;
+        private int BindingNoJoueurV;
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -68,6 +71,7 @@ namespace The_Main_Project
         {
             LoadMatch();
             FillComboBox();
+            LoadDataset();
         }
         private void FillComboBox()
         {
@@ -80,11 +84,11 @@ namespace The_Main_Project
                 {
                     if (objRead.GetString(6) == LB_NomEquipe_R.Text)
                     {
-                        CBX_Choix_J_R.Items.Add(objRead.GetString(2) + objRead.GetString(1));
+                        CBX_Choix_J_R.Items.Add(objRead.GetString(2) + " " + objRead.GetString(1));
                     }
                     if (objRead.GetString(6) == LB_NomEquipe_V.Text)
                     {
-                        CBX_Choix_J_V.Items.Add(objRead.GetString(2) + objRead.GetString(1));
+                        CBX_Choix_J_V.Items.Add(objRead.GetString(2)+ " " + objRead.GetString(1));
                     }
                 }
                 CBX_Choix_J_R.SelectedIndex = 0;
@@ -96,6 +100,84 @@ namespace The_Main_Project
             {
                 MessageBox.Show(ex.Message.ToString());
             } 
+        }
+
+        private void CBX_Choix_J_V_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            OracleCommand oraCmdProg = new OracleCommand("select prénom , Nom , NoMatch ,P.Nojoueur , NBREBUTS , NBREPASSES , TEMPSPUNITION" +
+                "From Joueurs INNER JOIN PRÉSENCESMATCHS P ON P.NOJOUEUR = joueurs.nojoueur", conn);
+            oraCmdProg.CommandType = CommandType.Text;
+            OracleDataReader objRead = oraCmdProg.ExecuteReader();
+            while (objRead.Read())
+            {
+                char[] splitters = new char[] { ' ' };
+                string[] CeQueJeVeux = CBX_Choix_J_V.Text.Split(splitters);
+                if (CeQueJeVeux[0] == objRead.GetString(0) && CeQueJeVeux[1] == objRead.GetString(1))
+                {
+                    LB_ID_V.Text = objRead.GetInt32(3).ToString();
+                    TB_But_Visiteur.Text = objRead.GetInt32(4).ToString();
+                    TB_Passes_Visiteur.Text = objRead.GetInt32(5).ToString();
+                    TB_Pen_Visiteur.Text = objRead.GetInt32(6).ToString();
+                }
+            }
+            objRead.Close();
+            LoadDataset();
+        }
+
+        private void CBX_Choix_J_R_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            OracleCommand oraCmdProg = new OracleCommand("select prénom , Nom , NoMatch ,P.Nojoueur , NBREBUTS , NBREPASSES , TEMPSPUNITION"+
+                "From Joueurs INNER JOIN PRÉSENCESMATCHS P ON P.NOJOUEUR = joueurs.nojoueur", conn);
+            oraCmdProg.CommandType = CommandType.Text;
+            OracleDataReader objRead = oraCmdProg.ExecuteReader();
+            while (objRead.Read())
+            {
+                char[] splitters = new char[] { ' ' };
+                string[] CeQueJeVeux = CBX_Choix_J_R.Text.Split(splitters);
+                if (CeQueJeVeux[0] == objRead.GetString(0) && CeQueJeVeux[1] == objRead.GetString(1))
+                {
+                    LB_ID_R.Text = objRead.GetInt32(3).ToString();
+                    TB_But_R.Text = objRead.GetInt32(4).ToString();
+                    TB_Passes_R.Text = objRead.GetInt32(5).ToString();
+                    TB_Pen_R.Text = objRead.GetInt32(6).ToString();
+                }
+            }
+            objRead.Close();
+            LoadDataset();
+        }
+
+        private void LoadDataset()
+        {
+            try
+            {
+                string sqlShow = "Select * from PRÉSENCESMATCHS";////ou par nom, prénom
+                Oraliste = new OracleDataAdapter(sqlShow, conn);
+                if (formDataSet.Tables.Contains(dsTable))
+                {
+                    formDataSet.Tables[dsTable].Clear();
+                }
+                Oraliste.Fill(formDataSet, dsTable);
+                Oraliste.Dispose();
+
+                BindingSource maSource = new BindingSource(formDataSet, dsTable);
+                Vider();
+                Lister();
+            }
+            catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
+        }
+        private void Lister()
+        {
+            
+            
+        }
+        private void Vider()
+        {
+            
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

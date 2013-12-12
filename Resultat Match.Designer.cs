@@ -36,6 +36,8 @@
             this.LB_DateMatch = new System.Windows.Forms.Label();
             this.LB_Lieu_Result = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.LB_ID_R = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.BTN = new System.Windows.Forms.Button();
             this.BTN_Add_R = new System.Windows.Forms.Button();
@@ -49,7 +51,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.CBX_Choix_J_R = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.LB_ID_V = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.DGV_ListeJoueur_V = new System.Windows.Forms.DataGridView();
@@ -125,6 +129,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.LB_ID_R);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.BTN);
             this.groupBox1.Controls.Add(this.BTN_Add_R);
@@ -143,6 +149,24 @@
             this.groupBox1.Size = new System.Drawing.Size(232, 252);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // LB_ID_R
+            // 
+            this.LB_ID_R.AutoSize = true;
+            this.LB_ID_R.Location = new System.Drawing.Point(58, 46);
+            this.LB_ID_R.Name = "LB_ID_R";
+            this.LB_ID_R.Size = new System.Drawing.Size(0, 13);
+            this.LB_ID_R.TabIndex = 26;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(24, 13);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "ID :";
             // 
             // button1
             // 
@@ -186,7 +210,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(115, 106);
+            this.label9.Location = new System.Drawing.Point(109, 126);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 13);
             this.label9.TabIndex = 19;
@@ -194,7 +218,7 @@
             // 
             // TB_Passes_R
             // 
-            this.TB_Passes_R.Location = new System.Drawing.Point(67, 75);
+            this.TB_Passes_R.Location = new System.Drawing.Point(61, 95);
             this.TB_Passes_R.Name = "TB_Passes_R";
             this.TB_Passes_R.Size = new System.Drawing.Size(42, 20);
             this.TB_Passes_R.TabIndex = 18;
@@ -202,7 +226,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(20, 78);
+            this.label11.Location = new System.Drawing.Point(14, 98);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(41, 13);
             this.label11.TabIndex = 17;
@@ -210,7 +234,7 @@
             // 
             // TB_But_R
             // 
-            this.TB_But_R.Location = new System.Drawing.Point(67, 49);
+            this.TB_But_R.Location = new System.Drawing.Point(61, 69);
             this.TB_But_R.Name = "TB_But_R";
             this.TB_But_R.Size = new System.Drawing.Size(42, 20);
             this.TB_But_R.TabIndex = 16;
@@ -218,7 +242,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(20, 56);
+            this.label10.Location = new System.Drawing.Point(14, 76);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(28, 13);
             this.label10.TabIndex = 15;
@@ -226,7 +250,7 @@
             // 
             // TB_Pen_R
             // 
-            this.TB_Pen_R.Location = new System.Drawing.Point(67, 99);
+            this.TB_Pen_R.Location = new System.Drawing.Point(61, 119);
             this.TB_Pen_R.Name = "TB_Pen_R";
             this.TB_Pen_R.Size = new System.Drawing.Size(42, 20);
             this.TB_Pen_R.TabIndex = 12;
@@ -234,7 +258,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(20, 102);
+            this.label8.Location = new System.Drawing.Point(14, 122);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(29, 13);
             this.label8.TabIndex = 11;
@@ -242,16 +266,19 @@
             // 
             // CBX_Choix_J_R
             // 
+            this.CBX_Choix_J_R.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBX_Choix_J_R.FormattingEnabled = true;
             this.CBX_Choix_J_R.Location = new System.Drawing.Point(6, 16);
             this.CBX_Choix_J_R.Name = "CBX_Choix_J_R";
             this.CBX_Choix_J_R.Size = new System.Drawing.Size(121, 21);
             this.CBX_Choix_J_R.TabIndex = 8;
-            this.CBX_Choix_J_R.Text = "Choix joueur";
+            this.CBX_Choix_J_R.SelectedIndexChanged += new System.EventHandler(this.CBX_Choix_J_R_SelectedIndexChanged);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.LB_ID_V);
             this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.button7);
             this.groupBox2.Controls.Add(this.DGV_ListeJoueur_V);
@@ -270,6 +297,14 @@
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             // 
+            // LB_ID_V
+            // 
+            this.LB_ID_V.AutoSize = true;
+            this.LB_ID_V.Location = new System.Drawing.Point(58, 46);
+            this.LB_ID_V.Name = "LB_ID_V";
+            this.LB_ID_V.Size = new System.Drawing.Size(0, 13);
+            this.LB_ID_V.TabIndex = 28;
+            // 
             // button2
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -279,6 +314,15 @@
             this.button2.Size = new System.Drawing.Size(40, 40);
             this.button2.TabIndex = 25;
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(24, 13);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "ID :";
             // 
             // button6
             // 
@@ -311,7 +355,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(115, 106);
+            this.label12.Location = new System.Drawing.Point(109, 133);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(44, 13);
             this.label12.TabIndex = 19;
@@ -319,7 +363,7 @@
             // 
             // TB_Passes_Visiteur
             // 
-            this.TB_Passes_Visiteur.Location = new System.Drawing.Point(67, 75);
+            this.TB_Passes_Visiteur.Location = new System.Drawing.Point(61, 102);
             this.TB_Passes_Visiteur.Name = "TB_Passes_Visiteur";
             this.TB_Passes_Visiteur.Size = new System.Drawing.Size(42, 20);
             this.TB_Passes_Visiteur.TabIndex = 18;
@@ -327,7 +371,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(20, 78);
+            this.label13.Location = new System.Drawing.Point(14, 105);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(41, 13);
             this.label13.TabIndex = 17;
@@ -335,7 +379,7 @@
             // 
             // TB_But_Visiteur
             // 
-            this.TB_But_Visiteur.Location = new System.Drawing.Point(67, 49);
+            this.TB_But_Visiteur.Location = new System.Drawing.Point(61, 76);
             this.TB_But_Visiteur.Name = "TB_But_Visiteur";
             this.TB_But_Visiteur.Size = new System.Drawing.Size(42, 20);
             this.TB_But_Visiteur.TabIndex = 16;
@@ -343,7 +387,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(20, 56);
+            this.label14.Location = new System.Drawing.Point(14, 83);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(28, 13);
             this.label14.TabIndex = 15;
@@ -351,7 +395,7 @@
             // 
             // TB_Pen_Visiteur
             // 
-            this.TB_Pen_Visiteur.Location = new System.Drawing.Point(67, 99);
+            this.TB_Pen_Visiteur.Location = new System.Drawing.Point(61, 126);
             this.TB_Pen_Visiteur.Name = "TB_Pen_Visiteur";
             this.TB_Pen_Visiteur.Size = new System.Drawing.Size(42, 20);
             this.TB_Pen_Visiteur.TabIndex = 12;
@@ -359,7 +403,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(20, 102);
+            this.label15.Location = new System.Drawing.Point(14, 129);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(29, 13);
             this.label15.TabIndex = 11;
@@ -367,12 +411,13 @@
             // 
             // CBX_Choix_J_V
             // 
+            this.CBX_Choix_J_V.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBX_Choix_J_V.FormattingEnabled = true;
             this.CBX_Choix_J_V.Location = new System.Drawing.Point(6, 16);
             this.CBX_Choix_J_V.Name = "CBX_Choix_J_V";
             this.CBX_Choix_J_V.Size = new System.Drawing.Size(121, 21);
             this.CBX_Choix_J_V.TabIndex = 8;
-            this.CBX_Choix_J_V.Text = "Choix joueur";
+            this.CBX_Choix_J_V.SelectedIndexChanged += new System.EventHandler(this.CBX_Choix_J_V_SelectedIndexChanged);
             // 
             // LB_NomEquipe_V
             // 
@@ -462,5 +507,9 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private FlashButton.FlashButton FB_Close;
+        private System.Windows.Forms.Label LB_ID_R;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LB_ID_V;
+        private System.Windows.Forms.Label label4;
     }
 }
