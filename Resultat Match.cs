@@ -181,28 +181,26 @@ namespace The_Main_Project
                 //////  :NOMATCH, :NOJOUEUR, :NBREBUTS,:NBREPASSES,:TEMPSPUNITION   all numbers
                 string sqlAdd = "INSERT INTO PRÉSENCESMATCHS VALUES (:NOMATCH, :NOJOUEUR, :BUTS,:PASSES,:PUNITION)";
 
-                OracleParameter oParam = new OracleParameter(":NOMATCH", OracleDbType.Int32, 2);
-                OracleParameter oParam = new OracleParameter(":NOJOUEUR", OracleDbType.Int32, 2);
-                OracleParameter oParam = new OracleParameter(":BUTS", OracleDbType.Int32, 2);
-                OracleParameter oParam = new OracleParameter(":PASSES", OracleDbType.Int32, 2);
-                OracleParameter oParam = new OracleParameter(":PUNITION", OracleDbType.Int32, 2);
+                OracleParameter oParamMatch = new OracleParameter(":NOMATCH", OracleDbType.Int32, 3);
+                OracleParameter oParamJoueur = new OracleParameter(":NOJOUEUR", OracleDbType.Int32, 4);
+                OracleParameter oParamButs = new OracleParameter(":BUTS", OracleDbType.Int32, 2);
+                OracleParameter oParamPasses = new OracleParameter(":PASSES", OracleDbType.Int32, 2);
+                OracleParameter oParamPunit = new OracleParameter(":PUNITION", OracleDbType.Int32, 3);
 
-                oParamRecev.Value = TB_Receveur.Text;
-                oParamVisit.Value = TB_Visiteur.Text;
-                oParamDate.Value = DTP_Date.Value;
-                oParamLieu.Value = TB_Lieu.Text;
-                oParamButsR.Value = int.Parse(TB_R_Pts.Text);
-                oParamButsV.Value = int.Parse(TB_V_Pts.Text);
+                oParamMatch.Value = int.Parse(LB_NoMatch.Text);
+                oParamJoueur.Value = int.Parse(LB_ID_R.Text);
+                oParamButs.Value = int.Parse(TB_But_R.Text);
+                oParamPasses.Value = int.Parse(TB_Passes_R.Text);
+                oParamPunit.Value = int.Parse(TB_Pen_R.Text);
 
                 OracleCommand orComm = new OracleCommand(sqlAdd, conn);
-                orComm.Parameters.Add(oParamRecev);
-                orComm.Parameters.Add(oParamVisit);
-                orComm.Parameters.Add(oParamDate);
-                orComm.Parameters.Add(oParamLieu);
-                orComm.Parameters.Add(oParamButsR);
-                orComm.Parameters.Add(oParamButsV);
+                orComm.Parameters.Add(oParamMatch);
+                orComm.Parameters.Add(oParamJoueur);
+                orComm.Parameters.Add(oParamButs);
+                orComm.Parameters.Add(oParamPasses);
+                orComm.Parameters.Add(oParamPunit);                
                 orComm.ExecuteNonQuery();
-                MessageBox.Show(" Le match à été ajouté");
+                MessageBox.Show(" Le joueur à été ajouté au match");
 
                 LoadDataset();
             }
@@ -260,13 +258,13 @@ namespace The_Main_Project
                 OracleParameter oParamButsV = new OracleParameter(":BUTSV", OracleDbType.Int32, 2);
                 OracleParameter oParamNo = new OracleParameter(":NO", OracleDbType.Int32, 3);
 
-                oParamRecev.Value = TB_Receveur.Text;
-                oParamVisit.Value = TB_Visiteur.Text;
-                oParamDate.Value = DTP_Date.Value;
-                oParamLieu.Value = TB_Lieu.Text;
-                oParamButsR.Value = int.Parse(TB_R_Pts.Text);
-                oParamButsV.Value = int.Parse(TB_V_Pts.Text);
-                oParamNo.Value = int.Parse(LB_No_Match.Text);
+                //oParamRecev.Value = TB_Receveur.Text;
+                //oParamVisit.Value = TB_Visiteur.Text;
+                //oParamDate.Value = DTP_Date.Value;
+                //oParamLieu.Value = TB_Lieu.Text;
+                //oParamButsR.Value = int.Parse(TB_R_Pts.Text);
+                //oParamButsV.Value = int.Parse(TB_V_Pts.Text);
+                //oParamNo.Value = int.Parse(LB_No_Match.Text);
 
                 OracleCommand orComm = new OracleCommand(sqlUpdate, conn);
                 orComm.Parameters.Add(oParamRecev);
