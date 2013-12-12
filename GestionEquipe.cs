@@ -184,10 +184,11 @@ namespace The_Main_Project
 
                     OracleCommand orComm = new OracleCommand(sqlDelete, conn);
                     orComm.Parameters.Add(oParamNom);
-                    orComm.ExecuteNonQuery();
+                    int res = orComm.ExecuteNonQuery();
 
                     LoadDataset();
-                    MessageBox.Show("Enregistrement supprimé avec succès");
+
+                    MessageBox.Show(res + " enregistrement supprimé avec succès");
                 }
             } 
             catch (Exception ex) 
