@@ -117,4 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Aide :
+Il y a 4 principales fonctionnalité a l'application : 
+- Gestion des joueurs qui permet d'ajouter , modifier ou supprimer un joueur
+- Gestion des matchs qui permet d'ajouter , modifier ou supprimer des matchs
+- Gestion des équipes qui permet d'ajouter , modifier ou supprimer des équipes 
+- Gestion des divisions quo permet d'ajouter , modifier et supprimer des divisions.
+
+Vous pouvez consulter les équipes et les matchs sur la page principal de l'application.
+
+Pour consulter les joueurs vous pouvez y accéder a partir du menu stat ou encore en appuyant 
+sur le bouton approprier dans la fenêtre principal.
+
+Il est aussi possible d'accéder au Top 5 des joueurs grâce au boutons en forme 
+d'étoiles sur la fenêtre principale.</value>
+  </data>
 </root>

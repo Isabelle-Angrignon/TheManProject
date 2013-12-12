@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(A_Propos));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.FB_Close = new FlashButton.FlashButton();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -90,17 +92,27 @@
             this.FB_Close.ImageDisable = null;
             this.FB_Close.ImageNeutral = global::The_Main_Project.Properties.Resources.Porte;
             this.FB_Close.ImageOver = global::The_Main_Project.Properties.Resources.PorteOver;
-            this.FB_Close.Location = new System.Drawing.Point(222, 108);
+            this.FB_Close.Location = new System.Drawing.Point(439, 294);
             this.FB_Close.Name = "FB_Close";
             this.FB_Close.Size = new System.Drawing.Size(50, 51);
             this.FB_Close.TabIndex = 37;
             this.FB_Close.Click += new System.EventHandler(this.FB_Close_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(28, 109);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(457, 182);
+            this.label6.TabIndex = 38;
+            this.label6.Text = resources.GetString("label6.Text");
+            // 
             // A_Propos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 171);
+            this.ClientSize = new System.Drawing.Size(501, 357);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -122,5 +134,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private FlashButton.FlashButton FB_Close;
+        private System.Windows.Forms.Label label6;
     }
 }
