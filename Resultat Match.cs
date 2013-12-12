@@ -154,14 +154,8 @@ catch (Exception ex)
 
         private void CBX_Choix_J_R_SelectedIndexChanged(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            string sqlMatchEquipe = "select prénom , Nom , NoMatch ,P.Nojoueur , NBREBUTS , NBREPASSES , TEMPSPUNITION" +
-                " From Joueurs j INNER JOIN PRÉSENCESMATCHS P ON P.NOJOUEUR = j.nojoueur right outer join ÉQUIPES E" +
-                " on E.noméquipe = j.noméquipe where nomatch = " + LB_NoMatch.Text + " and j.nomÉquipe = '" + LB_NomEquipe_R.Text + "'";
-=======
             string sqlMatchEquipe = "SELECT Prénom , Nom , NoMatch , J.Nojoueur , NbreButs , NbrePasses , TempsPunition FROM (SELECT Prénom , Nom , J.Nojoueur, J.NomÉquipe FROM Joueurs J   INNER JOIN Équipes E on E.NomÉquipe = J.NomÉquipe where E.NomÉquipe = '" + LB_NomEquipe_R.Text + "')J LEFT OUTER JOIN PrésencesMatchs P ON P.NoJoueur = J.NoJoueur";
-            
->>>>>>> Foutu champs nulls
+
             OracleCommand oraCmdProg = new OracleCommand(sqlMatchEquipe, conn);
             oraCmdProg.CommandType = CommandType.Text;
             OracleDataReader objRead = oraCmdProg.ExecuteReader();
