@@ -28,10 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.FB_Close = new FlashButton.FlashButton();
             this.DGV_Top5 = new System.Windows.Forms.DataGridView();
             this.LB_Top5 = new System.Windows.Forms.Label();
+            this.CMS = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.gestionJoueurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.afficherStatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Top5)).BeginInit();
+            this.CMS.SuspendLayout();
             this.SuspendLayout();
             // 
             // FB_Close
@@ -43,7 +48,7 @@
             this.FB_Close.ImageDisable = null;
             this.FB_Close.ImageNeutral = global::The_Main_Project.Properties.Resources.Porte;
             this.FB_Close.ImageOver = global::The_Main_Project.Properties.Resources.PorteOver;
-            this.FB_Close.Location = new System.Drawing.Point(423, 203);
+            this.FB_Close.Location = new System.Drawing.Point(578, 292);
             this.FB_Close.Name = "FB_Close";
             this.FB_Close.Size = new System.Drawing.Size(55, 62);
             this.FB_Close.TabIndex = 29;
@@ -65,8 +70,9 @@
             this.DGV_Top5.Name = "DGV_Top5";
             this.DGV_Top5.ReadOnly = true;
             this.DGV_Top5.RowHeadersVisible = false;
-            this.DGV_Top5.Size = new System.Drawing.Size(409, 181);
+            this.DGV_Top5.Size = new System.Drawing.Size(564, 270);
             this.DGV_Top5.TabIndex = 28;
+            this.DGV_Top5.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Top5_CellMouseUp);
             // 
             // LB_Top5
             // 
@@ -77,11 +83,33 @@
             this.LB_Top5.TabIndex = 27;
             this.LB_Top5.Text = "Voici les stats des joueurs";
             // 
+            // CMS
+            // 
+            this.CMS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionJoueurToolStripMenuItem,
+            this.afficherStatToolStripMenuItem});
+            this.CMS.Name = "CMS";
+            this.CMS.Size = new System.Drawing.Size(162, 70);
+            // 
+            // gestionJoueurToolStripMenuItem
+            // 
+            this.gestionJoueurToolStripMenuItem.Name = "gestionJoueurToolStripMenuItem";
+            this.gestionJoueurToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.gestionJoueurToolStripMenuItem.Text = "Gestion Joueur...";
+            this.gestionJoueurToolStripMenuItem.Click += new System.EventHandler(this.gestionJoueurToolStripMenuItem_Click);
+            // 
+            // afficherStatToolStripMenuItem
+            // 
+            this.afficherStatToolStripMenuItem.Name = "afficherStatToolStripMenuItem";
+            this.afficherStatToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.afficherStatToolStripMenuItem.Text = "Afficher Stat ...";
+            this.afficherStatToolStripMenuItem.Click += new System.EventHandler(this.afficherStatToolStripMenuItem_Click);
+            // 
             // Stats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 277);
+            this.ClientSize = new System.Drawing.Size(645, 366);
             this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.DGV_Top5);
             this.Controls.Add(this.LB_Top5);
@@ -89,6 +117,7 @@
             this.Text = "Stats";
             this.Load += new System.EventHandler(this.Stats_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Top5)).EndInit();
+            this.CMS.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,5 +128,8 @@
         private FlashButton.FlashButton FB_Close;
         private System.Windows.Forms.DataGridView DGV_Top5;
         private System.Windows.Forms.Label LB_Top5;
+        private System.Windows.Forms.ContextMenuStrip CMS;
+        private System.Windows.Forms.ToolStripMenuItem gestionJoueurToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem afficherStatToolStripMenuItem;
     }
 }

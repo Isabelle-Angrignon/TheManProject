@@ -47,5 +47,35 @@ namespace The_Main_Project
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
+
+        private void DGV_Top5_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                CMS.Show(Cursor.Position);
+            }
+        }
+
+        private void gestionJoueurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int LaLigne = DGV_Top5.CurrentCellAddress.Y;
+            int LaColonne = 0;
+            int NoJoueur = int.Parse(DGV_Top5.Rows[LaLigne].Cells[LaColonne].Value.ToString());
+            GestionJoueur Form = new GestionJoueur();
+            Form.NoJoueur = NoJoueur;
+            Form.conn = conn;
+            Form.ShowDialog();
+        }
+
+        private void afficherStatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int LaLigne = DGV_Top5.CurrentCellAddress.Y;
+            int LaColonne = 0;
+            int NoJoueur = int.Parse(DGV_Top5.Rows[LaLigne].Cells[LaColonne].Value.ToString());
+            AfficherStat Form = new AfficherStat();
+            Form.NoJoueur = NoJoueur;
+            Form.conn = conn;
+            Form.ShowDialog();
+        }
     }
 }

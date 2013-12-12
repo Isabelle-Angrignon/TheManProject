@@ -28,10 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.LB_Top5 = new System.Windows.Forms.Label();
             this.DGV_Top5 = new System.Windows.Forms.DataGridView();
             this.FB_Close = new FlashButton.FlashButton();
+            this.CMS = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.gestionJoueurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.afficherStatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Top5)).BeginInit();
+            this.CMS.SuspendLayout();
             this.SuspendLayout();
             // 
             // LB_Top5
@@ -53,14 +58,15 @@
             this.DGV_Top5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGV_Top5.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGV_Top5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_Top5.Cursor = System.Windows.Forms.Cursors.No;
+            this.DGV_Top5.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.DGV_Top5.Location = new System.Drawing.Point(15, 25);
             this.DGV_Top5.MultiSelect = false;
             this.DGV_Top5.Name = "DGV_Top5";
             this.DGV_Top5.ReadOnly = true;
             this.DGV_Top5.RowHeadersVisible = false;
-            this.DGV_Top5.Size = new System.Drawing.Size(531, 241);
+            this.DGV_Top5.Size = new System.Drawing.Size(531, 144);
             this.DGV_Top5.TabIndex = 5;
+            this.DGV_Top5.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Top5_CellMouseUp);
             // 
             // FB_Close
             // 
@@ -71,17 +77,39 @@
             this.FB_Close.ImageDisable = null;
             this.FB_Close.ImageNeutral = global::The_Main_Project.Properties.Resources.Porte;
             this.FB_Close.ImageOver = global::The_Main_Project.Properties.Resources.PorteOver;
-            this.FB_Close.Location = new System.Drawing.Point(491, 272);
+            this.FB_Close.Location = new System.Drawing.Point(491, 175);
             this.FB_Close.Name = "FB_Close";
             this.FB_Close.Size = new System.Drawing.Size(55, 62);
             this.FB_Close.TabIndex = 26;
             this.FB_Close.Click += new System.EventHandler(this.FB_Close_Click);
             // 
+            // CMS
+            // 
+            this.CMS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionJoueurToolStripMenuItem,
+            this.afficherStatToolStripMenuItem});
+            this.CMS.Name = "CMS";
+            this.CMS.Size = new System.Drawing.Size(162, 48);
+            // 
+            // gestionJoueurToolStripMenuItem
+            // 
+            this.gestionJoueurToolStripMenuItem.Name = "gestionJoueurToolStripMenuItem";
+            this.gestionJoueurToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.gestionJoueurToolStripMenuItem.Text = "Gestion Joueur...";
+            this.gestionJoueurToolStripMenuItem.Click += new System.EventHandler(this.gestionJoueurToolStripMenuItem_Click);
+            // 
+            // afficherStatToolStripMenuItem
+            // 
+            this.afficherStatToolStripMenuItem.Name = "afficherStatToolStripMenuItem";
+            this.afficherStatToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.afficherStatToolStripMenuItem.Text = "Afficher Stat...";
+            this.afficherStatToolStripMenuItem.Click += new System.EventHandler(this.afficherStatToolStripMenuItem_Click);
+            // 
             // Top5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 334);
+            this.ClientSize = new System.Drawing.Size(558, 237);
             this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.DGV_Top5);
             this.Controls.Add(this.LB_Top5);
@@ -89,6 +117,7 @@
             this.Text = "Top 5 des joueurs de la ligue";
             this.Load += new System.EventHandler(this.Top5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Top5)).EndInit();
+            this.CMS.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,5 +128,8 @@
         private System.Windows.Forms.Label LB_Top5;
         private System.Windows.Forms.DataGridView DGV_Top5;
         private FlashButton.FlashButton FB_Close;
+        private System.Windows.Forms.ContextMenuStrip CMS;
+        private System.Windows.Forms.ToolStripMenuItem gestionJoueurToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem afficherStatToolStripMenuItem;
     }
 }

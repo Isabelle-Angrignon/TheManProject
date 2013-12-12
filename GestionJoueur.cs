@@ -21,7 +21,7 @@ namespace The_Main_Project
         private DataSet formDataSet = new DataSet();
         private const string dsTable = "Table";
         OracleDataAdapter Oraliste;
-        public string NomEquipe = "";
+        public int NoJoueur = -1;
 
         private void BTN_Ok_Click(object sender, EventArgs e)
         {
@@ -94,7 +94,11 @@ namespace The_Main_Project
         {
             try
             {
-                string sqlShow = "Select * from Joueurs order by nomaillot";////ou par nom, prénom
+                string sqlShow = "Select * from Joueurs order by nomaillot";
+                if (NoJoueur != -1)
+                {
+                    sqlShow = "Select * from Joueurs where nojoueur =" + NoJoueur;
+                }
                 Oraliste = new OracleDataAdapter(sqlShow, conn);
                 if (formDataSet.Tables.Contains(dsTable))
                 {
