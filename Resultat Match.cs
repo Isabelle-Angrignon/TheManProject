@@ -220,13 +220,16 @@ namespace The_Main_Project
         {
             try
             {
-                string sqlDelete = "DELETE FROM matchs WHERE Nomatch = :NO";
+                string sqlDelete = "DELETE FROM PRÉSENCESMATCHS WHERE Nomatch = :NO AND NoJoueur = :Number";
 
                 OracleParameter oParamNo = new OracleParameter(":NO", OracleDbType.Int32, 3);
-                oParamNo.Value = int.Parse(LB_No_Match.Text);
+                oParamNo.Value = int.Parse(LB_NoMatch.Text);
+                OracleParameter oParamNumber = new OracleParameter(":Number", OracleDbType.Int32, 4);
+                oParamNumber.Value = int.Parse(LB_ID_R.Text);
 
                 OracleCommand orComm = new OracleCommand(sqlDelete, conn);
                 orComm.Parameters.Add(oParamNo);
+                orComm.Parameters.Add(oParamNumber);
                 orComm.ExecuteNonQuery();
 
                 LoadDataset();
