@@ -105,7 +105,7 @@ namespace The_Main_Project
         private void CBX_Choix_J_V_SelectedIndexChanged(object sender, EventArgs e)
         {
             OracleCommand oraCmdProg = new OracleCommand("select prénom , Nom , NoMatch ,P.Nojoueur , NBREBUTS , NBREPASSES , TEMPSPUNITION" +
-                "From Joueurs INNER JOIN PRÉSENCESMATCHS P ON P.NOJOUEUR = joueurs.nojoueur", conn);
+                " From Joueurs INNER JOIN PRÉSENCESMATCHS P ON P.NOJOUEUR = joueurs.nojoueur", conn);
             oraCmdProg.CommandType = CommandType.Text;
             OracleDataReader objRead = oraCmdProg.ExecuteReader();
             while (objRead.Read())
@@ -127,7 +127,7 @@ namespace The_Main_Project
         private void CBX_Choix_J_R_SelectedIndexChanged(object sender, EventArgs e)
         {
             OracleCommand oraCmdProg = new OracleCommand("select prénom , Nom , NoMatch ,P.Nojoueur , NBREBUTS , NBREPASSES , TEMPSPUNITION"+
-                "From Joueurs INNER JOIN PRÉSENCESMATCHS P ON P.NOJOUEUR = joueurs.nojoueur", conn);
+                " From Joueurs INNER JOIN PRÉSENCESMATCHS P ON P.NOJOUEUR = joueurs.nojoueur", conn);
             oraCmdProg.CommandType = CommandType.Text;
             OracleDataReader objRead = oraCmdProg.ExecuteReader();
             while (objRead.Read())
