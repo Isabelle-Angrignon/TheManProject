@@ -89,12 +89,20 @@ namespace The_Main_Project
                         CBX_Choix_J_V.Items.Add(objRead.GetString(2)+ " " + objRead.GetString(1));
                     }
                 }
-                CBX_Choix_J_R.SelectedIndex = 0;
-                CBX_Choix_J_V.SelectedIndex = 0;
+                try
+                {
+                    CBX_Choix_J_R.SelectedIndex = 0;
+                    CBX_Choix_J_V.SelectedIndex = 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Il n'y a pas de joueur entrée");
+                }
                 objRead.Close();
             }
             catch (Exception ex)
             {
+               
                 MessageBox.Show(ex.Message.ToString());
             } 
         }
