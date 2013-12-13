@@ -22,5 +22,28 @@ namespace The_Main_Project.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Drawing.Color DGV_Impair {
+            get {
+                return ((global::System.Drawing.Color)(this["DGV_Impair"]));
+            }
+            set {
+                this["DGV_Impair"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Silver")]
+        public global::System.Drawing.Color DGV_Pair {
+            get {
+                return ((global::System.Drawing.Color)(this["DGV_Pair"]));
+            }
+            set {
+                this["DGV_Pair"] = value;
+            }
+        }
     }
 }

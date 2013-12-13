@@ -41,7 +41,6 @@
             this.BTN_Mod_R = new System.Windows.Forms.Button();
             this.BTN_Del_R = new System.Windows.Forms.Button();
             this.BTN_Add_R = new System.Windows.Forms.Button();
-            this.DGV_ListeJoueur_R = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.TB_Passes_R = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -50,6 +49,7 @@
             this.TB_Pen_R = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.CBX_Choix_J_R = new System.Windows.Forms.ComboBox();
+            this.DGV_ListeJoueur_R = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.LB_ID_V = new System.Windows.Forms.Label();
             this.BTN_Mod_V = new System.Windows.Forms.Button();
@@ -76,18 +76,20 @@
             // LB_NoMatch
             // 
             this.LB_NoMatch.AutoSize = true;
-            this.LB_NoMatch.Location = new System.Drawing.Point(34, 11);
+            this.LB_NoMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_NoMatch.Location = new System.Drawing.Point(40, 9);
             this.LB_NoMatch.Name = "LB_NoMatch";
-            this.LB_NoMatch.Size = new System.Drawing.Size(37, 13);
+            this.LB_NoMatch.Size = new System.Drawing.Size(54, 20);
             this.LB_NoMatch.TabIndex = 3;
             this.LB_NoMatch.Text = "00000";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(16, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(14, 13);
+            this.label1.Size = new System.Drawing.Size(18, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "#";
             // 
@@ -115,18 +117,20 @@
             // LB_DateMatch
             // 
             this.LB_DateMatch.AutoSize = true;
-            this.LB_DateMatch.Location = new System.Drawing.Point(109, 11);
+            this.LB_DateMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_DateMatch.Location = new System.Drawing.Point(109, 9);
             this.LB_DateMatch.Name = "LB_DateMatch";
-            this.LB_DateMatch.Size = new System.Drawing.Size(30, 13);
+            this.LB_DateMatch.Size = new System.Drawing.Size(44, 20);
             this.LB_DateMatch.TabIndex = 8;
             this.LB_DateMatch.Text = "Date";
             // 
             // LB_Lieu_Result
             // 
             this.LB_Lieu_Result.AutoSize = true;
-            this.LB_Lieu_Result.Location = new System.Drawing.Point(174, 11);
+            this.LB_Lieu_Result.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Lieu_Result.Location = new System.Drawing.Point(180, 9);
             this.LB_Lieu_Result.Name = "LB_Lieu_Result";
-            this.LB_Lieu_Result.Size = new System.Drawing.Size(27, 13);
+            this.LB_Lieu_Result.Size = new System.Drawing.Size(39, 20);
             this.LB_Lieu_Result.TabIndex = 9;
             this.LB_Lieu_Result.Text = "Lieu";
             // 
@@ -204,22 +208,6 @@
             this.BTN_Add_R.UseVisualStyleBackColor = true;
             this.BTN_Add_R.Click += new System.EventHandler(this.BTN_Add_R_Click);
             // 
-            // DGV_ListeJoueur_R
-            // 
-            this.DGV_ListeJoueur_R.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.DGV_ListeJoueur_R.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.DGV_ListeJoueur_R.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_ListeJoueur_R.Cursor = System.Windows.Forms.Cursors.No;
-            this.DGV_ListeJoueur_R.Location = new System.Drawing.Point(15, 214);
-            this.DGV_ListeJoueur_R.MinimumSize = new System.Drawing.Size(220, 82);
-            this.DGV_ListeJoueur_R.MultiSelect = false;
-            this.DGV_ListeJoueur_R.Name = "DGV_ListeJoueur_R";
-            this.DGV_ListeJoueur_R.ReadOnly = true;
-            this.DGV_ListeJoueur_R.RowHeadersVisible = false;
-            this.DGV_ListeJoueur_R.Size = new System.Drawing.Size(369, 150);
-            this.DGV_ListeJoueur_R.TabIndex = 21;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -286,6 +274,22 @@
             this.CBX_Choix_J_R.Size = new System.Drawing.Size(121, 21);
             this.CBX_Choix_J_R.TabIndex = 8;
             this.CBX_Choix_J_R.SelectedIndexChanged += new System.EventHandler(this.CBX_Choix_J_R_SelectedIndexChanged);
+            // 
+            // DGV_ListeJoueur_R
+            // 
+            this.DGV_ListeJoueur_R.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.DGV_ListeJoueur_R.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DGV_ListeJoueur_R.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_ListeJoueur_R.Cursor = System.Windows.Forms.Cursors.No;
+            this.DGV_ListeJoueur_R.Location = new System.Drawing.Point(15, 214);
+            this.DGV_ListeJoueur_R.MinimumSize = new System.Drawing.Size(220, 82);
+            this.DGV_ListeJoueur_R.MultiSelect = false;
+            this.DGV_ListeJoueur_R.Name = "DGV_ListeJoueur_R";
+            this.DGV_ListeJoueur_R.ReadOnly = true;
+            this.DGV_ListeJoueur_R.RowHeadersVisible = false;
+            this.DGV_ListeJoueur_R.Size = new System.Drawing.Size(369, 150);
+            this.DGV_ListeJoueur_R.TabIndex = 21;
             // 
             // groupBox2
             // 
@@ -487,7 +491,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Resultat_Match";
-            this.Text = "Resultat_Match";
+            this.Text = "Participation au match";
             this.Load += new System.EventHandler(this.Resultat_Match_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

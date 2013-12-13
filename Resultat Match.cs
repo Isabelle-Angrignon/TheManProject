@@ -22,35 +22,33 @@ namespace The_Main_Project
         private const string dsTable = "Table";
         public int NoMatch;
         OracleDataAdapter Oraliste;
-        private int BindingNoJoueurR;
-        private int BindingNoJoueurV;
-
+        
         private void BTN_Ok_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void LoadMatch()
         {
             try
             {
+                //Pour remplir l'entête du formulaire: sur quel match on av travailler...
+                //no match assigné par la fenêtre appelante.
                 string sqlMatch= "select * From Matchs where NoMatch = " + "'" + NoMatch + "'";
                 OracleCommand oraCmdProg = new OracleCommand(sqlMatch, conn);
                 oraCmdProg.CommandType = CommandType.Text;
                 OracleDataReader objRead = oraCmdProg.ExecuteReader();
                 while (objRead.Read())
-                {
+                {                    
                     LB_NoMatch.Text = objRead.GetInt32(0).ToString();
                     LB_Lieu_Result.Text = objRead.GetString(4);
+
+                    //Truc compliqué qui récupère la portion date du format date/heure
                     char[] splitters = new char[] { ' ' };
                     string[] CeQueJeVeux = objRead.GetDateTime(3).Date.ToString().Split(splitters);
                     LB_DateMatch.Text = CeQueJeVeux[0];
+
                     LB_NomEquipe_R.Text = objRead.GetString(1);
                     LB_NomEquipe_V.Text = objRead.GetString(2);
                 }
@@ -70,6 +68,8 @@ namespace The_Main_Project
             //LoadDatasetR();
             //LoadDatasetV();
         }
+
+        //Remplir les deux menus déroulants avec la liste des joueurs de chaque équipe impliquées dans le match
         private void FillComboBox()
         {
             try
@@ -79,7 +79,8 @@ namespace The_Main_Project
                 OracleDataReader objRead = oraCmdProg.ExecuteReader();
                 while (objRead.Read())
                 {
-                    //6 ie colonne == équipe
+                    //Vérifie chacun des joueurs de la table joueur et l'ajoute à une liste si 
+                    //son équipe participe au match en tant que receveur ou visiteur
                     if (objRead.GetString(6) == LB_NomEquipe_R.Text)
                     {
                         CBX_Choix_J_R.Items.Add(objRead.GetString(2) + " " + objRead.GetString(1));
@@ -91,12 +92,13 @@ namespace The_Main_Project
                 }
                 try
                 {
+                    //Faire afficher le premier joueur de la liste
                     CBX_Choix_J_R.SelectedIndex = 0;
                     CBX_Choix_J_V.SelectedIndex = 0;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Il n'y a pas de joueur entrée");
+                    MessageBox.Show("Il n'y a pas de joueur entrée dans l'équipe");
                 }
                 objRead.Close();
             }
@@ -107,10 +109,15 @@ namespace The_Main_Project
             } 
         }
 
+        //Si on change de joueur dans un menu déroulant, on rempli les champs buts-passes-pénalité
+        //avec ses valeurs personnelles pour ce match
         private void CBX_Choix_J_V_SelectedIndexChanged(object sender, EventArgs e)
 
         {
-            string sqlMatchEquipe = "SELECT Prénom , Nom , NoMatch , J.Nojoueur , NbreButs , NbrePasses , TempsPunition FROM (SELECT Prénom , Nom , J.Nojoueur, J.NomÉquipe FROM Joueurs J   INNER JOIN Équipes E on E.NomÉquipe = J.NomÉquipe where E.NomÉquipe = '" + LB_NomEquipe_V.Text + "')J LEFT OUTER JOIN PrésencesMatchs P ON P.NoJoueur = J.NoJoueur";
+            string sqlMatchEquipe = "SELECT Prénom , Nom , NoMatch , J.Nojoueur , NbreButs , NbrePasses , "+
+                "TempsPunition FROM (SELECT Prénom , Nom , J.Nojoueur, J.NomÉquipe FROM Joueurs J "+
+                "  INNER JOIN Équipes E on E.NomÉquipe = J.NomÉquipe where E.NomÉquipe = '" +
+                 LB_NomEquipe_V.Text + "')J LEFT OUTER JOIN PrésencesMatchs P ON P.NoJoueur = J.NoJoueur";
                        
 
             OracleCommand oraCmdProg = new OracleCommand(sqlMatchEquipe, conn);
@@ -253,6 +260,8 @@ namespace The_Main_Project
         ///////////////////////////////
         // boutons  + - mod
         //////////////////////////////
+
+        ///receveur///////////////////////////////
         private void BTN_Add_R_Click(object sender, EventArgs e)
         {
             try
