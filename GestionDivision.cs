@@ -190,11 +190,9 @@ namespace The_Main_Project
             switch (Ex.Number)
             {
                 case 1:
-                    // au lieu d'afficher violation de clé primaire, on affiche ceci:
                     MessageBox.Show("Une division porte déjà ce nom");
                     break;
                 case 02292:
-                    // au lieu d'afficher violation de clé étrangère , on affiche ceci:
                     MessageBox.Show("La Division choisie n'est pas vide et ne peut donc pas être suprimer ou son nom ne peut être modifier");
                     break;
                 case 01400:
