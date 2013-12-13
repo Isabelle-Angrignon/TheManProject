@@ -223,6 +223,7 @@
             this.TB_Passes_R.Name = "TB_Passes_R";
             this.TB_Passes_R.Size = new System.Drawing.Size(42, 20);
             this.TB_Passes_R.TabIndex = 18;
+            this.TB_Passes_R.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Chiffres_Seulement_KeyPress);
             // 
             // label11
             // 
@@ -239,6 +240,7 @@
             this.TB_But_R.Name = "TB_But_R";
             this.TB_But_R.Size = new System.Drawing.Size(42, 20);
             this.TB_But_R.TabIndex = 16;
+            this.TB_But_R.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Chiffres_Seulement_KeyPress);
             // 
             // label10
             // 
@@ -255,6 +257,7 @@
             this.TB_Pen_R.Name = "TB_Pen_R";
             this.TB_Pen_R.Size = new System.Drawing.Size(42, 20);
             this.TB_Pen_R.TabIndex = 12;
+            this.TB_Pen_R.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Chiffres_Seulement_KeyPress);
             // 
             // label8
             // 
@@ -267,6 +270,7 @@
             // 
             // CBX_Choix_J_R
             // 
+            this.CBX_Choix_J_R.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBX_Choix_J_R.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBX_Choix_J_R.FormattingEnabled = true;
             this.CBX_Choix_J_R.Location = new System.Drawing.Point(17, 16);
@@ -380,6 +384,7 @@
             this.TB_Passes_Visiteur.Name = "TB_Passes_Visiteur";
             this.TB_Passes_Visiteur.Size = new System.Drawing.Size(42, 20);
             this.TB_Passes_Visiteur.TabIndex = 18;
+            this.TB_Passes_Visiteur.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Chiffres_Seulement_KeyPress);
             // 
             // label13
             // 
@@ -396,6 +401,7 @@
             this.TB_But_Visiteur.Name = "TB_But_Visiteur";
             this.TB_But_Visiteur.Size = new System.Drawing.Size(42, 20);
             this.TB_But_Visiteur.TabIndex = 16;
+            this.TB_But_Visiteur.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Chiffres_Seulement_KeyPress);
             // 
             // label14
             // 
@@ -412,6 +418,7 @@
             this.TB_Pen_Visiteur.Name = "TB_Pen_Visiteur";
             this.TB_Pen_Visiteur.Size = new System.Drawing.Size(42, 20);
             this.TB_Pen_Visiteur.TabIndex = 12;
+            this.TB_Pen_Visiteur.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Chiffres_Seulement_KeyPress);
             // 
             // label15
             // 
@@ -424,6 +431,7 @@
             // 
             // CBX_Choix_J_V
             // 
+            this.CBX_Choix_J_V.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBX_Choix_J_V.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBX_Choix_J_V.FormattingEnabled = true;
             this.CBX_Choix_J_V.Location = new System.Drawing.Point(142, 14);
@@ -447,6 +455,7 @@
             this.FB_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.FB_Close.BackgroundImage = global::The_Main_Project.Properties.Resources.Porte;
             this.FB_Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FB_Close.ImageClick = global::The_Main_Project.Properties.Resources.PorteCLic;
             this.FB_Close.ImageDisable = null;
             this.FB_Close.ImageNeutral = global::The_Main_Project.Properties.Resources.Porte;

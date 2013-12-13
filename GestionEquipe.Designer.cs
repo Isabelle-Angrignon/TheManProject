@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionEquipe));
             this.Caractérstique = new System.Windows.Forms.GroupBox();
             this.uC_Navigator = new UC_Navigator.UC_Navigator();
             this.BTN_Load = new System.Windows.Forms.Button();
             this.PBX_Logo = new System.Windows.Forms.PictureBox();
+            this.TB_DivisionEquipe = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.DTP_Date_Team = new System.Windows.Forms.DateTimePicker();
             this.TB_Nom_Team = new System.Windows.Forms.TextBox();
@@ -44,13 +44,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.TB_DivisionEquipe = new System.Windows.Forms.TextBox();
-            this.CMS_Add = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cliquerPourAjouterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FB_Close = new FlashButton.FlashButton();
             this.Caractérstique.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Logo)).BeginInit();
-            this.CMS_Add.SuspendLayout();
             this.SuspendLayout();
             // 
             // Caractérstique
@@ -106,6 +102,14 @@
             this.PBX_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBX_Logo.TabIndex = 22;
             this.PBX_Logo.TabStop = false;
+            // 
+            // TB_DivisionEquipe
+            // 
+            this.TB_DivisionEquipe.Location = new System.Drawing.Point(67, 172);
+            this.TB_DivisionEquipe.Name = "TB_DivisionEquipe";
+            this.TB_DivisionEquipe.Size = new System.Drawing.Size(131, 20);
+            this.TB_DivisionEquipe.TabIndex = 19;
+            this.TB_DivisionEquipe.Text = "Autofill";
             // 
             // label2
             // 
@@ -198,27 +202,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Nom";
             // 
-            // TB_DivisionEquipe
-            // 
-            this.TB_DivisionEquipe.Location = new System.Drawing.Point(67, 172);
-            this.TB_DivisionEquipe.Name = "TB_DivisionEquipe";
-            this.TB_DivisionEquipe.Size = new System.Drawing.Size(131, 20);
-            this.TB_DivisionEquipe.TabIndex = 19;
-            this.TB_DivisionEquipe.Text = "Autofill";
-            // 
-            // CMS_Add
-            // 
-            this.CMS_Add.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cliquerPourAjouterToolStripMenuItem});
-            this.CMS_Add.Name = "CMS_Add";
-            this.CMS_Add.Size = new System.Drawing.Size(181, 26);
-            // 
-            // cliquerPourAjouterToolStripMenuItem
-            // 
-            this.cliquerPourAjouterToolStripMenuItem.Name = "cliquerPourAjouterToolStripMenuItem";
-            this.cliquerPourAjouterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cliquerPourAjouterToolStripMenuItem.Text = "Cliquer pour ajouter";
-            // 
             // FB_Close
             // 
             this.FB_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -249,7 +232,6 @@
             this.Caractérstique.ResumeLayout(false);
             this.Caractérstique.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Logo)).EndInit();
-            this.CMS_Add.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -271,8 +253,6 @@
         private System.Windows.Forms.Button BTN_Load;
         private System.Windows.Forms.PictureBox PBX_Logo;
         private UC_Navigator.UC_Navigator uC_Navigator;
-        private System.Windows.Forms.ContextMenuStrip CMS_Add;
-        private System.Windows.Forms.ToolStripMenuItem cliquerPourAjouterToolStripMenuItem;
         private FlashButton.FlashButton FB_Close;
     }
 }

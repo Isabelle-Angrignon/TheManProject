@@ -44,6 +44,7 @@
             this.FB_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.FB_Close.BackgroundImage = global::The_Main_Project.Properties.Resources.Porte;
             this.FB_Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FB_Close.ImageClick = global::The_Main_Project.Properties.Resources.PorteCLic;
             this.FB_Close.ImageDisable = null;
             this.FB_Close.ImageNeutral = global::The_Main_Project.Properties.Resources.Porte;
@@ -89,7 +90,7 @@
             this.gestionJoueurToolStripMenuItem,
             this.afficherStatToolStripMenuItem});
             this.CMS.Name = "CMS";
-            this.CMS.Size = new System.Drawing.Size(162, 70);
+            this.CMS.Size = new System.Drawing.Size(162, 48);
             // 
             // gestionJoueurToolStripMenuItem
             // 

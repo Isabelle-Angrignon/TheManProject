@@ -22,6 +22,20 @@ namespace The_Main_Project
         private const string dsTable = "Table";
         OracleDataAdapter Oraliste;
         public int NoJoueur = -1;
+        /////////////////////////////////////////////////
+        //Pour valider l'entrée du no de maillot
+        const char BACKSPACE = '\b';
+        bool EstChiffre(char c)
+        {
+            String chiffres = "0123456789";
+            return (chiffres.IndexOf(c.ToString()) != -1);
+        }
+        private void TB_Chiffres_Seulement_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != BACKSPACE)
+                e.Handled = !EstChiffre(e.KeyChar);
+        }
+        /////////////////////////////////////////////////
 
         private void BTN_Ok_Click(object sender, EventArgs e)
         {

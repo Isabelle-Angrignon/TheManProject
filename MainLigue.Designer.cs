@@ -190,7 +190,7 @@
             // TSMI_Themes
             // 
             this.TSMI_Themes.Name = "TSMI_Themes";
-            this.TSMI_Themes.Size = new System.Drawing.Size(152, 22);
+            this.TSMI_Themes.Size = new System.Drawing.Size(125, 22);
             this.TSMI_Themes.Text = "Thèmes...";
             this.TSMI_Themes.Click += new System.EventHandler(this.TSMI_Themes_Click);
             // 
@@ -207,13 +207,13 @@
             // 
             this.aideToolStripMenuItem1.Enabled = false;
             this.aideToolStripMenuItem1.Name = "aideToolStripMenuItem1";
-            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.aideToolStripMenuItem1.Text = "Aide...";
             // 
             // TSMI_A_Propos
             // 
             this.TSMI_A_Propos.Name = "TSMI_A_Propos";
-            this.TSMI_A_Propos.Size = new System.Drawing.Size(152, 22);
+            this.TSMI_A_Propos.Size = new System.Drawing.Size(131, 22);
             this.TSMI_A_Propos.Text = "A Propos...";
             this.TSMI_A_Propos.Click += new System.EventHandler(this.TSMI_A_Propos_Click);
             // 
@@ -228,17 +228,18 @@
             this.DGV_Match.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGV_Match.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGV_Match.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_Match.Location = new System.Drawing.Point(29, 146);
+            this.DGV_Match.Location = new System.Drawing.Point(12, 146);
             this.DGV_Match.Name = "DGV_Match";
             this.DGV_Match.ReadOnly = true;
             this.DGV_Match.RowHeadersVisible = false;
-            this.DGV_Match.Size = new System.Drawing.Size(465, 150);
+            this.DGV_Match.Size = new System.Drawing.Size(482, 150);
             this.DGV_Match.TabIndex = 7;
             this.DGV_Match.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Match_CellMouseUp);
             // 
             // CBX_Division
             // 
             this.CBX_Division.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CBX_Division.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBX_Division.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBX_Division.FormattingEnabled = true;
             this.CBX_Division.Location = new System.Drawing.Point(639, 119);
@@ -376,6 +377,7 @@
             this.FB_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FB_Close.BackgroundImage = global::The_Main_Project.Properties.Resources.Porte;
             this.FB_Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FB_Close.ImageClick = global::The_Main_Project.Properties.Resources.PorteCLic;
             this.FB_Close.ImageDisable = null;
             this.FB_Close.ImageNeutral = global::The_Main_Project.Properties.Resources.Porte;

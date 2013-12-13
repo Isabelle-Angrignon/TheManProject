@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionMatch));
             this.BTN_MOD = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TB_R_Pts = new System.Windows.Forms.TextBox();
+            this.TB_V_Pts = new System.Windows.Forms.TextBox();
             this.UC_Navigator = new UC_Navigator.UC_Navigator();
             this.button2 = new System.Windows.Forms.Button();
             this.BTN_Delete = new System.Windows.Forms.Button();
@@ -43,9 +46,6 @@
             this.DTP_Date = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.FB_Close = new FlashButton.FlashButton();
-            this.TB_R_Pts = new System.Windows.Forms.TextBox();
-            this.TB_V_Pts = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.FB_Fiche_Resultat = new FlashButton.FlashButton();
             this.label2 = new System.Windows.Forms.Label();
             this.LB_No_Match = new System.Windows.Forms.Label();
@@ -74,6 +74,31 @@
             this.BTN_MOD.Size = new System.Drawing.Size(295, 167);
             this.BTN_MOD.TabIndex = 0;
             this.BTN_MOD.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(183, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(22, 13);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Pts";
+            // 
+            // TB_R_Pts
+            // 
+            this.TB_R_Pts.Location = new System.Drawing.Point(171, 71);
+            this.TB_R_Pts.Name = "TB_R_Pts";
+            this.TB_R_Pts.Size = new System.Drawing.Size(39, 20);
+            this.TB_R_Pts.TabIndex = 40;
+            this.TB_R_Pts.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Chiffres_Seulement_KeyPress);
+            // 
+            // TB_V_Pts
+            // 
+            this.TB_V_Pts.Location = new System.Drawing.Point(171, 97);
+            this.TB_V_Pts.Name = "TB_V_Pts";
+            this.TB_V_Pts.Size = new System.Drawing.Size(39, 20);
+            this.TB_V_Pts.TabIndex = 39;
+            this.TB_V_Pts.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Chiffres_Seulement_KeyPress);
             // 
             // UC_Navigator
             // 
@@ -189,6 +214,7 @@
             this.FB_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.FB_Close.BackgroundImage = global::The_Main_Project.Properties.Resources.Porte;
             this.FB_Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FB_Close.ImageClick = global::The_Main_Project.Properties.Resources.PorteCLic;
             this.FB_Close.ImageDisable = null;
             this.FB_Close.ImageNeutral = global::The_Main_Project.Properties.Resources.Porte;
@@ -198,29 +224,6 @@
             this.FB_Close.Size = new System.Drawing.Size(49, 46);
             this.FB_Close.TabIndex = 39;
             this.FB_Close.Click += new System.EventHandler(this.BTN_Ok_Click);
-            // 
-            // TB_R_Pts
-            // 
-            this.TB_R_Pts.Location = new System.Drawing.Point(171, 71);
-            this.TB_R_Pts.Name = "TB_R_Pts";
-            this.TB_R_Pts.Size = new System.Drawing.Size(39, 20);
-            this.TB_R_Pts.TabIndex = 40;
-            // 
-            // TB_V_Pts
-            // 
-            this.TB_V_Pts.Location = new System.Drawing.Point(171, 97);
-            this.TB_V_Pts.Name = "TB_V_Pts";
-            this.TB_V_Pts.Size = new System.Drawing.Size(39, 20);
-            this.TB_V_Pts.TabIndex = 39;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(183, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(22, 13);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "Pts";
             // 
             // FB_Fiche_Resultat
             // 
@@ -265,7 +268,7 @@
             this.Controls.Add(this.BTN_MOD);
             this.Controls.Add(this.FB_Fiche_Resultat);
             this.Name = "GestionMatch";
-            this.Text = "GestionMatch";
+            this.Text = "Gestion Match";
             this.Load += new System.EventHandler(this.GestionMatch_Load);
             this.BTN_MOD.ResumeLayout(false);
             this.BTN_MOD.PerformLayout();

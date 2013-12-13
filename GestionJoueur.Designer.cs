@@ -116,6 +116,7 @@
             this.TB_Maillot.Size = new System.Drawing.Size(100, 20);
             this.TB_Maillot.TabIndex = 20;
             this.TB_Maillot.Text = "Check pas déja équipe";
+            this.TB_Maillot.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Chiffres_Seulement_KeyPress);
             // 
             // TB_Équipe
             // 
@@ -245,6 +246,7 @@
             this.FB_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.FB_Close.BackgroundImage = global::The_Main_Project.Properties.Resources.Porte;
             this.FB_Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FB_Close.ImageClick = global::The_Main_Project.Properties.Resources.PorteCLic;
             this.FB_Close.ImageDisable = null;
             this.FB_Close.ImageNeutral = global::The_Main_Project.Properties.Resources.Porte;
