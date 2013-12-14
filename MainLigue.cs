@@ -15,11 +15,10 @@ namespace The_Main_Project
     {
         private OracleConnection conn = new OracleConnection();
         private DataSet mainDataSet = new DataSet();
-        
-        string sqlClassement = "select nomÉquipe as Équipe, sum(Nbpoints)as total from classement  group by nomÉquipe order by total desc";
-        /private const string dsHoraire = "Liste_matchs";
-        private string dsClassement = "Classement_équipes";        
 
+        //Est utilisé dans deux méthodes...
+        string sqlClassement = "select nomÉquipe as Équipe, sum(Nbpoints)as total from classement  group by nomÉquipe order by total desc";
+        
         public Form_League()
         {
             InitializeComponent();
