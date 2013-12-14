@@ -15,10 +15,9 @@ namespace The_Main_Project
     {
         private OracleConnection conn = new OracleConnection();
         private DataSet mainDataSet = new DataSet();
-        string sqlHoraire = "SELECT DATEMATCH AS Match, NOMATCH AS No , RECEVEUR AS Receveur , BUTSRECEVEUR AS B_R,  VISITEUR AS Visiteur ," +
-            " BUTSVISITEUR AS B_V,  LIEU AS Cité  FROM Matchs ";
+        
         string sqlClassement = "select nomÉquipe as Équipe, sum(Nbpoints)as total from classement  group by nomÉquipe order by total desc";
-        private const string dsHoraire = "Liste_matchs";
+        /private const string dsHoraire = "Liste_matchs";
         private string dsClassement = "Classement_équipes";        
 
         public Form_League()
@@ -39,47 +38,6 @@ namespace The_Main_Project
                 UpdateComboBox();
             }
         }
-
-        //afficher logo de l'équipe sélectionnée du DGV dans la picture box
-        //private void LoadLogo()
-        //{
-        //    int LaLigne = DGV_Team.CurrentCellAddress.Y;
-        //    int LaColonne = 1;
-        //    string NomEquipe = DGV_Team.Rows[LaLigne].Cells[LaColonne].Value.ToString();
-        //    string sqlLogo = "Select Logo from Équipes where noméquipe = '" + NomEquipe + "'";
-        //    OracleCommand oraCmdProg = new OracleCommand(sqlLogo, conn);
-        //    oraCmdProg.CommandType = CommandType.Text;
-
-        //    OracleDataReader objRead = oraCmdProg.ExecuteReader();
-                            
-        //    while (objRead.Read())
-        //    {
-        //        byte[] logo = objRead.GetByte(0);
-                
-        //    }  
-        //    objRead.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message.ToString());
-        //    } 
-
-            
-            
-            
-
-
-        //    ////////
-        //    if (logo_ != null)
-        //        {
-        //            using (MemoryStream ms = new MemoryStream(logo_)) 
-        //            {
-        //                PBX_Logo.Image = Image.FromStream(ms);
-        //            }
-        //        }    
-        //}
-
-
 
         private void Form_League_Load(object sender, EventArgs e)
         {
@@ -136,36 +94,39 @@ namespace The_Main_Project
         {
             try
             {
+                //Remplissage DGV Match avec dataadapter et dataset. 
+                string sqlHoraire = "SELECT DATEMATCH AS Match, NOMATCH AS No , RECEVEUR AS Receveur , BUTSRECEVEUR AS B_R,  VISITEUR AS Visiteur ," +
+                    " BUTSVISITEUR AS B_V,  LIEU AS Cité  FROM Matchs ";
                 OracleDataAdapter Oraliste = new OracleDataAdapter(sqlHoraire, conn);
 
-                if (mainDataSet.Tables.Contains(dsHoraire))
+                if (mainDataSet.Tables.Contains("Liste_matchs"))
                 {
-                    mainDataSet.Tables[dsHoraire].Clear();
+                    mainDataSet.Tables["Liste_matchs"].Clear();
                 }
-                Oraliste.Fill(mainDataSet, dsHoraire);
+                Oraliste.Fill(mainDataSet, "Liste_matchs");
                 Oraliste.Dispose();
 
-                BindingSource maSource = new BindingSource(mainDataSet, dsHoraire);
+                BindingSource maSource = new BindingSource(mainDataSet, "Liste_matchs");
 
                 DGV_Match.DataSource = maSource;
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
                 
-        private void FillDGVEquipe(string sql)
+        private void FillDGVEquipe(string sqlParticulier)
         {
             try
             {
-                OracleDataAdapter Oraliste = new OracleDataAdapter(sql, conn);
+                OracleDataAdapter Oraliste = new OracleDataAdapter(sqlParticulier, conn);
 
-                if (mainDataSet.Tables.Contains(dsClassement))
+                if (mainDataSet.Tables.Contains("Classement_équipes"))
                 {
-                    mainDataSet.Tables[dsClassement].Clear();
+                    mainDataSet.Tables["Classement_équipes"].Clear();
                 }
-                Oraliste.Fill(mainDataSet, dsClassement);
+                Oraliste.Fill(mainDataSet, "Classement_équipes");
                 Oraliste.Dispose();
 
-                BindingSource maSource = new BindingSource(mainDataSet, dsClassement);
+                BindingSource maSource = new BindingSource(mainDataSet, "Classement_équipes");
 
                 DGV_Team.DataSource = maSource;
                 //on selected item
@@ -176,12 +137,43 @@ namespace The_Main_Project
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
+
+        //afficher logo de l'équipe sélectionnée du DGV dans la picture box
+        private void LoadLogo()
+        {
+        //    int LaLigne = DGV_Team.CurrentCellAddress.Y;
+        //    int LaColonne = 1;
+        //    string NomEquipe = DGV_Team.Rows[LaLigne].Cells[LaColonne].Value.ToString();
+        //    string sqlLogo = "Select Logo from Équipes where noméquipe = '" + NomEquipe + "'";
+        //    OracleCommand oraCmdProg = new OracleCommand(sqlLogo, conn);
+        //    oraCmdProg.CommandType = CommandType.Text;
+
+        //    OracleDataReader objRead = oraCmdProg.ExecuteReader();
+
+        //    while (objRead.Read())
+        //    {
+        //        byte[] logo = objRead.GetByte(0);
+        //    }  
+        //    objRead.Close();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message.ToString());
+        //    } 
+        //    ////////
+        //    if (logo_ != null)
+        //        {
+        //            using (MemoryStream ms = new MemoryStream(logo_)) 
+        //            {
+        //                PBX_Logo.Image = Image.FromStream(ms);
+        //            }
+        //        }    
+        }
+
         private void UpdateLogo()
         {
             //string sqlLogo = "SELECT logo FROM équipes where noméquipe = '" +
-
-
-
+            
             //    DGV_Team.SelectedCells.ToString() + "'";
             ////dataset
             //OracleDataAdapter Oraliste = new OracleDataAdapter(dsLogo, conn);
@@ -239,10 +231,7 @@ namespace The_Main_Project
         {
             GestionEquipe Form = new GestionEquipe();
             Form.conn = conn;
-            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                ///envoyer commit?
-            }
+            Form.ShowDialog();
         }
 
         private void flashButton1_Click(object sender, EventArgs e)
@@ -253,10 +242,7 @@ namespace The_Main_Project
         {
             GestionJoueur Form = new GestionJoueur();
             Form.conn = conn;
-            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                ///envoyer commit?
-            }
+            Form.ShowDialog();
         }
 
         private void flashButton3_Click(object sender, EventArgs e)
@@ -268,22 +254,14 @@ namespace The_Main_Project
         {
             GestionMatch Form = new GestionMatch();
             Form.conn = conn;
-            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                ///envoyer commit?
-            }
+            Form.ShowDialog();
         }
 
         private void FB_Top5_Click(object sender, EventArgs e)
         {
             OuvertureTop5();
         }
-
-        private void Form_League_SizeChanged(object sender, EventArgs e)
-        {
-            //constater nouvelle size, redimensionne éléments tels dgv en fonction de la nouvelle dimension
-        }
-
+       
         private void TSMI_Division_Click(object sender, EventArgs e)
         {
             OuvertureDivision();
@@ -309,7 +287,7 @@ namespace The_Main_Project
             Parametre Form = new Parametre();
             if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                ///envoyer commit?
+                //faire qquechose avec les settings
             }
         }
 
@@ -317,26 +295,27 @@ namespace The_Main_Project
         {
             OuvrireParam();
         }
+
         private void OuvrireStat()
         {
             Stats Form = new Stats();
             Form.conn = conn;
-            Form.ShowDialog();
-            
+            Form.ShowDialog();            
         }
 
         private void TSMI_Stats_Joueur_Click(object sender, EventArgs e)
         {
             OuvrireStat();
         }
-
-
+        //Quand on change de division, on n'affiche que les équipes de cette division
         private void CBX_Division_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Index 0 = "toutes les divisions donc on utilise la sql de classement std.
             if (CBX_Division.SelectedIndex == 0)
             {
                 FillDGVEquipe(sqlClassement);
             }
+            //Sinon, on affiche que les équipes de la division selectionnée.
             else
             {
                 string sqlEquipeParDiv = "select nomÉquipe as équipe, sum(Nbpoints) as total  from classement" +
@@ -351,7 +330,7 @@ namespace The_Main_Project
             conn.Close();
             Application.Exit();
 	    }
-
+        //Menu contextuel: appelle le form match pour le match sélectioné
         private void CMS_Match_Afficher_Click(object sender, EventArgs e)
         {
             int LaLigne = DGV_Match.CurrentCellAddress.Y;
@@ -362,7 +341,7 @@ namespace The_Main_Project
             Form.conn = conn;
             Form.ShowDialog();
         }
-
+        //Menu contextuel: appelle le form résultat de match pour le match sélectioné
         private void CMS_Match_Modifier_Click(object sender, EventArgs e)
         {
             int LaLigne = DGV_Match.CurrentCellAddress.Y;
@@ -374,31 +353,24 @@ namespace The_Main_Project
             Form.ShowDialog();
         }
 
-        private void CMS_Match_Supprimer_Click(object sender, EventArgs e)
-        {
-            //doit supprimer l'élément sélectionné dans le DGV
-        }
-
+        //Vérifie qu'on a cliqué avec bouton droit sur le DGV match et affiche le menu contextuel
         private void DGV_Match_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
-                CMS_Match.Show(Cursor.Position);
-                
+                CMS_Match.Show(Cursor.Position);                
             }
-
-
         }
-
+        //Vérifie qu'on a cliqué avec bouton droit sur le DGV équipe et affiche le menu contextuel
         private void DGV_Team_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
                 CMS_Team.Show(Cursor.Position);
-
             }
         }
 
+        //Menu contextuel: appelle le form équipe pour l'équipe sélectionnée
         private void CMS_Team_Afficher_Click(object sender, EventArgs e)
         {
             int LaLigne = DGV_Team.CurrentCellAddress.Y;
@@ -415,8 +387,5 @@ namespace The_Main_Project
             A_Propos Form = new A_Propos();
             Form.ShowDialog();
         }
-
-    }
-
-   
+    }   
 }
