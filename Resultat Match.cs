@@ -80,6 +80,8 @@ namespace The_Main_Project
         {
             LoadMatch();
             FillComboBox();
+            ChangeColorMenu();
+            ChangeColorDGV();
         }
 
         //Remplir les deux menus déroulants avec la liste des joueurs de chaque équipe impliquées dans le match
@@ -508,6 +510,66 @@ namespace The_Main_Project
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
+            }
+        }
+        private void ChangeColorMenu()
+        {
+            this.BackColor = Properties.Settings.Default.Back_Color;
+            foreach (Control c in this.Controls)
+            {
+                if (c.GetType() == typeof(MenuStrip))
+                {
+                    c.BackColor = Properties.Settings.Default.Menu_Back;
+                    c.ForeColor = Properties.Settings.Default.Label_Color;
+                }
+                if (c.GetType() == typeof(Label))
+                    c.ForeColor = Properties.Settings.Default.Label_Color;
+
+                if (c.GetType() == typeof(ContextMenu))
+                {
+                    c.BackColor = Properties.Settings.Default.Menu_Back;
+                    c.ForeColor = Properties.Settings.Default.Label_Color;
+                }
+                if (c.GetType() == typeof(ContextMenuStrip))
+                {
+                    c.BackColor = Properties.Settings.Default.Menu_Back;
+                    c.ForeColor = Properties.Settings.Default.Label_Color;
+                }
+                if (c.GetType() == typeof(Menu))
+                {
+                    c.BackColor = Properties.Settings.Default.Menu_Back;
+                    c.ForeColor = Properties.Settings.Default.Label_Color;
+                }
+                if (c.GetType() == typeof(GroupBox))
+                    c.ForeColor = Properties.Settings.Default.Label_Color;
+                if (c.GetType() == typeof(RadioButton))
+                    c.ForeColor = Properties.Settings.Default.Label_Color;
+
+            }
+        }
+        private void ChangeColorDGV()
+        {
+            for (int i = 0; i < DGV_ListeJoueur_R.RowCount; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    DGV_ListeJoueur_R.Rows[i].DefaultCellStyle.BackColor = Properties.Settings.Default.DGV_Pair;
+                }
+                else
+                {
+                    DGV_ListeJoueur_R.Rows[i].DefaultCellStyle.BackColor = Properties.Settings.Default.DGV_Impair;
+                }
+            }
+            for (int i = 0; i < DGV_ListeJoueur_V.RowCount; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    DGV_ListeJoueur_V.Rows[i].DefaultCellStyle.BackColor = Properties.Settings.Default.DGV_Pair;
+                }
+                else
+                {
+                    DGV_ListeJoueur_V.Rows[i].DefaultCellStyle.BackColor = Properties.Settings.Default.DGV_Impair;
+                }
             }
         }
     }

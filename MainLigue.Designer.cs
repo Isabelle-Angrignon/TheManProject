@@ -277,7 +277,7 @@
             this.CMS_Team_Afficher,
             this.afficherJoueursToolStripMenuItem});
             this.CMS_Team.Name = "CMS_Match";
-            this.CMS_Team.Size = new System.Drawing.Size(172, 70);
+            this.CMS_Team.Size = new System.Drawing.Size(172, 48);
             // 
             // CMS_Team_Afficher
             // 

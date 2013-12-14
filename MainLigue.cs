@@ -46,6 +46,7 @@ namespace The_Main_Project
             FillDGVEquipe(sqlClassement);
             ChangeColor();
         }
+        
         public void ChangeColor()
         {
             ChangeColorDGV();
@@ -348,10 +349,8 @@ namespace The_Main_Project
         private void OuvrireParam()
         {
             Parametre Form = new Parametre();
-            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                //faire qquechose avec les settings
-            }
+            Form.Form = this;
+            Form.ShowDialog();
         }
 
         private void TSMI_Themes_Click(object sender, EventArgs e)
@@ -421,7 +420,8 @@ namespace The_Main_Project
         {
             if (e.Button == MouseButtons.Right)
             {
-                CMS_Match.Show(Cursor.Position);                
+                CMS_Match.Show(Cursor.Position);
+                ChangeColorMenu();
             }
         }
         //Vérifie qu'on a cliqué avec bouton droit sur le DGV équipe et affiche le menu contextuel
@@ -430,6 +430,7 @@ namespace The_Main_Project
             if (e.Button == MouseButtons.Right)
             {
                 CMS_Team.Show(Cursor.Position);
+                ChangeColorMenu();
             }
         }
 

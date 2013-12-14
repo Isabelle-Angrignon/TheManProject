@@ -21,5 +21,45 @@ namespace The_Main_Project
         {
             Close();
         }
+
+        private void A_Propos_Load(object sender, EventArgs e)
+        {
+            ChangeColorMenu();
+        }
+        private void ChangeColorMenu()
+        {
+            this.BackColor = Properties.Settings.Default.Back_Color;
+            foreach (Control c in this.Controls)
+            {
+                if (c.GetType() == typeof(MenuStrip))
+                {
+                    c.BackColor = Properties.Settings.Default.Menu_Back;
+                    c.ForeColor = Properties.Settings.Default.Label_Color;
+                }
+                if (c.GetType() == typeof(Label))
+                    c.ForeColor = Properties.Settings.Default.Label_Color;
+
+                if (c.GetType() == typeof(ContextMenu))
+                {
+                    c.BackColor = Properties.Settings.Default.Menu_Back;
+                    c.ForeColor = Properties.Settings.Default.Label_Color;
+                }
+                if (c.GetType() == typeof(ContextMenuStrip))
+                {
+                    c.BackColor = Properties.Settings.Default.Menu_Back;
+                    c.ForeColor = Properties.Settings.Default.Label_Color;
+                }
+                if (c.GetType() == typeof(Menu))
+                {
+                    c.BackColor = Properties.Settings.Default.Menu_Back;
+                    c.ForeColor = Properties.Settings.Default.Label_Color;
+                }
+                if (c.GetType() == typeof(GroupBox))
+                    c.ForeColor = Properties.Settings.Default.Label_Color;
+                if (c.GetType() == typeof(RadioButton))
+                    c.ForeColor = Properties.Settings.Default.Label_Color;
+
+            }
+        }
     }
 }

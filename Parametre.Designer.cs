@@ -62,6 +62,7 @@
             this.RB_Sombre.TabStop = true;
             this.RB_Sombre.Text = "Sombre";
             this.RB_Sombre.UseVisualStyleBackColor = true;
+            this.RB_Sombre.CheckedChanged += new System.EventHandler(this.RB_Sombre_CheckedChanged);
             // 
             // RB_Canadien
             // 
@@ -75,6 +76,7 @@
             this.RB_Canadien.TabStop = true;
             this.RB_Canadien.Text = "Canadien";
             this.RB_Canadien.UseVisualStyleBackColor = true;
+            this.RB_Canadien.CheckedChanged += new System.EventHandler(this.RB_Canadien_CheckedChanged);
             // 
             // RB_Defaut
             // 
@@ -88,7 +90,7 @@
             this.RB_Defaut.TabStop = true;
             this.RB_Defaut.Text = "Défaut";
             this.RB_Defaut.UseVisualStyleBackColor = true;
-            this.RB_Defaut.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.RB_Defaut.CheckedChanged += new System.EventHandler(this.RB_Defaut_CheckedChanged);
             // 
             // BTN_Appliquer
             // 
@@ -99,6 +101,7 @@
             this.BTN_Appliquer.TabIndex = 11;
             this.BTN_Appliquer.Text = "Appliquer";
             this.BTN_Appliquer.UseVisualStyleBackColor = true;
+            this.BTN_Appliquer.Click += new System.EventHandler(this.BTN_Appliquer_Click);
             // 
             // FB_Close
             // 
