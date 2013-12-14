@@ -15,14 +15,11 @@ namespace The_Main_Project
     {
         private OracleConnection conn = new OracleConnection();
         private DataSet mainDataSet = new DataSet();
-        string sqlHoraire = "SELECT DATEMATCH AS Match, NOMATCH AS No , RECEVEUR AS Receveur , BUTSRECEVEUR AS B,  VISITEUR AS Visiteur ," +
-            " BUTSVISITEUR AS B,  LIEU AS Cité  FROM Matchs ";
-        string sqlClassement = "select sum(Nbpoints)as total ,equipe from classement  group by equipe order by total desc";///////////////
-        private byte[] logo = null;
+        string sqlHoraire = "SELECT DATEMATCH AS Match, NOMATCH AS No , RECEVEUR AS Receveur , BUTSRECEVEUR AS B_R,  VISITEUR AS Visiteur ," +
+            " BUTSVISITEUR AS B_V,  LIEU AS Cité  FROM Matchs ";
+        string sqlClassement = "select nomÉquipe as Équipe, sum(Nbpoints)as total from classement  group by nomÉquipe order by total desc";
         private const string dsHoraire = "Liste_matchs";
-        private string dsClassement = "Classement_équipes";
-        private string dsLogo = "Logo";
-        OracleDataReader orLigue;
+        private string dsClassement = "Classement_équipes";        
 
         public Form_League()
         {
@@ -42,6 +39,47 @@ namespace The_Main_Project
                 UpdateComboBox();
             }
         }
+
+        //afficher logo de l'équipe sélectionnée du DGV dans la picture box
+        //private void LoadLogo()
+        //{
+        //    int LaLigne = DGV_Team.CurrentCellAddress.Y;
+        //    int LaColonne = 1;
+        //    string NomEquipe = DGV_Team.Rows[LaLigne].Cells[LaColonne].Value.ToString();
+        //    string sqlLogo = "Select Logo from Équipes where noméquipe = '" + NomEquipe + "'";
+        //    OracleCommand oraCmdProg = new OracleCommand(sqlLogo, conn);
+        //    oraCmdProg.CommandType = CommandType.Text;
+
+        //    OracleDataReader objRead = oraCmdProg.ExecuteReader();
+                            
+        //    while (objRead.Read())
+        //    {
+        //        byte[] logo = objRead.GetByte(0);
+                
+        //    }  
+        //    objRead.Close();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message.ToString());
+        //    } 
+
+            
+            
+            
+
+
+        //    ////////
+        //    if (logo_ != null)
+        //        {
+        //            using (MemoryStream ms = new MemoryStream(logo_)) 
+        //            {
+        //                PBX_Logo.Image = Image.FromStream(ms);
+        //            }
+        //        }    
+        //}
+
+
 
         private void Form_League_Load(object sender, EventArgs e)
         {
@@ -141,6 +179,9 @@ namespace The_Main_Project
         private void UpdateLogo()
         {
             //string sqlLogo = "SELECT logo FROM équipes where noméquipe = '" +
+
+
+
             //    DGV_Team.SelectedCells.ToString() + "'";
             ////dataset
             //OracleDataAdapter Oraliste = new OracleDataAdapter(dsLogo, conn);
@@ -298,8 +339,8 @@ namespace The_Main_Project
             }
             else
             {
-                string sqlEquipeParDiv = "select sum(Nbpoints) as total, equipe from classement" +
-                    " group by equipe having equipe in (select noméquipe from Équipes where" +
+                string sqlEquipeParDiv = "select nomÉquipe as équipe, sum(Nbpoints) as total  from classement" +
+                    " group by nomÉquipe having nomÉquipe in (select noméquipe from Équipes where" +
                     " nomdivision = '" + CBX_Division.SelectedItem.ToString() + "') order by total desc" ;
                 FillDGVEquipe(sqlEquipeParDiv);
             }
@@ -360,7 +401,7 @@ namespace The_Main_Project
 
         private void CMS_Team_Afficher_Click(object sender, EventArgs e)
         {
-             int LaLigne = DGV_Team.CurrentCellAddress.Y;
+            int LaLigne = DGV_Team.CurrentCellAddress.Y;
             int LaColonne = 1;
             string NomEquipe = DGV_Team.Rows[LaLigne].Cells[LaColonne].Value.ToString();
             GestionEquipe Form = new GestionEquipe();

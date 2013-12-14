@@ -268,7 +268,7 @@
             this.Controls.Add(this.BTN_MOD);
             this.Controls.Add(this.FB_Fiche_Resultat);
             this.Name = "GestionMatch";
-            this.Text = "Gestion Match";
+            this.Text = "Gestion match";
             this.Load += new System.EventHandler(this.GestionMatch_Load);
             this.BTN_MOD.ResumeLayout(false);
             this.BTN_MOD.PerformLayout();

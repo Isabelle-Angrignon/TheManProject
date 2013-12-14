@@ -80,9 +80,9 @@
             this.LB_Top5.AutoSize = true;
             this.LB_Top5.Location = new System.Drawing.Point(9, 5);
             this.LB_Top5.Name = "LB_Top5";
-            this.LB_Top5.Size = new System.Drawing.Size(128, 13);
+            this.LB_Top5.Size = new System.Drawing.Size(278, 13);
             this.LB_Top5.TabIndex = 27;
-            this.LB_Top5.Text = "Voici les stats des joueurs";
+            this.LB_Top5.Text = "Pour tous les joueurs ayant participé à au moins un match";
             // 
             // CMS
             // 
@@ -90,20 +90,20 @@
             this.gestionJoueurToolStripMenuItem,
             this.afficherStatToolStripMenuItem});
             this.CMS.Name = "CMS";
-            this.CMS.Size = new System.Drawing.Size(162, 48);
+            this.CMS.Size = new System.Drawing.Size(161, 70);
             // 
             // gestionJoueurToolStripMenuItem
             // 
             this.gestionJoueurToolStripMenuItem.Name = "gestionJoueurToolStripMenuItem";
-            this.gestionJoueurToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.gestionJoueurToolStripMenuItem.Text = "Gestion Joueur...";
+            this.gestionJoueurToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.gestionJoueurToolStripMenuItem.Text = "Gestion joueur...";
             this.gestionJoueurToolStripMenuItem.Click += new System.EventHandler(this.gestionJoueurToolStripMenuItem_Click);
             // 
             // afficherStatToolStripMenuItem
             // 
             this.afficherStatToolStripMenuItem.Name = "afficherStatToolStripMenuItem";
-            this.afficherStatToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.afficherStatToolStripMenuItem.Text = "Afficher Stat ...";
+            this.afficherStatToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.afficherStatToolStripMenuItem.Text = "Fiche joueur...";
             this.afficherStatToolStripMenuItem.Click += new System.EventHandler(this.afficherStatToolStripMenuItem_Click);
             // 
             // Stats
@@ -115,7 +115,7 @@
             this.Controls.Add(this.DGV_Top5);
             this.Controls.Add(this.LB_Top5);
             this.Name = "Stats";
-            this.Text = "Stats";
+            this.Text = "Statistiques des joueurs";
             this.Load += new System.EventHandler(this.Stats_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Top5)).EndInit();
             this.CMS.ResumeLayout(false);

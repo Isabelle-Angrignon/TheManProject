@@ -158,7 +158,7 @@
             this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.Caractérstique);
             this.Name = "GestionDivision";
-            this.Text = "GestionDivision";
+            this.Text = "Gestion division";
             this.Load += new System.EventHandler(this.GestionDivision_Load);
             this.Caractérstique.ResumeLayout(false);
             this.Caractérstique.PerformLayout();

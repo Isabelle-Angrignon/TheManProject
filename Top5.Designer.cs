@@ -90,20 +90,20 @@
             this.gestionJoueurToolStripMenuItem,
             this.afficherStatToolStripMenuItem});
             this.CMS.Name = "CMS";
-            this.CMS.Size = new System.Drawing.Size(162, 48);
+            this.CMS.Size = new System.Drawing.Size(161, 70);
             // 
             // gestionJoueurToolStripMenuItem
             // 
             this.gestionJoueurToolStripMenuItem.Name = "gestionJoueurToolStripMenuItem";
-            this.gestionJoueurToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.gestionJoueurToolStripMenuItem.Text = "Gestion Joueur...";
+            this.gestionJoueurToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.gestionJoueurToolStripMenuItem.Text = "Gestion joueur...";
             this.gestionJoueurToolStripMenuItem.Click += new System.EventHandler(this.gestionJoueurToolStripMenuItem_Click);
             // 
             // afficherStatToolStripMenuItem
             // 
             this.afficherStatToolStripMenuItem.Name = "afficherStatToolStripMenuItem";
-            this.afficherStatToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.afficherStatToolStripMenuItem.Text = "Afficher Stat...";
+            this.afficherStatToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.afficherStatToolStripMenuItem.Text = "Fiche joueur...";
             this.afficherStatToolStripMenuItem.Click += new System.EventHandler(this.afficherStatToolStripMenuItem_Click);
             // 
             // Top5

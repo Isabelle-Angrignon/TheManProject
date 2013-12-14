@@ -96,7 +96,7 @@
             this.BTN_Stats.Name = "BTN_Stats";
             this.BTN_Stats.Size = new System.Drawing.Size(58, 39);
             this.BTN_Stats.TabIndex = 22;
-            this.BTN_Stats.Text = "Stats";
+            this.BTN_Stats.Text = "Fiche";
             this.BTN_Stats.UseVisualStyleBackColor = true;
             this.BTN_Stats.Click += new System.EventHandler(this.BTN_Stats_Click);
             // 
@@ -266,7 +266,7 @@
             this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.Caractérstique);
             this.Name = "GestionJoueur";
-            this.Text = "GestionJoueur";
+            this.Text = "Gestion joueur";
             this.Load += new System.EventHandler(this.GestionJoueur_Load);
             this.Caractérstique.ResumeLayout(false);
             this.Caractérstique.PerformLayout();

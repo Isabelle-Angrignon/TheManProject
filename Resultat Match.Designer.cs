@@ -264,9 +264,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(14, 122);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(29, 13);
+            this.label8.Size = new System.Drawing.Size(37, 13);
             this.label8.TabIndex = 11;
-            this.label8.Text = "Pen.";
+            this.label8.Text = "Pénal.";
             // 
             // CBX_Choix_J_R
             // 
@@ -425,9 +425,9 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(139, 123);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(29, 13);
+            this.label15.Size = new System.Drawing.Size(37, 13);
             this.label15.TabIndex = 11;
-            this.label15.Text = "Pen.";
+            this.label15.Text = "Pénal.";
             // 
             // CBX_Choix_J_V
             // 

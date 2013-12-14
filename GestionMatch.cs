@@ -173,44 +173,51 @@ namespace The_Main_Project
         }
         private void BTN_Add_Click(object sender, EventArgs e)
         {
-            try
-            {               
-                string sqlAdd = "INSERT INTO Matchs VALUES (SeqMatchs.nextval,:RECEV,:VISIT," +
-                    " :DATEMATCH, :LIEU, :BUTSR, :BUTSV)";
-
-                OracleParameter oParamRecev = new OracleParameter(":RECEV", OracleDbType.Varchar2, 30);
-                OracleParameter oParamVisit = new OracleParameter(":VISIT", OracleDbType.Varchar2, 30);
-                OracleParameter oParamDate = new OracleParameter(":DATEMATCH", OracleDbType.Date);
-                OracleParameter oParamLieu = new OracleParameter(":LIEU", OracleDbType.Varchar2, 30);
-                OracleParameter oParamButsR = new OracleParameter(":BUTSR", OracleDbType.Int32, 2);
-                OracleParameter oParamButsV = new OracleParameter(":BUTSV", OracleDbType.Int32, 2);
-
-                oParamRecev.Value = TB_Receveur.Text;
-                oParamVisit.Value = TB_Visiteur.Text;
-                oParamDate.Value = DTP_Date.Value;
-                oParamLieu.Value = TB_Lieu.Text;
-                oParamButsR.Value = int.Parse(TB_R_Pts.Text);
-                oParamButsV.Value = int.Parse(TB_V_Pts.Text);
-
-                OracleCommand orComm = new OracleCommand(sqlAdd, conn);
-                orComm.Parameters.Add(oParamRecev);
-                orComm.Parameters.Add(oParamVisit);
-                orComm.Parameters.Add(oParamDate);
-                orComm.Parameters.Add(oParamLieu);
-                orComm.Parameters.Add(oParamButsR);
-                orComm.Parameters.Add(oParamButsV);
-                orComm.ExecuteNonQuery();
-                MessageBox.Show(" Le match à été ajouté");
-
-                LoadDataset();
-            }
-            catch (OracleException ex)
+            if (TB_Receveur.Text == TB_Visiteur.Text)
             {
-                ErrorMessage(ex);
+                try
+                {
+                    string sqlAdd = "INSERT INTO Matchs VALUES (SeqMatchs.nextval,:RECEV,:VISIT," +
+                        " :DATEMATCH, :LIEU, :BUTSR, :BUTSV)";
+
+                    OracleParameter oParamRecev = new OracleParameter(":RECEV", OracleDbType.Varchar2, 30);
+                    OracleParameter oParamVisit = new OracleParameter(":VISIT", OracleDbType.Varchar2, 30);
+                    OracleParameter oParamDate = new OracleParameter(":DATEMATCH", OracleDbType.Date);
+                    OracleParameter oParamLieu = new OracleParameter(":LIEU", OracleDbType.Varchar2, 30);
+                    OracleParameter oParamButsR = new OracleParameter(":BUTSR", OracleDbType.Int32, 2);
+                    OracleParameter oParamButsV = new OracleParameter(":BUTSV", OracleDbType.Int32, 2);
+
+                    oParamRecev.Value = TB_Receveur.Text;
+                    oParamVisit.Value = TB_Visiteur.Text;
+                    oParamDate.Value = DTP_Date.Value;
+                    oParamLieu.Value = TB_Lieu.Text;
+                    oParamButsR.Value = int.Parse(TB_R_Pts.Text);
+                    oParamButsV.Value = int.Parse(TB_V_Pts.Text);
+
+                    OracleCommand orComm = new OracleCommand(sqlAdd, conn);
+                    orComm.Parameters.Add(oParamRecev);
+                    orComm.Parameters.Add(oParamVisit);
+                    orComm.Parameters.Add(oParamDate);
+                    orComm.Parameters.Add(oParamLieu);
+                    orComm.Parameters.Add(oParamButsR);
+                    orComm.Parameters.Add(oParamButsV);
+                    orComm.ExecuteNonQuery();
+                    MessageBox.Show(" Le match à été ajouté");
+
+                    LoadDataset();
+                }
+                catch (OracleException ex)
+                {
+                    ErrorMessage(ex);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message.ToString());
+                MessageBox.Show("Une équipe ne peut jouer contre elle-même.");
             }
         }
 
@@ -252,48 +259,56 @@ namespace The_Main_Project
 
         private void BTN_Edit_Click(object sender, EventArgs e)
         {
-            try
+            if (TB_Receveur.Text == TB_Visiteur.Text)
             {
-                string sqlUpdate = "UPDATE matchs SET Receveur = :RECEV, Visiteur = :VISIT, datematch = :DATEMATCH," +
-                " Lieu = :LIEU, butsreceveur = :BUTSR, butsvisiteur = :BUTSV WHERE Nomatch = :NO"; //requete met a jour
- 
-                OracleParameter oParamRecev = new OracleParameter(":RECEV", OracleDbType.Varchar2, 30);
-                OracleParameter oParamVisit = new OracleParameter(":VISIT", OracleDbType.Varchar2, 30);
-                OracleParameter oParamDate = new OracleParameter(":DATEMATCH", OracleDbType.Date);
-                OracleParameter oParamLieu = new OracleParameter(":LIEU", OracleDbType.Varchar2, 30);
-                OracleParameter oParamButsR = new OracleParameter(":BUTSR", OracleDbType.Int32, 2);
-                OracleParameter oParamButsV = new OracleParameter(":BUTSV", OracleDbType.Int32, 2);
-                OracleParameter oParamNo = new OracleParameter(":NO", OracleDbType.Int32, 3);
 
-                oParamRecev.Value = TB_Receveur.Text;
-                oParamVisit.Value = TB_Visiteur.Text;
-                oParamDate.Value = DTP_Date.Value;
-                oParamLieu.Value = TB_Lieu.Text;
-                oParamButsR.Value = int.Parse(TB_R_Pts.Text);
-                oParamButsV.Value = int.Parse(TB_V_Pts.Text);
-                oParamNo.Value = int.Parse(LB_No_Match.Text);
+                try
+                {
+                    string sqlUpdate = "UPDATE matchs SET Receveur = :RECEV, Visiteur = :VISIT, datematch = :DATEMATCH," +
+                    " Lieu = :LIEU, butsreceveur = :BUTSR, butsvisiteur = :BUTSV WHERE Nomatch = :NO"; //requete met a jour
 
-                OracleCommand orComm = new OracleCommand(sqlUpdate, conn);
-                orComm.Parameters.Add(oParamRecev);
-                orComm.Parameters.Add(oParamVisit);
-                orComm.Parameters.Add(oParamDate);
-                orComm.Parameters.Add(oParamLieu);
-                orComm.Parameters.Add(oParamButsR);
-                orComm.Parameters.Add(oParamButsV);
-                orComm.Parameters.Add(oParamNo);
-                orComm.ExecuteNonQuery();
+                    OracleParameter oParamRecev = new OracleParameter(":RECEV", OracleDbType.Varchar2, 30);
+                    OracleParameter oParamVisit = new OracleParameter(":VISIT", OracleDbType.Varchar2, 30);
+                    OracleParameter oParamDate = new OracleParameter(":DATEMATCH", OracleDbType.Date);
+                    OracleParameter oParamLieu = new OracleParameter(":LIEU", OracleDbType.Varchar2, 30);
+                    OracleParameter oParamButsR = new OracleParameter(":BUTSR", OracleDbType.Int32, 2);
+                    OracleParameter oParamButsV = new OracleParameter(":BUTSV", OracleDbType.Int32, 2);
+                    OracleParameter oParamNo = new OracleParameter(":NO", OracleDbType.Int32, 3);
 
-                MessageBox.Show(" Le match à été modifié");              
+                    oParamRecev.Value = TB_Receveur.Text;
+                    oParamVisit.Value = TB_Visiteur.Text;
+                    oParamDate.Value = DTP_Date.Value;
+                    oParamLieu.Value = TB_Lieu.Text;
+                    oParamButsR.Value = int.Parse(TB_R_Pts.Text);
+                    oParamButsV.Value = int.Parse(TB_V_Pts.Text);
+                    oParamNo.Value = int.Parse(LB_No_Match.Text);
 
-                LoadDataset();
+                    OracleCommand orComm = new OracleCommand(sqlUpdate, conn);
+                    orComm.Parameters.Add(oParamRecev);
+                    orComm.Parameters.Add(oParamVisit);
+                    orComm.Parameters.Add(oParamDate);
+                    orComm.Parameters.Add(oParamLieu);
+                    orComm.Parameters.Add(oParamButsR);
+                    orComm.Parameters.Add(oParamButsV);
+                    orComm.Parameters.Add(oParamNo);
+                    orComm.ExecuteNonQuery();
+
+                    MessageBox.Show(" Le match à été modifié");
+
+                    LoadDataset();
+                }
+                catch (OracleException ex)
+                {
+                    ErrorMessage(ex);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
             }
-            catch (OracleException ex)
+            else
             {
-                ErrorMessage(ex);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString());
+                MessageBox.Show("Une équipe ne peut jouer contre elle-même.");
             }
         }           
 

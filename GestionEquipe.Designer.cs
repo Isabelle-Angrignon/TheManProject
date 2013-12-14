@@ -90,7 +90,7 @@
             this.BTN_Load.Name = "BTN_Load";
             this.BTN_Load.Size = new System.Drawing.Size(75, 23);
             this.BTN_Load.TabIndex = 9;
-            this.BTN_Load.Text = "Charger";
+            this.BTN_Load.Text = "Charger logo";
             this.BTN_Load.UseVisualStyleBackColor = true;
             this.BTN_Load.Click += new System.EventHandler(this.BTN_Load_Click);
             // 
@@ -123,9 +123,9 @@
             // DTP_Date_Team
             // 
             this.DTP_Date_Team.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DTP_Date_Team.Location = new System.Drawing.Point(83, 123);
+            this.DTP_Date_Team.Location = new System.Drawing.Point(107, 123);
             this.DTP_Date_Team.Name = "DTP_Date_Team";
-            this.DTP_Date_Team.Size = new System.Drawing.Size(115, 20);
+            this.DTP_Date_Team.Size = new System.Drawing.Size(91, 20);
             this.DTP_Date_Team.TabIndex = 17;
             // 
             // TB_Nom_Team
@@ -189,9 +189,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(14, 126);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.Size = new System.Drawing.Size(88, 13);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Date intro";
+            this.label5.Text = "Date introduction";
             // 
             // label3
             // 
@@ -227,7 +227,7 @@
             this.Controls.Add(this.Caractérstique);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "GestionEquipe";
-            this.Text = "GestionEquipe";
+            this.Text = "Gestion équipe";
             this.Load += new System.EventHandler(this.GestionEquipe_Load);
             this.Caractérstique.ResumeLayout(false);
             this.Caractérstique.PerformLayout();

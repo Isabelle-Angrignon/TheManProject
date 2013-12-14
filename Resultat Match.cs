@@ -80,11 +80,10 @@ namespace The_Main_Project
         {
             LoadMatch();
             FillComboBox();
-            //LoadDatasetR();
-            //LoadDatasetV();
         }
 
         //Remplir les deux menus déroulants avec la liste des joueurs de chaque équipe impliquées dans le match
+        //Appelle aussi le remplissage des DGV en changeant l'index des combo box.
         private void FillComboBox()
         {
             try
@@ -105,7 +104,7 @@ namespace The_Main_Project
                         CBX_Choix_J_V.Items.Add(objRead.GetString(2)+ " " + objRead.GetString(1));
                     }
                 }
-                try
+                 try
                 {
                     //Faire afficher le premier joueur de la liste
                     CBX_Choix_J_R.SelectedIndex = 0;
@@ -113,7 +112,7 @@ namespace The_Main_Project
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Il n'y a pas de joueur entrée dans l'équipe");
+                    MessageBox.Show("Il n'y a pas de joueur entré dans l'équipe");
                 }
                 objRead.Close();
             }

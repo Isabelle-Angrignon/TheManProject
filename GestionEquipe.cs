@@ -81,8 +81,8 @@ namespace The_Main_Project
             DTP_Date_Team.DataBindings.Add("Text", equDataSet, "Équipes.DateIntro");
             clePrimaire = TB_Nom_Team.Text;
             TB_Ville.DataBindings.Add("Text", equDataSet, "Équipes.ville");
-            TB_DivisionEquipe.DataBindings.Add("Text", equDataSet, "Équipes.nomdivision");///invisible
-            PBX_Logo.DataBindings.Add("Image", equDataSet, "Équipes.logo", true);/////////           
+            TB_DivisionEquipe.DataBindings.Add("Text", equDataSet, "Équipes.nomdivision");
+            PBX_Logo.DataBindings.Add("Image", equDataSet, "Équipes.logo", true);      
             
 }
         
@@ -246,15 +246,14 @@ namespace The_Main_Project
             OpenFileDialog file = new OpenFileDialog();
             file.Title = "Sélectionner le logo d'équipe";
             file.CheckFileExists = true;
-            file.InitialDirectory = @":C\";
-            //file.InitialDirectory = Application.StartupPath;
+            file.InitialDirectory = @":C\";            
             file.Filter = "Fichiers images (*.BMP; *.JPG; *.GIF; *.PNG)|*.BMP; *.JPG; *.GIF; *.PNG|Tous les fichiers(*.*)|*.*";
             file.FilterIndex = 1;
             file.RestoreDirectory = true;
 
             if (file.ShowDialog() == DialogResult.OK)
             {
-                logo = File.ReadAllBytes(file.FileName);////file.Filename;
+                logo = File.ReadAllBytes(file.FileName);
                 PBX_Logo.Image = Image.FromFile(file.FileName);
                 PBX_Logo.ImageLocation = file.FileName;
             }
