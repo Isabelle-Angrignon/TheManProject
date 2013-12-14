@@ -44,8 +44,72 @@ namespace The_Main_Project
             UpdateComboBox();
             FillDGVMatch();
             FillDGVEquipe(sqlClassement);
+            ChangeColor();
         }
-        
+        public void ChangeColor()
+        {
+            ChangeColorDGV();
+            ChangeColorMenu();
+            
+        }
+        private void ChangeColorMenu()
+        {
+            this.BackColor = Properties.Settings.Default.Back_Color;
+            foreach (Control c in this.Controls)
+            {
+                if (c.GetType() == typeof(MenuStrip))
+                {
+                    c.BackColor = Properties.Settings.Default.Menu_Back;
+                    c.ForeColor = Properties.Settings.Default.Label_Color;
+                }
+                if (c.GetType() == typeof(Label))
+                    c.ForeColor = Properties.Settings.Default.Label_Color;
+
+                if (c.GetType() == typeof(ContextMenu))
+                {
+                    c.BackColor = Properties.Settings.Default.Menu_Back;
+                    c.ForeColor = Properties.Settings.Default.Label_Color;
+                }
+                if (c.GetType() == typeof(ContextMenuStrip))
+                {
+                    c.BackColor = Properties.Settings.Default.Menu_Back;
+                    c.ForeColor = Properties.Settings.Default.Label_Color;
+                }
+                if (c.GetType() == typeof(Menu))
+                {
+                     c.BackColor = Properties.Settings.Default.Menu_Back;
+                     c.ForeColor = Properties.Settings.Default.Label_Color;
+                }
+
+            }
+        }
+
+        private void ChangeColorDGV()
+        {
+            for (int i = 0; i < DGV_Match.RowCount; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    DGV_Match.Rows[i].DefaultCellStyle.BackColor = Properties.Settings.Default.DGV_Pair;
+                }
+                else
+                {
+                    DGV_Match.Rows[i].DefaultCellStyle.BackColor = Properties.Settings.Default.DGV_Impair;
+                }
+            }
+            for (int i = 0; i < DGV_Team.RowCount; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    DGV_Team.Rows[i].DefaultCellStyle.BackColor = Properties.Settings.Default.DGV_Pair;
+                }
+                else
+                {
+                    DGV_Team.Rows[i].DefaultCellStyle.BackColor = Properties.Settings.Default.DGV_Impair;
+                }
+            }
+        }
+
         private void UpdateComboBox()
         {
             CBX_Division.Items.Clear();
@@ -385,6 +449,18 @@ namespace The_Main_Project
         {
             A_Propos Form = new A_Propos();
             Form.ShowDialog();
+        }
+
+        private void afficherJoueursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int LaLigne = DGV_Team.CurrentCellAddress.Y;
+            int LaColonne = 0;
+            string NomEquipe = DGV_Team.Rows[LaLigne].Cells[LaColonne].Value.ToString();
+            GestionJoueur Form = new GestionJoueur();
+            Form.NomEquipe = NomEquipe;
+            Form.conn = conn;
+            Form.ShowDialog();
+            
         }
     }   
 }

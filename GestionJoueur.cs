@@ -22,6 +22,7 @@ namespace The_Main_Project
         private const string dsTable = "Table";
         OracleDataAdapter Oraliste;
         public int NoJoueur = -1;
+        public string NomEquipe = "";
         /////////////////////////////////////////////////
         //Pour valider l'entrée du no de maillot
         const char BACKSPACE = '\b';
@@ -53,6 +54,7 @@ namespace The_Main_Project
             AutoCompletePosition();
             ContournerBinding(TB_Position.Text);
             AutoCompleteEquipe();
+            
         }
 
         private void AutoCompleteEquipe()
@@ -112,6 +114,10 @@ namespace The_Main_Project
                 if (NoJoueur != -1)
                 {
                     sqlShow = "Select * from Joueurs where nojoueur =" + NoJoueur;
+                }
+                if (NomEquipe != "")
+                {
+                    sqlShow = "Select * from joueurs where noméquipe ='" + NomEquipe + "'";
                 }
                 Oraliste = new OracleDataAdapter(sqlShow, conn);
                 if (formDataSet.Tables.Contains(dsTable))

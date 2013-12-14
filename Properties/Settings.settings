@@ -6,7 +6,19 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="DGV_Pair" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">Silver</Value>
+      <Value Profile="(Default)">Gainsboro</Value>
+    </Setting>
+    <Setting Name="Back_Color" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">ButtonFace</Value>
+    </Setting>
+    <Setting Name="Label_Color" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="Control_BoxColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">ActiveBorder</Value>
+    </Setting>
+    <Setting Name="Menu_Back" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Menu</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -61,6 +61,7 @@
             this.PBX_Logo = new System.Windows.Forms.PictureBox();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.FB_Close = new FlashButton.FlashButton();
+            this.afficherJoueursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Team)).BeginInit();
             this.MS_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Match)).BeginInit();
@@ -273,14 +274,15 @@
             // CMS_Team
             // 
             this.CMS_Team.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CMS_Team_Afficher});
+            this.CMS_Team_Afficher,
+            this.afficherJoueursToolStripMenuItem});
             this.CMS_Team.Name = "CMS_Match";
-            this.CMS_Team.Size = new System.Drawing.Size(156, 26);
+            this.CMS_Team.Size = new System.Drawing.Size(172, 70);
             // 
             // CMS_Team_Afficher
             // 
             this.CMS_Team_Afficher.Name = "CMS_Team_Afficher";
-            this.CMS_Team_Afficher.Size = new System.Drawing.Size(155, 22);
+            this.CMS_Team_Afficher.Size = new System.Drawing.Size(171, 22);
             this.CMS_Team_Afficher.Text = "Afficher Équipe";
             this.CMS_Team_Afficher.Click += new System.EventHandler(this.CMS_Team_Afficher_Click);
             // 
@@ -388,6 +390,13 @@
             this.FB_Close.TabIndex = 40;
             this.FB_Close.Click += new System.EventHandler(this.FB_Close_Click);
             // 
+            // afficherJoueursToolStripMenuItem
+            // 
+            this.afficherJoueursToolStripMenuItem.Name = "afficherJoueursToolStripMenuItem";
+            this.afficherJoueursToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.afficherJoueursToolStripMenuItem.Text = "Afficher Joueurs ...";
+            this.afficherJoueursToolStripMenuItem.Click += new System.EventHandler(this.afficherJoueursToolStripMenuItem_Click);
+            // 
             // Form_League
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -456,6 +465,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private FlashButton.FlashButton FB_Close;
+        private System.Windows.Forms.ToolStripMenuItem afficherJoueursToolStripMenuItem;
 
     }
 }

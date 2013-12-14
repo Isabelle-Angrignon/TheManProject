@@ -36,13 +36,61 @@ namespace The_Main_Project.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Silver")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Gainsboro")]
         public global::System.Drawing.Color DGV_Pair {
             get {
                 return ((global::System.Drawing.Color)(this["DGV_Pair"]));
             }
             set {
                 this["DGV_Pair"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ButtonFace")]
+        public global::System.Drawing.Color Back_Color {
+            get {
+                return ((global::System.Drawing.Color)(this["Back_Color"]));
+            }
+            set {
+                this["Back_Color"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color Label_Color {
+            get {
+                return ((global::System.Drawing.Color)(this["Label_Color"]));
+            }
+            set {
+                this["Label_Color"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ActiveBorder")]
+        public global::System.Drawing.Color Control_BoxColor {
+            get {
+                return ((global::System.Drawing.Color)(this["Control_BoxColor"]));
+            }
+            set {
+                this["Control_BoxColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Menu")]
+        public global::System.Drawing.Color Menu_Back {
+            get {
+                return ((global::System.Drawing.Color)(this["Menu_Back"]));
+            }
+            set {
+                this["Menu_Back"] = value;
             }
         }
     }
