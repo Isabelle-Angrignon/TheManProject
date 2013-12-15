@@ -213,7 +213,7 @@ namespace The_Main_Project
             {
                 if (MessageBox.Show("Voulez-vous vraiment supprimer cet enregistrement?", "Attention", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    string sqlDelete = "DELETE FROM Équipes WHERE Noméquipe = :NOM";//requete supprime
+                    string sqlDelete = "DELETE FROM Équipes WHERE Noméquipe = :NOM";
 
                     OracleParameter oParamNom = new OracleParameter(":NOM", OracleDbType.Varchar2, 30);
                     oParamNom.Value = TB_Nom_Team.Text;

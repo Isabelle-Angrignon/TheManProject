@@ -46,13 +46,14 @@ namespace The_Main_Project
             FillDGVEquipe(sqlClassement);
             ChangeColor();
         }
-        
+        //Affecte les settings aux contrôle de la fenêtre
         public void ChangeColor()
         {
             ChangeColorDGV();
             ChangeColorMenu();
             
         }
+        //Affecte les settings aux contrôle de la fenêtre sauf DGV
         private void ChangeColorMenu()
         {
             this.BackColor = Properties.Settings.Default.Back_Color;
@@ -81,10 +82,9 @@ namespace The_Main_Project
                      c.BackColor = Properties.Settings.Default.Menu_Back;
                      c.ForeColor = Properties.Settings.Default.Label_Color;
                 }
-
             }
         }
-
+        //Détermine les couleurs des lignes paires et impaires des DGV.
         private void ChangeColorDGV()
         {
             for (int i = 0; i < DGV_Match.RowCount; i++)
@@ -110,7 +110,7 @@ namespace The_Main_Project
                 }
             }
         }
-
+        //Rempli la liste menu de toutes les divisions avec datareader
         private void UpdateComboBox()
         {
             CBX_Division.Items.Clear();
@@ -136,6 +136,7 @@ namespace The_Main_Project
             } 
 
         }
+        //Établi la connection avec la BD
         private void Connect()
         {
             try
@@ -153,12 +154,11 @@ namespace The_Main_Project
             }
             catch (Exception ex) { MessageBox.Show(ex.Message.ToString());}
         }
-        
+        //Remplis le DGV Match avec data adapter et dataset. 
         private void FillDGVMatch()
         {
             try
-            {
-                //Remplissage DGV Match avec dataadapter et dataset. 
+            {                
                 string sqlHoraire = "SELECT DATEMATCH AS Match, NOMATCH AS No , RECEVEUR AS Receveur , BUTSRECEVEUR AS B_R,  VISITEUR AS Visiteur ," +
                     " BUTSVISITEUR AS B_V,  LIEU AS Cité  FROM Matchs ";
                 OracleDataAdapter Oraliste = new OracleDataAdapter(sqlHoraire, conn);
@@ -176,7 +176,7 @@ namespace The_Main_Project
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
-                
+        //Remplis le DGV équipe avec data adapter et dataset.         
         private void FillDGVEquipe(string sqlParticulier)
         {
             try
@@ -277,7 +277,8 @@ namespace The_Main_Project
         //{
         //    PBX_Logo.DataBindings.Add("Image", mainDataSet, "Classement_équipes.logo", true);
         //}
-        
+
+        #region "Appel d'ouverture des fenêtres avec bouton flash et barre d'outil"
 
         private void OuvertureTop5()
         {
@@ -369,6 +370,25 @@ namespace The_Main_Project
         {
             OuvrireStat();
         }
+        private void TSMI_A_Propos_Click(object sender, EventArgs e)
+        {
+            A_Propos Form = new A_Propos();
+            Form.ShowDialog();
+        }
+
+        private void afficherJoueursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int LaLigne = DGV_Team.CurrentCellAddress.Y;
+            int LaColonne = 0;
+            string NomEquipe = DGV_Team.Rows[LaLigne].Cells[LaColonne].Value.ToString();
+            GestionJoueur Form = new GestionJoueur();
+            Form.NomEquipe = NomEquipe;
+            Form.conn = conn;
+            Form.ShowDialog();
+
+        }
+        #endregion
+
         //Quand on change de division, on n'affiche que les équipes de cette division
         private void CBX_Division_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -392,6 +412,9 @@ namespace The_Main_Project
             conn.Close();
             Application.Exit();
 	    }
+
+        #region "Menus contextuels, appel d'ouverture des fenêtres"
+
         //Menu contextuel: appelle le form match pour le match sélectioné
         private void CMS_Match_Afficher_Click(object sender, EventArgs e)
         {
@@ -445,23 +468,8 @@ namespace The_Main_Project
             Form.conn = conn;
             Form.ShowDialog();
         }
+        #endregion
 
-        private void TSMI_A_Propos_Click(object sender, EventArgs e)
-        {
-            A_Propos Form = new A_Propos();
-            Form.ShowDialog();
-        }
-
-        private void afficherJoueursToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            int LaLigne = DGV_Team.CurrentCellAddress.Y;
-            int LaColonne = 0;
-            string NomEquipe = DGV_Team.Rows[LaLigne].Cells[LaColonne].Value.ToString();
-            GestionJoueur Form = new GestionJoueur();
-            Form.NomEquipe = NomEquipe;
-            Form.conn = conn;
-            Form.ShowDialog();
-            
-        }
+        
     }   
 }
