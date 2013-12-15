@@ -163,20 +163,20 @@
             // 
             this.divisonToolStripMenuItem.Enabled = false;
             this.divisonToolStripMenuItem.Name = "divisonToolStripMenuItem";
-            this.divisonToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.divisonToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.divisonToolStripMenuItem.Text = "Divison...";
             // 
             // équipeToolStripMenuItem1
             // 
             this.équipeToolStripMenuItem1.Enabled = false;
             this.équipeToolStripMenuItem1.Name = "équipeToolStripMenuItem1";
-            this.équipeToolStripMenuItem1.Size = new System.Drawing.Size(123, 22);
+            this.équipeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.équipeToolStripMenuItem1.Text = "Équipe...";
             // 
             // TSMI_Stats_Joueur
             // 
             this.TSMI_Stats_Joueur.Name = "TSMI_Stats_Joueur";
-            this.TSMI_Stats_Joueur.Size = new System.Drawing.Size(123, 22);
+            this.TSMI_Stats_Joueur.Size = new System.Drawing.Size(152, 22);
             this.TSMI_Stats_Joueur.Text = "Joueurs...";
             this.TSMI_Stats_Joueur.Click += new System.EventHandler(this.TSMI_Stats_Joueur_Click);
             // 
@@ -191,7 +191,7 @@
             // TSMI_Themes
             // 
             this.TSMI_Themes.Name = "TSMI_Themes";
-            this.TSMI_Themes.Size = new System.Drawing.Size(125, 22);
+            this.TSMI_Themes.Size = new System.Drawing.Size(152, 22);
             this.TSMI_Themes.Text = "Thèmes...";
             this.TSMI_Themes.Click += new System.EventHandler(this.TSMI_Themes_Click);
             // 
@@ -208,13 +208,13 @@
             // 
             this.aideToolStripMenuItem1.Enabled = false;
             this.aideToolStripMenuItem1.Name = "aideToolStripMenuItem1";
-            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
+            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.aideToolStripMenuItem1.Text = "Aide...";
             // 
             // TSMI_A_Propos
             // 
             this.TSMI_A_Propos.Name = "TSMI_A_Propos";
-            this.TSMI_A_Propos.Size = new System.Drawing.Size(131, 22);
+            this.TSMI_A_Propos.Size = new System.Drawing.Size(152, 22);
             this.TSMI_A_Propos.Text = "À propos...";
             this.TSMI_A_Propos.Click += new System.EventHandler(this.TSMI_A_Propos_Click);
             // 
@@ -255,20 +255,20 @@
             this.CMS_Match_Afficher,
             this.CMS_Match_Modifier});
             this.CMS_Match.Name = "CMS_Match";
-            this.CMS_Match.Size = new System.Drawing.Size(182, 48);
+            this.CMS_Match.Size = new System.Drawing.Size(215, 48);
             // 
             // CMS_Match_Afficher
             // 
             this.CMS_Match_Afficher.Name = "CMS_Match_Afficher";
-            this.CMS_Match_Afficher.Size = new System.Drawing.Size(181, 22);
-            this.CMS_Match_Afficher.Text = "Gérer match";
+            this.CMS_Match_Afficher.Size = new System.Drawing.Size(214, 22);
+            this.CMS_Match_Afficher.Text = "Gérer ce match...";
             this.CMS_Match_Afficher.Click += new System.EventHandler(this.CMS_Match_Afficher_Click);
             // 
             // CMS_Match_Modifier
             // 
             this.CMS_Match_Modifier.Name = "CMS_Match_Modifier";
-            this.CMS_Match_Modifier.Size = new System.Drawing.Size(181, 22);
-            this.CMS_Match_Modifier.Text = "Gérer résultat match";
+            this.CMS_Match_Modifier.Size = new System.Drawing.Size(214, 22);
+            this.CMS_Match_Modifier.Text = "Gérer ses résultats match...";
             this.CMS_Match_Modifier.Click += new System.EventHandler(this.CMS_Match_Modifier_Click);
             // 
             // CMS_Team
@@ -277,20 +277,20 @@
             this.CMS_Team_Afficher,
             this.afficherJoueursToolStripMenuItem});
             this.CMS_Team.Name = "CMS_Match";
-            this.CMS_Team.Size = new System.Drawing.Size(172, 48);
+            this.CMS_Team.Size = new System.Drawing.Size(180, 48);
             // 
             // CMS_Team_Afficher
             // 
             this.CMS_Team_Afficher.Name = "CMS_Team_Afficher";
-            this.CMS_Team_Afficher.Size = new System.Drawing.Size(171, 22);
-            this.CMS_Team_Afficher.Text = "Afficher Équipe";
+            this.CMS_Team_Afficher.Size = new System.Drawing.Size(179, 22);
+            this.CMS_Team_Afficher.Text = "Gérer cette équipe...";
             this.CMS_Team_Afficher.Click += new System.EventHandler(this.CMS_Team_Afficher_Click);
             // 
             // afficherJoueursToolStripMenuItem
             // 
             this.afficherJoueursToolStripMenuItem.Name = "afficherJoueursToolStripMenuItem";
-            this.afficherJoueursToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.afficherJoueursToolStripMenuItem.Text = "Afficher Joueurs ...";
+            this.afficherJoueursToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.afficherJoueursToolStripMenuItem.Text = "Gérer ses joueurs ...";
             this.afficherJoueursToolStripMenuItem.Click += new System.EventHandler(this.afficherJoueursToolStripMenuItem_Click);
             // 
             // FB_Match

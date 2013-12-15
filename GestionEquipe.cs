@@ -43,7 +43,9 @@ namespace The_Main_Project
 
         private void FB_Close_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.OK;
             this.Close();
+            
         } 
 
         private void GestionEquipe_Load(object sender, EventArgs e)

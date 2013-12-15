@@ -50,12 +50,12 @@ namespace The_Main_Project
             {
                 //Pour remplir l'entête du formulaire: sur quel match on av travailler...
                 //no match assigné par la fenêtre appelante.
-                string sqlMatch= "select * From Matchs where NoMatch = " + "'" + NoMatch + "'";
+                string sqlMatch = "select * From Matchs where NoMatch = " + "'" + NoMatch + "'";
                 OracleCommand oraCmdProg = new OracleCommand(sqlMatch, conn);
                 oraCmdProg.CommandType = CommandType.Text;
                 OracleDataReader objRead = oraCmdProg.ExecuteReader();
                 while (objRead.Read())
-                {                    
+                {
                     LB_NoMatch.Text = objRead.GetInt32(0).ToString();
                     LB_Lieu_Result.Text = objRead.GetString(4);
 
@@ -76,7 +76,7 @@ namespace The_Main_Project
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
-            } 
+            }
         }
 
         private void Resultat_Match_Load(object sender, EventArgs e)
@@ -106,10 +106,10 @@ namespace The_Main_Project
                     }
                     if (objRead.GetString(6) == LB_NomEquipe_V.Text)
                     {
-                        CBX_Choix_J_V.Items.Add(objRead.GetString(2)+ " " + objRead.GetString(1));
+                        CBX_Choix_J_V.Items.Add(objRead.GetString(2) + " " + objRead.GetString(1));
                     }
                 }
-                 try
+                try
                 {
                     //Faire afficher le premier joueur de la liste
                     CBX_Choix_J_R.SelectedIndex = 0;
@@ -127,119 +127,150 @@ namespace The_Main_Project
             }
             catch (Exception ex)
             {
-               
+
                 MessageBox.Show(ex.Message.ToString());
-            } 
+            }
         }
 
         //Si on change de joueur dans un menu déroulant, on rempli les champs buts-passes-pénalité
         //avec ses valeurs personnelles pour ce match
         private void CBX_Choix_J_V_SelectedIndexChanged(object sender, EventArgs e)
-
         {
-            string sqlMatchEquipe = "SELECT Prénom , Nom , NoMatch , J.Nojoueur , NbreButs , NbrePasses , "+
-                "TempsPunition FROM (SELECT Prénom , Nom , J.Nojoueur, J.NomÉquipe FROM Joueurs J "+
-                "  INNER JOIN Équipes E on E.NomÉquipe = J.NomÉquipe where E.NomÉquipe = '" +
-                 LB_NomEquipe_V.Text + "')J LEFT OUTER JOIN PrésencesMatchs P ON P.NoJoueur = J.NoJoueur";
-                       
-
-            OracleCommand oraCmdProg = new OracleCommand(sqlMatchEquipe, conn);
-            oraCmdProg.CommandType = CommandType.Text;
-            OracleDataReader objRead = oraCmdProg.ExecuteReader();
-            while (objRead.Read())
+            try
             {
-                char[] splitters = new char[] { ' ' };
-                string[] CeQueJeVeux = CBX_Choix_J_V.Text.Split(splitters);
-                if (CeQueJeVeux[0] == objRead.GetString(0) && CeQueJeVeux[1] == objRead.GetString(1))
-                {                   
-                    LB_ID_V.Text = objRead.GetInt32(3).ToString();
-                    if (objRead.IsDBNull(4))                    
+                string sqlMatchEquipe = "SELECT Prénom , Nom , NoMatch , J.Nojoueur , NbreButs , NbrePasses , " +
+                    "TempsPunition FROM (SELECT Prénom , Nom , J.Nojoueur, J.NomÉquipe FROM Joueurs J " +
+                    "  INNER JOIN Équipes E on E.NomÉquipe = J.NomÉquipe where E.NomÉquipe = '" +
+                     LB_NomEquipe_V.Text + "') J LEFT OUTER JOIN PrésencesMatchs P ON P.NoJoueur = J.NoJoueur ";
+
+
+                OracleCommand oraCmdProg = new OracleCommand(sqlMatchEquipe, conn);
+                oraCmdProg.CommandType = CommandType.Text;
+                OracleDataReader objRead = oraCmdProg.ExecuteReader();
+                while (objRead.Read())
+                {
+                    //Prend le string "prénom nom" du combo box et le split en deux valeurs pour trouver 
+                    //l'équivalent dans le data reader.
+                    char[] splitters = new char[] { ' ' };//l'espace est le séparateur de nom et prénom
+                    //les éléments séparés sont placés dans un tableau de string
+                    string[] CeQueJeVeux = CBX_Choix_J_V.Text.Split(splitters);
+                    //si prénom et nom choisi (combobox sont présent dans le datareader:
+                    if (CeQueJeVeux[0] == objRead.GetString(0) && CeQueJeVeux[1] == objRead.GetString(1))
                     {
-                        TB_But_Visiteur.Clear();
+                        LB_ID_V.Text = objRead.GetInt32(3).ToString();
+
+                        if (objRead.IsDBNull(4))
+                        {
+                            TB_But_Visiteur.Clear();
+                        }
+                        else
+                        {
+                            TB_But_Visiteur.Text = objRead.GetInt32(4).ToString();
+                        }
+                        if (objRead.IsDBNull(5))
+                        {
+                            TB_Passes_Visiteur.Clear();
+                        }
+                        else
+                        {
+                            TB_Passes_Visiteur.Text = objRead.GetInt32(5).ToString();
+                        }
+                        if (objRead.IsDBNull(6))
+                        {
+                            TB_Pen_Visiteur.Clear();
+                        }
+                        else
+                        {
+                            TB_Pen_Visiteur.Text = objRead.GetInt32(6).ToString();
+                        }
+
                     }
-                    else
-                    {
-                        TB_But_Visiteur.Text = objRead.GetInt32(4).ToString();
-                    }
-                    if (objRead.IsDBNull(5))
-                    {
-                        TB_Passes_Visiteur.Clear();
-                    }
-                    else
-                    {
-                        TB_Passes_Visiteur.Text = objRead.GetInt32(5).ToString();
-                    }
-                    if (objRead.IsDBNull(6))
-                    {
-                        TB_Pen_Visiteur.Clear();
-                    }
-                    else
-                    {
-                        TB_Pen_Visiteur.Text = objRead.GetInt32(6).ToString();
-                    }               
-                    
                 }
+                objRead.Close();
+                LoadDatasetV();
             }
-            objRead.Close();
-            LoadDatasetV();
-        }        
-       
+            catch (OracleException ex)
+            {
+                ErrorMessage(ex);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
         private void CBX_Choix_J_R_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string sqlMatchEquipe = "SELECT Prénom , Nom , NoMatch , J.Nojoueur , NbreButs , NbrePasses , TempsPunition FROM (SELECT Prénom , Nom , J.Nojoueur, J.NomÉquipe FROM Joueurs J   INNER JOIN Équipes E on E.NomÉquipe = J.NomÉquipe where E.NomÉquipe = '" + LB_NomEquipe_R.Text + "')J LEFT OUTER JOIN PrésencesMatchs P ON P.NoJoueur = J.NoJoueur";
-
-            OracleCommand oraCmdProg = new OracleCommand(sqlMatchEquipe, conn);
-            oraCmdProg.CommandType = CommandType.Text;
-            OracleDataReader objRead = oraCmdProg.ExecuteReader();
-            while (objRead.Read())
+            try
             {
-                char[] splitters = new char[] { ' ' };
-                string[] CeQueJeVeux = CBX_Choix_J_R.Text.Split(splitters);
-                if (CeQueJeVeux[0] == objRead.GetString(0) && CeQueJeVeux[1] == objRead.GetString(1))
+                string sqlMatchEquipe = "SELECT Prénom , Nom , NoMatch , J.Nojoueur , NbreButs , NbrePasses , " +
+                "TempsPunition FROM (SELECT Prénom , Nom , J.Nojoueur, J.NomÉquipe FROM Joueurs J  " +
+                " INNER JOIN Équipes E on E.NomÉquipe = J.NomÉquipe where E.NomÉquipe = '" + LB_NomEquipe_R.Text +
+                "') J LEFT OUTER JOIN PrésencesMatchs P ON P.NoJoueur = J.NoJoueur";
+
+                OracleCommand oraCmdProg = new OracleCommand(sqlMatchEquipe, conn);
+                oraCmdProg.CommandType = CommandType.Text;
+                OracleDataReader objRead = oraCmdProg.ExecuteReader();
+                while (objRead.Read())
                 {
-                    LB_ID_R.Text = objRead.GetInt32(3).ToString();
-                    
-                    if (objRead.IsDBNull(4))
+                    char[] splitters = new char[] { ' ' };
+                    string[] CeQueJeVeux = CBX_Choix_J_R.Text.Split(splitters);
+                    if (CeQueJeVeux[0] == objRead.GetString(0) && CeQueJeVeux[1] == objRead.GetString(1))
                     {
-                        TB_But_R.Clear();
+                        LB_ID_R.Text = objRead.GetInt32(3).ToString();
+
+                        if (objRead.IsDBNull(4))
+                        {
+                            TB_But_R.Clear();
+                        }
+                        else
+                        {
+                            TB_But_R.Text = objRead.GetInt32(4).ToString();
+                        }
+                        if (objRead.IsDBNull(5))
+                        {
+                            TB_Passes_R.Clear();
+                        }
+                        else
+                        {
+                            TB_Passes_R.Text = objRead.GetInt32(5).ToString();
+                        }
+                        if (objRead.IsDBNull(6))
+                        {
+                            TB_Pen_R.Clear();
+                        }
+                        else
+                        {
+                            TB_Pen_R.Text = objRead.GetInt32(6).ToString();
+                        }
                     }
-                    else
-                    {
-                        TB_But_R.Text = objRead.GetInt32(4).ToString();
-                    }
-                    if (objRead.IsDBNull(5))
-                    {
-                        TB_Passes_R.Clear();
-                    }
-                    else
-                    {
-                        TB_Passes_R.Text = objRead.GetInt32(5).ToString();
-                    }
-                    if (objRead.IsDBNull(6))
-                    {
-                        TB_Pen_R.Clear();
-                    }
-                    else
-                    {
-                        TB_Pen_R.Text = objRead.GetInt32(6).ToString();
-                    }   
                 }
+                objRead.Close();
+                LoadDatasetR();
             }
-            objRead.Close();
-            LoadDatasetR();           
+            catch (OracleException ex)
+            {
+                ErrorMessage(ex);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         private void LoadDatasetR()//pour le DGV de l'équipe qui reçoit.
         {
             try
-            {                
+            {
                 //Afficher tous les joueurs et leurs b/p/p participant à un match dans l'équipe qui reçoit.
-                string sqlShow = "Select J.nojoueur as no, nom, prénom, nbrebuts as b, nbrepasses as p, "+
-                    "tempspunition as pen from PRÉSENCESMATCHS P inner join joueurs J "+
-                    "on P.nojoueur = J.nojoueur where nomatch = " + LB_NoMatch.Text + 
-                    " AND P.nojoueur in (select nojoueur FROM Joueurs where noméquipe in "+
+                string sqlShow = "Select J.nojoueur as no, nom, prénom, nbrebuts as b, nbrepasses as p, " +
+                    "tempspunition as pen from PRÉSENCESMATCHS P inner join joueurs J " +
+                    "on P.nojoueur = J.nojoueur where nomatch = " + LB_NoMatch.Text +
+                    " AND P.nojoueur in (select nojoueur FROM Joueurs where noméquipe in " +
                     "(select receveur from matchs where receveur = '" + LB_NomEquipe_R.Text + "'))";
-                               
+
                 Oraliste = new OracleDataAdapter(sqlShow, conn);
 
                 if (formDataSet.Tables.Contains("Receveur"))
@@ -250,7 +281,7 @@ namespace The_Main_Project
                 Oraliste.Dispose();
 
                 BindingSource maSource = new BindingSource(formDataSet, "Receveur");
-                DGV_ListeJoueur_R.DataSource = maSource;                
+                DGV_ListeJoueur_R.DataSource = maSource;
             }
             catch (OracleException ex)
             {
@@ -258,7 +289,7 @@ namespace The_Main_Project
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
-       
+
         private void LoadDatasetV()//pour le DGV de l'équipe qui visite.
         {
             try
@@ -287,7 +318,7 @@ namespace The_Main_Project
                 ErrorMessage(ex);
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
-        } 
+        }
         ///////////////////////////////
         // boutons  + - mod
         //////////////////////////////
@@ -316,7 +347,7 @@ namespace The_Main_Project
                 orComm.Parameters.Add(oParamJoueur);
                 orComm.Parameters.Add(oParamButs);
                 orComm.Parameters.Add(oParamPasses);
-                orComm.Parameters.Add(oParamPunit);                
+                orComm.Parameters.Add(oParamPunit);
                 orComm.ExecuteNonQuery();
                 MessageBox.Show("Le joueur a été ajouté au match");
 
@@ -348,7 +379,7 @@ namespace The_Main_Project
                 orComm.Parameters.Add(oParamNumber);
                 int res = orComm.ExecuteNonQuery();
 
-                LoadDatasetR();                  
+                LoadDatasetR();
                 MessageBox.Show(res + " participation supprimée avec succès");
             }
             catch (OracleException ex)
@@ -365,9 +396,9 @@ namespace The_Main_Project
         {
             try
             {
-                string sqlUpdate = "UPDATE PrésencesMatchs SET nbrebuts = :BUTS, nbrepasses = :PASSES, "+
+                string sqlUpdate = "UPDATE PrésencesMatchs SET nbrebuts = :BUTS, nbrepasses = :PASSES, " +
                     "tempspunition = :PEN WHERE Nomatch = :NOMATCH AND NoJoueur = :NOJOUEUR"; //requete met a jour
-                                
+
                 OracleParameter oParamButs = new OracleParameter(":BUTS", OracleDbType.Int32, 2);
                 OracleParameter oParamPasses = new OracleParameter(":PASSES", OracleDbType.Int32, 2);
                 OracleParameter oParamPunit = new OracleParameter(":PUNITION", OracleDbType.Int32, 3);
@@ -381,12 +412,12 @@ namespace The_Main_Project
                 oParamJoueur.Value = int.Parse(LB_ID_R.Text);
 
                 OracleCommand orComm = new OracleCommand(sqlUpdate, conn);
-                
+
                 orComm.Parameters.Add(oParamButs);
                 orComm.Parameters.Add(oParamPasses);
                 orComm.Parameters.Add(oParamPunit);
                 orComm.Parameters.Add(oParamMatch);
-                orComm.Parameters.Add(oParamJoueur);                
+                orComm.Parameters.Add(oParamJoueur);
                 orComm.ExecuteNonQuery();
 
                 MessageBox.Show("La participation au match a été modifiée");
@@ -402,22 +433,6 @@ namespace The_Main_Project
             }
         }
 
-        private void ErrorMessage(OracleException Ex)
-        {
-            switch (Ex.Number)
-            {
-                case 02290:
-                    // au lieu d'afficher violation de clé étrangère , on affiche ceci:
-                    MessageBox.Show("Entrée invalide");
-                    break;
-                case 01400:
-                    MessageBox.Show("Il y a des champs vides");
-                    break;
-                default: MessageBox.Show(Ex.Message.ToString());
-                    break;
-            }
-        }
-               
         ///visiteur////////////////////////////////
         private void BTN_Add_V_Click(object sender, EventArgs e)
         {
@@ -431,8 +446,8 @@ namespace The_Main_Project
                 OracleParameter oParamPasses = new OracleParameter(":PASSES", OracleDbType.Int32, 2);
                 OracleParameter oParamPunit = new OracleParameter(":PUNITION", OracleDbType.Int32, 3);
 
-                oParamMatch.Value = int.Parse(LB_NoMatch.Text);
-                oParamJoueur.Value = int.Parse(LB_ID_V.Text);
+                oParamMatch.Value = int.Parse(LB_NoMatch.Text);////
+                oParamJoueur.Value = int.Parse(LB_ID_V.Text);////
                 oParamButs.Value = int.Parse(TB_But_Visiteur.Text);
                 oParamPasses.Value = int.Parse(TB_Passes_Visiteur.Text);
                 oParamPunit.Value = int.Parse(TB_Pen_Visiteur.Text);
@@ -525,6 +540,23 @@ namespace The_Main_Project
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        private void ErrorMessage(OracleException Ex)
+        {
+            switch (Ex.Number)
+            {
+
+                case 02290:
+                    // au lieu d'afficher violation de clé étrangère , on affiche ceci:
+                    MessageBox.Show("Entrée invalide");
+                    break;
+                case 01400:
+                    MessageBox.Show("Il y a des champs vides");
+                    break;
+                default: MessageBox.Show(Ex.Message.ToString());
+                    break;
             }
         }
         private void ChangeColorMenu()

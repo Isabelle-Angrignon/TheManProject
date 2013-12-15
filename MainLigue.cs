@@ -42,11 +42,16 @@ namespace The_Main_Project
         private void Form_League_Load(object sender, EventArgs e)
         {
             Connect();
+            Mainload();
+        }
+        private void Mainload()
+        {
             UpdateComboBox();
             FillDGVMatch();
             FillDGVEquipe(sqlClassement);
             ChangeColor();
         }
+
         //Affecte les settings aux contrôle de la fenêtre
         public void ChangeColor()
         {
@@ -296,7 +301,10 @@ namespace The_Main_Project
         {
             GestionEquipe Form = new GestionEquipe();
             Form.conn = conn;
-            Form.ShowDialog();
+            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Mainload();
+            }
         }
 
         private void flashButton1_Click(object sender, EventArgs e)
@@ -319,7 +327,10 @@ namespace The_Main_Project
         {
             GestionMatch Form = new GestionMatch();
             Form.conn = conn;
-            Form.ShowDialog();
+            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Mainload();
+            }
         }
 
         private void FB_Top5_Click(object sender, EventArgs e)
@@ -424,7 +435,10 @@ namespace The_Main_Project
             GestionMatch Form = new GestionMatch();
             Form.NoMatch = NoMatch;
             Form.conn = conn;
-            Form.ShowDialog();
+            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Mainload();
+            }
         }
         //Menu contextuel: appelle le form résultat de match pour le match sélectioné
         private void CMS_Match_Modifier_Click(object sender, EventArgs e)
@@ -435,7 +449,10 @@ namespace The_Main_Project
             Resultat_Match Form = new Resultat_Match();
             Form.NoMatch = NoMatch;
             Form.conn = conn;
-            Form.ShowDialog();
+            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Mainload();
+            }
         }
 
         //Vérifie qu'on a cliqué avec bouton droit sur le DGV match et affiche le menu contextuel
@@ -466,7 +483,10 @@ namespace The_Main_Project
             GestionEquipe Form = new GestionEquipe();
             Form.NomEquipe = NomEquipe;
             Form.conn = conn;
-            Form.ShowDialog();
+            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Mainload();
+            }
         }
         #endregion        
     }   
