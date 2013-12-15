@@ -53,8 +53,7 @@ namespace The_Main_Project
         private void GestionMatch_Load(object sender, EventArgs e)
         {
             LoadDataset();
-            AutoCompleteVisiteur();
-            AutoCompleteReceveur();
+            AutoCompleteEquipe();
             ChangeColorMenu();
         }
         private void ChangeColorMenu()
@@ -92,29 +91,8 @@ namespace The_Main_Project
 
             }
         }
-
-        private void AutoCompleteReceveur()
-        {
-            try
-            {
-                OracleCommand oraCmdProg = new OracleCommand("select NomÉquipe From Équipes", conn);
-                oraCmdProg.CommandType = CommandType.Text;
-
-                OracleDataReader objRead = oraCmdProg.ExecuteReader();
-                while (objRead.Read())
-                {
-                    TB_Receveur.AutoCompleteCustomSource.Add(objRead.GetString(0));
-                }
-                TB_Receveur.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                TB_Receveur.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                objRead.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString());
-            }
-        }
-        private void AutoCompleteVisiteur()
+        //Fait en sorte que les noms d'équipe receveur et visiteur se complète dès qu'on commence à taper un nom.        
+        private void AutoCompleteEquipe()
         {
             try
             {
@@ -125,9 +103,12 @@ namespace The_Main_Project
                 while (objRead.Read())
                 {
                     TB_Visiteur.AutoCompleteCustomSource.Add(objRead.GetString(0));
+                    TB_Receveur.AutoCompleteCustomSource.Add(objRead.GetString(0));
                 }
                 TB_Visiteur.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                 TB_Visiteur.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                TB_Receveur.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                TB_Receveur.AutoCompleteSource = AutoCompleteSource.CustomSource;
                 objRead.Close();
             }
             catch (Exception ex)
