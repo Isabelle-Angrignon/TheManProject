@@ -18,19 +18,21 @@ namespace The_Main_Project
         }
         public Form_League Form;
         int Choix = 0;
-        
+
+        //Attributs de chaque thème : couleur de fond,lignes dgv, Textes des labelés, menu
+        //Défaut
         private  Color D_BackColor = SystemColors.ButtonFace;
         private  Color D_PairRow = Color.White;
         private  Color D_Label = Color.Black;
         private  Color D_ImpairRow = Color.Gainsboro;
         private  Color D_Menu_Back = SystemColors.Menu;
-
+        //Canadien
         private Color C_BackColor = Color.FromArgb(131, 170, 234);//Bleu pâle
         private Color C_PairRow = Color.FromArgb(255, 61, 61);//Rouge pâle 
         private Color C_Label = Color.FromArgb(0,47,124);//Bleu foncé
         private Color C_ImpairRow = Color.White;
         private Color C_Menu_Back = Color.FromArgb(255, 61, 61);//Bleu pâle
-
+        //Sombre
         private Color S_BackColor = Color.FromArgb(77, 77, 77);//Gris foncé
         private Color S_PairRow = Color.LightGray;
         private Color S_Label = Color.White;
@@ -41,12 +43,7 @@ namespace The_Main_Project
         {
             this.DialogResult = DialogResult.OK;
             this.Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        }        
 
         private void RB_Defaut_CheckedChanged(object sender, EventArgs e)
         {
@@ -62,7 +59,7 @@ namespace The_Main_Project
         {
             Choix = 2;
         }
-
+        //application des settings selon le thème choisi
         private void BTN_Appliquer_Click(object sender, EventArgs e)
         {
             if (Choix == 0)
@@ -94,7 +91,7 @@ namespace The_Main_Project
             ChangeColorMenu();
             Properties.Settings.Default.Save();
         }
-
+        //Applque les settings pour chaque type de contrôle.
         private void ChangeColorMenu()
         {
             this.BackColor = Properties.Settings.Default.Back_Color;
@@ -127,7 +124,6 @@ namespace The_Main_Project
                     c.ForeColor = Properties.Settings.Default.Label_Color;
                 if (c.GetType() == typeof(RadioButton))
                     c.ForeColor = Properties.Settings.Default.Label_Color;
-
             }
         }
     }

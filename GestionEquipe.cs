@@ -193,6 +193,10 @@ namespace The_Main_Project
                 LoadDataset();
                 MessageBox.Show("Enregistrement ajouté avec succès");
             }
+            catch (OracleException ex)
+            {
+                ErrorMessage(ex);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
@@ -211,7 +215,7 @@ namespace The_Main_Project
         {
             try 
             {
-                if (MessageBox.Show("Voulez-vous vraiment supprimer cet enregistrement?", "Attention", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                if (MessageBox.Show("Voulez-vous vraiment supprimer cette équipe?", "Attention", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 {
                     string sqlDelete = "DELETE FROM Équipes WHERE Noméquipe = :NOM";
 
@@ -226,7 +230,11 @@ namespace The_Main_Project
 
                     MessageBox.Show(res + " enregistrement supprimé avec succès");
                 }
-            } 
+            }
+            catch (OracleException ex)
+            {
+                ErrorMessage(ex);
+            }
             catch (Exception ex) 
             { 
                 MessageBox.Show(ex.Message.ToString()); 
@@ -270,7 +278,11 @@ namespace The_Main_Project
                 
                 LoadDataset();
                 MessageBox.Show("Enregistrement modifié avec succès");
-            } 
+            }
+            catch (OracleException ex)
+            {
+                ErrorMessage(ex);
+            }
             catch (Exception ex) 
             { 
                 MessageBox.Show(ex.Message.ToString()); 
@@ -315,10 +327,34 @@ namespace The_Main_Project
                 TB_DivisionEquipe.AutoCompleteSource = AutoCompleteSource.CustomSource;
                 objRead.Close();
             }
+            catch (OracleException ex)
+            {
+                ErrorMessage(ex);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
             }
-        }                               
+        }
+        private void ErrorMessage(OracleException Ex)
+        {
+            switch (Ex.Number)
+            {
+                case 1:
+                    MessageBox.Show("Une équipe porte déjà ce nom");
+                    break;
+                case 02292:
+                    MessageBox.Show("L'équipe choisie n'est pas vide: " +
+                        "on ne peut ni la suprimer, ni modifier son nom");
+                    break;
+                case 01400:
+                    MessageBox.Show("L'équipe doit avoir un nom");
+                    break;
+                default: MessageBox.Show(Ex.Message.ToString());
+                    break;
+            }
+        }
+        
+                    
     }
 }

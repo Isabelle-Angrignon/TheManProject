@@ -135,7 +135,6 @@ namespace The_Main_Project
             {
                 MessageBox.Show(ex.Message.ToString());
             } 
-
         }
         //Établi la connection avec la BD
         private void Connect()
@@ -469,8 +468,6 @@ namespace The_Main_Project
             Form.conn = conn;
             Form.ShowDialog();
         }
-        #endregion
-
-        
+        #endregion        
     }   
 }

@@ -19,8 +19,7 @@ namespace The_Main_Project
         }
 
         public OracleConnection conn = new OracleConnection();
-        private DataSet formDataSet = new DataSet();
-        private const string dsTable = "Match";
+        private DataSet formDataSet = new DataSet();       
         OracleDataAdapter Oraliste;
         public int NoMatch = -1;
 
@@ -171,22 +170,22 @@ namespace The_Main_Project
 
         private void uC_Navigator_OnFirst(object sender, EventArgs e)
         {
-            this.BindingContext[formDataSet, dsTable].Position = 0;            
+            this.BindingContext[formDataSet, "Match"].Position = 0;            
         }
 
         private void uC_Navigator_OnLast(object sender, EventArgs e)
         {
-            this.BindingContext[formDataSet, dsTable].Position =
-                this.BindingContext[formDataSet, dsTable].Count - 1;            
+            this.BindingContext[formDataSet, "Match"].Position =
+                this.BindingContext[formDataSet, "Match"].Count - 1;            
         }
         private void uC_Navigator_OnNext(object sender, EventArgs e)
         {
-            this.BindingContext[formDataSet, dsTable].Position += 1;
+            this.BindingContext[formDataSet, "Match"].Position += 1;
         }
 
         private void uC_Navigator_OnPrev(object sender, EventArgs e)
         {
-            this.BindingContext[formDataSet, dsTable].Position -= 1;
+            this.BindingContext[formDataSet, "Match"].Position -= 1;
         }
         private void BTN_Add_Click(object sender, EventArgs e)
         {
@@ -219,7 +218,7 @@ namespace The_Main_Project
                     orComm.Parameters.Add(oParamButsR);
                     orComm.Parameters.Add(oParamButsV);
                     orComm.ExecuteNonQuery();
-                    MessageBox.Show(" Le match à été ajouté");
+                    MessageBox.Show(" Le match a été ajouté");
 
                     LoadDataset();
                 }
@@ -256,7 +255,7 @@ namespace The_Main_Project
                     LoadDataset();
                     if (res > 0)
                     {
-                        MessageBox.Show(" Le match à été suprimé");
+                        MessageBox.Show(" Le match a été suprimé");
                     }
                     else
                     {
@@ -309,7 +308,7 @@ namespace The_Main_Project
                     orComm.Parameters.Add(oParamNo);
                     orComm.ExecuteNonQuery();
 
-                    MessageBox.Show(" Le match à été modifié");
+                    MessageBox.Show(" Le match a été modifié");
 
                     LoadDataset();
                 }
@@ -335,12 +334,12 @@ namespace The_Main_Project
                 case 02290:
                     // au lieu d'afficher violation de clé étrangère , on affiche ceci:
                     MessageBox.Show("Entrée invalide");
-                    break;
+                    break;                
                 case 01400:
-                    MessageBox.Show("Il y à des champs vides");
+                    MessageBox.Show("Il y a des champs vides");
                     break;
                 default: MessageBox.Show(Ex.Message.ToString());
-                    break;
+                    break;  
             }
         }
 
@@ -361,6 +360,6 @@ namespace The_Main_Project
             Form.conn = conn;
             Form.NoMatch = int.Parse(LB_No_Match.Text);
             Form.ShowDialog();
-        }
+        }     
     }
 }

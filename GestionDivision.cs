@@ -147,7 +147,7 @@ namespace The_Main_Project
                 orComm.Parameters.Add(oParamNomDiv);
                 orComm.Parameters.Add(oParamCreation);
                 orComm.ExecuteNonQuery();
-                MessageBox.Show("La Divsion " + Nom + " a été ajouté");
+                MessageBox.Show("La division " + Nom + " a été ajoutée");
 
                 LoadDataset();
             } 
@@ -176,7 +176,7 @@ namespace The_Main_Project
                     LoadDataset();
                     if (res > 0)
                     {
-                        MessageBox.Show("La Divsion " + Nom + " a été supprimé");
+                        MessageBox.Show("La division " + Nom + " a été supprimée");
                     }
                     else
                     {
@@ -213,7 +213,7 @@ namespace The_Main_Project
                 orComm.ExecuteNonQuery();
 
                 LoadDataset();
-                MessageBox.Show("La Divsion " + Nom + " a été modifié");
+                MessageBox.Show("La division " + Nom + " a été modifiée");
             } 
             catch (OracleException ex) 
             {
@@ -229,7 +229,8 @@ namespace The_Main_Project
                     MessageBox.Show("Une division porte déjà ce nom");
                     break;
                 case 02292:
-                    MessageBox.Show("La Division choisie n'est pas vide et ne peut donc pas être suprimer ou son nom ne peut être modifier");
+                    MessageBox.Show("La division choisie n'est pas vide: "+
+                        "on ne peut ni la suprimer, ni modifier son nom");
                     break;
                 case 01400:
                     MessageBox.Show("La division doit avoir un nom");

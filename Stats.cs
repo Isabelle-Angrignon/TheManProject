@@ -46,6 +46,10 @@ namespace The_Main_Project
                 DGV_Top5.DataSource = maSource;
                 ChangeColorMenu();
             }
+            catch (OracleException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
         private void ChangeColorMenu()
@@ -129,5 +133,7 @@ namespace The_Main_Project
             Form.conn = conn;
             Form.ShowDialog();
         }
+
+
     }
 }

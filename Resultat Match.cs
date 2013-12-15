@@ -69,7 +69,10 @@ namespace The_Main_Project
                 }
                 objRead.Close();
             }
-
+            catch (OracleException ex)
+            {
+                ErrorMessage(ex);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
@@ -117,6 +120,10 @@ namespace The_Main_Project
                     MessageBox.Show("Il n'y a pas de joueur entré dans l'équipe");
                 }
                 objRead.Close();
+            }
+            catch (OracleException ex)
+            {
+                ErrorMessage(ex);
             }
             catch (Exception ex)
             {
@@ -245,6 +252,10 @@ namespace The_Main_Project
                 BindingSource maSource = new BindingSource(formDataSet, "Receveur");
                 DGV_ListeJoueur_R.DataSource = maSource;                
             }
+            catch (OracleException ex)
+            {
+                ErrorMessage(ex);
+            }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
        
@@ -270,6 +281,10 @@ namespace The_Main_Project
 
                 BindingSource maSource = new BindingSource(formDataSet, "Visiteur");
                 DGV_ListeJoueur_V.DataSource = maSource;
+            }
+            catch (OracleException ex)
+            {
+                ErrorMessage(ex);
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         } 
@@ -303,7 +318,7 @@ namespace The_Main_Project
                 orComm.Parameters.Add(oParamPasses);
                 orComm.Parameters.Add(oParamPunit);                
                 orComm.ExecuteNonQuery();
-                MessageBox.Show(" Le joueur à été ajouté au match");
+                MessageBox.Show("Le joueur a été ajouté au match");
 
                 LoadDatasetR();
             }
@@ -374,7 +389,7 @@ namespace The_Main_Project
                 orComm.Parameters.Add(oParamJoueur);                
                 orComm.ExecuteNonQuery();
 
-                MessageBox.Show(" La participation au match à été modifié");
+                MessageBox.Show("La participation au match a été modifiée");
                 LoadDatasetR();
             }
             catch (OracleException ex)
@@ -396,7 +411,7 @@ namespace The_Main_Project
                     MessageBox.Show("Entrée invalide");
                     break;
                 case 01400:
-                    MessageBox.Show("Il y à des champs vides");
+                    MessageBox.Show("Il y a des champs vides");
                     break;
                 default: MessageBox.Show(Ex.Message.ToString());
                     break;
@@ -429,7 +444,7 @@ namespace The_Main_Project
                 orComm.Parameters.Add(oParamPasses);
                 orComm.Parameters.Add(oParamPunit);
                 orComm.ExecuteNonQuery();
-                MessageBox.Show(" Le joueur à été ajouté au match");
+                MessageBox.Show(" Le joueur a été ajouté au match");
 
                 LoadDatasetV();
             }
@@ -500,7 +515,7 @@ namespace The_Main_Project
                 orComm.Parameters.Add(oParamJoueur);
                 orComm.ExecuteNonQuery();
 
-                MessageBox.Show(" La participation au match à été modifié");
+                MessageBox.Show(" La participation au match a été modifiée");
                 LoadDatasetV();
             }
             catch (OracleException ex)

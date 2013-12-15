@@ -248,7 +248,7 @@ namespace The_Main_Project
                 orComm.Parameters.Add(oParamMail);
                 orComm.Parameters.Add(oParamEqu);
                 orComm.ExecuteNonQuery();
-                MessageBox.Show(" Le joueur " + Nom + " a été ajouter");
+                MessageBox.Show(" Le joueur " + Nom + " a été ajouté");
 
                 LoadDataset();
             }
@@ -266,7 +266,7 @@ namespace The_Main_Project
         {
             try
             {
-                if (MessageBox.Show("Voulez-vous vraiment supprimer cet enregistrement?", "Attention", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                if (MessageBox.Show("Voulez-vous vraiment supprimer ce joueur?", "Attention", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 {
                     string sqlDelete = "DELETE FROM Joueurs WHERE NoJoueur = :NO";
                     string Nom = TB_Prenom_J.Text + " " + TB_Nom_J.Text;
@@ -280,7 +280,7 @@ namespace The_Main_Project
                     LoadDataset();
                     if (res > 0)
                     {
-                        MessageBox.Show(" Le joueur " + Nom + " a été suprimer");
+                        MessageBox.Show(" Le joueur " + Nom + " a été suprimé");
                     }
                     else
                     {
@@ -331,7 +331,7 @@ namespace The_Main_Project
                 orComm.Parameters.Add(oParamEqu);
                 orComm.Parameters.Add(oParamNo);
                 orComm.ExecuteNonQuery();
-                MessageBox.Show(" Le joueur " + Nom + " a été modifier");
+                MessageBox.Show(" Le joueur " + Nom + " a été modifié");
 
                 LoadDataset();
             }
@@ -361,15 +361,16 @@ namespace The_Main_Project
                     // au lieu d'afficher violation de clé étrangère , on affiche ceci:
                     MessageBox.Show("Entrée invalide");
                     break;
+                case 02292:
+                    MessageBox.Show("Le joueur choisi est inscrit dans au moins un match: " +
+                        "on ne peut le suprimer.");
+                    break;
                 case 01400:
-                    MessageBox.Show("Il y a des champs vide");
+                    MessageBox.Show("Il y a des champs vides");
                     break;
                 default: MessageBox.Show(Ex.Message.ToString());
                     break;
-
             }
         }
-
-
     }
 }
