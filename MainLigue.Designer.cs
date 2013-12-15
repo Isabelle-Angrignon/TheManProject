@@ -52,6 +52,7 @@
             this.CMS_Match_Modifier = new System.Windows.Forms.ToolStripMenuItem();
             this.CMS_Team = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CMS_Team_Afficher = new System.Windows.Forms.ToolStripMenuItem();
+            this.afficherJoueursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.FB_Match = new FlashButton.FlashButton();
             this.FB_Top5 = new FlashButton.FlashButton();
@@ -61,7 +62,6 @@
             this.PBX_Logo = new System.Windows.Forms.PictureBox();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.FB_Close = new FlashButton.FlashButton();
-            this.afficherJoueursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Team)).BeginInit();
             this.MS_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Match)).BeginInit();
@@ -89,7 +89,7 @@
             this.DGV_Team.ReadOnly = true;
             this.DGV_Team.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DGV_Team.RowHeadersVisible = false;
-            this.DGV_Team.Size = new System.Drawing.Size(156, 150);
+            this.DGV_Team.Size = new System.Drawing.Size(191, 213);
             this.DGV_Team.TabIndex = 1;
             this.DGV_Team.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Team_CellMouseUp);
             // 
@@ -102,7 +102,7 @@
             this.TSMI_Aide});
             this.MS_Main.Location = new System.Drawing.Point(0, 0);
             this.MS_Main.Name = "MS_Main";
-            this.MS_Main.Size = new System.Drawing.Size(807, 24);
+            this.MS_Main.Size = new System.Drawing.Size(842, 24);
             this.MS_Main.TabIndex = 4;
             this.MS_Main.Text = "menuStrip1";
             // 
@@ -233,7 +233,7 @@
             this.DGV_Match.Name = "DGV_Match";
             this.DGV_Match.ReadOnly = true;
             this.DGV_Match.RowHeadersVisible = false;
-            this.DGV_Match.Size = new System.Drawing.Size(482, 150);
+            this.DGV_Match.Size = new System.Drawing.Size(482, 213);
             this.DGV_Match.TabIndex = 7;
             this.DGV_Match.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Match_CellMouseUp);
             // 
@@ -245,7 +245,7 @@
             this.CBX_Division.FormattingEnabled = true;
             this.CBX_Division.Location = new System.Drawing.Point(639, 119);
             this.CBX_Division.Name = "CBX_Division";
-            this.CBX_Division.Size = new System.Drawing.Size(156, 21);
+            this.CBX_Division.Size = new System.Drawing.Size(191, 21);
             this.CBX_Division.TabIndex = 8;
             this.CBX_Division.SelectedIndexChanged += new System.EventHandler(this.CBX_Division_SelectedIndexChanged);
             // 
@@ -285,6 +285,13 @@
             this.CMS_Team_Afficher.Size = new System.Drawing.Size(171, 22);
             this.CMS_Team_Afficher.Text = "Afficher Équipe";
             this.CMS_Team_Afficher.Click += new System.EventHandler(this.CMS_Team_Afficher_Click);
+            // 
+            // afficherJoueursToolStripMenuItem
+            // 
+            this.afficherJoueursToolStripMenuItem.Name = "afficherJoueursToolStripMenuItem";
+            this.afficherJoueursToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.afficherJoueursToolStripMenuItem.Text = "Afficher Joueurs ...";
+            this.afficherJoueursToolStripMenuItem.Click += new System.EventHandler(this.afficherJoueursToolStripMenuItem_Click);
             // 
             // FB_Match
             // 
@@ -384,24 +391,17 @@
             this.FB_Close.ImageDisable = null;
             this.FB_Close.ImageNeutral = global::The_Main_Project.Properties.Resources.Porte;
             this.FB_Close.ImageOver = global::The_Main_Project.Properties.Resources.PorteOver;
-            this.FB_Close.Location = new System.Drawing.Point(755, 44);
+            this.FB_Close.Location = new System.Drawing.Point(790, 44);
             this.FB_Close.Name = "FB_Close";
             this.FB_Close.Size = new System.Drawing.Size(40, 46);
             this.FB_Close.TabIndex = 40;
             this.FB_Close.Click += new System.EventHandler(this.FB_Close_Click);
             // 
-            // afficherJoueursToolStripMenuItem
-            // 
-            this.afficherJoueursToolStripMenuItem.Name = "afficherJoueursToolStripMenuItem";
-            this.afficherJoueursToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.afficherJoueursToolStripMenuItem.Text = "Afficher Joueurs ...";
-            this.afficherJoueursToolStripMenuItem.Click += new System.EventHandler(this.afficherJoueursToolStripMenuItem_Click);
-            // 
             // Form_League
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(807, 308);
+            this.ClientSize = new System.Drawing.Size(842, 371);
             this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.FB_Match);
             this.Controls.Add(this.FB_Top5);

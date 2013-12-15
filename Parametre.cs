@@ -18,18 +18,24 @@ namespace The_Main_Project
         }
         public Form_League Form;
         int Choix = 0;
-
+        
         private  Color D_BackColor = SystemColors.ButtonFace;
         private  Color D_PairRow = Color.White;
         private  Color D_Label = Color.Black;
         private  Color D_ImpairRow = Color.Gainsboro;
         private  Color D_Menu_Back = SystemColors.Menu;
 
-        private Color S_BackColor = Color.FromArgb(33,33,33);
+        private Color C_BackColor = Color.FromArgb(131, 170, 234);//Bleu pâle
+        private Color C_PairRow = Color.FromArgb(255, 61, 61);//Rouge pâle 
+        private Color C_Label = Color.FromArgb(0,47,124);//Bleu foncé
+        private Color C_ImpairRow = Color.White;
+        private Color C_Menu_Back = Color.FromArgb(255, 61, 61);//Bleu pâle
+
+        private Color S_BackColor = Color.FromArgb(77, 77, 77);//Gris foncé
         private Color S_PairRow = Color.LightGray;
         private Color S_Label = Color.White;
         private Color S_ImpairRow = Color.Gray;
-        private Color S_Menu_Back = Color.FromArgb(33,33,33);
+        private Color S_Menu_Back = Color.FromArgb(77, 77, 77);//Gris foncé
 
         private void BTN_Ok_Click(object sender, EventArgs e)
         {
@@ -69,7 +75,11 @@ namespace The_Main_Project
             }
             if (Choix == 1)
             {
-
+                Properties.Settings.Default.Label_Color = C_Label;
+                Properties.Settings.Default.Back_Color = C_BackColor;
+                Properties.Settings.Default.DGV_Impair = C_ImpairRow;
+                Properties.Settings.Default.DGV_Pair = C_PairRow;
+                Properties.Settings.Default.Menu_Back = C_Menu_Back;
             }
             if (Choix == 2)
             {

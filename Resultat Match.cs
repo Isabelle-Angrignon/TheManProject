@@ -257,7 +257,7 @@ namespace The_Main_Project
                     "tempspunition as pen from PRÉSENCESMATCHS P inner join joueurs J " +
                     "on P.nojoueur = J.nojoueur where nomatch = " + LB_NoMatch.Text +
                     " AND P.nojoueur in (select nojoueur FROM Joueurs where noméquipe in " +
-                    "(select receveur from matchs where Visiteur = '" + LB_NomEquipe_V.Text + "'))";
+                    "(select visiteur from matchs where Visiteur = '" + LB_NomEquipe_V.Text + "'))";
 
                 Oraliste = new OracleDataAdapter(sqlShow, conn);
 

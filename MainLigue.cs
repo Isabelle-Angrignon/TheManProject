@@ -17,7 +17,8 @@ namespace The_Main_Project
         private DataSet mainDataSet = new DataSet();
 
         //Est utilisé dans deux méthodes...
-        string sqlClassement = "select nomÉquipe as Équipe, sum(Nbpoints)as total from classement  group by nomÉquipe order by total desc";
+        string sqlClassement = "select nomÉquipe as Équipe, sum(Nbpoints)as total from classement"+
+            "  group by nomÉquipe order by total desc";
         
         public Form_League()
         {

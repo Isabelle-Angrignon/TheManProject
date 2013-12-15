@@ -20,7 +20,7 @@ namespace The_Main_Project
 
         public OracleConnection conn = new OracleConnection();
         private DataSet formDataSet = new DataSet();
-        private const string dsTable = "Table";
+        private const string dsTable = "Match";
         OracleDataAdapter Oraliste;
         public int NoMatch = -1;
 
@@ -127,14 +127,14 @@ namespace The_Main_Project
                 }
                 
                 Oraliste = new OracleDataAdapter(sqlShow, conn);
-                if (formDataSet.Tables.Contains(dsTable))
+                if (formDataSet.Tables.Contains("Match"))
                 {
-                    formDataSet.Tables[dsTable].Clear();
+                    formDataSet.Tables["Match"].Clear();
                 }
-                Oraliste.Fill(formDataSet, dsTable);
+                Oraliste.Fill(formDataSet, "Match");
                 Oraliste.Dispose();
 
-                BindingSource maSource = new BindingSource(formDataSet, dsTable);
+                BindingSource maSource = new BindingSource(formDataSet, "Match");
                 Vider();
                 Lister();               
             }
@@ -142,13 +142,13 @@ namespace The_Main_Project
         }
         private void Lister()
         {
-            LB_No_Match.DataBindings.Add("Text", formDataSet, "Table.nomatch");
-            DTP_Date.DataBindings.Add("Text", formDataSet, "Table.datematch");
-            TB_Lieu.DataBindings.Add("Text", formDataSet, "Table.lieu");
-            TB_Receveur.DataBindings.Add("Text", formDataSet, "Table.receveur");
-            TB_Visiteur.DataBindings.Add("Text", formDataSet, "Table.visiteur");
-            TB_R_Pts.DataBindings.Add("Text", formDataSet, "Table.butsreceveur");
-            TB_V_Pts.DataBindings.Add("Text", formDataSet, "Table.butsvisiteur");
+            LB_No_Match.DataBindings.Add("Text", formDataSet, "Match.nomatch");
+            DTP_Date.DataBindings.Add("Text", formDataSet, "Match.datematch");
+            TB_Lieu.DataBindings.Add("Text", formDataSet, "Match.lieu");
+            TB_Receveur.DataBindings.Add("Text", formDataSet, "Match.receveur");
+            TB_Visiteur.DataBindings.Add("Text", formDataSet, "Match.visiteur");
+            TB_R_Pts.DataBindings.Add("Text", formDataSet, "Match.butsreceveur");
+            TB_V_Pts.DataBindings.Add("Text", formDataSet, "Match.butsvisiteur");
         }
         private void Vider()
         {
@@ -190,7 +190,7 @@ namespace The_Main_Project
         }
         private void BTN_Add_Click(object sender, EventArgs e)
         {
-            if (TB_Receveur.Text == TB_Visiteur.Text)
+            if (TB_Receveur.Text != TB_Visiteur.Text)
             {
                 try
                 {
@@ -276,9 +276,8 @@ namespace The_Main_Project
 
         private void BTN_Edit_Click(object sender, EventArgs e)
         {
-            if (TB_Receveur.Text == TB_Visiteur.Text)
+            if (TB_Receveur.Text != TB_Visiteur.Text)
             {
-
                 try
                 {
                     string sqlUpdate = "UPDATE matchs SET Receveur = :RECEV, Visiteur = :VISIT, datematch = :DATEMATCH," +
@@ -361,10 +360,7 @@ namespace The_Main_Project
             Resultat_Match Form = new Resultat_Match();
             Form.conn = conn;
             Form.NoMatch = int.Parse(LB_No_Match.Text);
-            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                ///envoyer commit?
-            }
+            Form.ShowDialog();
         }
     }
 }
