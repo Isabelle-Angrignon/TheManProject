@@ -499,6 +499,7 @@
             this.Controls.Add(this.label1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MinimumSize = new System.Drawing.Size(821, 471);
             this.Name = "Resultat_Match";
             this.Text = "Participation au match";
             this.Load += new System.EventHandler(this.Resultat_Match_Load);

@@ -127,6 +127,7 @@
             this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.BTN_Appliquer);
             this.Controls.Add(this.BG_Parametre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Parametre";
             this.Text = "Thèmes";
             this.BG_Parametre.ResumeLayout(false);

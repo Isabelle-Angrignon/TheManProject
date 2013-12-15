@@ -136,6 +136,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "A_Propos";
             this.Text = "À propos";
             this.Load += new System.EventHandler(this.A_Propos_Load);

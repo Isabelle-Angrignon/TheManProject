@@ -90,7 +90,7 @@
             this.gestionJoueurToolStripMenuItem,
             this.afficherStatToolStripMenuItem});
             this.CMS.Name = "CMS";
-            this.CMS.Size = new System.Drawing.Size(180, 70);
+            this.CMS.Size = new System.Drawing.Size(180, 48);
             // 
             // gestionJoueurToolStripMenuItem
             // 
@@ -114,6 +114,8 @@
             this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.DGV_Top5);
             this.Controls.Add(this.LB_Top5);
+            this.MaximumSize = new System.Drawing.Size(661, 800);
+            this.MinimumSize = new System.Drawing.Size(661, 405);
             this.Name = "Stats";
             this.Text = "Statistiques des joueurs";
             this.Load += new System.EventHandler(this.Stats_Load);

@@ -44,9 +44,9 @@
             this.LB_Top5.AutoSize = true;
             this.LB_Top5.Location = new System.Drawing.Point(12, 9);
             this.LB_Top5.Name = "LB_Top5";
-            this.LB_Top5.Size = new System.Drawing.Size(139, 13);
+            this.LB_Top5.Size = new System.Drawing.Size(148, 13);
             this.LB_Top5.TabIndex = 4;
-            this.LB_Top5.Text = "Les meilleurs joueurs sont ...";
+            this.LB_Top5.Text = "Les 5 meilleurs joueurs sont ...";
             // 
             // DGV_Top5
             // 
@@ -64,7 +64,7 @@
             this.DGV_Top5.Name = "DGV_Top5";
             this.DGV_Top5.ReadOnly = true;
             this.DGV_Top5.RowHeadersVisible = false;
-            this.DGV_Top5.Size = new System.Drawing.Size(531, 144);
+            this.DGV_Top5.Size = new System.Drawing.Size(531, 164);
             this.DGV_Top5.TabIndex = 5;
             this.DGV_Top5.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Top5_CellMouseUp);
             // 
@@ -78,7 +78,7 @@
             this.FB_Close.ImageDisable = null;
             this.FB_Close.ImageNeutral = global::The_Main_Project.Properties.Resources.Porte;
             this.FB_Close.ImageOver = global::The_Main_Project.Properties.Resources.PorteOver;
-            this.FB_Close.Location = new System.Drawing.Point(491, 175);
+            this.FB_Close.Location = new System.Drawing.Point(491, 195);
             this.FB_Close.Name = "FB_Close";
             this.FB_Close.Size = new System.Drawing.Size(55, 62);
             this.FB_Close.TabIndex = 26;
@@ -90,7 +90,7 @@
             this.gestionJoueurToolStripMenuItem,
             this.afficherStatToolStripMenuItem});
             this.CMS.Name = "CMS";
-            this.CMS.Size = new System.Drawing.Size(180, 70);
+            this.CMS.Size = new System.Drawing.Size(180, 48);
             // 
             // gestionJoueurToolStripMenuItem
             // 
@@ -110,10 +110,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 237);
+            this.ClientSize = new System.Drawing.Size(558, 257);
             this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.DGV_Top5);
             this.Controls.Add(this.LB_Top5);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximumSize = new System.Drawing.Size(574, 500);
+            this.MinimumSize = new System.Drawing.Size(574, 39);
             this.Name = "Top5";
             this.Text = "Top 5 des joueurs de la ligue";
             this.Load += new System.EventHandler(this.Top5_Load);

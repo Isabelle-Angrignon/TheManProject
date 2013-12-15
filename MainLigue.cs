@@ -396,7 +396,6 @@ namespace The_Main_Project
             Form.NomEquipe = NomEquipe;
             Form.conn = conn;
             Form.ShowDialog();
-
         }
         #endregion
 

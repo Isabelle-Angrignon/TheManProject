@@ -267,6 +267,7 @@
             this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.BTN_MOD);
             this.Controls.Add(this.FB_Fiche_Resultat);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "GestionMatch";
             this.Text = "Gestion match";
             this.Load += new System.EventHandler(this.GestionMatch_Load);

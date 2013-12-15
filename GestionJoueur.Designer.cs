@@ -265,6 +265,7 @@
             this.Controls.Add(this.LB_No_J);
             this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.Caractérstique);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "GestionJoueur";
             this.Text = "Gestion joueur";
             this.Load += new System.EventHandler(this.GestionJoueur_Load);

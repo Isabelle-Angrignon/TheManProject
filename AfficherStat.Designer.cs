@@ -285,6 +285,7 @@
             this.ClientSize = new System.Drawing.Size(280, 300);
             this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.Caractérstique);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "AfficherStat";
             this.Text = "Fiche du joueur";
             this.Load += new System.EventHandler(this.AfficherStat_Load_1);

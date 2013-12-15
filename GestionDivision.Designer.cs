@@ -154,9 +154,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(246, 239);
             this.Controls.Add(this.FB_Close);
             this.Controls.Add(this.Caractérstique);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "GestionDivision";
             this.Text = "Gestion division";
             this.Load += new System.EventHandler(this.GestionDivision_Load);
