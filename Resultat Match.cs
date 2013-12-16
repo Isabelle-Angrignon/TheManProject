@@ -288,6 +288,7 @@ namespace The_Main_Project
                 ErrorMessage(ex);
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
+            ChangeColorDGV();
         }
 
         private void LoadDatasetV()//pour le DGV de l'équipe qui visite.
@@ -318,6 +319,7 @@ namespace The_Main_Project
                 ErrorMessage(ex);
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
+            ChangeColorDGV();
         }
         ///////////////////////////////
         // boutons  + - mod

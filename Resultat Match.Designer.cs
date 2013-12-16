@@ -107,7 +107,7 @@
             // 
             this.LB_NomEquipe_R.AutoSize = true;
             this.LB_NomEquipe_R.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_NomEquipe_R.Location = new System.Drawing.Point(286, 16);
+            this.LB_NomEquipe_R.Location = new System.Drawing.Point(286, 12);
             this.LB_NomEquipe_R.Name = "LB_NomEquipe_R";
             this.LB_NomEquipe_R.Size = new System.Drawing.Size(77, 20);
             this.LB_NomEquipe_R.TabIndex = 7;

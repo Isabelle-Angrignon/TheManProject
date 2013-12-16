@@ -24,22 +24,6 @@ namespace The_Main_Project
         public string NomEquipe = "";
         OracleDataAdapter Oraliste;
         string clePrimaire;
-        private byte[] logo_;
-        public byte[] logo 
-        {
-            get { return logo_; }
-            set 
-            {
-                logo_ = value;
-                if (logo_ != null)
-                {
-                    using (MemoryStream ms = new MemoryStream(logo_)) 
-                    {
-                        PBX_Logo.Image = Image.FromStream(ms);
-                    }
-                }            
-            }
-        }
 
         private void FB_Close_Click(object sender, EventArgs e)
         {
@@ -263,9 +247,7 @@ namespace The_Main_Project
                 byte[] buffer1 = imageToByteArray(PBX_Logo.Image);
                 //Mettre le byte dans les param..
                 oParamLogo.Value = buffer1;
-                oParamLogo.Value = buffer1;
-
-                //Mettre le byte dans logo;
+                                
                 oParamVille.Value = TB_Ville.Text;
                 oParamDiv.Value = TB_DivisionEquipe.Text;
                 oParamNom2.Value = clePrimaire;
@@ -303,14 +285,9 @@ namespace The_Main_Project
 
             if (file.ShowDialog() == DialogResult.OK)
             {
-                logo = File.ReadAllBytes(file.FileName);
                 PBX_Logo.Image = Image.FromFile(file.FileName);
                 PBX_Logo.ImageLocation = file.FileName;
-            }
-            else
-            {
-                logo = null;
-            }
+            }  
         }
 
         private void AutoCompleteDivision()

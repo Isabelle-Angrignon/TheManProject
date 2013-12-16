@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
+using System.IO;
 
 namespace The_Main_Project
 {
@@ -15,34 +16,21 @@ namespace The_Main_Project
     {
         private OracleConnection conn = new OracleConnection();
         private DataSet mainDataSet = new DataSet();
-
+       
         //Est utilisé dans deux méthodes...
         string sqlClassement = "select nomÉquipe as Équipe, sum(Nbpoints)as total from classement"+
             "  group by nomÉquipe order by total desc";
-        
+
         public Form_League()
         {
             InitializeComponent();
-        }
-
-        private void FLB_Division_Click(object sender, EventArgs e)
-        {
-            OuvertureDivision();
-        }
-        private void OuvertureDivision()
-        {
-            GestionDivision Form = new GestionDivision();
-            Form.conn = conn;
-            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                UpdateComboBox();
-            }
         }
 
         private void Form_League_Load(object sender, EventArgs e)
         {
             Connect();
             Mainload();
+            LoadLogo();
         }
         private void Mainload()
         {
@@ -56,8 +44,7 @@ namespace The_Main_Project
         public void ChangeColor()
         {
             ChangeColorDGV();
-            ChangeColorMenu();
-            
+            ChangeColorMenu();            
         }
         //Affecte les settings aux contrôle de la fenêtre sauf DGV
         private void ChangeColorMenu()
@@ -197,12 +184,7 @@ namespace The_Main_Project
 
                 BindingSource maSource = new BindingSource(mainDataSet, "Classement_équipes");
 
-                DGV_Team.DataSource = maSource;
-                //on selected item
-                //Vider();
-                //Lister();
-                //UpdateLogo();
-               // PBX_Logo.DataBindings.Add("Image", mainDataSet, "Classement_équipes.logo", true);
+                DGV_Team.DataSource = maSource;                
             }
             catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         }
@@ -213,7 +195,7 @@ namespace The_Main_Project
             try
             {
                 int LaLigne = DGV_Team.CurrentCellAddress.Y;
-                int LaColonne = 1;
+                int LaColonne = 0;
                 string NomEquipe = DGV_Team.Rows[LaLigne].Cells[LaColonne].Value.ToString();
 
                 string sqlLogo = "Select Logo from Équipes where noméquipe = '" + NomEquipe + "'";
@@ -226,71 +208,39 @@ namespace The_Main_Project
                 }
                 Oraliste.Fill(mainDataSet, "Logos_équipes");
                 Oraliste.Dispose();
-
-                BindingSource maSource = new BindingSource(mainDataSet, "Logos_équipes");
-                               
-                PBX_Logo.DataBindings.Add("Image", mainDataSet, "Logos_équipes.logo", true);
+               
+                BindingSource maSource = new BindingSource(mainDataSet, "Logos_équipes");                    
+               
+                Vider();
+                Lister();
             }
-            catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
-        //    ////////
-        //    if (logo_ != null)
-        //        {
-        //            using (MemoryStream ms = new MemoryStream(logo_)) 
-        //            {
-        //                PBX_Logo.Image = Image.FromStream(ms);
-        //            }
-        //        }    
-        }
-
-        private void UpdateLogo()
+            catch (Exception se) { MessageBox.Show(se.Message.ToString()); }          
+        }       
+        private void Vider()
         {
-            int LaLigne = DGV_Team.CurrentCellAddress.Y;
-            int LaColonne = 1;
-            string NomEquipe = DGV_Team.Rows[LaLigne].Cells[LaColonne].Value.ToString();
-
-            //string sqlLogo = "SELECT logo FROM équipes where noméquipe = '" +
-            
-            //    DGV_Team.SelectedCells.ToString() + "'";
-            ////dataset
-            //OracleDataAdapter Oraliste = new OracleDataAdapter(dsLogo, conn);
-
-            //if (mainDataSet.Tables.Contains(dsLogo))
-            //{
-            //    mainDataSet.Tables[dsLogo].Clear();
-            //}
-            //Oraliste.Fill(mainDataSet, dsLogo);
-            //Oraliste.Dispose();
-
-            //BindingSource maSource = new BindingSource(mainDataSet, dsLogo);
-
-            //DGV_Team.DataSource = maSource;
-            ////on selected item
-            //Vider();
-            //Lister();
-                
-
-         //   OracleCommand CMD = new OracleCommand(sqlLogo, conn);
-         //   CMD.CommandType = CommandType.Text;
-         //   orLigue = CMD.ExecuteReader();
-         //   while (orLigue.Read())
-         //   {
-         ////      PBX_Logo.Image.Clone(     //(orLigue.GetString(0));
-         //   }
-            //récupérer le nom d'équipe du selected row du dgv
-            //trouver ligne équivalente dans le data reader
-            //associer le logo de cette ligne au CBX
+            PBX_Logo.DataBindings.Clear();
+            PBX_Logo.Image = null;
         }
-        //private void Vider()
-        //{
-        //    PBX_Logo.DataBindings.Clear();
-        //    PBX_Logo.Image = null;
-        //}
-        //private void Lister()
-        //{
-        //    PBX_Logo.DataBindings.Add("Image", mainDataSet, "Classement_équipes.logo", true);
-        //}
+        private void Lister()
+        {
+            PBX_Logo.DataBindings.Add("Image", mainDataSet, "Logos_équipes.logo", true);
+        }
 
         #region "Appel d'ouverture des fenêtres avec bouton flash et barre d'outil"
+
+        private void FLB_Division_Click(object sender, EventArgs e)
+        {
+            OuvertureDivision();
+        }
+        private void OuvertureDivision()
+        {
+            GestionDivision Form = new GestionDivision();
+            Form.conn = conn;
+            if (Form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                UpdateComboBox();
+            }
+        }
 
         private void OuvertureTop5()
         {
@@ -423,6 +373,7 @@ namespace The_Main_Project
                 FillDGVEquipe(sqlEquipeParDiv);
             }
             ChangeColorDGV();
+            LoadLogo();
         }
 
         private void FB_Close_Click(object sender, EventArgs e)
@@ -485,7 +436,7 @@ namespace The_Main_Project
         private void CMS_Team_Afficher_Click(object sender, EventArgs e)
         {
             int LaLigne = DGV_Team.CurrentCellAddress.Y;
-            int LaColonne = 1;
+            int LaColonne = 0;
             string NomEquipe = DGV_Team.Rows[LaLigne].Cells[LaColonne].Value.ToString();
             GestionEquipe Form = new GestionEquipe();
             Form.NomEquipe = NomEquipe;
@@ -505,6 +456,14 @@ namespace The_Main_Project
         private void DGV_Team_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             ChangeColorDGV();
+        }
+
+        private void DGV_Team_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                LoadLogo();
+            }
         }
     }   
 }

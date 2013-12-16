@@ -91,6 +91,7 @@
             this.DGV_Team.RowHeadersVisible = false;
             this.DGV_Team.Size = new System.Drawing.Size(191, 213);
             this.DGV_Team.TabIndex = 1;
+            this.DGV_Team.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Team_CellContentClick);
             this.DGV_Team.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Team_CellMouseUp);
             this.DGV_Team.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Team_ColumnHeaderMouseClick);
             // 
