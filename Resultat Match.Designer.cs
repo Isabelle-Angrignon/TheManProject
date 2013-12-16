@@ -294,6 +294,7 @@
             this.DGV_ListeJoueur_R.RowHeadersVisible = false;
             this.DGV_ListeJoueur_R.Size = new System.Drawing.Size(369, 150);
             this.DGV_ListeJoueur_R.TabIndex = 21;
+            this.DGV_ListeJoueur_R.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_ListeJoueur_R_ColumnHeaderMouseClick);
             // 
             // groupBox2
             // 
@@ -481,6 +482,7 @@
             this.DGV_ListeJoueur_V.RowHeadersVisible = false;
             this.DGV_ListeJoueur_V.Size = new System.Drawing.Size(369, 150);
             this.DGV_ListeJoueur_V.TabIndex = 29;
+            this.DGV_ListeJoueur_V.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_ListeJoueur_V_ColumnHeaderMouseClick);
             // 
             // Resultat_Match
             // 

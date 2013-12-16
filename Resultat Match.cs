@@ -619,5 +619,15 @@ namespace The_Main_Project
                 }
             }
         }
+
+        private void DGV_ListeJoueur_R_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            ChangeColorDGV();
+        }
+
+        private void DGV_ListeJoueur_V_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            ChangeColorDGV();
+        }
     }
 }

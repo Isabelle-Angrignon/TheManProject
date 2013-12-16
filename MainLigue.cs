@@ -209,26 +209,29 @@ namespace The_Main_Project
 
         //afficher logo de l'équipe sélectionnée du DGV dans la picture box
         private void LoadLogo()
-        {
-        //    int LaLigne = DGV_Team.CurrentCellAddress.Y;
-        //    int LaColonne = 1;
-        //    string NomEquipe = DGV_Team.Rows[LaLigne].Cells[LaColonne].Value.ToString();
-        //    string sqlLogo = "Select Logo from Équipes where noméquipe = '" + NomEquipe + "'";
-        //    OracleCommand oraCmdProg = new OracleCommand(sqlLogo, conn);
-        //    oraCmdProg.CommandType = CommandType.Text;
+        {            
+            try
+            {
+                int LaLigne = DGV_Team.CurrentCellAddress.Y;
+                int LaColonne = 1;
+                string NomEquipe = DGV_Team.Rows[LaLigne].Cells[LaColonne].Value.ToString();
 
-        //    OracleDataReader objRead = oraCmdProg.ExecuteReader();
+                string sqlLogo = "Select Logo from Équipes where noméquipe = '" + NomEquipe + "'";
 
-        //    while (objRead.Read())
-        //    {
-        //        byte[] logo = objRead.GetByte(0);
-        //    }  
-        //    objRead.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message.ToString());
-        //    } 
+                OracleDataAdapter Oraliste = new OracleDataAdapter(sqlLogo, conn);
+
+                if (mainDataSet.Tables.Contains("Logos_équipes"))
+                {
+                    mainDataSet.Tables["Logos_équipes"].Clear();
+                }
+                Oraliste.Fill(mainDataSet, "Logos_équipes");
+                Oraliste.Dispose();
+
+                BindingSource maSource = new BindingSource(mainDataSet, "Logos_équipes");
+                               
+                PBX_Logo.DataBindings.Add("Image", mainDataSet, "Logos_équipes.logo", true);
+            }
+            catch (Exception se) { MessageBox.Show(se.Message.ToString()); }
         //    ////////
         //    if (logo_ != null)
         //        {
@@ -241,6 +244,10 @@ namespace The_Main_Project
 
         private void UpdateLogo()
         {
+            int LaLigne = DGV_Team.CurrentCellAddress.Y;
+            int LaColonne = 1;
+            string NomEquipe = DGV_Team.Rows[LaLigne].Cells[LaColonne].Value.ToString();
+
             //string sqlLogo = "SELECT logo FROM équipes where noméquipe = '" +
             
             //    DGV_Team.SelectedCells.ToString() + "'";
@@ -415,6 +422,7 @@ namespace The_Main_Project
                     " nomdivision = '" + CBX_Division.SelectedItem.ToString() + "') order by total desc" ;
                 FillDGVEquipe(sqlEquipeParDiv);
             }
+            ChangeColorDGV();
         }
 
         private void FB_Close_Click(object sender, EventArgs e)
@@ -488,5 +496,15 @@ namespace The_Main_Project
             }
         }
         #endregion        
+
+        private void DGV_Match_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            ChangeColorDGV();
+        }
+
+        private void DGV_Team_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            ChangeColorDGV();
+        }
     }   
 }

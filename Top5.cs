@@ -130,6 +130,11 @@ namespace The_Main_Project
             }
         }
 
+        private void DGV_Top5_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            ChangeColorDGV();
+        }
+
         
     }
 }

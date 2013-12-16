@@ -92,6 +92,7 @@
             this.DGV_Team.Size = new System.Drawing.Size(191, 213);
             this.DGV_Team.TabIndex = 1;
             this.DGV_Team.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Team_CellMouseUp);
+            this.DGV_Team.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Team_ColumnHeaderMouseClick);
             // 
             // MS_Main
             // 
@@ -163,20 +164,20 @@
             // 
             this.divisonToolStripMenuItem.Enabled = false;
             this.divisonToolStripMenuItem.Name = "divisonToolStripMenuItem";
-            this.divisonToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.divisonToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.divisonToolStripMenuItem.Text = "Divison...";
             // 
             // équipeToolStripMenuItem1
             // 
             this.équipeToolStripMenuItem1.Enabled = false;
             this.équipeToolStripMenuItem1.Name = "équipeToolStripMenuItem1";
-            this.équipeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.équipeToolStripMenuItem1.Size = new System.Drawing.Size(123, 22);
             this.équipeToolStripMenuItem1.Text = "Équipe...";
             // 
             // TSMI_Stats_Joueur
             // 
             this.TSMI_Stats_Joueur.Name = "TSMI_Stats_Joueur";
-            this.TSMI_Stats_Joueur.Size = new System.Drawing.Size(152, 22);
+            this.TSMI_Stats_Joueur.Size = new System.Drawing.Size(123, 22);
             this.TSMI_Stats_Joueur.Text = "Joueurs...";
             this.TSMI_Stats_Joueur.Click += new System.EventHandler(this.TSMI_Stats_Joueur_Click);
             // 
@@ -191,7 +192,7 @@
             // TSMI_Themes
             // 
             this.TSMI_Themes.Name = "TSMI_Themes";
-            this.TSMI_Themes.Size = new System.Drawing.Size(152, 22);
+            this.TSMI_Themes.Size = new System.Drawing.Size(125, 22);
             this.TSMI_Themes.Text = "Thèmes...";
             this.TSMI_Themes.Click += new System.EventHandler(this.TSMI_Themes_Click);
             // 
@@ -208,13 +209,13 @@
             // 
             this.aideToolStripMenuItem1.Enabled = false;
             this.aideToolStripMenuItem1.Name = "aideToolStripMenuItem1";
-            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.aideToolStripMenuItem1.Text = "Aide...";
             // 
             // TSMI_A_Propos
             // 
             this.TSMI_A_Propos.Name = "TSMI_A_Propos";
-            this.TSMI_A_Propos.Size = new System.Drawing.Size(152, 22);
+            this.TSMI_A_Propos.Size = new System.Drawing.Size(131, 22);
             this.TSMI_A_Propos.Text = "À propos...";
             this.TSMI_A_Propos.Click += new System.EventHandler(this.TSMI_A_Propos_Click);
             // 
@@ -236,6 +237,7 @@
             this.DGV_Match.Size = new System.Drawing.Size(482, 213);
             this.DGV_Match.TabIndex = 7;
             this.DGV_Match.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Match_CellMouseUp);
+            this.DGV_Match.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Match_ColumnHeaderMouseClick);
             // 
             // CBX_Division
             // 

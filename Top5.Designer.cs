@@ -67,6 +67,7 @@
             this.DGV_Top5.Size = new System.Drawing.Size(531, 164);
             this.DGV_Top5.TabIndex = 5;
             this.DGV_Top5.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Top5_CellMouseUp);
+            this.DGV_Top5.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Top5_ColumnHeaderMouseClick);
             // 
             // FB_Close
             // 
