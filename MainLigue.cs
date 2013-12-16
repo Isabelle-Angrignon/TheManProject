@@ -465,5 +465,11 @@ namespace The_Main_Project
                 LoadLogo();
             }
         }
+
+        private void fermerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            conn.Close();
+            Application.Exit();
+        }
     }   
 }

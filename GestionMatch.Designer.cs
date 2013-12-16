@@ -81,7 +81,7 @@
             this.label1.Location = new System.Drawing.Point(183, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(22, 13);
-            this.label1.TabIndex = 41;
+            this.label1.TabIndex = 9;
             this.label1.Text = "Pts";
             // 
             // TB_R_Pts
@@ -89,7 +89,7 @@
             this.TB_R_Pts.Location = new System.Drawing.Point(171, 71);
             this.TB_R_Pts.Name = "TB_R_Pts";
             this.TB_R_Pts.Size = new System.Drawing.Size(39, 20);
-            this.TB_R_Pts.TabIndex = 40;
+            this.TB_R_Pts.TabIndex = 6;
             this.TB_R_Pts.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Chiffres_Seulement_KeyPress);
             // 
             // TB_V_Pts
@@ -97,7 +97,7 @@
             this.TB_V_Pts.Location = new System.Drawing.Point(171, 97);
             this.TB_V_Pts.Name = "TB_V_Pts";
             this.TB_V_Pts.Size = new System.Drawing.Size(39, 20);
-            this.TB_V_Pts.TabIndex = 39;
+            this.TB_V_Pts.TabIndex = 9;
             this.TB_V_Pts.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Chiffres_Seulement_KeyPress);
             // 
             // UC_Navigator
@@ -106,7 +106,7 @@
             this.UC_Navigator.Location = new System.Drawing.Point(12, 132);
             this.UC_Navigator.Name = "UC_Navigator";
             this.UC_Navigator.Size = new System.Drawing.Size(206, 19);
-            this.UC_Navigator.TabIndex = 38;
+            this.UC_Navigator.TabIndex = 10;
             this.UC_Navigator.OnFirst += new UC_Navigator.UC_Navigator.ClickFirstChangedHandler(this.uC_Navigator_OnFirst);
             this.UC_Navigator.OnPrev += new UC_Navigator.UC_Navigator.ClickPreviousChangedHandler(this.uC_Navigator_OnPrev);
             this.UC_Navigator.OnNext += new UC_Navigator.UC_Navigator.ClickNextChangedHandler(this.uC_Navigator_OnNext);
@@ -119,7 +119,7 @@
             this.button2.Location = new System.Drawing.Point(240, 85);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(44, 43);
-            this.button2.TabIndex = 3;
+            this.button2.TabIndex = 13;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.BTN_Edit_Click);
             // 
@@ -130,7 +130,7 @@
             this.BTN_Delete.Location = new System.Drawing.Point(240, 49);
             this.BTN_Delete.Name = "BTN_Delete";
             this.BTN_Delete.Size = new System.Drawing.Size(44, 40);
-            this.BTN_Delete.TabIndex = 4;
+            this.BTN_Delete.TabIndex = 12;
             this.BTN_Delete.UseVisualStyleBackColor = true;
             this.BTN_Delete.Click += new System.EventHandler(this.BTN_Del_Click);
             // 
@@ -141,7 +141,7 @@
             this.BTN_Add.Location = new System.Drawing.Point(240, 12);
             this.BTN_Add.Name = "BTN_Add";
             this.BTN_Add.Size = new System.Drawing.Size(44, 35);
-            this.BTN_Add.TabIndex = 5;
+            this.BTN_Add.TabIndex = 11;
             this.BTN_Add.UseVisualStyleBackColor = true;
             this.BTN_Add.Click += new System.EventHandler(this.BTN_Add_Click);
             // 
@@ -150,14 +150,14 @@
             this.TB_Receveur.Location = new System.Drawing.Point(65, 71);
             this.TB_Receveur.Name = "TB_Receveur";
             this.TB_Receveur.Size = new System.Drawing.Size(100, 20);
-            this.TB_Receveur.TabIndex = 11;
+            this.TB_Receveur.TabIndex = 5;
             // 
             // TB_Visiteur
             // 
             this.TB_Visiteur.Location = new System.Drawing.Point(65, 97);
             this.TB_Visiteur.Name = "TB_Visiteur";
             this.TB_Visiteur.Size = new System.Drawing.Size(100, 20);
-            this.TB_Visiteur.TabIndex = 10;
+            this.TB_Visiteur.TabIndex = 8;
             // 
             // label6
             // 
@@ -165,7 +165,7 @@
             this.label6.Location = new System.Drawing.Point(9, 100);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 13);
-            this.label6.TabIndex = 9;
+            this.label6.TabIndex = 7;
             this.label6.Text = "Visiteur";
             // 
             // label5
@@ -174,7 +174,7 @@
             this.label5.Location = new System.Drawing.Point(9, 74);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 13);
-            this.label5.TabIndex = 8;
+            this.label5.TabIndex = 4;
             this.label5.Text = "Receveur";
             // 
             // TB_Lieu
@@ -182,7 +182,7 @@
             this.TB_Lieu.Location = new System.Drawing.Point(65, 45);
             this.TB_Lieu.Name = "TB_Lieu";
             this.TB_Lieu.Size = new System.Drawing.Size(100, 20);
-            this.TB_Lieu.TabIndex = 5;
+            this.TB_Lieu.TabIndex = 3;
             // 
             // label4
             // 
@@ -190,7 +190,7 @@
             this.label4.Location = new System.Drawing.Point(9, 47);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 13);
-            this.label4.TabIndex = 4;
+            this.label4.TabIndex = 2;
             this.label4.Text = "Lieu";
             // 
             // DTP_Date
@@ -198,7 +198,7 @@
             this.DTP_Date.Location = new System.Drawing.Point(54, 19);
             this.DTP_Date.Name = "DTP_Date";
             this.DTP_Date.Size = new System.Drawing.Size(111, 20);
-            this.DTP_Date.TabIndex = 3;
+            this.DTP_Date.TabIndex = 1;
             // 
             // label3
             // 
@@ -206,7 +206,7 @@
             this.label3.Location = new System.Drawing.Point(9, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 13);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Date";
             // 
             // FB_Close
@@ -222,7 +222,7 @@
             this.FB_Close.Location = new System.Drawing.Point(260, 186);
             this.FB_Close.Name = "FB_Close";
             this.FB_Close.Size = new System.Drawing.Size(49, 46);
-            this.FB_Close.TabIndex = 39;
+            this.FB_Close.TabIndex = 3;
             this.FB_Close.Click += new System.EventHandler(this.BTN_Ok_Click);
             // 
             // FB_Fiche_Resultat
@@ -237,7 +237,7 @@
             this.FB_Fiche_Resultat.Location = new System.Drawing.Point(12, 187);
             this.FB_Fiche_Resultat.Name = "FB_Fiche_Resultat";
             this.FB_Fiche_Resultat.Size = new System.Drawing.Size(60, 45);
-            this.FB_Fiche_Resultat.TabIndex = 24;
+            this.FB_Fiche_Resultat.TabIndex = 2;
             this.FB_Fiche_Resultat.Click += new System.EventHandler(this.FB_Fiche_Resultat_Click);
             // 
             // label2
@@ -246,7 +246,7 @@
             this.label2.Location = new System.Drawing.Point(14, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(14, 13);
-            this.label2.TabIndex = 40;
+            this.label2.TabIndex = 0;
             this.label2.Text = "#";
             // 
             // LB_No_Match
@@ -255,7 +255,7 @@
             this.LB_No_Match.Location = new System.Drawing.Point(34, 7);
             this.LB_No_Match.Name = "LB_No_Match";
             this.LB_No_Match.Size = new System.Drawing.Size(0, 13);
-            this.LB_No_Match.TabIndex = 41;
+            this.LB_No_Match.TabIndex = 1;
             // 
             // GestionMatch
             // 

@@ -68,7 +68,7 @@
             this.Caractérstique.Location = new System.Drawing.Point(12, 12);
             this.Caractérstique.Name = "Caractérstique";
             this.Caractérstique.Size = new System.Drawing.Size(288, 249);
-            this.Caractérstique.TabIndex = 6;
+            this.Caractérstique.TabIndex = 0;
             this.Caractérstique.TabStop = false;
             // 
             // uC_Navigator
@@ -77,7 +77,7 @@
             this.uC_Navigator.Location = new System.Drawing.Point(17, 215);
             this.uC_Navigator.Name = "uC_Navigator";
             this.uC_Navigator.Size = new System.Drawing.Size(195, 19);
-            this.uC_Navigator.TabIndex = 23;
+            this.uC_Navigator.TabIndex = 9;
             this.uC_Navigator.OnFirst += new UC_Navigator.UC_Navigator.ClickFirstChangedHandler(this.uC_Navigator_OnFirst);
             this.uC_Navigator.OnPrev += new UC_Navigator.UC_Navigator.ClickPreviousChangedHandler(this.uC_Navigator_OnPrev);
             this.uC_Navigator.OnNext += new UC_Navigator.UC_Navigator.ClickNextChangedHandler(this.uC_Navigator_OnNext);
@@ -89,7 +89,7 @@
             this.BTN_Load.Location = new System.Drawing.Point(96, 19);
             this.BTN_Load.Name = "BTN_Load";
             this.BTN_Load.Size = new System.Drawing.Size(75, 23);
-            this.BTN_Load.TabIndex = 9;
+            this.BTN_Load.TabIndex = 0;
             this.BTN_Load.Text = "Charger logo";
             this.BTN_Load.UseVisualStyleBackColor = true;
             this.BTN_Load.Click += new System.EventHandler(this.BTN_Load_Click);
@@ -108,7 +108,7 @@
             this.TB_DivisionEquipe.Location = new System.Drawing.Point(67, 172);
             this.TB_DivisionEquipe.Name = "TB_DivisionEquipe";
             this.TB_DivisionEquipe.Size = new System.Drawing.Size(131, 20);
-            this.TB_DivisionEquipe.TabIndex = 19;
+            this.TB_DivisionEquipe.TabIndex = 8;
             this.TB_DivisionEquipe.Text = "Autofill";
             // 
             // label2
@@ -117,7 +117,7 @@
             this.label2.Location = new System.Drawing.Point(14, 172);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 21;
+            this.label2.TabIndex = 7;
             this.label2.Text = "Division";
             // 
             // DTP_Date_Team
@@ -126,14 +126,14 @@
             this.DTP_Date_Team.Location = new System.Drawing.Point(107, 123);
             this.DTP_Date_Team.Name = "DTP_Date_Team";
             this.DTP_Date_Team.Size = new System.Drawing.Size(91, 20);
-            this.DTP_Date_Team.TabIndex = 17;
+            this.DTP_Date_Team.TabIndex = 4;
             // 
             // TB_Nom_Team
             // 
             this.TB_Nom_Team.Location = new System.Drawing.Point(67, 96);
             this.TB_Nom_Team.Name = "TB_Nom_Team";
             this.TB_Nom_Team.Size = new System.Drawing.Size(131, 20);
-            this.TB_Nom_Team.TabIndex = 16;
+            this.TB_Nom_Team.TabIndex = 2;
             // 
             // BTN_Edit
             // 
@@ -142,7 +142,7 @@
             this.BTN_Edit.Location = new System.Drawing.Point(221, 137);
             this.BTN_Edit.Name = "BTN_Edit";
             this.BTN_Edit.Size = new System.Drawing.Size(40, 40);
-            this.BTN_Edit.TabIndex = 3;
+            this.BTN_Edit.TabIndex = 12;
             this.BTN_Edit.UseVisualStyleBackColor = true;
             this.BTN_Edit.Click += new System.EventHandler(this.BTN_Edit_Click);
             // 
@@ -153,7 +153,7 @@
             this.BTN_Del.Location = new System.Drawing.Point(221, 91);
             this.BTN_Del.Name = "BTN_Del";
             this.BTN_Del.Size = new System.Drawing.Size(40, 40);
-            this.BTN_Del.TabIndex = 4;
+            this.BTN_Del.TabIndex = 11;
             this.BTN_Del.UseVisualStyleBackColor = true;
             this.BTN_Del.Click += new System.EventHandler(this.BTN_Del_Click);
             // 
@@ -164,7 +164,7 @@
             this.BTN_Add.Location = new System.Drawing.Point(221, 46);
             this.BTN_Add.Name = "BTN_Add";
             this.BTN_Add.Size = new System.Drawing.Size(40, 40);
-            this.BTN_Add.TabIndex = 5;
+            this.BTN_Add.TabIndex = 10;
             this.BTN_Add.UseVisualStyleBackColor = true;
             this.BTN_Add.Click += new System.EventHandler(this.BTN_Add_Click);
             // 
@@ -173,7 +173,7 @@
             this.TB_Ville.Location = new System.Drawing.Point(67, 148);
             this.TB_Ville.Name = "TB_Ville";
             this.TB_Ville.Size = new System.Drawing.Size(131, 20);
-            this.TB_Ville.TabIndex = 10;
+            this.TB_Ville.TabIndex = 6;
             // 
             // label6
             // 
@@ -181,7 +181,7 @@
             this.label6.Location = new System.Drawing.Point(14, 151);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(26, 13);
-            this.label6.TabIndex = 9;
+            this.label6.TabIndex = 5;
             this.label6.Text = "Ville";
             // 
             // label5
@@ -190,7 +190,7 @@
             this.label5.Location = new System.Drawing.Point(14, 126);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 13);
-            this.label5.TabIndex = 8;
+            this.label5.TabIndex = 3;
             this.label5.Text = "Date introduction";
             // 
             // label3
@@ -199,7 +199,7 @@
             this.label3.Location = new System.Drawing.Point(14, 99);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 1;
             this.label3.Text = "Nom";
             // 
             // FB_Close
@@ -214,7 +214,7 @@
             this.FB_Close.Location = new System.Drawing.Point(233, 267);
             this.FB_Close.Name = "FB_Close";
             this.FB_Close.Size = new System.Drawing.Size(55, 62);
-            this.FB_Close.TabIndex = 25;
+            this.FB_Close.TabIndex = 1;
             this.FB_Close.Click += new System.EventHandler(this.FB_Close_Click);
             // 
             // GestionEquipe

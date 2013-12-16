@@ -80,7 +80,7 @@
             this.LB_NoMatch.Location = new System.Drawing.Point(40, 9);
             this.LB_NoMatch.Name = "LB_NoMatch";
             this.LB_NoMatch.Size = new System.Drawing.Size(54, 20);
-            this.LB_NoMatch.TabIndex = 3;
+            this.LB_NoMatch.TabIndex = 1;
             this.LB_NoMatch.Text = "00000";
             // 
             // label1
@@ -90,7 +90,7 @@
             this.label1.Location = new System.Drawing.Point(16, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 20);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 0;
             this.label1.Text = "#";
             // 
             // label5
@@ -100,7 +100,7 @@
             this.label5.Location = new System.Drawing.Point(390, 58);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 29);
-            this.label5.TabIndex = 6;
+            this.label5.TabIndex = 5;
             this.label5.Text = "vs";
             // 
             // LB_NomEquipe_R
@@ -110,7 +110,7 @@
             this.LB_NomEquipe_R.Location = new System.Drawing.Point(286, 12);
             this.LB_NomEquipe_R.Name = "LB_NomEquipe_R";
             this.LB_NomEquipe_R.Size = new System.Drawing.Size(77, 20);
-            this.LB_NomEquipe_R.TabIndex = 7;
+            this.LB_NomEquipe_R.TabIndex = 13;
             this.LB_NomEquipe_R.Text = "Receveur";
             this.LB_NomEquipe_R.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
@@ -121,7 +121,7 @@
             this.LB_DateMatch.Location = new System.Drawing.Point(109, 9);
             this.LB_DateMatch.Name = "LB_DateMatch";
             this.LB_DateMatch.Size = new System.Drawing.Size(44, 20);
-            this.LB_DateMatch.TabIndex = 8;
+            this.LB_DateMatch.TabIndex = 2;
             this.LB_DateMatch.Text = "Date";
             // 
             // LB_Lieu_Result
@@ -131,7 +131,7 @@
             this.LB_Lieu_Result.Location = new System.Drawing.Point(267, 9);
             this.LB_Lieu_Result.Name = "LB_Lieu_Result";
             this.LB_Lieu_Result.Size = new System.Drawing.Size(39, 20);
-            this.LB_Lieu_Result.TabIndex = 9;
+            this.LB_Lieu_Result.TabIndex = 3;
             this.LB_Lieu_Result.Text = "Lieu";
             // 
             // groupBox1
@@ -155,7 +155,7 @@
             this.groupBox1.Location = new System.Drawing.Point(15, 42);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(369, 154);
-            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
             // LB_ID_R
@@ -164,7 +164,7 @@
             this.LB_ID_R.Location = new System.Drawing.Point(58, 46);
             this.LB_ID_R.Name = "LB_ID_R";
             this.LB_ID_R.Size = new System.Drawing.Size(0, 13);
-            this.LB_ID_R.TabIndex = 26;
+            this.LB_ID_R.TabIndex = 2;
             // 
             // label2
             // 
@@ -172,7 +172,7 @@
             this.label2.Location = new System.Drawing.Point(14, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(24, 13);
-            this.label2.TabIndex = 25;
+            this.label2.TabIndex = 1;
             this.label2.Text = "ID :";
             // 
             // BTN_Mod_R
@@ -182,7 +182,7 @@
             this.BTN_Mod_R.Location = new System.Drawing.Point(185, 104);
             this.BTN_Mod_R.Name = "BTN_Mod_R";
             this.BTN_Mod_R.Size = new System.Drawing.Size(40, 40);
-            this.BTN_Mod_R.TabIndex = 22;
+            this.BTN_Mod_R.TabIndex = 12;
             this.BTN_Mod_R.UseVisualStyleBackColor = true;
             this.BTN_Mod_R.Click += new System.EventHandler(this.BTN_Mod_R_Click);
             // 
@@ -193,7 +193,7 @@
             this.BTN_Del_R.Location = new System.Drawing.Point(185, 58);
             this.BTN_Del_R.Name = "BTN_Del_R";
             this.BTN_Del_R.Size = new System.Drawing.Size(40, 40);
-            this.BTN_Del_R.TabIndex = 23;
+            this.BTN_Del_R.TabIndex = 11;
             this.BTN_Del_R.UseVisualStyleBackColor = true;
             this.BTN_Del_R.Click += new System.EventHandler(this.BTN_Del_R_Click);
             // 
@@ -204,7 +204,7 @@
             this.BTN_Add_R.Location = new System.Drawing.Point(185, 12);
             this.BTN_Add_R.Name = "BTN_Add_R";
             this.BTN_Add_R.Size = new System.Drawing.Size(40, 40);
-            this.BTN_Add_R.TabIndex = 24;
+            this.BTN_Add_R.TabIndex = 10;
             this.BTN_Add_R.UseVisualStyleBackColor = true;
             this.BTN_Add_R.Click += new System.EventHandler(this.BTN_Add_R_Click);
             // 
@@ -214,7 +214,7 @@
             this.label9.Location = new System.Drawing.Point(109, 126);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 13);
-            this.label9.TabIndex = 19;
+            this.label9.TabIndex = 9;
             this.label9.Text = "Minutes";
             // 
             // TB_Passes_R
@@ -222,7 +222,7 @@
             this.TB_Passes_R.Location = new System.Drawing.Point(61, 95);
             this.TB_Passes_R.Name = "TB_Passes_R";
             this.TB_Passes_R.Size = new System.Drawing.Size(42, 20);
-            this.TB_Passes_R.TabIndex = 18;
+            this.TB_Passes_R.TabIndex = 6;
             this.TB_Passes_R.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Chiffres_Seulement_KeyPress);
             // 
             // label11
@@ -231,7 +231,7 @@
             this.label11.Location = new System.Drawing.Point(14, 98);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(41, 13);
-            this.label11.TabIndex = 17;
+            this.label11.TabIndex = 5;
             this.label11.Text = "Passes";
             // 
             // TB_But_R
@@ -239,7 +239,7 @@
             this.TB_But_R.Location = new System.Drawing.Point(61, 69);
             this.TB_But_R.Name = "TB_But_R";
             this.TB_But_R.Size = new System.Drawing.Size(42, 20);
-            this.TB_But_R.TabIndex = 16;
+            this.TB_But_R.TabIndex = 4;
             this.TB_But_R.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Chiffres_Seulement_KeyPress);
             // 
             // label10
@@ -248,7 +248,7 @@
             this.label10.Location = new System.Drawing.Point(14, 76);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(28, 13);
-            this.label10.TabIndex = 15;
+            this.label10.TabIndex = 3;
             this.label10.Text = "Buts";
             // 
             // TB_Pen_R
@@ -256,7 +256,7 @@
             this.TB_Pen_R.Location = new System.Drawing.Point(61, 119);
             this.TB_Pen_R.Name = "TB_Pen_R";
             this.TB_Pen_R.Size = new System.Drawing.Size(42, 20);
-            this.TB_Pen_R.TabIndex = 12;
+            this.TB_Pen_R.TabIndex = 8;
             this.TB_Pen_R.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Chiffres_Seulement_KeyPress);
             // 
             // label8
@@ -265,7 +265,7 @@
             this.label8.Location = new System.Drawing.Point(14, 122);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(37, 13);
-            this.label8.TabIndex = 11;
+            this.label8.TabIndex = 7;
             this.label8.Text = "Pénal.";
             // 
             // CBX_Choix_J_R
@@ -276,7 +276,7 @@
             this.CBX_Choix_J_R.Location = new System.Drawing.Point(17, 16);
             this.CBX_Choix_J_R.Name = "CBX_Choix_J_R";
             this.CBX_Choix_J_R.Size = new System.Drawing.Size(121, 21);
-            this.CBX_Choix_J_R.TabIndex = 8;
+            this.CBX_Choix_J_R.TabIndex = 0;
             this.CBX_Choix_J_R.SelectedIndexChanged += new System.EventHandler(this.CBX_Choix_J_R_SelectedIndexChanged);
             // 
             // DGV_ListeJoueur_R
@@ -293,7 +293,7 @@
             this.DGV_ListeJoueur_R.ReadOnly = true;
             this.DGV_ListeJoueur_R.RowHeadersVisible = false;
             this.DGV_ListeJoueur_R.Size = new System.Drawing.Size(369, 150);
-            this.DGV_ListeJoueur_R.TabIndex = 21;
+            this.DGV_ListeJoueur_R.TabIndex = 7;
             this.DGV_ListeJoueur_R.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_ListeJoueur_R_ColumnHeaderMouseClick);
             // 
             // groupBox2
@@ -317,7 +317,7 @@
             this.groupBox2.Location = new System.Drawing.Point(429, 42);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(369, 154);
-            this.groupBox2.TabIndex = 23;
+            this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             // 
             // LB_ID_V
@@ -326,7 +326,7 @@
             this.LB_ID_V.Location = new System.Drawing.Point(183, 40);
             this.LB_ID_V.Name = "LB_ID_V";
             this.LB_ID_V.Size = new System.Drawing.Size(0, 13);
-            this.LB_ID_V.TabIndex = 28;
+            this.LB_ID_V.TabIndex = 3;
             // 
             // BTN_Mod_V
             // 
@@ -335,7 +335,7 @@
             this.BTN_Mod_V.Location = new System.Drawing.Point(314, 100);
             this.BTN_Mod_V.Name = "BTN_Mod_V";
             this.BTN_Mod_V.Size = new System.Drawing.Size(40, 40);
-            this.BTN_Mod_V.TabIndex = 25;
+            this.BTN_Mod_V.TabIndex = 13;
             this.BTN_Mod_V.UseVisualStyleBackColor = true;
             this.BTN_Mod_V.Click += new System.EventHandler(this.BTN_Mod_V_Click);
             // 
@@ -345,7 +345,7 @@
             this.label4.Location = new System.Drawing.Point(139, 40);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(24, 13);
-            this.label4.TabIndex = 27;
+            this.label4.TabIndex = 2;
             this.label4.Text = "ID :";
             // 
             // BTN_Del_V
@@ -355,7 +355,7 @@
             this.BTN_Del_V.Location = new System.Drawing.Point(314, 57);
             this.BTN_Del_V.Name = "BTN_Del_V";
             this.BTN_Del_V.Size = new System.Drawing.Size(40, 40);
-            this.BTN_Del_V.TabIndex = 26;
+            this.BTN_Del_V.TabIndex = 12;
             this.BTN_Del_V.UseVisualStyleBackColor = true;
             this.BTN_Del_V.Click += new System.EventHandler(this.BTN_Del_V_Click);
             // 
@@ -366,7 +366,7 @@
             this.BTN_Add_V.Location = new System.Drawing.Point(314, 14);
             this.BTN_Add_V.Name = "BTN_Add_V";
             this.BTN_Add_V.Size = new System.Drawing.Size(40, 40);
-            this.BTN_Add_V.TabIndex = 27;
+            this.BTN_Add_V.TabIndex = 11;
             this.BTN_Add_V.UseVisualStyleBackColor = true;
             this.BTN_Add_V.Click += new System.EventHandler(this.BTN_Add_V_Click);
             // 
@@ -376,7 +376,7 @@
             this.label12.Location = new System.Drawing.Point(234, 127);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(44, 13);
-            this.label12.TabIndex = 19;
+            this.label12.TabIndex = 10;
             this.label12.Text = "Minutes";
             // 
             // TB_Passes_Visiteur
@@ -384,7 +384,7 @@
             this.TB_Passes_Visiteur.Location = new System.Drawing.Point(186, 96);
             this.TB_Passes_Visiteur.Name = "TB_Passes_Visiteur";
             this.TB_Passes_Visiteur.Size = new System.Drawing.Size(42, 20);
-            this.TB_Passes_Visiteur.TabIndex = 18;
+            this.TB_Passes_Visiteur.TabIndex = 7;
             this.TB_Passes_Visiteur.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Chiffres_Seulement_KeyPress);
             // 
             // label13
@@ -393,7 +393,7 @@
             this.label13.Location = new System.Drawing.Point(139, 99);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(41, 13);
-            this.label13.TabIndex = 17;
+            this.label13.TabIndex = 6;
             this.label13.Text = "Passes";
             // 
             // TB_But_Visiteur
@@ -401,7 +401,7 @@
             this.TB_But_Visiteur.Location = new System.Drawing.Point(186, 70);
             this.TB_But_Visiteur.Name = "TB_But_Visiteur";
             this.TB_But_Visiteur.Size = new System.Drawing.Size(42, 20);
-            this.TB_But_Visiteur.TabIndex = 16;
+            this.TB_But_Visiteur.TabIndex = 5;
             this.TB_But_Visiteur.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Chiffres_Seulement_KeyPress);
             // 
             // label14
@@ -410,7 +410,7 @@
             this.label14.Location = new System.Drawing.Point(139, 77);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(28, 13);
-            this.label14.TabIndex = 15;
+            this.label14.TabIndex = 4;
             this.label14.Text = "Buts";
             // 
             // TB_Pen_Visiteur
@@ -418,7 +418,7 @@
             this.TB_Pen_Visiteur.Location = new System.Drawing.Point(186, 120);
             this.TB_Pen_Visiteur.Name = "TB_Pen_Visiteur";
             this.TB_Pen_Visiteur.Size = new System.Drawing.Size(42, 20);
-            this.TB_Pen_Visiteur.TabIndex = 12;
+            this.TB_Pen_Visiteur.TabIndex = 9;
             this.TB_Pen_Visiteur.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Chiffres_Seulement_KeyPress);
             // 
             // label15
@@ -427,7 +427,7 @@
             this.label15.Location = new System.Drawing.Point(139, 123);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(37, 13);
-            this.label15.TabIndex = 11;
+            this.label15.TabIndex = 8;
             this.label15.Text = "Pénal.";
             // 
             // CBX_Choix_J_V
@@ -438,7 +438,7 @@
             this.CBX_Choix_J_V.Location = new System.Drawing.Point(142, 14);
             this.CBX_Choix_J_V.Name = "CBX_Choix_J_V";
             this.CBX_Choix_J_V.Size = new System.Drawing.Size(121, 21);
-            this.CBX_Choix_J_V.TabIndex = 8;
+            this.CBX_Choix_J_V.TabIndex = 1;
             this.CBX_Choix_J_V.SelectedIndexChanged += new System.EventHandler(this.CBX_Choix_J_V_SelectedIndexChanged);
             // 
             // LB_NomEquipe_V
@@ -448,7 +448,7 @@
             this.LB_NomEquipe_V.Location = new System.Drawing.Point(6, 16);
             this.LB_NomEquipe_V.Name = "LB_NomEquipe_V";
             this.LB_NomEquipe_V.Size = new System.Drawing.Size(62, 20);
-            this.LB_NomEquipe_V.TabIndex = 7;
+            this.LB_NomEquipe_V.TabIndex = 0;
             this.LB_NomEquipe_V.Text = "Visiteur";
             // 
             // FB_Close
@@ -464,7 +464,7 @@
             this.FB_Close.Location = new System.Drawing.Point(743, 368);
             this.FB_Close.Name = "FB_Close";
             this.FB_Close.Size = new System.Drawing.Size(50, 52);
-            this.FB_Close.TabIndex = 28;
+            this.FB_Close.TabIndex = 9;
             this.FB_Close.Click += new System.EventHandler(this.BTN_Ok_Click);
             // 
             // DGV_ListeJoueur_V
@@ -481,7 +481,7 @@
             this.DGV_ListeJoueur_V.ReadOnly = true;
             this.DGV_ListeJoueur_V.RowHeadersVisible = false;
             this.DGV_ListeJoueur_V.Size = new System.Drawing.Size(369, 150);
-            this.DGV_ListeJoueur_V.TabIndex = 29;
+            this.DGV_ListeJoueur_V.TabIndex = 8;
             this.DGV_ListeJoueur_V.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_ListeJoueur_V_ColumnHeaderMouseClick);
             // 
             // Resultat_Match

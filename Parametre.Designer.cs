@@ -46,7 +46,7 @@
             this.BG_Parametre.Location = new System.Drawing.Point(12, 12);
             this.BG_Parametre.Name = "BG_Parametre";
             this.BG_Parametre.Size = new System.Drawing.Size(113, 124);
-            this.BG_Parametre.TabIndex = 0;
+            this.BG_Parametre.TabIndex = 1;
             this.BG_Parametre.TabStop = false;
             this.BG_Parametre.Text = "Options";
             // 
@@ -98,7 +98,7 @@
             this.BTN_Appliquer.Location = new System.Drawing.Point(12, 142);
             this.BTN_Appliquer.Name = "BTN_Appliquer";
             this.BTN_Appliquer.Size = new System.Drawing.Size(68, 50);
-            this.BTN_Appliquer.TabIndex = 11;
+            this.BTN_Appliquer.TabIndex = 2;
             this.BTN_Appliquer.Text = "Appliquer";
             this.BTN_Appliquer.UseVisualStyleBackColor = true;
             this.BTN_Appliquer.Click += new System.EventHandler(this.BTN_Appliquer_Click);
@@ -116,7 +116,7 @@
             this.FB_Close.Location = new System.Drawing.Point(151, 142);
             this.FB_Close.Name = "FB_Close";
             this.FB_Close.Size = new System.Drawing.Size(42, 50);
-            this.FB_Close.TabIndex = 26;
+            this.FB_Close.TabIndex = 0;
             this.FB_Close.Click += new System.EventHandler(this.BTN_Ok_Click);
             // 
             // Parametre
